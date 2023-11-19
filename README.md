@@ -1,5 +1,5 @@
 # Documents
-Documents produced during the Software Engineering project for the Computer Science BSc at the University of Padua.\
+Documents and code produced during the Software Engineering project for the Computer Science BSc at the University of Padua.\
 **Group**: Avant-Garde\
 **Email**: sweavantgarde@gmail.com\
 **Academic Year**: 2023/2024
