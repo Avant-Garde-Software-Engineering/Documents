@@ -76,7 +76,7 @@
 
 \large\textbf{} \\
 \textbf{Attori:}\\
-\textbf{Pre-condizione:} L'utente ha selezionato un oggetto presente nel magazzino \\
+\textbf{Pre-condizione:} Un oggetto presente nel magazzino é stato selezionato \\
 \textbf{Post-condizione: } Evidenziazione dell'oggetto selezionato \\
 \textbf{Scenario Principale:}  Se l'oggetto selezionato é presente nel magazzino esso viene evidenziato nello spazio tridimensionale\\
 
@@ -102,3 +102,73 @@
 -UCX Spostamento Oggetto \\ -UCX Eliminazione Oggetto
 
 \vspace{0.5cm}
+
+
+\Large\textbf{}\\
+\Large\textbf{Use Case X Inserimento Oggetto} \\
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{UseCasesImages/Inserimento.png}
+\end{figure}
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
+\textbf{Post-condizione: } L'oggetto é stato inserito correttamente oppure viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di inserirlo nel magazzino, sceglie uno scaffale a cui destinarlo e vengono effettuate una serie di verifiche. La prima verifica effettuata é di natura statica: il sistema verifica la disponibilitá dimensionale del magazzino. Dopo aver passato la verifica statica la richiesta di spostamento viene inoltrata ad un gestore incaricato di approvare il movimento o rifiutarlo. In caso il movimento non venga effettuato viene visualizzato un messaggio di errore \\
+\textbf{Inclusione:} UCX Selezione Scaffale \\
+
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case X Spostamento Oggetto} \\
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{UseCasesImages/Inserimento.png}
+\end{figure}
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
+\textbf{Post-condizione: } L'oggetto é stato spostato correttamente oppure viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di spostarlo, sceglie uno scaffale a cui destinarlo e vengono effettuate una serie di verifiche. La prima verifica effettuata é di natura statica: il sistema verifica la disponibilitá dimensionale del magazzino. Dopo aver passato la verifica statica la richiesta di spostamento viene inoltrata ad un gestore incaricato di approvare il movimento o rifiutarlo. In caso il movimento non venga effettuato viene visualizzato un messaggio di errore \\
+\textbf{Inclusione:} UCX Selezione Scaffale \\
+
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case X Eliminazione Oggetto} \\
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
+\textbf{Post-condizione: } L'oggetto é eliminato\\
+\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di eliminarlo \\
+
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case X Approvazione Movimento} \\
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto e uno scaffale a cui destinarlo \\
+\textbf{Post-condizione: } Il movimento é stato effettuato correttamente o viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} Da Definire \\
+\textbf{Inclusione:} \\
+UCX Approvazione Statica \\
+UCX Approvazione Dinamica \\
+
+\vspace{0.5cm}
+
+\textbf{}\\
+{\color{red}{\textbf{Domanda:} Lo spostamento avviene anche attraverso il trascinamento mediante il mouse?}} \\
+{\color{red}{\textbf{Delucidamento:} Funzionamento dettagliato della richiesta di approvazione}}\\
