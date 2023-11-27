@@ -9,10 +9,7 @@
 \usepackage{tabularx}
 \usepackage{colortbl}
 
-\def \titoloDocumento {Analisi dei requisiti}    %modificare con il titolo del documento
-
-%rimuovere se non è un verbale esterno
-\def \nomeAzienda {NOME AZIENDA}    %modificare con il nome dell'azienda
+\def \titoloDocumento {ANALISI DEI REQUISITI}    %modificare con il titolo del documento
 
 \geometry{a4paper,total={160mm,240mm},top=30mm,}
 \begin{document}
@@ -24,15 +21,13 @@
     \headsep = 15mm
 
     \input{changelog.tex}
-    
-    \input{signature.tex}
+    \input{signature}
     \newpage
     
     \renewcommand{\contentsname}{Indice}    %rimuovere se non si vuole l'indice
     \tableofcontents    %rimuovere se non si vuole l'indice
     \newpage    %rimuovere se non si vuole l'indice
 
-    \input{info.tex}
     \newpage
 
     \input{content.tex}
