@@ -1,0 +1,222 @@
+\begin{beginningnote}
+    Si tenga presente che alcuni termini utilizzati nel documento riportano la lettera \textbf{G} in apice, allo scopo di evidenziare le parole che assumono uno specifico significato nell'ambito del progetto. Per comprenderle in maniera corretta, si rimanda il lettore al documento ``Glossario", che contiene un elenco completo di tutte le terminologie utilizzate con relative definizioni, allo scopo di costruire un linguaggio uniforme che possa migliorare la comunicazione tra i componenti interni al gruppo e gli stakeholders esterni.   %inserire corsivo per ogni termine del glossario?
+\end{beginningnote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOPO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scopo del documento}\label{sec:scopo_del_documento}
+Questo documento è destinato sia ai membri del gruppo che agli stakeholders\textsuperscript{G} in quanto ha come obiettivo quello di indicare tempi, costi e modalità di sviluppo delle varie fasi del progetto\textsuperscript{G}.
+In particolare, al suo interno, sono riportati:
+\begin{itemize}
+    \item Un'analisi dei rischi, comprendente anche delle tecniche di mitigazione implementate per limitarne le problematiche;
+    \item Il modello di sviluppo scelto per il progetto\textsuperscript{G};
+    \item La pianificazione delle milestones\textsuperscript{G} del progetto\textsuperscript{G}, inclusi i relativi costi e tempi di completamento (sia preventivi sia a consuntivo).
+\end{itemize}
+Vista la natura del documento, è previsto che questo venga redatto in maniera incrementale, aggiornandolo a seconda dei bisogni di gruppo e proponente e in seguito a riflessioni nate dal compimento delle diverse fasi di sviluppo. Per una visione precisa delle modifiche, si rimanda al changelog, che descrive per ciascuna versione le differenze rispetto a quella precedente.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IL PROGETTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Il progetto}\label{sec:il_progetto}
+\par Il progetto nasce nell'ambito dei \textbf{sistemi gestionali di magazzino}, meglio noti con il termine inglese di \textit{Warehouse Management Systems} (WMS), con l'obiettivo di risolvere una serie di problematiche derivanti dalle soluzioni tradizionali tuttora presenti sul mercato.
+\par Il focus principale sarà migliorare la user experience, tramite la realizzazione di un applicativo che proponga all'utente un'interazione con il magazzino in un ambiente di lavoro 3D: questa soluzione, rispetto ai tradizionali sistemi 2D, garantirebbe una maggiore comprensione degli spazi, proponendo una visualizzazione più intuitiva e familiare del magazzino all'utente che, di conseguenza, sarà in grado di prendere decisioni organizzative più informate ed efficienti, ottimizzando i processi di logistica.
+\par Per raggiungere questo obiettivo, l'ambiente di lavoro non può essere una semplice visualizzazione del magazzino. L'utente dovrà infatti poter:
+\begin{itemize}
+    \item Navigare l'ambiente 3D;
+    \item Progettare la scaffalatura e modificarla nel tempo;
+    \item Simulare i flussi di movimento di mezzi e prodotti.
+\end{itemize}
+Il progetto deve concretizzarsi nella realizzazione di una web app fruibile agli impiegati d'ufficio ed incentrata sulla visualizzazione 3D del magazzino.
+\par Per visionare il capitolato\textsuperscript{G} e la documentazione del gruppo, si veda la sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANALISI DEI RISCHI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analisi dei rischi}\label{sec:analisi_rischi}
+Lo scopo di questa sezione è quella di prendere in esame tutte le possibili problematiche che potrebbero verificarsi durante la realizzazione del progetto\textsuperscript{G}, al fine di evitare che questi rischi si concretizzino e minaccino così l'avanzamento delle attività di progetto.
+Questa analisi sarà organizzata in forma tabellare, in modo da consentire un monitoraggio continuo e più accessibile, e dividendo i rischi a seconda delle seguenti categorie:
+\begin{itemize}
+    \item Rischi di tipo tecnico-tecnologico;
+    \item Rischi organizzativi.
+\end{itemize}
+In particolare, per ciascun rischio viene fornito:
+\begin{itemize}
+    \item \textbf{Una breve descrizione}.
+    \item \textbf{La probabilità di occorrenza}, indicata attraverso:
+        \begin{itemize}
+            \item \textbf{A}: per occorrenza alta;
+            \item \textbf{M}: per occorrenza media;
+            \item \textbf{B}: per occorrenza bassa.
+        \end{itemize}
+    \item \textbf{Il grado di pericolosità}, indicato attraverso i seguenti colori:
+        \begin{itemize}
+        \item \colorbox{red!50}{\textbf{Rosso:}} per rischi con pericolosità alta;
+        \item \colorbox{orange!50}{\textbf{Arancione:}} per rischi con pericolosità media;
+        \item \colorbox{yellow!75}{\textbf{Giallo:}} per rischi con pericolosità bassa.
+        \end{itemize}
+    \item \textbf{Precauzioni da prendere}.
+    \item \textbf{Il piano di contingenza}\textsuperscript{G}.
+\end{itemize}
+
+\subsection{Rischi di tipo tecnico-tecnologico}\label{sec:analisi_rischi:tec}
+\renewcommand{\arraystretch}{1.5}
+\begin{xltabular}{\textwidth}{p{0.00001\textwidth} X | X | X | p{0.05\textwidth}}
+    \rowcolor{black}
+    & \textbf{\color{white} Rischio} & \textbf{\color{white} Precauzioni} & \textbf{\color{white} Piano di contingenza} & \textbf{\color{white} Occ.}\\ 
+    \hline
+    \endhead
+    
+    \cellcolor{red}& \textbf{Tecnologie sconosciute:} il gruppo ha scarsa esperienza con le tecnologie da utilizzare in fase di codifica del prodotto SW. 
+    & Ogni membro deve comunicare ai colleghi il suo livello di conoscenza relativo alla tecnologia da utilizzare per migliorare l'efficienza del gruppo (e.g. trovando una migliore suddivisione del lavoro).
+    & Si cerca di approfondire con lo studio individuale, ed eventualmente collettivo, la documentazione relativa alla tecnologia da utilizzare. Nel caso la tecnologia non sia funzionale e/o causi ritardi troppo prolungati si può valutarne il cambiamento o dismissione. 
+    & A \\
+    \hline
+    
+    \cellcolor{orange}& \textbf{Strumenti sconosciuti:} il gruppo non ha alcuna esperienza con SW di gestione dei progetti. 
+    & Prima di utilizzare uno strumento sconosciuto, si valuta congiuntamente l'efficienza/efficacia del suo utilizzo. Ogni membro dovrà poi esercitarsi a comprendere gli aspetti principali dello strumento e segnalare le eventuali difficoltà incontrate.
+    & In caso di dubbi non risolti attraverso lo studio individuale, si può ricorrere ad un incontro con altri membri del gruppo per cercare di risolvere il problema più velocemente. Altrimenti, se ciò è causa di ritardi troppo lunghi, si cerca un'alternativa o si valuta di non usarlo. 
+    & A \\
+    \hline
+
+    \cellcolor{orange}& \textbf{Problemi hardware o software:} lo strumento di lavoro (sia esso SW o HW) di un componente del gruppo potrebbe non permettere, totalmente o parzialmente, lo svolgimento di una qualche attività del progetto. 
+    & Il membro che incorrerà in questo rischio (e.g. a causa di un guasto) dovrà farlo presente tempestivamente agli altri membri del gruppo.
+    & Si cerca di utilizzare SW affidabili ed effettuare backup periodici. Nel caso di malfunzionamento del dispositivo, è necessario cercare di svolgere i compiti assegnati usandone un altro. Se ciò non fosse possibile, si cerca di ridistribuire le attività in modo da limitare il più possibile il risultante rallentamento nello sviluppo del progetto.
+    & B \\
+    \hline \\
+
+    \caption{Tabella dei rischi di tipo tecnico-tecnologico}
+    \label{tab:rischi:tec}
+\end{xltabular}
+
+\subsection{Rischi organizzativi}\label{sec:analisi_rischi:org}
+\renewcommand{\arraystretch}{1.5}
+\begin{xltabular}{\textwidth}{p{0.00001\textwidth} X | X | X | p{0.05\textwidth}}
+
+    \rowcolor{black}
+    & \textbf{\color{white} Rischio} & \textbf{\color{white} Precauzioni} & \textbf{\color{white} Piano di contingenza} & \textbf{\color{white} Occ.}\\ 
+    \hline
+    \endhead
+    
+    \cellcolor{red}& \textbf{Inesperienza professionale-organizzativa:} la maggior parte del gruppo affronta per la prima volta un progetto così complesso.
+    & Ogni membro deve comunicare ai colleghi quelli che potrebbero rivelarsi dei punti di criticità.
+    & Si cerca di approfondire quanto possibile con lo studio individuale. Se ciò non dovesse bastare, il membro può richiedere un aiuto agli altri componenti del gruppo. Nel caso la criticità persistesse, si richiedono chiarimenti ai docenti del corso e/o all'azienda proponente.
+    & A \\
+    \hline
+
+    \cellcolor{red}& \textbf{Prospetti economici e temporali non rispettati: } i costi monetari e temporali per le varie attività potrebbero essere stati stimati incorrettamente a causa dell'inesperienza del gruppo in tal senso.
+    & Si cerca di non pianificare in maniera ottimistica ma tenendo presente eventuali ostacoli in cui si potrebbe incorrere durante l'avanzamento del progetto. Per quanto riguarda la gestione delle scadenze, il responsabile si impegna a richiamare l'attenzione del gruppo su quelle imminenti per evitare slittamenti nel progetto.
+    & Se un membro del gruppo si accorge che non sta rispettando la pianificazione lo farà presente al responsabile, che valuterà una rilocazione di risorse oppure, in casi estremi, la modifica del preventivo proposto.
+    & A \\
+    \hline
+    
+    \cellcolor{orange}& \textbf{Disponibilità oraria varia:} i membri del gruppo hanno impegni diversi che potrebbero generare difficoltà nelle tempistiche di lavoro e/o nell'organizzazione di incontri collettivi.
+    & Ogni membro si impegna ad essere il più possibile reperibile e, se ciò non fosse possibile, di comunicare le sue disponibilità agli altri membri in modo da poter organizzare il lavoro in maniera più efficiente.
+    & Si comunica agli altri membri del gruppo i propri impegni attraverso gli strumenti predisposti e si cerca di trovare assieme una soluzione che sfrutti al meglio il tempo a disposizione di tutti.
+    & M \\
+    \hline
+
+    \cellcolor{yellow}& \textbf{Comunicazione esterna:} una parte del gruppo non ha conoscenza pratica per quanto riguarda la comunicazione in ambito professionale.
+    & Il gruppo affida agli enti esterni, più esperti, la scelta del canale di comunicazione più appropriato.
+    & Il gruppo si impegna a seguire le indicazioni fornite dall'ente in merito. Altrimenti, si cerca assieme ai membri più navigati di pensare a delle soluzioni.
+    & M \\
+    \hline
+
+    \cellcolor{red}& \textbf{Modifiche al progetto in corso d'opera:} l'azienda potrebbe richiedere l'aggiunta e/o modifica di alcuni requisiti, tecnologie e funzionalità a progetto già iniziato.
+    & Il gruppo aggiorna l'azienda al completamento di ogni obiettivo prestabilito in modo che questa possa valutare attentamente il lavoro svolto.
+    & Si mantiene un rapporto continuativo con l'azienda, aggiornandola sull'avanzamento del progetto. Se l'azienda dovesse comunicare al gruppo un cambiamento, le attività saranno ristrutturate dal responsabile di conseguenza.
+    & B \\
+    \hline
+
+    \cellcolor{orange}& \textbf{Rapporti interni:} si potrebbero verificare delle difficoltà qualora due o più membri del gruppo dovessero trovarsi, per un qualche motivo, in disaccordo sulle decisioni da prendere.
+    & Si cerca di evitare queste situazioni e pensare in ottica collettiva, cercando compromessi.
+    & Le opinioni di tutti devono essere discusse allo scopo di prendere la decisione migliore. Nel caso di conflitti, è nell'interesse di tutti i membri del gruppo (re-)instaurare un dialogo costruttivo.
+    & B \\
+    \hline
+
+    \cellcolor{orange}& \textbf{Distribuzione disomogenea:} il carico di lavoro potrebbe essere mal distribuito, e.g. troppo dispendioso per alcuni e/o troppo leggero per altri. 
+    & Ciascun membro, in base alle proprie disponibilità e agli impegni presi per il progetto, si impegna a far presente al gruppo le proprie capacità, segnalando eventuali compiti che potrebbero essere non/più adatti alla sua situazione corrente e futura.
+    & Sarà compito del responsabile decidere come redistribuire il lavoro in maniera più efficiente.
+    & B \\
+    \hline
+
+    \cellcolor{orange}& \textbf{Rapporti esterni: } il proponente potrebbe essere poco presente e/o di scarso aiuto.
+    & Si cerca di capire fin da subito le disponibilità dell'azienda.
+    & Il responsabile si occuperà di gestire la comunicazione esterna cercando di far presente se dovessero esserci delle difficoltà in tal senso.
+    & B \\
+    \hline \\
+
+    \caption{Tabella dei rischi organizzativi}
+    \label{tab:rischi:org}
+\end{xltabular}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MODELLO DI SVILUPPO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modello di sviluppo}\label{sec:modello_sviluppo}
+
+\begin{center}
+    \textcolor{red}{***TO-DO***}
+    % Illustrare e spiegare la scelta del modello di sviluppo da applicare al progetto
+\end{center}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PIANIFICAZIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pianificazione}\label{sec:pianificazione}
+
+\begin{center}
+    \textcolor{red}{***TO-DO***}
+    % Illustrare il calendario di pianificazione con le attività da svolgere, definendo periodi e scadenze per ciascuna attività
+\end{center}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREVENTIVO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preventivo}\label{sec:preventivo}
+\subsection{Prospetto economico e prospetto orario complessivi}\label{sec:preventivo:totale}
+Per queste voci si rimanda al documento \textit{Suddivisione dei ruoli e preventivo dei  costi}, presente alla sezione ``Candidatura'' del \href{https://avant-garde-software-engineering.github.io/documentazione.html}{repository documentale del gruppo}.
+
+\begin{center}
+    \textcolor{red}{***TO-DO***}
+    % Spiegare l'impegno previsto per ciascuna persona e ruolo nelle diverse fasi  con il ripielogo dei costi
+\end{center}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONSUNTIVO DI PERIODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Consuntivo di periodo}\label{sec:consuntivo}
+% Valutazione dei costi previsti rispetto a quelli effettivi 
+% DA INSERIRE UNA VOLTA COMPLETATA LA RTB
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MITIGAZIONE DEI RISCHI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Difficoltà incontrate e mitigazione dei rischi}\label{sec:mitigazione_rischi}
+% Scrivere le soluzioni implementate per risolvere i problemi derivanti da rischi effettivamente riscontrati
+% DA SCRIVERE UNA VOLTA CHE SI SONO EFFETTIVAMENTE VERIFICATI DEI RISCHI
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RIFERIMENTI ESTERNI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Riferimenti esterni}\label{sec:riferimenti_esterni}
+Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
+\begin{itemize}
+    \item Capitolato \textbf{Warehouse Management 3D}:\\
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf}
+    \item Link alla \textbf{documentazione del gruppo}:\\
+    \url{https://avant-garde-software-engineering.github.io/documentazione.html}
+    \item Link alle \textbf{slides sul ciclo di vita del SW}:\\
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T3.pdf}
+    \item Link alle \textbf{slides sulla gestione di progetto}:\\
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T4.pdf}   
+\end{itemize}
