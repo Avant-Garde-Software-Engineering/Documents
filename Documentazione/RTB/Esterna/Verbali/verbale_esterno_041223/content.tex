@@ -1,0 +1,35 @@
+\section{Scopo}\label{sec:scopo}
+Gli obiettivi dell'incontro con l'azienda proponente sono:
+\begin{itemize}
+    \item Comprendere in maniera più approfondita i requisiti di progetto, al fine di produrre un'analisi dei requisiti che sia coerente con la proposta del capitolato;
+    \item Chiarire alcuni dubbi sui requisiti già presenti nella proposta di capitolato;
+    \item Proporre ulteriori funzionalità del prodotto, per capire se sono requisiti minimi oppure obiettivi massimi del progetto.
+\end{itemize}
+\section{Domande al proponente}\label{sec:domande}
+\subsection{Domande sui requisiti di progetto}
+\begin{itemize}
+        \item \textbf{Qual è il significato di ``bin" nel progetto?}\\
+        Un bin è l'area minima della scaffalatura nella quale è possibile depositare un prodotto. Il gruppo può assumere, nella realizzazione del progetto, che solo un articolo possa stare dentro ad un bin.
+        \item \textbf{Come funziona lo spostamento di un prodotto?}\\
+        Lo spostamento è un obiettivo minimo, il cui funzionamento potrebbe essere come segue:
+        \begin{itemize}
+            \item L'utente, che si assume essere un responsabile ad alto livello del magazzino, interagisce con il sistema per comunicare una richiesta di spostamento di un prodotto da un'area ad un'altra;
+            \item Il sistema calcola, attraverso l'uso di una REST API, se è possibile realizzare lo spostamento;
+            \item Se lo spostamento è possibile l'utente riceve conferma della richiesta di spostamento in corso, altrimenti riceve una segnalazione che indica l'impossibilità dello spostamento (ad esempio, se l'area di destinazione è piena).
+        \end{itemize}
+        Si noti che l'utente responsabile potrebbe anche non sapere se c'è spazio o meno nell'area di destinazione.\\
+        Dal lato implementativo utente, lo spostamento può essere realizzato tramite click del prodotto e poi dell'area di destinazione oppure tramite trascinamento del prodotto nell'area di destinazione.
+        \item \textbf{Quali sono i dati che si possono perdere nelle sessioni volatili?}\\
+        Quando l'utente visualizza il magazzino (tramite caricamento di un file di configurazione oppure tramite creazione del magazzino) può fare delle operazioni di spostamento sui prodotti, ma tali operazioni di spostamento non interessa che vengano salvate. L'utente visualizzerà a schermo le diverse richieste di spostamento in corso, ma appena esegue il refresh della pagina, tutte le rischieste vanno perse e si ritorna allo stato originario.
+        \item \textbf{Quali forme devono avere i prodotti nel magazzino?}\\
+        Si può assumere che ciascun prodotto abbia una forma rettangolare, senza utilizzare altre forme. La dimensione di questo rettangolo potrebbero essere diverse per ogni prodotto, ma nell'ambito del capitolato, potrebbe bastare una dimensione fissa, purché possa stare all'interno della scaffalatura.
+    \end{itemize}
+\subsection{Proposte di ulteriori funzionalità del prodotto}
+\begin{itemize}
+        \item \textbf{Ricerca di prodotto tramite codice}\\
+        L'area di ricerca è da considerarsi come un obiettivo massimo del progetto: è desiderabile, ma è una funzionalità aggiuntiva rispetto ai requisiti minimi. Il funzionamento potrebbe essere come segue: l'utente inserisce il codice di prodotto nell'area dedicata alla ricerca e il sistema evidenzia i posti in cui il prodotto si trova nelle scaffalature.
+        \item \textbf{È importante fare in modo che le scaffalature si possano unire?}\\
+        Non c'è necessità di unire le scaffalature; il prodotto deve avere una funzionalità ``crea scaffalatura", mediante la quale l'utente costruisce lo scaffale. Ad esempio, inserendo il numero di colonne e righe (si può vedere la scaffalature come una matrice), ed eventualmente la possibilità di modificare la scaffalatura modificando i valori. Alternativamente, è possibile creare la scaffalatura cliccando su schermo e costruire la scaffalatura trascinando il mouse per blocchi.
+        \item \textbf{È necessario avere un cruscotto che fornisca i dati dello stato del magazzino?}\\
+        No, non è necessario.
+    \end{itemize}
