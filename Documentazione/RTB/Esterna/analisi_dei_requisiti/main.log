@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.28)  7 DEC 2023 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.28)  16 DEC 2023 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Luca/Desktop/TEST LATEX/analisi_dei_requisiti/main.tex"
-(c:/Users/Luca/Desktop/TEST LATEX/analisi_dei_requisiti/main.tex
+**"c:/Users/Luca/Desktop/PROGETTO SWE - SVILUPPO/2023-12-16-ANALISIDEIREQUISITI/WMS3D/Documentazione/RTB/Esterna/analisi_dei_requisiti/main.tex"
+(c:/Users/Luca/Desktop/PROGETTO SWE - SVILUPPO/2023-12-16-ANALISIDEIREQUISITI/WMS3D/Documentazione/RTB/Esterna/analisi_dei_requisiti/main.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
 (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -342,7 +342,7 @@ Package hyperref Info: Link coloring OFF on input line 15.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo+scritta.png, id=7, 298.2342pt x 157.0668pt>
+<logo+scritta.png, id=47, 298.2342pt x 157.0668pt>
 File: logo+scritta.png Graphic file (type png)
 <use logo+scritta.png>
 Package pdftex.def Info: logo+scritta.png  used on input line 4.
@@ -392,30 +392,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
-[2] (content.tex (EnvironmentUseCases.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--54
-
- []
-
+[2] (content.tex
 File: logo+scritta.png Graphic file (type png)
 <use logo+scritta.png>
-Package pdftex.def Info: logo+scritta.png  used on input line 65.
+Package pdftex.def Info: logo+scritta.png  used on input line 33.
 (pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 33.56766pt, for example:
@@ -424,33 +406,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 66--72
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--78
-
- []
+File: logo+scritta.png Graphic file (type png)
+<use logo+scritta.png>
+Package pdftex.def Info: logo+scritta.png  used on input line 75.
+(pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--95
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 33.56766pt, for example:
+(fancyhdr)                \setlength{\headheight}{33.56766pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
- []
+[4] (EnvironmentUseCases.tex
+File: logo+scritta.png Graphic file (type png)
+<use logo+scritta.png>
+Package pdftex.def Info: logo+scritta.png  used on input line 76.
+(pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--101
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 33.56766pt, for example:
+(fancyhdr)                \setlength{\headheight}{33.56766pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--118
+[5]) (ObjectUseCases.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--15
 
  []
 
 File: logo+scritta.png Graphic file (type png)
 <use logo+scritta.png>
-Package pdftex.def Info: logo+scritta.png  used on input line 118.
+Package pdftex.def Info: logo+scritta.png  used on input line 15.
 (pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -459,17 +447,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
-
- []
-
-) (ObjectUseCases.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--15
-
- []
-
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 18--21
 
  []
@@ -484,18 +462,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--31
 
  []
 
-File: logo+scritta.png Graphic file (type png)
-<use logo+scritta.png>
-Package pdftex.def Info: logo+scritta.png  used on input line 41.
-(pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 33.56766pt, for example:
-(fancyhdr)                \setlength{\headheight}{33.56766pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
-
-[5]
 Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
@@ -505,7 +472,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--60
 
  []
 
+File: logo+scritta.png Graphic file (type png)
+<use logo+scritta.png>
+Package pdftex.def Info: logo+scritta.png  used on input line 71.
+(pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 33.56766pt, for example:
+(fancyhdr)                \setlength{\headheight}{33.56766pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
+
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
  []
@@ -526,7 +504,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
-[6]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 86--92
 
  []
@@ -567,7 +545,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
-[7]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
  []
@@ -587,15 +565,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--169
 
  []
 
-))
-Underfull \hbox (badness 10000) in paragraph at lines 172--34
+)
+Underfull \hbox (badness 10000) in paragraph at lines 172--81
 
  []
 
+)
 File: logo+scritta.png Graphic file (type png)
 <use logo+scritta.png>
 Package pdftex.def Info: logo+scritta.png  used on input line 35.
 (pdftex.def)             Requested size: 56.9055pt x 29.96762pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 33.56766pt, for example:
@@ -603,26 +583,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-21.56766pt}.
 
-[8] (main.aux)
+[10] (main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B7C07CB834C5E93B81650472C04F9D05;91.
+(rerunfilecheck)             Checksum: 40F133BF77FADA9E56A89A382E8E1A12;1450.
  ) 
 Here is how much of TeX's memory you used:
- 9859 strings out of 474586
- 155000 string characters out of 5746152
- 1932558 words of memory out of 5000000
- 31903 multiletter control sequences out of 15000+600000
- 562978 words of font info for 52 fonts, out of 8000000 for 9000
+ 9896 strings out of 474586
+ 156853 string characters out of 5746152
+ 1933558 words of memory out of 5000000
+ 31927 multiletter control sequences out of 15000+600000
+ 563313 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,79p,687b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (9 pages, 171696 bytes).
+ 75i,15n,79p,764b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Luca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (11 pages, 206177 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 

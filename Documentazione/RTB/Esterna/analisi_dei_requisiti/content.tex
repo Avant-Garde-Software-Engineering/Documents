@@ -1,5 +1,86 @@
-\section{USE CASES}
-% Copia questo use case
+\section{Introduzione}\label{sec:introduzione}
+
+\subsection{Scopo del Documento}\label{sec:scopo_del_documento}
+Il presente documento ha lo scopo di fornire una descrizione dettagliata dei requisiti di progetto. Il documento é quindi frutto di un'attenta analisi del capitolato, proposto dal proponente, al fine di individuare ed esaminare in modo esaustivo i requisiti minimi, massimi e facoltativi presenti nel progetto. 
+Un ulteriore obbiettivo del documento é quello di analizzare e descrivere le possibili attività (use cases) permesse all'utente in fase di esecuzione del programma. 
+
+\subsection{Glossario}\label{sec:glossario}
+
+Al fine di evitare incomprensioni relative alla terminologia usata all’interno del presente documento, viene 
+fornito un Glossario di progetto. Ogni terminologia specifica di progetto verrà chiarita e definita in modo tale 
+da renderla maggiornamente comprensibile ed evitare errate interpretazioni. Pertanto ogni termine marchiato
+con una lettera G come apice, sarà specificato e presente nel glossario sopra citato.
+
+\subsection{Riferimenti}\label{sec:riferimenti}
+
+\subsubsection{Riferimenti normativi}\label{sec:riferimenti_normativi}
+\begin{itemize}
+    \item Norme di Progetto v1.0.0 \\
+    ++++Inserire link alle norme di progetto++++
+    \item Capitolato C5 - WMS3: wharehouse management 3D \\
+    https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf
+\end{itemize}
+
+\subsubsection{Riferimenti informativi}\label{sec:riferimenti_informativi}
+\begin{itemize}
+    \item Analisi e descrizione delle funzionalita: Use case e relativi diagrammi (UML) - materiale didattico corso
+    di Ingegneria del Software\\
+    https://www.math.unipd.it/rcardin/swea/2022/Diagrammi%20Use%20Case.pdf
+    \item Analisi dei requisiti (T5) - materiale didattico corso di Ingegneria del Software\\
+    https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf
+\end{itemize}
+
+\newpage
+
+\section{Descrizione}\label{sec:descrizione}
+
+\subsection{Scopo del progetto}\label{sec:scopo_del_progetto}
+Lo scopo del progetto é quello di ottimizzare i processi produttivi attraverso l'utilizzo di 
+un applicativo 3D che rappresenta lo stato di fatto di un magazzino di stoccaggio.\\
+L'applicativo, pensato per un'utilizzo da ufficio, deve permettere all'utente di navigare\textsuperscript{G} all'interno 
+del magazzino e poter gestire le seguenti operazioni:
+\begin{itemize}
+    \item Creazione magazzino:
+        \begin{itemize}
+            \item Creare un nuovo magazzino
+            \item Importare un layout esistente
+        \end{itemize}
+    \item Modifiche alla struttura del magazzino:
+        \begin{itemize}
+            \item Modificare scaffalature
+            \item Aggiungere nuove scaffalature
+            \item Rimuovere scaffalature esistenti
+        \end{itemize}
+    \item Modifiche ai prodotti presenti in magazzino:
+        \begin{itemize}
+            \item Eliminare un prodotto
+            \item Aggiungere un nuovo prodotto
+            \item Spostare un prodotto esistente 
+        \end{itemize}
+\end{itemize}
+Sfruttare quindi un'esperienza tridimensionale per aiutare la comprensione e facilitare la gestione delle 
+operazioni di logistica necessarie. 
+
+
+\subsection{Descrizione del prodotto}\label{sec:descrizione_del_prodotto}
+
++++++ ancora da definire correttamente
+L'applicativo, pensato per soddisfare lo scopo e i requisiti di progetto, si compone principalmente di due 
+sezioni distinte. La prima sezione é composta dal terminale, attraverso il quale l'utente potrà interagire 
+in modalità assistita\textsuperscript{G}. All'utente sarà infatti permesso, attraverso tale terminale, un certo numero di 
+operazioni 
+La seconda parte invece è composta dalla visualizzazione vera e proprio del magazzino 3D. In questa area 
+l'utente avrà modo di "navigare" e 
+
+\newpage
+
+\section{Use Cases}\label{sec:use_cases}
+
+\input{EnvironmentUseCases}
+\input{ObjectUseCases}
+
+% Struttura dello Use Case - copialo per crearne un altro
+
 %\Large\textbf{}\\
 %\Large\textbf{Use Case 1 : Inizializzazione Ambiente} \\
 %\vspace{0.5cm}
@@ -19,6 +100,6 @@
 
 % Fine use case
 
+\section{REQUISITI}\label{sec:requisiti}
 
-\input{EnvironmentUseCases}
-\input{ObjectUseCases}
+
