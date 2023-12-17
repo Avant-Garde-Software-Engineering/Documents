@@ -1,28 +1,30 @@
 \Large\textbf{}\\
-\Large\textbf{Use Case X Creazione Oggetto} \\
+\Large\textbf{Use Case 6 Creazione Oggetto} \\
 \vspace{0.5cm}
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
-%\end{figure}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCreation.png}
+\end{figure}
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
 \textbf{Pre-condizione:} Magazzino correttamente istanziato \\
-\textbf{Post-condizione: } Creazione Oggetto\\
-\textbf{Scenario Principale:}  L'utente crea un oggetto inserendone le \textit{specifiche caratteristiche}. Se i dati inseriti non rispettano il \textit{criterio prestabilito} viene visualizzato un messaggio di errore.\\
-\textbf{Estensioni: } UCX Errore Creazione Oggetto\\
+\textbf{Post-condizione: } Creazione di un oggetto\\
+\textbf{Scenario Principale:}\\
+\begin{itemize}
+  \item L'utente inserisce un codice identificativo dell'oggetto
+  \item L'oggetto viene creato
+\end{itemize}.\\
+\textbf{Estensioni: } UC6.1 Errore Creazione Oggetto\\
 
 \vspace{0.5cm}
 
-\textbf{}\\
-{\color{red}{\textbf{Domanda:} Un oggetto puó essere creato e memorizzato in uno spazio apposito senza essere inserito in una scaffalatura o la creazione coincide con l'inserimento?}} \\
-{\color{red}{\textbf{Domanda:} Quali sono le caratteristiche di un oggetto? In particolare: \\-Un oggetto puó superare i limiti di dimensione di una scaffalatura? \\ -Gli oggetti hanno forma standardizzata?}}\\
+{\color{red}{\textbf{Domanda:} La creazione di un oggetto puó avvenire anche senza inserimento?}}
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Errore Creazione Oggetto} \\
+\Large\textbf{Use Case 6.1 Errore Creazione Oggetto} \\
 \large\textbf{} \\
 \textbf{Attori:} User\\
 \textbf{Pre-condizione:} L'utente ha inserito dati scorretti nella schermata di creazione di un oggetto\\
@@ -31,28 +33,51 @@
 
 \vspace{0.5cm}
 
+
+
 \Large\textbf{}\\
-\Large\textbf{Use Case X Ricerca Statica Oggetto} \\
+\Large\textbf{Use Case 7 Ricerca Oggetto tramite Id} \\
 \vspace{0.5cm}
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{UseCasesImages/StaticRes.png}
-%\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjResearchId.drawio.png}
+\end{figure}
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} Magazzino correttamente istanziato, l'user si ritrova nell'area di gestione \\
-\textbf{Post-condizione: } Visualizzazione lista oggetti corrispondenti a dati inseriti\\
-\textbf{Scenario Principale:}  L'utente effettua una ricerca seguendo dei particolari \textit{parametri} e il sistema ritorna una lista (anche vuota) di oggetti corrispondenti. Sará poi possibile selezionare gli oggetti\\
-\textbf{Estensione:} UCX Selezione Statica Oggetto
-
-\textbf{}\\
-{\color{red}{\textbf{Domanda:} Quali sono i parametri di ricerca degli oggetti?}}\\
+\textbf{Pre-condizione:}  Magazzino correttamente istanziato\\
+\textbf{Post-condizione: } Visualizzazione risultato ricerca\\
+\textbf{Scenario Principale:} \\
+\begin{itemize}
+  \item L'utente immette un codice identificativo
+  \item Il sistema visualizza l'oggetto corrispondente, se trovato, oppure comunica l'assenza di un risultato
+\end{itemize}.
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Selezione Statica Oggetto} \\
+\Large\textbf{Use Case 8 Selezione Oggetto} \\
+\begin{figure}[h]
+  \centering
+ \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjSelection.drawio.png}
+\end{figure}
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} Sistema correttamente istanziato \\
+\textbf{Post-condizione: } Selezione di un oggetto\\
+\textbf{Scenario Principale:}  
+ L'utente seleziona un oggetto attraverso [UC9] o [UC10]
+\textbf{Generalizzazioni:} 
+\begin{itemize}
+    \item UC9 Selezione Statica Oggetto
+    \item UC10 Selezione 3D Oggetto
+\end{itemize}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 8.1 Selezione Statica Oggetto} \\
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=0.8\textwidth]{UseCasesImages/StaticSel.png}
@@ -62,68 +87,86 @@
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'user si trova nell'area di gestione e sta visualizzando una lista di oggetti \\
-\textbf{Post-condizione: } Selezione di un oggetto e relativa evidenziazione\\
-\textbf{Scenario Principale:}  L'utente sceglie uno degli oggetti presenti in una lista e, se giá inserito in una scaffalatura, l'oggetto selezionato viene evidenziato nell'ambiente tridimensionale. Una volta selezionato un oggetto sará possibile inserirlo (se non precedentemente inserito), spostarlo o eliminarlo.\\
-\textbf{Inclusione:} UCX Evidenziazione Oggetto \\
-\textbf{Estensioni:} \\ 
--UCX Inserimento oggetto \\ -UCX Spostamento Oggetto \\ -UCX Eliminazione Oggetto
+\textbf{Pre-condizione:} L'utente ha effettuato [UC7] con risultato non nullo \\
+\textbf{Post-condizione: }  Selezione di un oggetto con conseguente evidenziazione delle correnti posizioni nell'ambiente tridimensionale\\
+\textbf{Scenario Principale:}
+\begin{itemize}
+    \item L'utente seleziona un oggetto
+    \item L'oggetto viene evidenziato nell'ambiente 3D ove presente
+\end{itemize}
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Evidenziazione Oggetto} \\
-
-\large\textbf{} \\
-\textbf{Attori:}\\
-\textbf{Pre-condizione:} Un oggetto presente nel magazzino é stato selezionato \\
-\textbf{Post-condizione: } Evidenziazione dell'oggetto selezionato \\
-\textbf{Scenario Principale:}  Se l'oggetto selezionato é presente nel magazzino esso viene evidenziato nello spazio tridimensionale\\
-
-\vspace{0.5cm}
-\newpage
-
-\Large\textbf{}\\
-\Large\textbf{Use Case X Selezione 3D Oggetto} \\
+\Large\textbf{Use Case 8.2 Selezione 3D Oggetto} \\
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=0.8\textwidth]{UseCasesImages/3DSel.png}
 %\end{figure}
 
-\vspace{0.5cm}
-
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'user si trova nell'area di navigazione tridimensionale \\
-\textbf{Post-condizione: } Selezione di un oggetto e relativa evidenziazione\\
-\textbf{Scenario Principale:}  Navigando nello spazio tridimensionale l'utente seleziona un oggetto che viene conseguentemente evidenziato; una volta selezionato sará possibile spostarlo o eliminarlo.\\
-\textbf{Inclusione:} UCX Evidenziazione Oggetto \\
-\textbf{Estensioni:} \\ 
--UCX Spostamento Oggetto \\ -UCX Eliminazione Oggetto
+\textbf{Pre-condizione:} Sistema correttamente istanziato \\
+\textbf{Post-condizione: } Selezione di un oggetto\\
+\textbf{Scenario Principale:}
+Attraverso la navigazione nello spazio tridimensionale l'utente seleziona un oggetto
 
 \vspace{0.5cm}
 
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Inserimento Oggetto} \\
-%\begin{figure}[h]
-% \centering
-%  \includegraphics[width=0.8\textwidth]{UseCasesImages/Inserimento.png}
-%\end{figure}
+\Large\textbf{Use Case 9 Inserimento Oggetto} \\
+\begin{figure}[h]
+ \centering
+  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjInsert.drawio.png}
+\end{figure}
 
 \vspace{0.5cm}
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
-\textbf{Post-condizione: } L'oggetto é stato inserito correttamente oppure viene visualizzato un messaggio di errore\\
-\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di inserirlo nel magazzino, sceglie uno scaffale a cui destinarlo e vengono effettuate una serie di verifiche. La prima verifica effettuata é di natura statica: il sistema verifica la disponibilitá dimensionale del magazzino. Dopo aver passato la verifica statica la richiesta di spostamento viene inoltrata ad un gestore incaricato di approvare il movimento o rifiutarlo. In caso il movimento non venga effettuato viene visualizzato un messaggio di errore \\
-\textbf{Inclusione:} UCX Selezione Scaffale \\
+\textbf{Pre-condizione:} L'utente ha creato ([UC6]) o selezionato ([UC7] un oggetto non ancora inserito  \\
+\textbf{Post-condizione: } L'oggetto é stato correttamente inserito o viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} 
+\begin{itemize}
+    \item L'utente inserisce le coordinate della scaffalatura dove vuole inserire l'oggetto
+    \item Il sistema verifica la disponibilitá della scaffalatura
+    \item L'oggetto viene inserito o l'inserimento viene rifiutato con conseguente schermata di errore
+\end{itemize}
+\textbf{Estensione} UC11 Errore Movimento Oggetto
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Spostamento Oggetto} \\
+\Large\textbf{Use Case 10 Spostamento Oggetto} \\
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjMovement.drawio.png}
+\end{figure}
+
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto \\
+\textbf{Post-condizione: } L'oggetto é stato correttamente spostato o viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} 
+\begin{itemize}
+    \item L'utente sposta l'oggetto mediante [UC10.1] o [UC10.2]
+    \item Il sistema verifica la disponibilitá della scaffalatura
+    \item L'oggetto viene spostato o il movimento viene rifiutato con conseguente schermata di errore
+\end{itemize}
+\textbf{Generalizzazioni:}
+\begin{itemize}
+    \item UC10.1 Spostamento Oggetto tramite coordinate
+    \item UC10.2 Spostamento Oggetto tramite cursore/touch
+\end{itemize}
+\textbf{Estensione} UC11 Errore Movimento Oggetto
+
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 10.1 Spostamento Oggetto tramite coordinate} \\
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=0.8\textwidth]{UseCasesImages/Spostamento.png}
@@ -133,42 +176,69 @@
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
-\textbf{Post-condizione: } L'oggetto é stato spostato correttamente oppure viene visualizzato un messaggio di errore\\
-\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di spostarlo, sceglie uno scaffale a cui destinarlo e vengono effettuate una serie di verifiche. La prima verifica effettuata é di natura statica: il sistema verifica la disponibilitá dimensionale del magazzino. Dopo aver passato la verifica statica la richiesta di spostamento viene inoltrata ad un gestore incaricato di approvare il movimento o rifiutarlo. In caso il movimento non venga effettuato viene visualizzato un messaggio di errore \\
-\textbf{Inclusione:} UCX Selezione Scaffale \\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto \\
+\textbf{Post-condizione: } L'oggetto é stato correttamente spostato o viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} 
+\begin{itemize}
+    \item L'utente inserisce le coordinate della scaffalatura in cui vuole spostare l'oggetto
+    \item Il sistema verifica la disponibilitá della scaffalatura
+    \item L'oggetto viene spostato o il movimento viene rifiutato con conseguente schermata di errore
+\end{itemize}
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Eliminazione Oggetto} \\
+\Large\textbf{Use Case 10.2 Spostamento Oggetto tramite cursore/touch} \\
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/Spostamento.png}
+%\end{figure}
 
 \vspace{0.5cm}
 
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
-\textbf{Post-condizione: } L'oggetto é eliminato\\
-\textbf{Scenario Principale:}  Dopo aver selezionato un oggetto l'utente ha scelto di eliminarlo \\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto \\
+\textbf{Post-condizione: } L'oggetto é stato correttamente spostato o viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} 
+\begin{itemize}
+    \item L'utente trascina tramite cursore/touch l'oggetto verso la scaffalatua in cui lo vuole spostare
+    \item Il sistema verifica la disponibilitá della scaffalatura
+    \item L'oggetto viene spostato o il movimento viene rifiutato con conseguente schermata di errore
+\end{itemize}
 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case X Approvazione Movimento} \\
+\Large\textbf{Use Case 11 Errore Movimento Oggetto} \\
 
 \vspace{0.5cm}
 
 \large\textbf{} \\
-\textbf{Attori:} User\\
-\textbf{Pre-condizione:} L'utente ha selezionato un oggetto e uno scaffale a cui destinarlo \\
-\textbf{Post-condizione: } Il movimento é stato effettuato correttamente o viene visualizzato un messaggio di errore\\
-\textbf{Scenario Principale:} Da Definire \\
-\textbf{Inclusione:} \\
-UCX Approvazione Statica \\
-UCX Approvazione Dinamica \\
+\textbf{Attori:} Sistema\\
+\textbf{Pre-condizione:} L'utente ha richiesto un movimento non possibile di un oggetto  \\
+\textbf{Post-condizione: } Viene visualizzato un messaggio di errore\\
+\textbf{Scenario Principale:} 
+Il sistema visualizza un errore conseguente alla richiesta di un movimento non possibile di un oggetto
 
 \vspace{0.5cm}
 
-\textbf{}\\
-{\color{red}{\textbf{Domanda:} Lo spostamento avviene anche attraverso il trascinamento mediante il mouse?}} \\
-{\color{red}{\textbf{Delucidamento:} Funzionamento dettagliato della richiesta di approvazione}}\\
+\Large\textbf{}\\
+\Large\textbf{Use Case 12 Eliminazione Oggetto} \\
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjDelete.drawio.png}
+\end{figure}
+\vspace{0.5cm}
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha selezionato un oggetto  \\
+\textbf{Post-condizione: } L'oggetto viene eliminato da ogni scaffalatura in cui è presente\\
+\textbf{Scenario Principale:} 
+\begin{itemize}
+    \item L'utente elimina l' oggetto selezionato
+    \item Il sistema si occupa di rimuoverlo da tutte le scaffalature in cui è presente 
+\end{itemize}
+
+\vspace{0.5cm}
