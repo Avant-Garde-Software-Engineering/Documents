@@ -9,8 +9,7 @@
 \textbf{Attori:} User\\
 \textbf{Pre-condizione:} Avvio dell'applicazione da parte dell'utente\\
 \textbf{Post-condizione: } Creazione del layout magazzino\\
-\textbf{Scenario Principale:}  All'utente viene richiesto se caricare un layout esistente o se creare 
-un nuovo layout.\\
+\textbf{Scenario Principale:}  All'utente viene richiesto se caricare un layout esistente o se creare un nuovo layout.\\
 \vspace{0.5cm}
 
 \Large\textbf{}\\
@@ -24,8 +23,23 @@ un nuovo layout.\\
 \textbf{Attori:} User\\
 \textbf{Pre-condizione:} E' stata selezionata la modalità: "Creazione manuale magazzino" \\
 \textbf{Post-condizione: } Nuovo layout magazzino creato correttamente\\
-\textbf{Scenario Principale:}  L'utente viene invitato ad indicare le dimensioni del magazzino in modo da poterne creare il layout.\\
-\textbf{Estensioni: } UC1.1.1 - Errore Creazione Layout magazzino\\
+\textbf{Scenario Principale:}  L'utente viene invitato ad inserire le dimensioni del magazzino in modo da poterne creare il layout di base. In particolare dovrà inserire:
+    \begin{itemize}
+        \item Ampiezza del magazzino
+        \item Profondità del magazzino 
+        \item Altezza del magazzino 
+    \end{itemize}
+\textbf{Estensioni: } UC1.1.1 - Errore Creazione nuovo magazzino\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 1.1.1 - Errore Creazione nuovo magazzino} \\
+\vspace{0.5cm}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha appena inserito le tre dimensioni per creare il layout del nuovo magazzino \\
+\textbf{Post-condizione: } Visualizzazione messaggio di errore\\
+\textbf{Scenario Principale:}  Il sistema, dopo aver ricevuto in input le dimensioni per creare il nuovo magazzino, verifica e segnala un errore sulle stesse.\\ 
 \vspace{0.5cm}
 
 \Large\textbf{}\\
@@ -37,15 +51,24 @@ un nuovo layout.\\
 %\end{figure}
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} E' stato selezionata la modalità: "importazione layout magazzino" \\
+\textbf{Pre-condizione:} E' stato selezionata la modalità: "Importazione layout magazzino" \\
 \textbf{Post-condizione: } Importazione Layout Magazzino\\
-\textbf{Scenario Principale:}  Il magazzino viene correttamente importato da layout esistente.\\
-\textbf{Estensioni: } UC1.2.1 - Errore Importazione Layout\\
+\textbf{Scenario Principale:}  L'utente viene invitato a selezionare un file esistente da importare. Verrà utilizzato per caricare il layout di un magazzino già creato e salvato.\\
+\textbf{Estensioni: } UC1.2.1 - Errore importazione Layout\\
 \vspace{0.5cm}
 
+\Large\textbf{}\\
+\Large\textbf{Use Case 1.2.1 Errore importazione layout} \\
+\vspace{0.5cm}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} E' stato selezionata il file che verrà utilizzato per caricare il layout del magazzino \\
+\textbf{Post-condizione: } Visualizzazione messaggio di errore\\
+\textbf{Scenario Principale:}  Il sistema, dopo aver ricevuto in input il file attraverso cui caricare il layout magazzino, segnala un errore in fase di caricamento del layout esistente.\\
+\vspace{0.5cm}
 
 \Large\textbf{}\\
-\Large\textbf{Use Case 2 - Creazione scaffalatura} \\
+\Large\textbf{Use Case 2 - Modifica layout magazzino} \\
 \vspace{0.5cm}
 %\begin{figure}[h]
 %  \centering
@@ -53,44 +76,109 @@ un nuovo layout.\\
 %\end{figure}
 \large\textbf{} \\
 \textbf{Attori:} User\\
-\textbf{Pre-condizione:} Richiesta nuovi inserimento scaffalatura \\
+\textbf{Pre-condizione:} L'utente seleziona il comando "Modifica layout magazzino"\\
+\textbf{Post-condizione: } Modifica apportata correttamente\\
+\textbf{Scenario Principale:}  L'utente avrà la possibilità di modificare la struttura del magazzino in due modalità: 
+\begin{itemize}
+    \item Trascinare le freccie presenti nei vari lati tridimensionali del per aumentare o ridurne le dimensioni
+    \item Inserire le nuove dimensioni nell'apposito campo di "modifica assistita"
+\end{itemize}
+\textbf{Estensioni: } UC2.1 - Errore modifica layout\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 2.1 - Errore modifica layout} \\
+\vspace{0.5cm}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} Sono state inserite, attraverso il form di "modifica assistita" le nuove dimensioni del magazzino \\
+\textbf{Post-condizione: } Visualizzazione messaggio di errore\\
+\textbf{Scenario Principale:}  Il sistema, dopo aver ricevuto in input le nuove dimensioni del magazzino, segnala un errore in fase di adeguamento alle nuove dimensioni.\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 3 - Salvataggio layout} \\
+\vspace{0.5cm}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
+%\end{figure}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente seleziona il comando "Salva layout"\\
+\textbf{Post-condizione: } Il layout in corso viene correttamente salvato su appposito file \\
+\textbf{Scenario Principale:}  L'utente avrà la possibilità di indicare il percorso e il nome del nuovo file in cui verrà salvato il layout corrente \\ 
+\textbf{Estensioni: } UC3.1 - Errore salvataggio layout\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 3.1 - Errore salvataggio layout} \\
+\vspace{0.5cm}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha indicato la posizione e il nome da assegnare al file sul quale verrà salvato il layout corrente \\
+\textbf{Post-condizione: } Visualizzazione messaggio di errore\\
+\textbf{Scenario Principale:}  Il sistema, dopo aver ricevuto in input i dati richiesti, segnala un errore in fase di salvataggio del layout su file.\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 4 - Creazione scaffalatura} \\
+\vspace{0.5cm}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
+%\end{figure}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente selezione il comando "Crea nuova scaffalatura" \\
 \textbf{Post-condizione: } Creazione corretta della scaffalatura\\
-\textbf{Scenario Principale:}  L'utente crea una nuova scaffalatura inserendone le \textit{specifiche caratteristiche}. Se i dati inseriti non rispettano il \textit{criterio prestabilito} viene visualizzato un messaggio di errore.\\
-\textbf{Estensioni: } UC2.1 - Errore Creazione scaffalatura\\
-\vspace{0.5cm}
-
-\Large\textbf{}\\
-\Large\textbf{Use Case 3 - Spostamento scaffalatura} \\
-\vspace{0.5cm}
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
-%\end{figure}
-\large\textbf{} \\
-\textbf{Attori:} User\\
-\textbf{Pre-condizione:} Richiesta spostamento scaffalatura \\
-\textbf{Post-condizione: } Scaffallatura spostata \\
-\textbf{Scenario Principale:}  L'utente selezione la scaffalatura da spostare e il nuovo spazio dove posizionarla.\\
-\textbf{Estensioni: } UC3.1 - Errore Spostamento Scaffallatura\\
-\vspace{0.5cm}
-
-\Large\textbf{}\\
-\Large\textbf{Use Case 4 - Modifica scaffalatura} \\
-\vspace{0.5cm}
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
-%\end{figure}
-\large\textbf{} \\
-\textbf{Attori:} User\\
-\textbf{Pre-condizione:} Scaffallatura correttamente presente \\
-\textbf{Post-condizione: } Corretta modifica scaffalatura\\
-\textbf{Scenario Principale:}  L'utente, dopo aver selezionato la scaffalatura, seleziona il comando "Modifica scaffalatura". \\
-\textbf{Estensioni: } UC4.1 - Errore modifica scaffalatura\\
+\textbf{Scenario Principale:}  L'utente, attraverso il muose, può selezionare il punto di creazione della scaffalatura e da esso estenderla nei due lati possibili, altezza e lunghezza. \\
 \vspace{0.5cm}
 
 \Large\textbf{}\\
 \Large\textbf{Use Case 5 - Selezione scaffalatura} \\
+\vspace{0.5cm}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
+%\end{figure}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente ha creato correttamente il layout \\
+\textbf{Post-condizione: } Visualizzazione dati scaffalatura e evidenziazione a video\\
+\textbf{Scenario Principale:}  L'utente preme il tasto sinistro del mouse sopra la struttura di una scaffalatura\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 6 - Spostamento scaffalatura} \\
+\vspace{0.5cm}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
+%\end{figure}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente seleziona il comando "Spostamento scaffalatura" \\
+\textbf{Post-condizione: } Scaffallatura correttamente spostata \\
+\textbf{Scenario Principale:}  L'utente selezione la scaffalatura da spostare e la trascina verso il nuovo spazio di posizionamento.\\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 7 - Modifica scaffalatura} \\
+\vspace{0.5cm}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{UseCasesImages/ObjCr.png}
+%\end{figure}
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente seleziona il comando "Modifica scaffalatua" \\
+\textbf{Post-condizione: } Corretta modifica scaffalatura\\
+\textbf{Scenario Principale:}  L'utente, dopo aver selezionato la scaffalatura, seleziona il comando "Modifica scaffalatura". \\
+\vspace{0.5cm}
+
+\Large\textbf{}\\
+\Large\textbf{Use Case 8 - Selezione scaffalatura} \\
 \vspace{0.5cm}
 %\begin{figure}[h]
 %  \centering
