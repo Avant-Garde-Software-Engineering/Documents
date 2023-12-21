@@ -101,5 +101,167 @@ l'utente avrà modo di "navigare" e
 % Fine use case
 
 \section{REQUISITI}\label{sec:requisiti}
+La seguente sezione si occupa di \textbf{Descrivere}, \textbf{Classificare}, \textbf{Tracciare} e \textbf{Codificare}
+i requisiti individuati dal gruppo. \\
+Una prima macrodivisione classificativa sarà effettuata tra requisiti:
+\begin{itemize}
+    \item \textbf{Funzionali: }indicano le funzionalità offerta all'utente
+    \item \textbf{di Interfaccia: }indicano i requisiti offerti dall'interfaccia
+    \item \textbf{di Database: }indicano i requisiti di interazione con la base di dati
+    \item \textbf{Di Qualità: } garantiscono la qualità del prodotto
+    \item \textbf{Di Sistema: }indicano le specifiche tecniche a supporto dell'utiluzzo del prodotto
+    \item \textbf{Di Vincolo: } indicano i vincoli logici del sistema
+\end{itemize}
+i quali meritano una suddivisione in sottosezioni apposite.\\
+Ci si occuperà inoltre di distinguerà tra requisiti \textbf{Obbligatori}, \textbf{Desiderabili} ed \textbf{Opzionali}.\\ 
+Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti, in cui si esamina il perimetro di origine dei tali: una prima suddivisione sará effettuata tra requisiti \textbf{espliciti} ed \textbf{impliciti}, a cui sarà aggiunta una citazione del documento o la modalità dalla quale lo si è ricavatot, con eventuali riferimenti ai Casi d'uso individuati nella prima parte di questo docuemnto.\\
+Sulla base delle specifiche appena discusse, ad ogni documento verrà assegnato un codice che segue la seguente regola:
+
+\begin{figure}[h]
+ \centering
+  \includegraphics[width=0.5\textwidth]{UseCasesImages/requirementsCod.png}
+\end{figure}
+
+\subsection{Requisiti funzionali}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\renewcommand{\arraystretch}{2.5}
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti funzionali} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+RFD1 & L'utente può caricare un file per inizializzare l'ambiente& Esplicito, Capitolato\\
+RFO1 & L'utente può creare un ambiente da zero & Esplicito, Capitolato \\
+RFO2 & L'utente può creare delle scaffalature & Esplicito, Capitolato\\
+RFO3 & L'utente può creare un oggetto & Esplicito, Capitolato\\
+RFO4 & L'utente può navigare nello spazio tridimensionale attraverso il mouse& Esplicito, Capitolato\\
+RFO5 & L'utente può navigare nello spazio tridimensionale attraverso la tastiera& Esplicito, Capitolato\\
+RFO6 & L'utente può scegliere la dimensione delle scaffalature & Implicito, Analisi dei requisiti\\
+RFO7 & L'utente può modificare le scaffalature create & Esplicito, Capitolato\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti funzionali} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+RFO8 & L'utente può eliminare le scaffalature create & Implicito, Analisi dei requisiti\\
+RFO8 & L'utente può eliminare un oggetto creato & Implicito, Analisi dei requisiti\\
+RFO9 & L'utente può selezionare una scaffalatura nello spazio tridimensionale & Esplicito, Capitolato\\
+RFO10 & L'utente può selezionare un oggetto nello spazio tridimensionale & Esplicito, Capitolato\\
+RFD2 & L'utente può ricercare un oggetto tramite id & Esplicito, Capitolato\\
+RFO11 & L'utente può inserire un oggetto all'interno di una scaffalatura& Esplicito, Capitolato\\
+RFO12 & L'utente può richiedere lo spostamento di un oggetto & Esplicito, Capitolato\\
+RFO13 & L'utente può rimuovere un oggetto da una scaffalatura & Implicito, Analisi dei requisiti\\
+RFO14 & Il sistema deve verificare la disponibilità della scaffalatura target alla richiesta di uno spostamento & Implicito, Dialogo con il Proponente\\
+RFO14 & Il sistema delega ad un meccanismo terzo la decisione finale sull'accettazione di un movimento & Implicito, Dialogo con il Proponente\\
+\hline
+\end{tabular}
+\end{table}
 
 
+
+\subsection{Requisiti di Interfaccia}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\renewcommand{\arraystretch}{2.5}
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti di Interfaccia} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+RID1 & L'utente può scegliere come inizializzare il suo ambiente & Esplicito, Capitolato\\
+RIO1 & Sviluppo di un'are gestionale nella quale effettuare le ricerche per Id & Implicito, Analisi dei Requisiti\\
+RIX1 & Un oggetto selezionato viene evidenziato nell'ambiente tridimensionale & Esplicito, Capitolato\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Requisiti di Database}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\renewcommand{\arraystretch}{2.5}
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti di Database} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+RDO1 & Il Database deve memorizzare le scaffalatura tramite coordinate&Esplicito, Capitolato\\
+RDD1 & Il Database deve memorizzare la posizione degli oggetti ed il loro nome & Implicito, Analisi dei Requisiti\\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\subsection{Requisiti di Qualità}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\renewcommand{\arraystretch}{2.5}
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti di Qualità} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\subsection{Requisiti di Sistema}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\renewcommand{\arraystretch}{2.5}
+
+\begin{table}[h]
+\centering
+\rowcolors{3}{gray!10!white!100}{gray!0!white!100}
+\begin{tabular}{ |>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{5cm}| }
+\hline
+\multicolumn{3}{|c|}{\Large Requisiti di Sistema} \\
+\hline
+Codice & Descrizione & Tracciamento\\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+\section{Riepilogo}
+Di seguito si propone una suddivisione dei requisiti per rilevanza, conteggiandone il numero:
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ Obbligatori & Desiderabili & Opzionali & Totale \\ 
+ 17 & 4 & 1 & \textcolor{red}{23}
+\end{tabular}
+\end{center}
