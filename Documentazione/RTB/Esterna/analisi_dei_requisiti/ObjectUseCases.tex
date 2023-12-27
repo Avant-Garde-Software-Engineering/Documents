@@ -33,8 +33,6 @@
 
 \vspace{0.5cm}
 
-
-
 \Large\textbf{}\\
 \Large\textbf{Use Case 7 Ricerca Oggetto tramite Id} \\
 \vspace{0.5cm}
@@ -129,11 +127,26 @@ Attraverso la navigazione nello spazio tridimensionale l'utente seleziona un ogg
 \textbf{Post-condizione: } L'oggetto é stato correttamente inserito o viene visualizzato un messaggio di errore\\
 \textbf{Scenario Principale:} 
 \begin{itemize}
-    \item L'utente inserisce le coordinate della scaffalatura dove vuole inserire l'oggetto
+    \item L'utente seleziona la scaffalatura dove vuole inserire l'oggetto 
     \item Il sistema verifica la disponibilitá della scaffalatura
     \item L'oggetto viene inserito o l'inserimento viene rifiutato con conseguente schermata di errore
 \end{itemize}
 \textbf{Estensione} UC11 Errore Movimento Oggetto
+
+
+\large\textbf{} \\
+\textbf{Attori:} User\\
+\textbf{Pre-condizione:} L'utente sta creando un oggetto \\
+\textbf{Post-condizione: } L'utente ha inserito l'id di un oggetto\\
+\textbf{Scenario Principale:}\\
+\begin{itemize}
+  \item L'utente inserisce un codice identificativo dell'oggetto
+  \item L'oggetto viene creato
+\end{itemize}.\\
+\textbf{Estensioni: } UC6.1 Errore Creazione Oggetto\\
+
+\vspace{0.5cm}
+
 
 \vspace{0.5cm}
 
@@ -240,5 +253,8 @@ Il sistema visualizza un errore conseguente alla richiesta di un movimento non p
     \item L'utente elimina l' oggetto selezionato
     \item Il sistema si occupa di rimuoverlo da tutte le scaffalature in cui è presente 
 \end{itemize}
+
+
+{\color{red}{\textbf{Domanda:} Esistono diverse istanze di un oggetto oppure ogni oggeto è univoco?}}
 
 \vspace{0.5cm}
