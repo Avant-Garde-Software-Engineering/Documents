@@ -1,0 +1,327 @@
+\begin{beginningnote}
+    Si tenga presente che alcuni termini utilizzati nel documento riportano la lettera \textbf{G} in apice, allo scopo di evidenziare le parole che assumono uno specifico significato nell'ambito del progetto. Per comprenderle in maniera corretta, si rimanda il lettore al documento ``Glossario", che contiene un elenco completo di tutte le terminologie utilizzate con relative definizioni, allo scopo di costruire un linguaggio uniforme che possa migliorare la comunicazione tra i componenti interni al gruppo e gli stakeholders esterni.   %inserire corsivo per ogni termine del glossario?
+\end{beginningnote}
+
+%unire scopo delcoumento e il progetto in un unica sezione  (e.g. introduzione) con due sottosezioni?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOPO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduzione}
+
+\subsection{Scopo del documento}\label{sec:scopo_del_documento}
+\par Questo documento formale definisce come le attività di qualità saranno gestite durante il ciclo di vita del software. Include dettagli sui processi e standard da seguire per assicurare che il prodotto finale rispetti i requisiti di qualità specificati. Questo piano è fondamentale per garantire che il software sviluppato sia di alta qualità e soddisfi le aspettative dei clienti e degli stakeholder. Al suo interno conterrà misurazioni sulla qualità atte a migliorare alcune procedure se giudicate non conformi alle aspettative. Per questo motivo il documento è di natura incrementale.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IL PROGETTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Il progetto}\label{sec:il_progetto}
+\par Il progetto nasce nell'ambito dei \textbf{sistemi gestionali di magazzino}, meglio noti con il termine inglese di \textit{Warehouse Management Systems} (WMS), con l'obiettivo di risolvere una serie di problematiche derivanti dalle soluzioni tradizionali tuttora presenti sul mercato.
+\par Il focus principale sarà migliorare la user experience, tramite la realizzazione di un applicativo che proponga all'utente un'interazione con il magazzino in un ambiente di lavoro 3D: questa soluzione, rispetto ai tradizionali sistemi 2D, garantirebbe una maggiore comprensione degli spazi, proponendo una visualizzazione più intuitiva e familiare del magazzino all'utente che, di conseguenza, sarà in grado di prendere decisioni organizzative più informate ed efficienti, ottimizzando i processi di logistica.
+\par Per raggiungere questo obiettivo, l'ambiente di lavoro non può essere una semplice visualizzazione del magazzino. L'utente dovrà infatti poter:
+\begin{itemize}
+    \item Navigare l'ambiente 3D;
+    \item Progettare la scaffalatura e modificarla nel tempo;
+    \item Inserire, spostare e rimuovere prodotti negli scaffali.
+\end{itemize}
+Il progetto deve concretizzarsi nella realizzazione di una web app fruibile agli impiegati d'ufficio ed incentrata sulla visualizzazione 3D del magazzino.
+\par Per visionare il capitolato\textsuperscript{G} e la documentazione del gruppo, si veda la sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
+
+\newpage
+
+\section{Qualità di processo}
+Per assicurare la realizzazione di un software di alta qualità, è essenziale adottare metodologie rigorose e ben definite durante il ciclo di vita dello sviluppo. Queste metodologie sono misurate attraverso metriche specifiche che permettono di valutarne l'efficacia e l'efficienza.
+
+\subsection{Progettazione}
+\subsubsection{Descrizione}
+La fase di progettazione è cruciale per assicurare che il software soddisfi tutti i requisiti funzionali e non funzionali. Questa fase include la definizione dell'architettura del software, la scelta delle tecnologie e la pianificazione dettagliata del processo di sviluppo.
+
+\subsubsection{Metriche e valutazioni}
+\paragraph{Completezza della Progettazione}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPC1CP & Misura la percentuale di elementi di progettazione (moduli, classi, funzioni) definiti rispetto al totale previsto &
+\textit{Accettato}: $\geq$ 95\%
+\textit{Rifiutato}: $<$ 95\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Verifica}
+\subsubsection{Descrizione}
+La verifica è il processo attraverso il quale si assicura che il software soddisfi tutti i requisiti e funzioni come previsto. Questa fase include test funzionali, test di regressione, e revisioni del codice.
+
+\subsubsection{Metriche e valutazioni}
+\paragraph{Copertura dei Test}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPC2CT & Percentuale di codice coperto da test automatizzati &
+\textit{Accettato}: $\geq$ 80\%
+\textit{Rifiutato}: $<$ 80\%\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Budget}
+\subsubsection{Descrizione}
+Lo sviluppo del progetto deve tener conto di limiti di costo, definiti tra il team e lo stakeholder in fase di candidatura. E'necessario tenere traccia del consumo del budget pattuito.
+
+\subsubsection{Metriche e valutazioni}
+\paragraph{Consumo Budget rispetto a Percentuale Completamento Software}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPC3CBCS & indica quale percentuale di budget è stato consumato in rapporto alla percentuale di completamento del software & Si faccia attenzione ad un valore $>$1 nelle fasi finali\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\paragraph{Consumo Budget rispetto ad Aspettative}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPC4CBA& indica la differenza tra budget che ci si aspettava di consumare e il budget consumato  & si faccia attenzione quando il valore risulta negativo\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Documentazione}
+\subsubsection{Descrizione}
+La documentazione è fondamentale per garantire la comprensibilità e la trasferibilità delle informazioni relative al software. Una buona documentazione include specifiche tecniche, manuali utente e documenti di design.
+
+\subsubsection{Metriche e valutazioni}
+\paragraph{Completezza della Documentazione}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPC4CD & Ogni membro del team si dedicherà a valutare la completezza e la disambiguità della documentazione prodotta, decidendo se promuoverla o meno &
+\textit{Accettato}: Tutti i membri del team promuovono la documentazione
+\textit{Rifiutato}: Almeno un membro del team boccia la documentazione \\
+\hline
+\end{tabular}
+\end{table}
+
+Queste metriche e valutazioni aiuteranno a garantire che ogni fase del processo di sviluppo del software sia eseguita con i più alti standard di qualità, in conformità con gli standard ISO/IEC.
+
+\newpage
+\section{Qualità di prodotto}
+La qualità di un prodotto software, secondo gli standard ISO/IEC, è un argomento complesso e multidimensionale che richiede una comprensione approfondita di vari aspetti tecnici, funzionali e di gestione. Questa sezione si occupa di definire, descrivere e valutare tramite l'utilizzo di opportune metriche gli standard rilevanti, fornendo un quadro per valutarne la qualità in termini di un insieme di caratteristiche e sottocaratteristiche.
+
+\subsection{Funzionalità.}
+\subsubsection{Descrizione} Assicura che il software fornisca tutte le funzioni necessarie per una gestione efficace ed efficiente del magazzino, migliorando l'interazione e la gestione delle risorse.\\
+\subsubsection{Metriche e valutazioni}.
+
+\paragraph{Tasso di Copertura dei Requisiti Funzionali}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD1TCRF & Misura la percentuale di requisiti funzionali implementati &
+\textit{Accettato}: $\geq$ 95\%
+\textit{Rifiutato}: $<$ 95\% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Affidabilità}
+\subsubsection{Descrizione}
+Garantisce che il software sia stabile e affidabile durante l'uso, riducendo gli errori e migliorando la sicurezza.
+\subsubsection{Metriche e valutazioni}
+\paragraph{Numero di errori}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{6cm}|>{\centering\arraybackslash}m{7cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD2INE & Numero di malfunzionamenti o crash in un determinato intervallo di tempo &
+\textit{Accettato}:   0 incidenti/spazio temporale
+\textit{Rifiutato}:  $\geq$ 1 incidente/spazio temporale\\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Robustezza agli errori}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD3RE & Quale parte di tutti gli errori critici è stata messa sotto controllo &
+\textit{Accettato}:   100\%
+\textit{Rifiutato}:  $\leq$ 100\%\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Usabilità}
+\subsubsection{Descrizione}
+L'usabilità è cruciale e garantisce che l'interfaccia utente sia intuitiva, facile da usare e accessibile, riducendo il tempo di apprendimento e migliorando l'efficienza dell'utente. Per misurarla i membri del gruppo che non fanno parte del team di sviluppo del codice simuleranno il cliente finale. Le stime effettuate verranno poi gonfiate di un paio di minuti. 
+\subsubsection{Metriche e valutazioni}
+\paragraph{Tempo Medio di Apprendimento}
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{8cm}|>{\centering\arraybackslash}m{5cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD4TMA & Tempo necessario ad un nuovo utente per apprendere le funzionalitá offerte dal prodotto &
+\textit{Accettato}:  $\leq$ 5 minuti
+\textit{Migliorabile}: tra 5 e 15 minuti
+\textit{Rifiutato}:  $>$ 15 minuti\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Efficienza di Performance}
+\subsubsection{Descrizione}
+L'efficienza di performance mira a ottimizzare l'uso delle risorse di sistema e a garantire che il software funzioni con elevate prestazioni, riducendo il tempo di risposta e migliorando l'esperienza dell'utente.
+\subsubsection{Metriche e valutazioni}
+\paragraph{Tempo Medio di Risposta}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{8cm}|>{\centering\arraybackslash}m{5cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD5TMR & Indica il tempo medio di risposta di una funzione offerta dal software prodotto &
+\textit{Accettato}:  $\leq$ 2 secondi
+\textit{Migliorabile}: tra 2 e 3 secondi
+\textit{Rifiutato}: $>$ 3 secondi\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Manutenibilità}
+\subsubsection{Descrizione}
+La manutenibilità si focalizza sulla facilità con cui il software può essere modificato per correggere difetti, migliorare funzionalità o adattarsi a cambiamenti ambientali.
+\subsubsection{Metriche e valutazioni}
+\paragraph{ Tempo Medio per la Risoluzione dei Difetti}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{8cm}|>{\centering\arraybackslash}m{5cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD6TMRD & Indica il tempo medio necessario a risolvere un difetto del prodotto & \textit{Accettato}: $\leq$ 1 giorno
+\textit{Migliorabile}: tra 1 e 3 giorni
+\textit{Rifiutato}: $>$ 3 giorni\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\paragraph{Accoppiamento di componenti}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{8cm}|>{\centering\arraybackslash}m{5cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD7AC & indica quanto strettamente sono indipendenti i componenti e quanti componenti sono esenti da impatti da cambiamenti negli altri componenti&
+\textit{Accettato}:  $\leq$ 10\%
+\textit{Migliorabile}: tra 10 e 20\%
+\textit{Rifiutato}:  $>$ 20\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Complessità ciclomatica\textsuperscript{G}}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD7CC & Indica quanti moduli software hanno una complessità ciclomatica inferiore alla soglia, giudicata accettabile, di 20&
+\textit{Accettato}:  $\geq$ 90\%
+\textit{Rifiutato}:  $<$ 90\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Portabilità}
+\subsubsection{Descrizione}
+La portabilità assicura che il software possa essere eseguito in diversi ambienti di sistema, consentendo una facile installazione, configurazione e adattabilità.
+\subsubsection{Metriche e valutazioni}
+\paragraph{Compatibilità browser}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{10cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+Codice & Descrizione & Valutazione\\
+\hline
+MPD8CB & Indica il numero di browser con i quali il sistema risulta compatibile. I browser presi in considerazione sono: Chrome, Safari, Microsoft Edge, Mozilla Firefox e Opera&
+\textit{Accettato}:  $\geq$ 4/5
+\textit{Rifiutato}:  $<$ 4/5 \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Test}
+\par In questa sezione sono descritti dettagliatamente i vari tipi di test che verranno effettuati per assicurare la qualità e l'affidabilità del software.
+
+\subsection{Test di Unità}
+\par Test focalizzati sulle singole unità o componenti del software, eseguiti per verificare la loro corretta funzionalità in isolamento.
+
+\subsection{Test di Integrazione}
+\par Valutazione delle interazioni tra le diverse unità del software per identificare problemi nelle interfacce e nelle interazioni.
+
+\subsection{Test di Sistema}
+\par Verifica del comportamento complessivo del sistema, assicurando che tutti i requisiti siano soddisfatti.
+
+\subsection{Test di Regressione}
+\par Eseguiti dopo ogni cambiamento al software per garantire che le nuove modifiche non introducano errori nelle parti già testate.
+
+\subsection{Test di Usabilità}
+\par Valutazione dell'esperienza dell'utente con l'interfaccia del software, per garantire intuitività e facilità di uso.
+
+\subsection{Test di Prestazione}
+\par Controlli sulle prestazioni del software sotto vari carichi di lavoro, valutando tempo di risposta e scalabilità.
+
+
+\subsection{Test di Accettazione}
+\par Test condotti dal cliente o dall'utente finale per verificare se il software soddisfa i requisiti e se è pronto per il rilascio.
+
+\newpage
+\section{Resoconto}
+
+   
