@@ -8,7 +8,10 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{colortbl}
+\usepackage{float}
+\usepackage{placeins}
 \usepackage[table]{xcolor}
 
 \def \titoloDocumento {ANALISI DEI REQUISITI}    %modificare con il titolo del documento
@@ -24,14 +27,32 @@
 
     \input{changelog.tex}
     \input{signature}
-    \newpage
-    
+     \newpage
+    {
     \renewcommand{\contentsname}{Indice}    %rimuovere se non si vuole l'indice
+    \hypersetup{linkcolor=black}
     \tableofcontents    %rimuovere se non si vuole l'indice
     \newpage    %rimuovere se non si vuole l'indice
-
+    }
+    \renewcommand{\listfigurename}{Elenco delle figure}    %rimuovere le tre righe se non ci sono figure
+    \listoffigures
     \newpage
 
+    \renewcommand{\listtablename}{Elenco delle tabelle}    %rimuovere le tre righe se non ci sono tabelle
+    \listoftables
+    \newpage
+
+    \newenvironment{beginningnote}
+      {\clearpage
+       \thispagestyle{empty}% no header and footer
+       \vspace*{\stretch{1}}% some space at the top
+       \section*{Note}
+      }
+      {\par % end the paragraph
+       \vspace{\stretch{3}} % space at bottom is three times that at the top
+       \clearpage           % finish off the page
+  }
+  
     \input{content.tex}
       
 \end{document}
