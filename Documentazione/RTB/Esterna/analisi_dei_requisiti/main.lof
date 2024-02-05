@@ -1,0 +1,63 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagramma UML UC1 - Creazione Magazzino}}{9}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagramma UML UC1.2 - Creazione manuale del magazzino}}{10}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Diagramma UML UC2 - Salvataggio magazzino}}{12}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Diagramma UML UC2.2}}{13}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Diagramma UML UC3 - Visualizzazione 3D del magazzino}}{14}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagramma UML in dettaglio UC3 - Visualizzazione 3D del magazzino}}{15}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagramma UML UC3.1 - Visualizzazione 3D spazio del magazzino}}{15}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagramma UML UC3.2 - Visualizzazione 3D scaffalature}}{17}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagramma UML UC3.3 - Visualizzazione 3D prodotti}}{18}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagramma UML UC4 - Visualizzazione libreria}}{20}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagramma UML in dettaglio UC4 - Visualizzazione libreria}}{20}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagramma UML UC4.1 - Visualizzazione elenco scaffalature}}{21}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagramma UML UC4.1.1 - Visualizzazione singola scaffalatura}}{21}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagramma UML UC4.1.1.2 - Visualizzazione dimensioni scaffalatura}}{22}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagramma UML UC4.2 - Visualizzazione elenco prodotti}}{23}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagramma UML UC4.2.1 - Visualizzazione singolo prodotto}}{24}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Diagramma UML UC4.2.1.2 - Visualizzazione dimensioni prodotto}}{25}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagramma UML UC4.2.2 - Visualizzazione singolo prodotto posizionato}}{26}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagramma UML UC5 - Modifica vista magazzino}}{27}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagramma UML in dettaglio UC5 - Modifica vista magazzino}}{28}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagramma UML UC6 - Creazione scaffalatura}}{29}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagramma UML in dettaglio UC6 - Creazione scaffalatura}}{30}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagramma UML UC6.2 - Inserimento dimensioni}}{30}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagramma UML UC7 - Posizionamento scaffalatura}}{32}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Diagramma UML UC8 - Selezione scaffalatura}}{32}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Diagramma UML in dettaglio UC8 - Selezione scaffalatura}}{33}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Diagramma UML UC8.1 - Selezione scaffalatura in libreria}}{33}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagramma UML UC8.2 - Selezione scaffalatura in render 3D}}{34}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Diagramma UML UC9 - Modifica scaffalatura}}{35}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Diagramma UML in dettaglio UC9 - Modifica scaffalatura}}{35}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Diagramma UML UC9.1 - Modifica capacità scaffalatura}}{36}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Diagramma UML UC9.1.1 - Modifica capacità in altezza}}{36}{figure.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Diagramma UML UC9.1.2 - Modifica capacità in larghezza}}{37}{figure.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Diagramma UML UC10 - Ricerca scaffalatura per codice}}{39}{figure.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Diagramma UML UC11 - Visualizzazione risultato ricerca scaffalatura}}{40}{figure.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Diagramma UML UC12 - Cancellazione scaffalatura}}{40}{figure.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Diagramma UML in dettaglio UC12 - Cancellazione scaffalatura}}{41}{figure.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Diagramma UML UC13 - Creazione prodotto}}{42}{figure.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Diagramma UML in dettaglio UC13 - Creazione prodotto}}{42}{figure.39}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Diagramma UML UC13.2 - Inserimento dimensioni}}{43}{figure.40}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Diagramma UML UC14 - Posizionamento prodotto in scaffalatura}}{45}{figure.41}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Diagramma UML in dettaglio UC14 - Posizionamento prodotto in scaffalatura}}{45}{figure.42}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Diagramma UML UC15 - Selezione prodotto}}{47}{figure.43}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Diagramma UML UC15.1 - Selezione prodotto da libreria}}{47}{figure.44}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Diagramma UML UC15.2 - Selezione prodotto da render 3D}}{48}{figure.45}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Diagramma UML UC15.3 - Selezione prodotto posizionato da libreria}}{49}{figure.46}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Diagramma UML UC16 - Ricerca prodotto per nome}}{50}{figure.47}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Diagramma UML UC17 - Visualizzazione risultato ricerca prodotto}}{51}{figure.48}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Diagramma UML UC18 - Cancellazione prodotto}}{51}{figure.49}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Diagramma UML in dettaglio UC18 - Cancellazione prodotto}}{52}{figure.50}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Diagramma UML UC18.1 - Cancellazione prodotto posizionato}}{52}{figure.51}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Diagramma UML UC19 - Richiesta di spostamento}}{53}{figure.52}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Diagramma UML in dettaglio UC19 - Richiesta di spostamento}}{54}{figure.53}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Diagramma UML UC19.1 - Selezione scaffalatura di destinazione}}{54}{figure.54}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Diagramma UML UC20 - Visualizzazione richieste di spostamento pendenti}}{56}{figure.55}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Diagramma UML in dettaglio UC20 - Visualizzazione richieste di spostamento pendenti}}{56}{figure.56}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Diagramma UML UC20.1 - Visualizzazione singola richiesta di spostamento pendente}}{57}{figure.57}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Diagramma UML UC21 - Visualizzazione errore inserimento misura}}{58}{figure.58}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Diagramma UML UC22 - Visualizzazione errore codice scaffalatura non valido}}{59}{figure.59}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Diagramma UML UC23 - Visualizzazione errore misura in bin\textsuperscript {G} non valida}}{59}{figure.60}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Diagramma UML UC24 - Visualizzazione errore altezza non valida}}{60}{figure.61}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Diagramma UML UC25 - Visualizzazione errore larghezza non valida}}{60}{figure.62}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Diagramma UML UC26 - Visualizzazione errore posizione non valida}}{61}{figure.63}%

@@ -1,0 +1,141 @@
+\contentsline {section}{\numberline {1}Scopo del Documento}{8}{section.1}%
+\contentsline {section}{\numberline {2}Il progetto}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Scopo del progetto}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Descrizione del prodotto}{8}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Use Cases}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Attori}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Elenco dei casi d'uso}{9}{subsection.3.2}%
+\contentsline {subsection}{UC1 - Creazione Magazzino}{9}{section*.7}%
+\contentsline {subsubsection}{UC1.1 - Creazione magazzino da file}{9}{section*.8}%
+\contentsline {subsubsection}{UC1.2 - Creazione manuale del magazzino}{10}{section*.9}%
+\contentsline {paragraph}{UC1.2.1 - Inserimento altezza}{10}{section*.10}%
+\contentsline {paragraph}{UC1.2.2 - Inserimento profondità}{11}{section*.11}%
+\contentsline {paragraph}{UC1.2.3 - Inserimento larghezza}{11}{section*.12}%
+\contentsline {paragraph}{UC1.2.4 - Inserimento nome}{11}{section*.13}%
+\contentsline {paragraph}{UC1.2.6 - Visualizzazione errore inserimento nome}{11}{section*.14}%
+\contentsline {subsubsection}{UC1.3 - Visualizzazione errore caricamento file}{12}{section*.15}%
+\contentsline {subsection}{UC2 - Salvataggio magazzino}{12}{section*.16}%
+\contentsline {subsubsection}{UC2.1 - Salvataggio su file caricato}{12}{section*.17}%
+\contentsline {subsubsection}{UC2.2 - Salvataggio su nuovo file}{13}{section*.18}%
+\contentsline {paragraph}{UC2.2.1 - Inserimento percorso del file}{13}{section*.19}%
+\contentsline {paragraph}{UC2.2.2 - Creazione file}{13}{section*.20}%
+\contentsline {paragraph}{UC2.2.3 - Visualizzazione errore percorso invalido}{14}{section*.21}%
+\contentsline {paragraph}{UC2.2.4 - Visualizzazione errore creazione file}{14}{section*.22}%
+\contentsline {subsubsection}{UC2.3 - Visualizzazione errore salvataggio dati}{14}{section*.23}%
+\contentsline {subsection}{UC3 - Visualizzazione 3D del magazzino}{14}{section*.24}%
+\contentsline {subsubsection}{UC3.1 - Visualizzazione 3D spazio del magazzino}{15}{section*.25}%
+\contentsline {paragraph}{UC3.1.1 - Visualizzazione capacità}{16}{section*.26}%
+\contentsline {paragraph}{UC3.1.2 - Visualizzazione spazio occupato}{16}{section*.27}%
+\contentsline {subsubsection}{UC3.2 - Visualizzazione 3D scaffalature}{17}{section*.28}%
+\contentsline {paragraph}{UC3.2.1 - Visualizzazione posizionamento}{17}{section*.29}%
+\contentsline {paragraph}{UC3.2.2 - Visualizzazione capacità}{18}{section*.30}%
+\contentsline {paragraph}{UC3.2.3 - Visualizzazione occupazione}{18}{section*.31}%
+\contentsline {subsubsection}{UC3.3 - Visualizzazione 3D prodotti}{18}{section*.32}%
+\contentsline {paragraph}{UC3.3.1 - Visualizzazione grandezza}{19}{section*.33}%
+\contentsline {paragraph}{UC3.3.2 - Visualizzazione posizionamento}{19}{section*.34}%
+\contentsline {subsection}{UC4 - Visualizzazione libreria}{20}{section*.35}%
+\contentsline {subsubsection}{UC4.1 - Visualizzazione elenco scaffalature}{21}{section*.36}%
+\contentsline {paragraph}{UC4.1.1 - Visualizzazione singola scaffalatura}{21}{figure.13}%
+\contentsline {paragraph}{UC4.1.1.1 - Visualizzazione codice scaffalatura}{22}{section*.38}%
+\contentsline {paragraph}{UC4.1.1.2 - Visualizzazione dimensioni scaffalatura}{22}{figure.14}%
+\contentsline {paragraph}{UC4.1.1.2.1 - Visualizzazione capacità in altezza}{23}{section*.40}%
+\contentsline {paragraph}{UC4.1.1.2.2 - Visualizzazione capacità in larghezza}{23}{section*.41}%
+\contentsline {subsubsection}{UC4.2 - Visualizzazione elenco prodotti}{23}{section*.42}%
+\contentsline {paragraph}{UC4.2.1 - Visualizzazione singolo prodotto}{24}{figure.16}%
+\contentsline {paragraph}{UC4.2.1.1 - Visualizzazione nome prodotto}{24}{section*.44}%
+\contentsline {paragraph}{UC4.2.1.2 - Visualizzazione dimensioni prodotto}{25}{figure.17}%
+\contentsline {paragraph}{UC4.2.1.2.1 - Visualizzazione altezza prodotto}{25}{section*.46}%
+\contentsline {paragraph}{UC4.2.1.2.2 - Visualizzazione profondità prodotto}{26}{section*.47}%
+\contentsline {paragraph}{UC4.2.1.2.3 - Visualizzazione larghezza prodotto}{26}{section*.48}%
+\contentsline {paragraph}{UC4.2.2 - Visualizzazione singolo prodotto posizionato}{26}{figure.18}%
+\contentsline {paragraph}{UC4.2.2.1 - Visualizzazione scaffalatura di residenza}{27}{section*.50}%
+\contentsline {subsection}{UC5 - Modifica vista magazzino}{27}{section*.51}%
+\contentsline {subsubsection}{UC5.1 - Ingrandimento}{28}{section*.52}%
+\contentsline {subsubsection}{UC5.2 - Rimpicciolimento}{29}{section*.53}%
+\contentsline {subsubsection}{UC5.3 - Rotazione orizzontale}{29}{section*.54}%
+\contentsline {subsubsection}{UC5.4 - Rotazione verticale}{29}{section*.55}%
+\contentsline {subsection}{UC6 - Creazione scaffalatura}{29}{section*.56}%
+\contentsline {subsubsection}{UC6.1 - Inserimento codice}{30}{section*.57}%
+\contentsline {subsubsection}{UC6.2 - Inserimento dimensioni}{30}{section*.58}%
+\contentsline {paragraph}{UC6.2.1 - Inserimento capacità in altezza}{31}{section*.59}%
+\contentsline {paragraph}{UC6.2.2 - Inserimento capacità in larghezza}{31}{section*.60}%
+\contentsline {subsection}{UC7 - Posizionamento scaffalatura}{32}{section*.61}%
+\contentsline {subsection}{UC8 - Selezione scaffalatura}{32}{section*.62}%
+\contentsline {subsubsection}{UC8.1 - Selezione scaffalatura in libreria}{33}{section*.63}%
+\contentsline {subsubsection}{UC8.1.1 - Evidenziazione scaffalatura in libreria}{34}{section*.64}%
+\contentsline {subsubsection}{UC8.2 - Selezione scaffalatura in render 3D}{34}{section*.65}%
+\contentsline {subsubsection}{UC8.2.1 - Evidenziazione scaffalatura in render 3D}{35}{section*.66}%
+\contentsline {subsection}{UC9 - Modifica scaffalatura}{35}{section*.67}%
+\contentsline {subsubsection}{UC9.1 - Modifica capacità scaffalatura}{36}{section*.68}%
+\contentsline {paragraph}{UC9.1.1 - Modifica capacità in altezza}{36}{figure.32}%
+\contentsline {paragraph}{UC9.1.1.1 - Riduzione capacità in altezza}{37}{section*.70}%
+\contentsline {paragraph}{UC9.1.1.2 - Aumento capacità in altezza}{37}{section*.71}%
+\contentsline {paragraph}{UC9.1.2 - Modifica capacità in larghezza}{37}{figure.33}%
+\contentsline {paragraph}{UC9.1.2.1 - Riduzione capacità in altezza}{38}{section*.73}%
+\contentsline {paragraph}{UC9.1.2.2 - Aumento capacità in larghezza}{38}{section*.74}%
+\contentsline {paragraph}{UC9.1.3 - Visualizzazione errore scaffalatura occupata}{38}{section*.75}%
+\contentsline {subsubsection}{UC9.2 - Modifica codice scaffalatura}{38}{section*.76}%
+\contentsline {subsubsection}{UC9.3 - Modifica posizione scaffalatura}{39}{section*.77}%
+\contentsline {subsection}{UC10 - Ricerca scaffalatura per codice}{39}{section*.78}%
+\contentsline {subsubsection}{UC10.1 - Visualizzazione errore codice inesistente}{39}{section*.79}%
+\contentsline {subsection}{UC11 - Visualizzazione risultato ricerca scaffalatura}{40}{section*.80}%
+\contentsline {subsection}{UC12 - Cancellazione scaffalatura}{40}{section*.81}%
+\contentsline {subsubsection}{UC12.1 - Visualizzazione errore scaffalatura occupata}{41}{section*.82}%
+\contentsline {subsubsection}{UC12.2 - Cancellazione scaffalatura da libreria}{41}{section*.83}%
+\contentsline {subsubsection}{UC12.3 - Cancellazione scaffalatura da render 3D}{42}{section*.84}%
+\contentsline {subsection}{UC13 - Creazione prodotto}{42}{section*.85}%
+\contentsline {subsubsection}{UC13.1 - Inserimento nome}{43}{section*.86}%
+\contentsline {subsubsection}{UC13.2 - Inserimento dimensioni}{43}{section*.87}%
+\contentsline {paragraph}{UC13.2.1 - Inserimento altezza}{43}{section*.88}%
+\contentsline {paragraph}{UC13.2.2 - Inserimento profondità}{44}{section*.89}%
+\contentsline {paragraph}{UC13.2.3 - Inserimento larghezza}{44}{section*.90}%
+\contentsline {paragraph}{UC13.2.4 - Visualizzazione errore altezza non valida}{44}{section*.91}%
+\contentsline {paragraph}{UC13.2.5 - Visualizzazione errore profondità non valida}{44}{section*.92}%
+\contentsline {paragraph}{UC13.2.5 - Visualizzazione errore larghezza non valida}{45}{section*.93}%
+\contentsline {subsubsection}{UC13.3 - Visualizzazione errore nome non valido}{45}{section*.94}%
+\contentsline {subsection}{UC14 - Posizionamento prodotto in scaffalatura}{45}{section*.95}%
+\contentsline {subsubsection}{UC14.1 - Visualizzazione errore posizione non valida}{46}{section*.96}%
+\contentsline {subsubsection}{UC14.2 - Selezione posizione interna alla scaffalatura}{46}{section*.97}%
+\contentsline {subsubsection}{UC14.3 - Visualizzazione errore posizione occupata}{46}{section*.98}%
+\contentsline {subsection}{UC15 - Selezione prodotto}{47}{section*.99}%
+\contentsline {subsubsection}{UC15.1 - Selezione prodotto da libreria}{47}{section*.100}%
+\contentsline {paragraph}{UC15.1.1 - Evidenziazione prodotto in libreria}{48}{section*.101}%
+\contentsline {subsubsection}{UC15.2 - Selezione prodotto da render 3D}{48}{section*.102}%
+\contentsline {paragraph}{UC15.2.1 - Evidenziazione prodotto in render 3D}{49}{section*.103}%
+\contentsline {subsubsection}{UC15.3 - Selezione prodotto posizionato da libreria}{49}{section*.104}%
+\contentsline {subsection}{UC16 - Ricerca prodotto per nome}{50}{section*.105}%
+\contentsline {subsubsection}{UC16.1 - Visualizzazione errore codice inesistente}{50}{section*.106}%
+\contentsline {subsection}{UC17 - Visualizzazione risultato ricerca prodotto}{51}{section*.107}%
+\contentsline {subsection}{UC18 - Cancellazione prodotto}{51}{section*.108}%
+\contentsline {subsubsection}{UC18.1 - Cancellazione prodotto posizionato}{52}{section*.109}%
+\contentsline {paragraph}{UC18.1.1 - Cancellazione prodotto da render 3D}{53}{section*.110}%
+\contentsline {subsubsection}{UC18.2 - Cancellazione prodotto da libreria}{53}{section*.111}%
+\contentsline {subsection}{UC19 - Richiesta di spostamento}{53}{section*.112}%
+\contentsline {subsubsection}{UC19.1 - Selezione scaffalatura di destinazione}{54}{section*.113}%
+\contentsline {paragraph}{UC19.1.1 - Selezione posizione interna alla scaffalatura}{55}{section*.114}%
+\contentsline {paragraph}{UC19.1.2 - Visualizzazione errore posizione occupata}{55}{section*.115}%
+\contentsline {subsubsection}{UC19.2 - Visualizzazione errore destinazione non valida}{55}{section*.116}%
+\contentsline {subsection}{UC20 - Visualizzazione richieste di spostamento pendenti}{56}{section*.117}%
+\contentsline {subsubsection}{UC20.1 - Visualizzazione singola richiesta di spostamento pendente}{57}{section*.118}%
+\contentsline {paragraph}{UC20.1.1 - Visualizzazione nome prodotto}{57}{section*.119}%
+\contentsline {paragraph}{UC20.1.2 - Visualizzazione posizione origine prodotto}{57}{section*.120}%
+\contentsline {paragraph}{UC20.1.3 - Visualizzazione posizione destinazione prodotto}{58}{section*.121}%
+\contentsline {subsection}{UC21 - Visualizzazione errore inserimento misura}{58}{section*.122}%
+\contentsline {subsection}{UC22 - Visualizzazione errore codice scaffalatura non valido}{59}{section*.123}%
+\contentsline {subsection}{UC23 - Visualizzazione errore misura in bin\textsuperscript {G} non valida}{59}{section*.124}%
+\contentsline {subsection}{UC24 - Visualizzazione errore altezza non valida}{60}{section*.125}%
+\contentsline {subsection}{UC25 - Visualizzazione errore larghezza non valida}{60}{section*.126}%
+\contentsline {subsection}{UC26 - Visualizzazione errore posizione non valida}{61}{section*.127}%
+\contentsline {section}{\numberline {4}Requisiti}{62}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Classificazione dei requisiti}{62}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Requisiti funzionali}{62}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Requisiti di qualità}{67}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Requisiti di sistema (di vincolo)}{67}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Requisiti prestazionali}{68}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}Tracciamento dei requisiti}{68}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Tracciamento requisiti-fonti}{68}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Tracciamento fonti-requisiti}{73}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Riepilogo dei requisiti}{77}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Riferimenti esterni}{78}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Riferimenti normativi}{78}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Riferimenti informativi}{78}{subsection.5.2}%
