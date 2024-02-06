@@ -6,39 +6,39 @@
 % SCOPO DEL DOCUMENTO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scopo del Documento}\label{sec:scopo_del_documento}
-Il presente documento ha lo scopo di fornire una descrizione dettagliata dei requisiti di progetto. Il documento é quindi frutto di un'attenta analisi del capitolato, proposto dal proponente, al fine di individuare ed esaminare in modo esaustivo i requisiti minimi, massimi e facoltativi presenti nel progetto. 
-Un ulteriore obbiettivo del documento é quello di analizzare e descrivere le possibili attività (use cases) permesse all'utente in fase di esecuzione del programma. 
+Il presente documento ha lo scopo di fornire una descrizione dettagliata dei requisiti di progetto. Il documento è quindi frutto di un'attenta analisi del capitolato, proposto dal proponente, al fine di individuare ed esaminare in modo esaustivo i requisiti minimi, massimi e facoltativi presenti nel progetto. 
+Un ulteriore obbiettivo del documento è quello di analizzare e descrivere le possibili attività (use cases) permesse all'utente in fase di esecuzione del programma. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IL PROGETTO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Il progetto}\label{sec:progetto}
 \subsection{Scopo del progetto}\label{sec:scopo_del_progetto}
-Lo scopo del progetto é quello di ottimizzare i processi produttivi attraverso l'utilizzo di 
+Lo scopo del progetto è quello di ottimizzare i processi produttivi attraverso l'utilizzo di 
 un applicativo 3D che rappresenta lo stato di fatto di un magazzino di stoccaggio.\\
-L'applicativo, pensato per un'utilizzo da ufficio, deve permettere all'utente di navigare\textsuperscript{G} all'interno 
+L'applicativo, pensato per un'utilizzo da ufficio (di tipo amministrativo), deve permettere all'utente di muoversi all'interno 
 del magazzino e poter gestire le seguenti operazioni:
 \begin{itemize}
     \item Creazione magazzino:
         \begin{itemize}
-            \item Creare un nuovo magazzino
+            \item Creare un nuovo magazzino da zero
             \item Importare un layout esistente
         \end{itemize}
     \item Modifiche alla struttura del magazzino:
-        \begin{itemize}
-            \item Modificare scaffalature
+        \begin{itemize}            
             \item Aggiungere nuove scaffalature
             \item Rimuovere scaffalature esistenti
+            \item Modificare scaffalature
         \end{itemize}
     \item Modifiche ai prodotti presenti in magazzino:
-        \begin{itemize}
-            \item Eliminare un prodotto
+        \begin{itemize}            
             \item Aggiungere un nuovo prodotto
-            \item Spostare un prodotto esistente 
+            \item Eliminare un prodotto
+            \item Spostare un prodotto esistente
         \end{itemize}
 \end{itemize}
-Sfruttare quindi un'esperienza tridimensionale per aiutare la comprensione e facilitare la gestione delle 
-operazioni di logistica necessarie. 
+Si vuole sfruttare l'esperienza tridimensionale per aiutare la comprensione e facilitare la gestione delle 
+operazioni di logistica necessarie sopra elencate. 
 
 
 \subsection{Descrizione del prodotto}\label{sec:descrizione_del_prodotto}
@@ -53,7 +53,7 @@ La seconda parte invece è composta dalla visualizzazione vera e proprio del mag
 \section{Use Cases}\label{sec:use_cases}
 
 \subsection{Attori}\label{subsec:attori}
-Come da specifiche del proponente (si veda \ref{sec:riferimenti_normativi} per il link al capitolato), interessano soltanto sessioni volatili e con la sola gestione ``amministratore”. Pertanto, non sarà necessaria alcuna autenticazione nell'applicazione nè saranno presenti diverse tipologie di utenti con ``poteri'' distinti. L'unico attore\textsuperscript{G}, capace di accedere a tutte le funzionalità dell'applicazione e protagonista di tutti i casi d'uso, sarà dunque un utente generico, denominato \textbf{User}.
+Come da specifiche del proponente (si veda \ref{sec:riferimenti_normativi} per il link al capitolato), interessano soltanto sessioni volatili e con la sola gestione ``amministratore”. Pertanto, non sarà necessaria alcuna autenticazione nell'applicazione nè saranno presenti diverse tipologie di utenti con permessi distinti. L'unico attore\textsuperscript{G}, capace di accedere a tutte le funzionalità dell'applicazione e protagonista di tutti i casi d'uso, sarà dunque un utente generico amministratore, denominato \textbf{User}.
 
 \subsection{Elenco dei casi d'uso}\label{subsec:elenco_use_cases}
 \setcounter{secnumdepth}{0}         %per non mostrare numeri sezioni su indice
@@ -104,9 +104,9 @@ Una prima macrodivisione classificativa sarà effettuata tra requisiti:
    % \item \textbf{Di Vincolo: } indicano i vincoli logici del sistema
 \end{itemize}
 i quali meritano una suddivisione in sottosezioni apposite.
-Ci si occuperà inoltre di distinguerà tra requisiti \textbf{Obbligatori}, \textbf{Desiderabili} ed \textbf{Opzionali}.
+Ci si occuperà inoltre di distinguere tra requisiti \textbf{Obbligatori}, \textbf{Desiderabili} ed \textbf{Opzionali}.
 
-Sulla base delle specifiche appena discusse, ad ogni documento verrà assegnato un codice che segue la seguente regola:
+Sulla base delle specifiche appena discusse, ad ogni requisito verrà assegnato un codice che segue la seguente regola:
 \begin{center}
     \textbf{R[Priorità][Tipo]\textunderscore[Identificativo]}
 \end{center}
