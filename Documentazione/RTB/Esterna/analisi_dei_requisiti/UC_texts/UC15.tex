@@ -7,8 +7,8 @@
 \begin{itemize}
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:}  L'utente ha creato un prodotto [UC13].
-    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato da libreria\textsuperscript{G} o da render 3D.
-    \item \textbf{Scenario Principale:} Il prodotto può essere selezionato dalla libreria\textsuperscript{G} [UC15.1] e, in tal caso, il prodotto verrà evidenziato in libreria\textsuperscript{G} [UC15.1.1] e se il prodotto è posizionato [UC15.3] il prodotto verra evidenziato anche nel render 3D [UC15.2.1.]. Se invece il prodotto è selezionato dal render 3D [15.2], sicuramente il prodotto è posizionato, e dunque sarà evidenziato su libreria\textsuperscript{G} [UC15.1.1] e render 3D [UC15.2.1.].
+    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato da libreria o da render 3D.
+    \item \textbf{Scenario Principale:} Il prodotto può essere selezionato dalla libreria [UC15.1] e, in tal caso, il prodotto verrà evidenziato in libreria [UC15.1.1] e se il prodotto è posizionato [UC15.3] il prodotto verra evidenziato anche nel render 3D [UC15.2.1.]. Se invece il prodotto è selezionato dal render 3D [15.2], sicuramente il prodotto è posizionato, e dunque sarà evidenziato su libreria [UC15.1.1] e render 3D [UC15.2.1.].
     \item \textbf{Generalizzazioni:} Sono presenti due generalizzazioni seconda del luogo in cui il prodotto viene selezionato:
     \begin{itemize}
         \item UC15.1 - Selezione prodotto da libreria;
@@ -26,9 +26,9 @@
 \end{figure}
 \begin{itemize}
     \item \textbf{Attori:} User.
-    \item \textbf{Pre-condizione:}  L'utente ha creato un prodotto [UC13] e lo sta visualizzando nella libreria\textsuperscript{G} [UC4.2.1].
-    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato ed evidenziato in libreria\textsuperscript{G}.
-    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto dalla libreria\textsuperscript{G} e il prodotto verrà evidenziato in libreria\textsuperscript{G} [UC15.1.1].
+    \item \textbf{Pre-condizione:}  L'utente ha creato un prodotto [UC13] e lo sta visualizzando nella libreria [UC4.2.1].
+    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato ed evidenziato in libreria.
+    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto dalla libreria e il prodotto verrà evidenziato in libreria [UC15.1.1].
     \item \textbf{Generalizzazioni:} È presente una generalizzazione nel caso in cui il prodotto sia posizionato nel magazzino 3D:
     \begin{itemize}
         \item UC15.3 - Selezione prodotto posizionato da libreria.
@@ -41,8 +41,8 @@
 \begin{itemize}
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:}  L'utente ha selezionato un prodotto.
-    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene evidenziato nella libreria\textsuperscript{G}.
-    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto e questo viene evidenziato sempre nella libreria\textsuperscript{G}.
+    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene evidenziato nella libreria.
+    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto e questo viene evidenziato sempre nella libreria.
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} -
 \end{itemize}
@@ -56,9 +56,9 @@
 \end{figure}
 \begin{itemize}
     \item \textbf{Attori:} User.
-    \item \textbf{Pre-condizione:} L'utente ha creato un prodotto [UC13] e lo ha anche posizionato [UC14]. Al momento, lo sta visualizzando nella libreria\textsuperscript{G} [UC4.2.1] e nel render 3D [UC3.3].
-    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato dal render 3D ed evidenziato nel render 3D e nella libreria\textsuperscript{G}.
-    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto dal render 3D e questo verrà evidenziato nel render 3D [UC15.1.1.1] e nella libreria\textsuperscript{G} [15.2.1].
+    \item \textbf{Pre-condizione:} L'utente ha creato un prodotto [UC13] e lo ha anche posizionato [UC14]. Al momento, lo sta visualizzando nella libreria [UC4.2.1] e nel render 3D [UC3.3].
+    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato dal render 3D ed evidenziato nel render 3D e nella libreria.
+    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto dal render 3D e questo verrà evidenziato nel render 3D [UC15.1.1.1] e nella libreria [15.2.1].
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} -
 \end{itemize}
@@ -69,7 +69,7 @@
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:} L'utente ha selezionato un prodotto posizionato nel render 3D.
     \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene evidenziato nel render 3D.
-    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto nel render 3D o nella libreria\textsuperscript{G} e questo viene evidenziato nel render 3D.
+    \item \textbf{Scenario Principale:} L'utente seleziona il prodotto nel render 3D o nella libreria e questo viene evidenziato nel render 3D.
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} -
 \end{itemize}
@@ -83,9 +83,9 @@
 \end{figure}
 \begin{itemize}
     \item \textbf{Attori:} User.
-    \item \textbf{Pre-condizione:} L'utente ha creato un prodotto [UC13] e lo ha anche posizionato [UC14]. Al momento, lo sta visualizzando nella libreria\textsuperscript{G} [UC4.2.1] e nel render 3D [UC3.3].
-    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato dalla libreria\textsuperscript{G} ed evidenziato in libreria\textsuperscript{G} e nel render 3D.
-    \item \textbf{Scenario Principale:} Il prodotto viene selezionato dalla libreria\textsuperscript{G}, però questo essendo posizionato, verrà evidenziato sia nel render 3D [UC15.1.1] sia nel render 3D [UC15.2.1].
+    \item \textbf{Pre-condizione:} L'utente ha creato un prodotto [UC13] e lo ha anche posizionato [UC14]. Al momento, lo sta visualizzando nella libreria [UC4.2.1] e nel render 3D [UC3.3].
+    \item \textbf{Post-condizione:} Il prodotto preso in considerazione dall'utente viene selezionato dalla libreria ed evidenziato in libreria e nel render 3D.
+    \item \textbf{Scenario Principale:} Il prodotto viene selezionato dalla libreria, però questo essendo posizionato, verrà evidenziato sia nel render 3D [UC15.1.1] sia nel render 3D [UC15.2.1].
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} -
 \end{itemize}
