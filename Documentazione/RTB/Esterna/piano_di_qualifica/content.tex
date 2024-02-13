@@ -73,12 +73,11 @@ Uno dei compiti principali del processo di fornitura è la gestione delle proced
 \par Gli acronimi utilizzati nelle metriche faranno riferimento a quelli proposti dallo standard, reperibili al link sulle metriche di progetto nella sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni}. Per una lettura più immediata del documento si riportano i termini principali:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{4cm}|m{8cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{PV} & Planned Value & Costo pianificato per realizzare le attività di progetto alla data corrente.\\
 \hline
@@ -104,11 +103,13 @@ Uno dei compiti principali del processo di fornitura è la gestione delle proced
 \newpage
 Le metriche sono stabilite di conseguenza:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPC1-EAC & Si vuole che il costo attuale sia quanto più possibile in linea con quello pianificato originariamente & Errore massimo del $\pm 5$\% rispetto a BAC & = BAC \\
 \hline
@@ -134,12 +135,11 @@ realizzazione del prodotto software concorde con le esigenze del proponente ed, 
 Per assicurare qualità nella fase di progettazione si è ritenuto importante utilizzare le metriche di \textbf{Structural fan-in} e \textbf{fan-out}, applicate a procedure e file con i seguenti acronimi:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{4cm}|m{8cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{SFINp} & Structural fan-in (procedure) & Numero di procedure che chiamano una specifica procedura.\\
 \hline
@@ -153,21 +153,23 @@ Per assicurare qualità nella fase di progettazione si è ritenuto importante ut
 \end{table}
 
 \newpage
-Le regole da applicare alle metriche per la qualità del codice sono le seguenti:
+Le regole da applicare alle metriche sono dunque le seguenti:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{5cm}| }
 \hline
-Codice & Descrizione & Valore desiderabile\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore desiderabile}\\
 \hline
 MPC8-SFINp & Si vuole che le procedure progettate vengano riutilizzate & Alto (riutilizzo di codice) \\
 \hline
 MPC9-SFOUTp & Si vuole che le procedure non siano fortemente accoppiate fra loro & Basso (bassa dipendenza tra procedure) \\
 \hline
-MPC10-SFINf & Il numero di file che utilizzano uno specifico file non deve essere troppo alto per evitare dipendenze tra file & Ragionevolmente Basso (bassa dipendenza tra file) \\
+MPC10-SFINf & Il numero di file che utilizzano uno specifico file non deve essere troppo alto per evitare dipendenze tra file & Ragionevolmente basso (bassa dipendenza tra file) \\
 \hline
-MPC11-SFOUTf & Il livello di accoppiamentro tra file deve essere basso & Basso (bassa dipendenza tra file) \\
+MPC11-SFOUTf & Il livello di accoppiamento tra file deve essere basso & Basso (bassa dipendenza tra file) \\
 \hline
 \end{tabular}
 \end{table}
@@ -177,49 +179,49 @@ Con l'attività di codifica, i programmatori si impegnano a concretizzare quanto
 Lo scopo è quello di ottenere un prodotto software che rispetti i requisti e le richieste concordati con il proponente e che ne garantisca la qualità. Per raggiungere questi obiettivi si utilizzano metriche che cercano di limitare gli errori introdotti nel codice, in particolare:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{2.5cm}|m{9.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{CCH} & Code churn & Indica il numero di modifiche, aggiunte e cancellazioni apportate nel tempo ad una certa area di codice, in particolare nell'ambito di progetto, si intende modifiche apportate ad una procedura. Più sono le modifiche, più aumenta il rischio di introdurre errori nel codice. Un alto valore di nuove linee di codice potrebbe anche indicare basso riutilizzo di codice.\\
 \hline
 \textbf{NB} & Number of bugs & Indica il numero di bug ed errori presenti nel software.\\
 \hline
-\textbf{CC} & Cyclomatic complexity & Misura la complessità del codice calcolando il numero di percorsi indipendenti (contando cioè il numero di ``decisioni prese" nel codice sorgente). Un alto valore di complessità ciclomatica indica codice difficile da comprendere, mantenere e testare.\\
+\textbf{CC} & Cyclomatic complexity & Misura la complessità del codice calcolando il numero di percorsi indipendenti (contando cioè il numero di ``decisioni prese" nel codice sorgente). Un alto valore di complessità ciclomatica\textsuperscript{G} indica codice difficile da comprendere, mantenere e testare.\\
 \hline
 \end{tabular}
 \end{table}
 \par Le regole di qualità sono applicate alle metriche nel seguente modo:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPC12-CCH & Il numero di modifiche apportate alla singola procedura deve essere quanto più basso possibile & massimo 20\% di modifiche sul codice totale della procedura & 0 \\
 \hline
 MPC13-NB & Si vuole che il numero di bug ed errori nel codice sia quanto più basso possibile & $\leq$ 5 & 0 \\
 \hline
-MPC14-CC & Il codice deve essere mantenuto semplice, facilitiando comprensione, manutenzione e test & $\leq$ 15 & $\leq$ 10 \\
+MPC14-CC & Il codice deve essere mantenuto semplice, facilitando comprensione, manutenzione e test & $\leq$ 15 & $\leq$ 10 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsection{Processi di supporto}
 \subsubsection{Documentazione}
-La documentazione prodotta nel corso del progetto deve essere un valido supporto al gruppo e agli stakeholders per comprendere meglio il codice prodotto, le decisioni prese e la gestione organizzativa. Per questo motivo, le metriche di qualità sulla documentazione si concentrano sulla leggibilità e sul controllo degli errori ortografici.
+La documentazione prodotta nel corso del progetto deve essere un valido supporto al gruppo e agli stakeholders per comprendere meglio il codice prodotto, le decisioni prese e la gestione organizzativa. Per questo motivo, le metriche di qualità sulla documentazione si concentrano sulla leggibilità e sul controllo degli errori ortografici. Le metriche in questione sono le seguenti:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{4.5cm}|m{7.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{EOD} & Errori ortografici per documento & Indica il numero di errori ortografici individuati per documento.\\
 \hline
@@ -232,11 +234,13 @@ La documentazione prodotta nel corso del progetto deve essere un valido supporto
 \end{table}
 \par Le regole di qualità sono applicate alle metriche nel seguente modo:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPC15-EOD & Si vogliono meno errori ortografici possibili per ciascun documento & $\leq 5$ & 0 \\
 \hline
@@ -250,24 +254,25 @@ Lo scopo dell'accertamento della qualità è garantire che i processi e il prodo
 \par Diventa quindi essenziale il soddisfacimento delle metriche preposte:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{3.5cm}|m{8.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
-\textbf{MS} & Metriche Soddisfatte & Indica la percentuale di metriche di qualità soddisfatte rispetto al totale delle metriche preposte.\\
+\textbf{MS} & Metriche soddisfatte & Indica la percentuale di metriche di qualità soddisfatte rispetto al totale delle metriche preposte.\\
 \hline
 \end{tabular}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPC17-MS & Il numero di metriche di qualità soddisfatte deve essere molto alto & 90\% & 100\% \\
 \hline
@@ -276,29 +281,34 @@ MPC17-MS & Il numero di metriche di qualità soddisfatte deve essere molto alto 
 
 \newpage
 \subsubsection{Verifica}
-Il processo di verifica ha lo scopo di determinare se i prodotti dei processi durante il corso del progetto rispettano i requisiti preposti. Particolare enfasi viene data alla corretteza del codice prodotto.
+Il processo di verifica ha lo scopo di determinare se i prodotti dei processi durante il corso del progetto rispettano i requisiti preposti. In particolare, si vuole enfatizzare la correttezza del codice prodotto attraverso le seguenti metriche:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{3.5cm}|m{8.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{CCV} & Code coverage & Misura la quantità di codice (in percentuale) coperta dai test rispetto al totale del codice sorgente.\\
+\hline
+\textbf{TP} & Test passati & Misura la quantità di test (in percentuale) eseguiti con successo.\\
 \hline
 \end{tabular}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPC18-CCV & Si vuole che la percentuale di codice coperta da test sia molto alta & $\geq$ 90\% & 100\% \\
+\hline
+MPC19-TP & Si vuole che tutti i test siano eseguiti con successo & 100\% & 100\% \\
 \hline
 \end{tabular}
 \end{table}
@@ -307,14 +317,14 @@ MPC18-CCV & Si vuole che la percentuale di codice coperta da test sia molto alta
 \section{Qualità di prodotto}
 L'obiettivo delle metriche definite in questa sezione è controllare la qualità del prodotto realizzato nel corso del progetto. Per questa ragione, diventa importante assicurarsi che il prodotto sia conforme alle richieste del proponente e che possieda le caratteristiche proprie di un software di qualità.
 \subsection{Customer needs}
+Si definiscono le seguenti metriche:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{ROB} & Copertura dei requisiti obbligatori & Indica il valore (in percentuale) di requisiti obbligatori che il prodotto soddisfa.\\
 \hline
@@ -324,11 +334,13 @@ L'obiettivo delle metriche definite in questa sezione è controllare la qualità
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPD1-ROB & I requisiti obbligatori devono essere tutti soddisfatti & 100\% & 100\% \\
 \hline
@@ -338,14 +350,14 @@ MPD2-RDE & I requisiti desiderabili devono essere soddisfatti in buona parte & 7
 \end{table}
 
 \subsection{Efficienza}
+Si definiscono le seguenti metriche:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{ART} & Average response time & Misura il tempo medio che il prodotto software impiega per rispondere agli input forniti dall'utente.\\
 \hline
@@ -353,11 +365,13 @@ MPD2-RDE & I requisiti desiderabili devono essere soddisfatti in buona parte & 7
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPD3-ART & Il prodotto deve essere veloce nel tempo di risposta & $<$ 3 sec. & $\leq$ 1 sec. \\
 \hline
@@ -365,28 +379,35 @@ MPD3-ART & Il prodotto deve essere veloce nel tempo di risposta & $<$ 3 sec. & $
 \end{table}
 
 \subsection{Usabilità}
+\par Si definiscono le seguenti metriche:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{PC} & Profondità di click per operazione & Misura il numero di click che l'utente deve fare per raggiungere un determinato obiettivo. Un numero troppo alto provoca frustrazione e difficoltà di utilizzo.\\
 \hline
+\textbf{CFO} & Comprensibilità funzioni offerte & Misura la quantità (in percentuale) di funzioni offerte che l'utente riesce ad individuare ed utilizzare con facilità.\\
+\hline
 \end{tabular}
 \end{table}
+\newpage
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
 MPD4-PC & L'utente deve essere facilitato nell'interazione con il prodotto software & $\leq$ 7 & $\leq$ 5 \\
+\hline
+MPD5-CFO & L'utente deve comprendere facilmente quali sono e come si comportano le funzioni offerte & $\geq$ 90\% & 100\% \\
 \hline
 \end{tabular}
 \end{table}
@@ -395,20 +416,20 @@ MPD4-PC & L'utente deve essere facilitato nell'interazione con il prodotto softw
 Su richiesta del committente, il software prodotto deve essere una Web Application. Come tale, risulta essenziale assicurarsi che il prodotto sia utilizzabile tramite tutti i browser maggiormente utilizzati nel mercato.
 \par Le applicazioni che sono state considerate sono:
 \begin{itemize}
-    \item Google Chrome
-    \item Mozilla Firefox
-    \item Microsoft Edge
-    \item Safari
-    \item Opera
+    \item Google Chrome,
+    \item Mozilla Firefox,
+    \item Microsoft Edge,
+    \item Safari,
+    \item Opera.
 \end{itemize}
+Si definiscono dunque le seguenti metriche:
 \begin{table}[h!]
 \centering
-\rowcolors{2}{lightgray!30}{white}
 \def\arraystretch{1.5}
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
-\rowcolor{black}
-\textbf{\color{white} Acronimo} & \textbf{\color{white} Nome} & \textbf{\color{white} Significato}\\
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{PPT} & Portabilità su piattaforme & Indica la percentuale di piattaforme (tra quelle prese in considerazione) su cui il prodotto software è utilizzabile.\\
 \hline
@@ -416,13 +437,44 @@ Su richiesta del committente, il software prodotto deve essere una Web Applicati
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
 \centering
 \def\arraystretch{1.5}
 \begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
 \hline
-Codice & Descrizione & Valore accettabile & Valore ottimale\\
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
-MPD5-PPT & Il prodotto deve essere utilizzabile su tutti i browser principali. & 100\% & 100\% \\
+MPD6-PPT & Il prodotto deve essere utilizzabile su tutti i browser principali. & 100\% & 100\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Manutenibilità}
+Si definiscono le seguenti metriche:
+\begin{table}[h!]
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
+\hline
+\rowcolor{lightgray!30}
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
+\hline
+\textbf{CD} & Codice duplicato & Misura la quantità (in percentuale) di codice duplicato.\\
+\hline
+\end{tabular}
+\end{table}
+\par Con le seguenti regole:
+\begin{table}[h!]
+\rowcolors{2}{lightgray!30}{white}
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
+\hline
+\rowcolor{black}
+\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
+\hline
+MPD7-CD & La duplicazione del codice deve essere minimizzata & $\leq$ 3\% & 0\% \\
 \hline
 \end{tabular}
 \end{table}
@@ -433,11 +485,11 @@ MPD5-PPT & Il prodotto deve essere utilizzabile su tutti i browser principali. &
 
 \subsection{Test di Unità}
 \par I test di unità sono di basso livello e mirano a testare le singole unità dell'applicativo software in isolamento. Il concetto di unità si fa corrispondere generalmente alle funzioni per la programmazione procedurale, oppure a metodi e classi per la programmazione ad oggetti.
-\par Sono i più economici da implementare, possono essere scritti più velocemente rispetto agli altri e generalmente vengono eseguiti in maniera automatica (rendendo veloce anche la loro esecuzione). Inoltre, permettono di individuare un problema in maniera più immediata, evitando che si propaghi nel software.
+\par Sono i più economici da implementare, possono essere scritti più velocemente rispetto agli altri e generalmente vengono eseguiti in maniera automatica (rendendo veloce anche la loro esecuzione e ripetizione). Inoltre, permettono di individuare un problema in maniera più immediata, evitando che si propaghi nel software.
 
 \subsection{Test di Integrazione}
 \par I test di integrazione si pongono ad un livello più alto dei test di unità e sono eseguiti per controllare le interazioni tra le diverse componenti del software. L'obiettivo è verificare il corretto funzionamento delle componenti quando vengono integrate fra loro ed identificare problemi nelle interfacce e nelle interazioni.
-\par Di norma sono eseguiti dopo i test di unità per verificare che le componenti che funzionano singolarmente continuino a funzionare in maniera corretta quando comunicano fra loro.
+\par Di norma sono eseguiti dopo i test di unità per verificare che le componenti che funzionano singolarmente continuino a funzionare in maniera corretta anche quando comunicano fra loro.
 
 \subsection{Test di Sistema}
 \par Sono eseguiti dopo aver completato i test sulle singole unità e sulla loro integrazione, con l'obiettivo di verificare il comportamento complessivo del sistema. Si basano sulle funzionalità espresse nei requisiti concordati con il proponente, per assicurare che tutte le richieste siano soddisfatte.
@@ -458,6 +510,7 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
 
 \newpage
 \section{Resoconto}
+
 
 \newpage
 \section{Riferimenti esterni} \label{sec:riferimenti_esterni}
