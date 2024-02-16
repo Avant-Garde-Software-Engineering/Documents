@@ -1,0 +1,30 @@
+\section{Argomenti} \label{sec:argomenti}
+Lo scopo della riunione è quello di discutere con il proponente che l'analisi dei requisiti, la quale era stata consegnata in precendenza, si allineasse con gli obiettivi di \nomeAzienda, e di condividere con essi il progresso relativo al PoC svolto fino a quel momento. Infine sono state esaminate diverse questioni relative il progresso del progetto in generale.\\
+\subsection{Chiarimenti analisi dei requisiti} \label{sec:argomenti:analisi}
+    Il proponente, dopo aver esaminato il documento da noi inviatogli dell'analisi dei requisiti, ha espresso la conformità di ciò scritto con ciò che si aspettava. Inoltre ha fornito alcuni dubbi sorti durante la lettura del documento, i quali sono stati chiariti durante la riunione, ovvero:\\        \begin{itemize}
+        \item \textbf{Modalità assistita e visualizzazione 3D} \\
+        Il dubbio sorto leggendo una sezione scritta alla pagina 8 del documento di \textit{Analisi dei requisiti} riguarda la modalità di visualizzazione del magazzino stesso. In particolare, nel sito saranno presenti sia una visualizzazione 3D del magazzino che una lista degli oggetti e scaffali che contiene, la quale  seconda parte ha fatto sorgere dei dubbi al proponente, il quale dopo chiarimenti con noi ha confermato che la scelta è corretta. \\
+        \item \textbf{Dimensione degli oggetti}\\
+        Il caso d'uso 13.2 riguarda la creazione di un prodotto. Mentre nella nostra versione il prodotto ha dimensioni variabili che vengono inserite in input dall'utente, l'azienda propone di semplificare la questione rendendo tutti i prodotti grandi 1 \textit{bin}, unità di misura che può essere definita a priori oppure, preferibilmente, inserita in input dall'utente durante la creazione di una scaffalatura, permettendo di creare scaffalature di dimensioni variabili.\\
+    \end{itemize}
+
+\subsection{Discussione riguardante il PoC} \label{sec:argomenti:discussione_poc}
+    In questa fase abbiamo mostrato al proponente il PoC realizzato finora, il quale procede conformemente alle aspettative. Il proponente ha inoltre fornito alcuni consigli e richieste da implementare prossimamente, ovvero:
+    \begin{itemize}
+        \item \textbf{Separazione visuale dei bin di una scaffalatura}\\
+        Nello stato attuale, una volta creata una scaffalatura, non è presente un modo di distunguere visivamente i diversi bin vuoti che compongono una scaffalatura. Per questo il proponente consiglia di aggiungere una separazione visuale intuitiva in modo da poter capire facilmente quanti bin sono presenti in una scaffalatura, anche dalle dimensioni elevate. \\
+        \item \textbf{Aggiunta voce dimensione bin nella creazione di uno scaffale}\\
+        Come già menzionato nel secondo punto discusso dall'analisi dei requisiti, il proponente richiede la possibilità di creare una scaffalatura contenente bin di dimensioni variabili, perciò sarebbe utile aggiungere una voce nel form di creazione dello scaffale per questo scopo.
+        \item \textbf{Possibile rimozione dell'altezza del magazzino}\\
+        Come consiglio fornitoci, il proponente, che ha notato la presenza di una voce "altezza" durante la creazione del magazzino, ci ha informati sulla possibilità di rimuovere questa opzione, in quanto non è strettamente necessaria per la creazione del magazzino, il cui scopo principale è quello di gestire le dimensioni orizzontali più che verticali.
+    \end{itemize}
+
+\subsection{Altri argomenti trattati} \label{sec:argomenti:altri}
+    Al termine della riunione, prima di terminare la chiamata, sono stati posti alcuni quesiti riguardanti il progetto più in generale:
+    \begin{itemize}
+        \item Andamento del progetto \\
+        
+        \item Differenze dalla programmazione a cui siamo abituati ed eventuali difficoltà incontrate derivate da tali differenze\\
+        
+        \item Progettazione del codice effettuata per il PoC \\
+    \end{itemize}
