@@ -42,9 +42,11 @@ operazioni di logistica necessarie sopra elencate.
 
 
 \subsection{Descrizione del prodotto}\label{sec:descrizione_del_prodotto}
-L'applicativo, pensato per soddisfare lo scopo e i requisiti di progetto, si compone principalmente di due sezioni. 
-La prima sezione consente all'utente di interagire in modalità assistita\textsuperscript{G} con il magazzino. In particolare, permette all'utente di effettuare operazioni che vanno a modificare lo stato attuale del magazzino (e.g. inserimento e modifica di scaffalature/prodotti, richieste di movimentazione). 
-La seconda parte invece è composta dalla visualizzazione vera e proprio del magazzino 3D. In questa area l'utente avrà modo di ``navigare" il magazzino. 
+L'applicativo, pensato per soddisfare lo scopo e i requisiti di progetto, si compone principalmente di due sezioni.
+\begin{itemize}
+    \item La prima sezione consente all'utente di interagire con il magazzino, per effettuare operazioni che ne vanno a modificare lo stato attuale (e.g. inserimento e modifica di scaffalature/prodotti, richieste di movimentazione);
+    \item La seconda parte invece è composta dalla visualizzazione vera e propria del magazzino 3D. In questa area l'utente avrà modo di ``navigare" il magazzino. 
+\end{itemize}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,6 +85,7 @@ Come da specifiche del proponente (si veda \ref{sec:riferimenti_normativi} per i
 \input{UC_texts/UC24}
 \input{UC_texts/UC25}
 \input{UC_texts/UC26}
+\input{UC_texts/UC27}
 \setcounter{secnumdepth}{3} 
 
 
@@ -167,12 +170,13 @@ Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti,
     ROF\_5.1.2 & L'utente per ogni scaffalatura deve poterne visualizzare il codice & Implicito, Discussione interna [UC4.1.1.2]\\
     ROF\_5.2 & L'utente può visualizzare l'elenco dei prodotti creati & Implicito, Discussione interna [UC4.2] \\
     ROF\_5.2.1 & L'utente per ogni prodotto deve poterne visualizzare il nome & Implicito, Discussione interna [UC4.2.1.1]\\
-    ROF\_5.2.2 & L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Implicito, Discussione interna [UC4.2.1.2]\\
-    ROF\_5.2.3 & L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Implicito, Discussione interna [UC4.2.2.1] \\
+    %ROF\_5.2.2 & L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Implicito, Discussione interna [UC4.2.1.2]\\
+    ROF\_5.2.2 & L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Implicito, Discussione interna [UC4.2.2.1] \\
     ROF\_6 & L'utente può creare delle scaffalature & Esplicito, Capitolato [UC6]\\
     ROF\_6.1 & L'utente può scegliere un codice univoco da dare alla scaffalatura & Implicito, Discussione interna [UC6.1]\\
     ROF\_6.2 & L'utente può scegliere la dimensione delle scaffalature & Esplicito, Capitolato [UC6.2]\\
     ROF\_6.2.1 & Le scaffalature devono essere divise in bin codificabili con coordinate & Esplicito, Capitolato + Verbale esterno 04-12-23\\
+    ROF\_6.2.3 & L'utente può scegliere la dimensione del bin per la scaffalatura & Esplicito, Verbale esterno 16-02-24 [UC6.3]\\
     ROF\_7 & L'utente può inserire le scaffalature nello spazio 3D & Esplicito, Capitolato [UC7]\\
     ROF\_8 & L'utente può selezionare una scaffalatura & Implicito, Discussione interna [UC8]\\
     ROF\_8.1 & L'utente può selezionare una scaffalatura dalla libreria & Implicito, Discussione interna [UC8.1]\\
@@ -189,7 +193,7 @@ Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti,
     ROF\_11.2 & L'utente può cancellare la scaffalatura dal render 3D & Implicito, Discussione interna [UC12.3]\\
     ROF\_12 & L'utente può creare un prodotto di forma parallelepipeda & Esplicito, Capitolato + Verbale esterno 04-12-23 [UC13]\\
     ROF\_12.1 & L'utente può scegliere un nome univoco da dare al prodotto & Implicito, Discussione interna [UC13.1]\\
-    RDF\_12.2 & L'utente può scegliere delle dimensioni da dare al prodotto & Esplicito, Verbale esterno 04-12-23 [UC13.2]\\    
+    %RDF\_12.2 & L'utente può scegliere delle dimensioni da dare al prodotto & Esplicito, Verbale esterno 04-12-23 [UC13.2]\\    
     ROF\_13 & L'utente può inserire i prodotti in un bin di una scaffalatura all'interno dello spazio 3D & Esplicito, Capitolato [UC14.2]\\
     ROF\_14 & L'utente può selezionare un prodotto creato & Esplicito, Capitolato [UC15]\\
     ROF\_14.1 & L'utente può selezionare un prodotto dalla libreria & Implicito, Discussione interna [UC15.1]\\
@@ -222,7 +226,7 @@ Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti,
 
     ROQ\_1 & La progettazione e il codice devono seguire le norme e le metriche riportate nel documento \textit{Piano di qualifica} & Implicito, Discussione interna \\
     ROQ\_2 & Dovrà essere fornito un manuale utente sull'uso dell'applicazione & Esplicito, Capitolato \\
-    ROQ\_3 & Il codice sorgente deve essere pubblicato sulla piattaforma GitHub o BitBucket & Esplicito, Capitolato \\
+    ROQ\_3 & Il codice sorgente deve essere pubblicato sulla piattaforma GitHub & Esplicito, Capitolato \\
     ROQ\_4 & Dovrà essere fornita una lista dei bug risolti durante lo sviluppo & Esplicito, Capitolato \\ 
     ROQ\_5 & Dovrà essere fornito lo schema di design della base di dati & Esplicito, Capitolato \\ 
     ROQ\_6 & Dovranno essere forniti i diagrammi UML degli use cases di progetto & Esplicito, Capitolato \\ 
@@ -295,12 +299,13 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     ROF\_5.1.2& L'utente per ogni scaffalatura deve poterne visualizzare il codice & Discussione interna [UC4.1.1.2]\\
     ROF\_5.2& L'utente può visualizzare l'elenco dei prodotti creati & Discussione interna [UC4.2] \\
     ROF\_5.2.1& L'utente per ogni prodotto deve poterne visualizzare il nome & Discussione interna [UC4.2.1.1]\\
-    ROF\_5.2.2& L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Discussione interna [UC4.2.1.2]\\
-    ROF\_5.2.3& L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Discussione interna [UC4.2.2.1] \\
+    %ROF\_5.2.2& L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Discussione interna [UC4.2.1.2]\\
+    ROF\_5.2.2& L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Discussione interna [UC4.2.2.1] \\
     ROF\_6& L'utente può creare delle scaffalature & Capitolato [UC6]\\
     ROF\_6.1& L'utente può scegliere un codice univoco da dare alla scaffalatura & Discussione interna [UC6.1]\\
     ROF\_6.2& L'utente può scegliere la dimensione delle scaffalature & Capitolato [UC6.2]\\
     ROF\_6.2.1& Le scaffalature devono essere divise in bin codificabili con coordinate & Capitolato + Verbale esterno 04-12-23\\
+    ROF\_6.3& L'utente può scegliere la dimensione del bin per la scaffalatura & Verbale esterno 16-02-24 [UC6.3]\\
     ROF\_7& L'utente può inserire le scaffalature nello spazio 3D & Capitolato [UC7]\\
     ROF\_8& L'utente può selezionare una scaffalatura & Discussione interna [UC8]\\
     ROF\_8.1& L'utente può selezionare una scaffalatura dalla libreria & Discussione interna [UC8.1]\\
@@ -317,7 +322,7 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     ROF\_11.2& L'utente può cancellare la scaffalatura dal render 3D & Discussione interna [UC12.3]\\
     ROF\_12& L'utente può creare un prodotto di forma parallelepipeda & Capitolato + Verbale esterno 04-12-23 [UC13]\\
     ROF\_12.1& L'utente può scegliere un nome univoco da dare al prodotto & Discussione interna [UC13.1]\\
-    RDF\_12.2& L'utente può scegliere delle dimensioni da dare al prodotto & Verbale esterno 04-12-23 [UC13.2]    \\
+    %RDF\_12.2& L'utente può scegliere delle dimensioni da dare al prodotto & Verbale esterno 04-12-23 [UC13.2]    \\
     ROF\_13& L'utente può inserire i prodotti in un bin di una scaffalatura all'interno dello spazio 3D & Capitolato [UC14.2]\\
     ROF\_14& L'utente può selezionare un prodotto creato & Capitolato [UC15]\\
     ROF\_14.1& L'utente può selezionare un prodotto dalla libreria & Discussione interna [UC15.1]\\
@@ -409,102 +414,107 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     \rowcolors{1}{white}{white}
     Verbale esterno 04-12-23 & & ROF\_6.2.1\\
     &&ROF\_12\\
-    &&RDF\_12.2\\
+    %&&RDF\_12.2\\
     &&RDF\_15\\
     &&RDF\_17.1\\
     &&ROF\_17.2\\
 
 
-    \rowcolor{gray!10}Discussione interna & & RDF\_2.1\\ 
-    \rowcolor{gray!10}&&RDF\_2.2\\ 
-    \rowcolor{gray!10}&&RDF\_2.3\\ 
-    \rowcolor{gray!10}&&RFF\_3.3.1\\ 
-    \rowcolor{gray!10}&&ROF\_4.1\\ 
-    \rowcolor{gray!10}&&ROF\_4.2\\ 
-    \rowcolor{gray!10}&&ROF\_4.3\\ 
-    \rowcolor{gray!10}&&ROF\_4.4\\ 
-    \rowcolor{gray!10}&&ROF\_5\\ 
-    \rowcolor{gray!10}&&ROF\_5.1\\ 
-    \rowcolor{gray!10}&&ROF\_5.1.1\\ 
-    \rowcolor{gray!10}&&ROF\_5.1.2\\ 
-    \rowcolor{gray!10}&&ROF\_5.2\\ 
-    \rowcolor{gray!10}&&ROF\_5.2.1\\ 
-    \rowcolor{gray!10}&&ROF\_5.2.2\\ 
-    \rowcolor{gray!10}&&ROF\_5.2.3\\ 
-    \rowcolor{gray!10}&&ROF\_6.1\\ 
-    \rowcolor{gray!10}&&ROF\_8\\ 
-    \rowcolor{gray!10}&&ROF\_8.1\\ 
-    \rowcolor{gray!10}&&RFF\_8.1.1\\ 
-    \rowcolor{gray!10}&&ROF\_8.2\\ 
-    \rowcolor{gray!10}&&RFF\_8.1.1\\ 
-    \rowcolor{gray!10}&&RDF\_9.2\\ 
-    \rowcolor{gray!10}&&RDF\_9.3\\ 
-    \rowcolor{gray!10}&&RDF\_10\\ 
-    \rowcolor{gray!10}&&ROF\_11\\ 
-    \rowcolor{gray!10}&&ROF\_11.1\\ 
-    \rowcolor{gray!10}&&ROF\_11.2\\ 
-    \rowcolor{gray!10}&&ROF\_12.1\\ 
-    \rowcolor{gray!10}&&ROF\_14.1\\ 
-    \rowcolor{gray!10}&&RFF\_14.1.1\\ 
-    \rowcolor{gray!10}&&RFF\_14.2.1\\ 
-    \rowcolor{gray!10}&&ROF\_16\\ 
-    \rowcolor{gray!10}&&ROF\_16.1\\ 
-    \rowcolor{gray!10}&&ROF\_16.2\\ 
-    \rowcolor{gray!10}&&ROQ\_1\\ 
-    \rowcolor{gray!10}&&ROV\_1.1\\ 
-    \rowcolor{gray!10}&&RFV\_2\\ 
-    \rowcolor{gray!10}&&ROV\_3\\ 
-    \rowcolor{gray!10}&&ROV\_3.1\\ 
-    \rowcolor{gray!10}&&ROV\_3.2\\ 
-    \rowcolor{gray!10}&&ROV\_3.3\\ 
-    \rowcolor{gray!10}&&ROV\_3.4\\ 
+    \rowcolor{gray!10} Verbale esterno 16-02-24 & & ROF\_6.3\\
 
 
     \rowcolors{1}{white}{white}
+    Discussione interna & & RDF\_2.1\\ 
+    &&RDF\_2.2\\ 
+    &&RDF\_2.3\\ 
+    &&RFF\_3.3.1\\ 
+    &&ROF\_4.1\\ 
+    &&ROF\_4.2\\ 
+    &&ROF\_4.3\\ 
+    &&ROF\_4.4\\ 
+    &&ROF\_5\\ 
+    &&ROF\_5.1\\ 
+    &&ROF\_5.1.1\\ 
+    &&ROF\_5.1.2\\ 
+    &&ROF\_5.2\\ 
+    &&ROF\_5.2.1\\ 
+    %\rowcolor{gray!10}&&ROF\_5.2.2\\ 
+    &&ROF\_5.2.2\\ 
+    &&ROF\_6.1\\ 
+    &&ROF\_8\\ 
+    &&ROF\_8.1\\ 
+    &&RFF\_8.1.1\\ 
+    &&ROF\_8.2\\ 
+    &&RFF\_8.1.1\\ 
+    &&RDF\_9.2\\ 
+    &&RDF\_9.3\\ 
+    &&RDF\_10\\ 
+    &&ROF\_11\\ 
+    &&ROF\_11.1\\ 
+    &&ROF\_11.2\\ 
+    &&ROF\_12.1\\ 
+    &&ROF\_14.1\\ 
+    &&RFF\_14.1.1\\ 
+    &&RFF\_14.2.1\\ 
+    &&ROF\_16\\ 
+    &&ROF\_16.1\\ 
+    &&ROF\_16.2\\ 
+    &&ROQ\_1\\ 
+    &&ROV\_1.1\\ 
+    &&RFV\_2\\ 
+    &&ROV\_3\\ 
+    &&ROV\_3.1\\ 
+    &&ROV\_3.2\\ 
+    &&ROV\_3.3\\ 
+    &&ROV\_3.4\\ 
+
+
+    \rowcolor{gray!10}
     Norme di progetto & & RDQ\_7\\
 
 
-    \rowcolor{gray!10}UC1 & Creazione Magazzino & ROF\_1\\
-    UC1.2 & Creazione manuale del magazzino & ROF\_1.1\\
-    \rowcolor{gray!10}UC1.1 & Creazione magazzino da file & RDF\_1.2\\
-    UC2 & Salvataggio magazzino & RDF\_2\\
-    \rowcolor{gray!10}UC3 & Visualizzazione 3D del magazzino & ROF\_3\\
-    UC3.1 & Visualizzazione 3D spazio del magazzino & ROF\_3.1\\
-    \rowcolor{gray!10}UC3.2 & Visualizzazione 3D scaffalature & ROF\_3.2\\
-    ROF\_3.3 & Visualizzazione 3D prodotti & UC3.3\\
-    \rowcolor{gray!10}UC5 & Modifica vista magazzino & ROF\_4\\
-    UC4.1 & Ingrandimento & ROF\_4.1\\ 
-    \rowcolor{gray!10}UC5.2 & Rimpicciolimento & ROF\_4.2\\ 
-    UC5.3 & Rotazione orizzontale & ROF\_4.3\\ 
-    \rowcolor{gray!10}UC5.4 & Rotazione verticale & ROF\_4.4\\ 
-    UC4 & Visualizzazione libreria & ROF\_5\\ 
-    \rowcolor{gray!10}UC4.1 & Visualizzazione elenco scaffalature & ROF\_5.1\\ 
-    UC4.1.1.1 & Visualizzazione codice scaffalatura & ROF\_5.1.1\\
-    \rowcolor{gray!10}UC4.1.1.2 & Visualizzazione dimensioni scaffalatura & ROF\_5.1.2\\
-    UC4.2 & Visualizzazione elenco prodotti & ROF\_5.2\\ 
-    \rowcolor{gray!10}UC4.2.1.1 & visualizzazione nome prodotto & ROF\_5.2.1\\
-    UC4.2.1.2 & Visualizzazione dimensioni prodotto & ROF\_5.2.2\\
-    \rowcolor{gray!10}UC4.2.2.1 & Visualizzazione scaffalatura di residenza & ROF\_5.2.3\\ 
+    UC1 & Creazione Magazzino & ROF\_1\\
+    \rowcolor{gray!10}UC1.2 & Creazione manuale del magazzino & ROF\_1.1\\
+    UC1.1 & Creazione magazzino da file & RDF\_1.2\\
+    \rowcolor{gray!10}UC2 & Salvataggio magazzino & RDF\_2\\
+    UC3 & Visualizzazione 3D del magazzino & ROF\_3\\
+    \rowcolor{gray!10}UC3.1 & Visualizzazione 3D spazio del magazzino & ROF\_3.1\\
+    UC3.2 & Visualizzazione 3D scaffalature & ROF\_3.2\\
+    \rowcolor{gray!10}ROF\_3.3 & Visualizzazione 3D prodotti & UC3.3\\
+    UC5 & Modifica vista magazzino & ROF\_4\\
+    \rowcolor{gray!10}UC4.1 & Ingrandimento & ROF\_4.1\\ 
+    UC5.2 & Rimpicciolimento & ROF\_4.2\\ 
+    \rowcolor{gray!10}UC5.3 & Rotazione orizzontale & ROF\_4.3\\ 
+    UC5.4 & Rotazione verticale & ROF\_4.4\\ 
+    \rowcolor{gray!10}UC4 & Visualizzazione libreria & ROF\_5\\ 
+    UC4.1 & Visualizzazione elenco scaffalature & ROF\_5.1\\ 
+    \rowcolor{gray!10}UC4.1.1.1 & Visualizzazione codice scaffalatura & ROF\_5.1.1\\
+    UC4.1.1.2 & Visualizzazione dimensioni scaffalatura & ROF\_5.1.2\\
+    \rowcolor{gray!10}UC4.2 & Visualizzazione elenco prodotti & ROF\_5.2\\ 
+    UC4.2.1.1 & visualizzazione nome prodotto & ROF\_5.2.1\\
+    %UC4.2.1.2 & Visualizzazione dimensioni prodotto & ROF\_5.2.2\\
+    \rowcolor{gray!10}UC4.2.2.1 & Visualizzazione scaffalatura di residenza & ROF\_5.2.2\\ 
     UC6 & Creazione scaffalatura & ROF\_6\\
     \rowcolor{gray!10}UC6.1 & Inserimento codice & ROF\_6.1\\
     UC6.2 & Inserimento dimensioni & ROF\_6.2\\
-    \rowcolor{gray!10}UC7 & Posizionamento scaffalatura & ROF\_7\\
-    UC8 & Selezione scaffalatura & ROF\_8\\
-    \rowcolor{gray!10}UC8.1 & Selezione scaffalatura in libreria & ROF\_8.1\\
-    UC8.1.1 & Evidenziazione scaffalatura in libreria & RFF\_8.1.1\\
-    \rowcolor{gray!10}UC8.2 & Selezione scaffalatura in render 3D & ROF\_8.2\\
-    UC8.2.1 & Evidenziazione scaffalatura in render 3D & RFF\_8.1.1\\
-    \rowcolor{gray!10}UC9 & Modifica scaffalatura & ROF\_9\\
-    UC9 & Modifica codice scaffalatura & ROF\_9.1\\
-    \rowcolor{gray!10}UC9.2 &  Modifica codice scaffalatura & RDF\_9.2\\
-    UC9.3 & Modifica posizione scaffalatura & RDF\_9.3\\
-    \rowcolor{gray!10}UC10 & Ricerca scaffalatura per codice & RDF\_10\\
-    UC12 & Cancellazione scaffalatura & ROF\_11\\
-    \rowcolor{gray!10}UC12.2 &  Cancellazione scaffalatura da libreria & ROF\_11.1\\
-    UC12.3 & Cancellazione scaffalatura da render 3D & ROF\_11.2\\
-    \rowcolor{gray!10}UC13 & Creazione prodotto & ROF\_12\\
-    UC13.1 & Inserimento nome & ROF\_12.1\\
-    \rowcolor{gray!10}UC13.2 &  Inserimento dimensioni & RDF\_12.2\\    
+    \rowcolor{gray!10}UC6.3 & Inserimento dimensioni bin & ROF\_6.3\\
+    UC7 & Posizionamento scaffalatura & ROF\_7\\
+    \rowcolor{gray!10}UC8 & Selezione scaffalatura & ROF\_8\\
+    UC8.1 & Selezione scaffalatura in libreria & ROF\_8.1\\
+    \rowcolor{gray!10}UC8.1.1 & Evidenziazione scaffalatura in libreria & RFF\_8.1.1\\
+    UC8.2 & Selezione scaffalatura in render 3D & ROF\_8.2\\
+    \rowcolor{gray!10}UC8.2.1 & Evidenziazione scaffalatura in render 3D & RFF\_8.1.1\\
+    UC9 & Modifica scaffalatura & ROF\_9\\
+    \rowcolor{gray!10}UC9 & Modifica codice scaffalatura & ROF\_9.1\\
+    UC9.2 &  Modifica codice scaffalatura & RDF\_9.2\\
+    \rowcolor{gray!10}UC9.3 & Modifica posizione scaffalatura & RDF\_9.3\\
+    UC10 & Ricerca scaffalatura per codice & RDF\_10\\
+    \rowcolor{gray!10}UC12 & Cancellazione scaffalatura & ROF\_11\\
+    UC12.2 &  Cancellazione scaffalatura da libreria & ROF\_11.1\\
+    \rowcolor{gray!10}UC12.3 & Cancellazione scaffalatura da render 3D & ROF\_11.2\\
+    UC13 & Creazione prodotto & ROF\_12\\
+    \rowcolor{gray!10}UC13.1 & Inserimento nome & ROF\_12.1\\    
+    %\rowcolor{gray!10}UC13.2 &  Inserimento dimensioni & RDF\_12.2\\    
     UC14.2 & Selezione posizione interna alla scaffalatura & ROF\_13\\
     \rowcolor{gray!10}UC15 & Selezione prodotto & ROF\_14\\
     UC15.1 &  Selezione prodotto da libreria & ROF\_14.1\\
@@ -522,7 +532,7 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
 \end{xltabular}
 
 
-
+\newpage
 \subsection{Riepilogo dei requisiti}\label{subsec:riepilogo}
 Di seguito si propone una suddivisione dei requisiti per rilevanza e tipo, conteggiandone il numero:
 
@@ -536,12 +546,12 @@ Di seguito si propone una suddivisione dei requisiti per rilevanza e tipo, conte
         \multicolumn{1}{|c|}{\cellcolor{white}Tipo\textbackslash Priorità} & \textbf{\color{white}Obbligatori} & \textbf{\color{white}Desiderabili} & \textbf{\color{white}Facoltativi} & \textbf{\color{white}Totale}\\ 
         \hline
 
-        \cellcolor{black} \textbf{\color{white}Funzionali} & 47 & 11 & 7 & \textbf{65}\\
+        \cellcolor{black} \textbf{\color{white}Funzionali} & 47 & 10 & 7 & \textbf{64}\\
         \cellcolor{black} \textbf{\color{white}Di qualità} & 6 & 1 & 0 & \textbf{7}\\
         \cellcolor{black} \textbf{\color{white}Di sistema} & 7 & 0 & 2 & \textbf{9}\\
 
         \hline\hline
-        \cellcolor{black} \textbf{\color{white}Totale complessivo} & \textbf{60} & \textbf{12} & \textbf{9} & \textbf{81}\\
+        \cellcolor{black} \textbf{\color{white}Totale complessivo} & \textbf{60} & \textbf{11} & \textbf{9} & \textbf{80}\\
         \hline
     \end{tabular}
 \end{table}
