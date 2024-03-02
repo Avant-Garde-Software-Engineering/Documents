@@ -86,6 +86,7 @@ Come da specifiche del proponente (si veda \ref{sec:riferimenti_normativi} per i
 \input{UC_texts/UC25}
 \input{UC_texts/UC26}
 \input{UC_texts/UC27}
+\input{UC_texts/UC28}
 \setcounter{secnumdepth}{3} 
 
 
@@ -146,6 +147,7 @@ Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti,
 
     ROF\_1 & L'utente può creare un ambiente di magazzino tridimensionale & Esplicito, Capitolato [UC1]\\
     ROF\_1.1 & L'utente può creare un ambiente di magazzino tridimensionale da zero & Esplicito, Capitolato [UC1.2]\\
+    ROF\_1.1.1 & L'utente puó creare una planimetria personalizzata & Esplicito, Verbale Esterno 27/02/2024 [UC1.2.1]\\
     RDF\_1.2 & L'utente può caricare un layout memorizzato in database per inizializzare l'ambiente & Esplicito, Capitolato [UC1.1]\\
     RFF\_1.3 & L'utente può caricare un file in formato svg per inizializzare l'ambiente & Esplicito, Capitolato \\
     RDF\_2 & L'utente può salvare i dati del magazzino creato in un database & Esplicito, Capitolato [UC2]\\  
@@ -232,6 +234,7 @@ Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti,
     ROQ\_5 & Dovrà essere fornito lo schema di design della base di dati & Esplicito, Capitolato \\ 
     ROQ\_6 & Dovranno essere forniti i diagrammi UML degli use cases di progetto & Esplicito, Capitolato \\ 
     RDQ\_7 & Il codice JavaScript deve essere supportato dall'utilizzo di JSDoc & Implicito, Norme di Progetto \\
+    RDQ\_8 & Deve essere possibile suddividere il magazzino in zone adibite ad uno scopo, visualizzandole distintamente nell'ambiente tridimensionale & Esplicito, Verbale 27-02-2024 \\
     \hline
     %se useremo typescript con supporto di analisi del codice ESLint
 \end{xltabular}
@@ -277,6 +280,7 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     ROF\_1& L'utente può creare un ambiente di magazzino tridimensionale & Capitolato [UC1]\\
     ROF\_1.1& L'utente può creare un ambiente di magazzino tridimensionale da zero & Capitolato [UC1.2]\\
     RDF\_1.2& L'utente può caricare un layout memorizzato in database per inizializzare l'ambiente & Capitolato [UC1.1]\\
+    ROF\_1.1.1 & L'utente puó creare una planimetria personalizzata & Verbale Esterno 27/02/2024 [UC1.2.1]\\
     RFF\_1.3& L'utente può caricare un file in formato svg per inizializzare l'ambiente & Capitolato \\
     RDF\_2& L'utente può salvare i dati del magazzino creato in un database & Capitolato [UC2]  \\
     RDF\_2.1& L'utente salva i dati dello spazio del magazzino & Discussione interna   \\
@@ -357,6 +361,8 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     ROV\_3.3& L'applicativo deve essere accessibile e utilizzabile dalla versione 104 di Opera & Discussione interna\\
     ROV\_3.4& L'applicativo deve essere accessibile e utilizzabile dalla versione 16.6 di Safari & Discussione interna\\
     RFV\_4& L'applicativo deve essere accessibile e utilizzabile da browser su tablet, per le versioni supportate fare riferimento alle controparti PC & Verbale esterno 24-10-23\\
+    RDQ\_8 & Deve essere possibile suddividere il magazzino in zone adibite ad uno scopo, visualizzandole distintamente nell'ambiente tridimensionale & Verbale Esterno 27-02-2024 [UC28] \\
+    \hline
 
     \hline
 \end{xltabular}
@@ -425,8 +431,10 @@ Non è stato individuato alcun requisito prestazionale durante l’analisi del c
     \rowcolor{gray!10} Verbale esterno 16-02-24 & & ROF\_6.3\\
     \rowcolor{gray!10}&&ROF\_5.1.3\\
 
-
-    \rowcolors{1}{white}{white}
+    \rowcolors{1}{white}{white} Verbale esterno 27-02-24 & & ROF\_1.2.1\\
+    \rowcolors{1}{white}{white} & & RDQ\_8\\
+    
+    
     Discussione interna & & RDF\_2.1\\ 
     &&RDF\_2.2\\ 
     &&RDF\_2.3\\ 
@@ -548,12 +556,12 @@ Di seguito si propone una suddivisione dei requisiti per rilevanza e tipo, conte
         \multicolumn{1}{|c|}{\cellcolor{white}Tipo\textbackslash Priorità} & \textbf{\color{white}Obbligatori} & \textbf{\color{white}Desiderabili} & \textbf{\color{white}Facoltativi} & \textbf{\color{white}Totale}\\ 
         \hline
 
-        \cellcolor{black} \textbf{\color{white}Funzionali} & 48 & 10 & 7 & \textbf{65}\\
-        \cellcolor{black} \textbf{\color{white}Di qualità} & 6 & 1 & 0 & \textbf{7}\\
+        \cellcolor{black} \textbf{\color{white}Funzionali} & 49 & 10 & 7 & \textbf{65}\\
+        \cellcolor{black} \textbf{\color{white}Di qualità} & 6 & 2 & 0 & \textbf{7}\\
         \cellcolor{black} \textbf{\color{white}Di sistema} & 7 & 0 & 2 & \textbf{9}\\
 
         \hline\hline
-        \cellcolor{black} \textbf{\color{white}Totale complessivo} & \textbf{61} & \textbf{11} & \textbf{9} & \textbf{81}\\
+        \cellcolor{black} \textbf{\color{white}Totale complessivo} & \textbf{62} & \textbf{12} & \textbf{9} & \textbf{83}\\
         \hline
     \end{tabular}
 \end{table}
