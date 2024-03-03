@@ -42,46 +42,43 @@
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:} L'applicazione è avviata e funzionante e l'utente desidera creare un nuovo magazzino 3D.
     \item \textbf{Post-condizione:} Un nuovo magazzino vuoto viene creato e potrà essere visualizzato.
-    \item \textbf{Scenario Principale:}  L’utente accede al sistema e sceglie la modalità di costruzione manuale. Inserisce i dati del magazzino, quali altezza [UC1.2.1], profondità [UC1.2.2], larghezza [UC1.2.3] e nome [UC1.2.4]), che vengono correttamente processati e il magazzino viene costruito.
+    \item \textbf{Scenario Principale:}  L’utente accede al sistema e sceglie la modalità di costruzione manuale. Inserisce i dati del magazzino, quali la planimetria [UC1.2.1], l'altezza [UC1.2.3] e il nome  [UC1.2.4], che vengono correttamente processati e il magazzino viene costruito.
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} -
 \end{itemize}
 
 
-\paragraph{UC1.2.1 - Inserimento altezza}
+\paragraph{UC1.2.1 - Creazione planimetria personalizzata}
+\begin{itemize}
+    \item \textbf{Attori:} User.
+    \item \textbf{Pre-condizione:}  L'applicazione è avviata e funzionante e l'utente ha scelto di creare manualmente un nuovo magazzino 3D.
+    \item \textbf{Post-condizione:} Viene inserita la planimetria per il nuovo magazzino.
+    \item \textbf{Scenario Principale:}  L’utente sceglie la forma e le relative misure da dare allo spazio del magazzino.
+    \item \textbf{Generalizzazioni:} -
+    \item \textbf{Estensioni:} È presente una estensione:
+    \begin{itemize}
+        \item UC1.2.2 - Visualizzazione errore creazione planimetria.
+    \end{itemize}
+\end{itemize}
+
+
+\paragraph{UC1.2.2 - Visualizzazione errore creazione planimetria}
+\begin{itemize}
+    \item \textbf{Attori:} User.
+    \item \textbf{Pre-condizione:}  L'utente ha inserito una planimetria invalida.
+    \item \textbf{Post-condizione:} L'utente visualizza un messaggio d'errore e l'operazione fallisce.
+    \item \textbf{Scenario Principale:} L'utente visualizza un messaggio informativo sull'errore e ne conferma la ricezione. L'operazione, di conseguenza, fallisce.
+    \item \textbf{Generalizzazioni:} -
+    \item \textbf{Estensioni:} -
+\end{itemize}
+
+
+\paragraph{UC1.2.3 - Inserimento altezza}
 \begin{itemize}
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:}  L'applicazione è avviata e funzionante e l'utente ha scelto di creare manualmente un nuovo magazzino 3D.
     \item \textbf{Post-condizione:} Viene inserita l'altezza per il nuovo magazzino.
     \item \textbf{Scenario Principale:}  L’utente inserisce l'altezza del magazzino da costruire.
-    \item \textbf{Generalizzazioni:} -
-    \item \textbf{Estensioni:} È presente una estensione:
-    \begin{itemize}
-        \item UC21 - Visualizzazione errore inserimento misura.
-    \end{itemize}
-\end{itemize}
-
-
-\paragraph{UC1.2.2 - Inserimento profondità}
-\begin{itemize}
-    \item \textbf{Attori:} User.
-    \item \textbf{Pre-condizione:}  L'applicazione è avviata e funzionante e l'utente ha scelto di creare manualmente un nuovo magazzino 3D.
-    \item \textbf{Post-condizione:} Viene inserita la profondità per il nuovo magazzino.
-    \item \textbf{Scenario Principale:}  L’utente inserisce la profondità del magazzino da costruire.
-    \item \textbf{Generalizzazioni:} -
-    \item \textbf{Estensioni:} È presente una estensione:
-    \begin{itemize}
-        \item UC21 - Visualizzazione errore inserimento misura.
-    \end{itemize}
-\end{itemize}
-
-
-\paragraph{UC1.2.3 - Inserimento larghezza}
-\begin{itemize}
-    \item \textbf{Attori:} User.
-    \item \textbf{Pre-condizione:}  L'applicazione è avviata e funzionante e l'utente ha scelto di creare manualmente un nuovo magazzino 3D.
-    \item \textbf{Post-condizione:} Viene inserita la larghezza per il nuovo magazzino.
-    \item \textbf{Scenario Principale:}  L’utente inserisce la larghezza del magazzino da costruire.
     \item \textbf{Generalizzazioni:} -
     \item \textbf{Estensioni:} È presente una estensione:
     \begin{itemize}
@@ -104,7 +101,7 @@
 \end{itemize}
 
 
-\paragraph{UC1.2.6 - Visualizzazione errore inserimento nome}
+\paragraph{UC1.2.5 - Visualizzazione errore inserimento nome}
 \begin{itemize}
     \item \textbf{Attori:} User.
     \item \textbf{Pre-condizione:}  L'utente ha inserito come nome del magazzino un valore comprendente caratteri invalidi.
