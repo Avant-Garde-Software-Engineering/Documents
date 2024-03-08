@@ -1,0 +1,43 @@
+\section{Scopo dell'incontro} \label{sec:scopo}
+La riunione ha il duplice scopo di discutere con il proponente il documento di Analisi dei requisiti v.1.0.0, precedentemente inviato, e di condividere il progresso relativo al PoC, in modo tale da garantire la coerenza di entrambi i prodotti con gli obiettivi di \nomeAzienda. 
+
+\section{Argomenti} \label{sec:argomenti}
+\noindent Si riportano di seguito gli argomenti trattati in dettaglio.
+
+\subsection{Discussione riguardante l'Analisi dei requisiti} \label{sec:argomenti:analisi}
+    Il proponente comunica al team che l'Analisi dei requisiti è conforme alle sue aspettative. 
+    Tuttavia, esprime anche alcuni dubbi sorti durante la lettura del documento, i quali vengono chiariti durante la riunione. Questi dubbi riguardano:
+    \begin{itemize}
+        \item \textbf{Modalità assistita e visualizzazione 3D} \\
+        Il proponente manifesta la sua perplessità sul significato di ``modalità assistita'', termine introdotto alla sezione \textit{2.2 - Descrizione del prodotto} del documento in questione. Con questa modalità si indica la possibilità, alternativa e parallela al render 3D, di gestire e visualizzare gli elementi del magazzino attraverso bottoni, pannelli informativi e menù contestuali.
+        Non si fa invece riferimento a nessuna divisione di responsabilità tra gli utenti.
+        Dopo una breve spiegazione in merito, il proponente conferma la scelta, mostrandosi d'accordo sull'inserimento di questa modalità.
+    \end{itemize}
+    Inoltre, il proponente dispensa alcuni consigli relativi a:
+    \begin{itemize}
+        \item \textbf{Dimensione degli oggetti}\\
+        Con riferimento al caso d'uso \textit{UC13 - Creazione prodotto}, il proponente suggerisce di semplificare la creazione del prodotto eliminando il sottocaso \textit{UC13.2 - Inserimento dimensioni}, in altre parole di rendere il prodotto di dimensioni fisse (uguali alla dimensione del bin) e non modificabili dall'utente.
+    \end{itemize}
+
+\subsection{Discussione riguardante il PoC} \label{sec:argomenti:discussione_poc}
+Viene mostrato al proponente il PoC realizzato finora, il quale procede conformemente alle aspettative. 
+A tal proposito, egli ha inoltre fornito alcuni consigli e richieste da implementare, ovvero:
+\begin{itemize}
+    \item \textbf{Separazione visuale dei bin di una scaffalatura}\\
+    Nello stato attuale, una volta creata una scaffalatura, non è presente un modo di distinguere visivamente i diversi bin vuoti che la compongono. Per questo motivo, il proponente consiglia di aggiungere una separazione grafica in modo da poter capire facilmente quanti bin sono presenti in una scaffalatura.
+    \item \textbf{Aggiunta della voce ``Dimensione bin'' nella creazione di uno scaffale}\\
+    Il proponente richiede la possibilità di creare una scaffalatura contenente bin di dimensioni variabili a seconda dell'input fornito dall'utente, perciò si rende necessario aggiungere una voce apposita nel form di creazione dello scaffale.
+    \item \textbf{Possibile rimozione dell'altezza del magazzino}\\
+    Il proponente, notando che gli utenti possono scegliere l'altezza del magazzino, ha informato il team sulla possibilità di rimuovere questa opzione, in quanto non è strettamente necessaria per la creazione del magazzino. Lo scopo principale è infatti quello di gestire le dimensioni orizzontali più che verticali. Se mantenuta, consiglia di modificarla leggermente per renderla più intuitiva per l'utente dal punto di vista grafico.
+\end{itemize}
+
+\subsection{Altri argomenti generici} \label{sec:argomenti:altri}
+    Al termine della riunione, sono stati posti dal proponente alcuni quesiti riguardanti il progetto più in generale, quali:
+    \begin{itemize}
+        \item \textbf{Tempistiche previste e prossimi incontri}\\
+        Si prevede di completare il PoC entro il 23/02/24 e di fissare una riunione immediatamente dopo per assicurarsi che anche le ultime funzionalità aggiunte rispettino i desideri del proponente.
+        \item \textbf{Differenze con progetti effettuati in precedenza ed eventuali difficoltà incontrate}\\
+        Il team rileva delle differenze sul livello di formalità e dettaglio del progetto. Infatti, mentre i progetti precedenti si concentravano sulla produzione di codice, nel progetto corrente assumono una parte altrettanto importante documenti e metodicità nel lavoro.
+        \item \textbf{Scelte progettuali effettuate per il PoC}\\
+        Il team si è concentrato sull'implementazione dei requisiti minimi che risultavano essere di maggiore importanza per lo sviluppo dell'applicativo. Le tecnologie scelte per lo sviluppo dell'interfaccia sono state HTML, CSS e JavaScript (con l'uso della libreria Three.js per la gestione della parte 3D), mentre per quanto riguarda il back-end si è scelto di utilizzare Node.js. Scelte riguardanti efficienza, scalabilità e sicurezza non sono state prese in considerazione per il PoC, vista la sua natura ``usa-e-getta" atta a verificare la fattibilità del capitolato.
+    \end{itemize}
