@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{array}
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -7,12 +8,13 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{colortbl}
+\usepackage{float}
+\usepackage{placeins}
+%\usepackage[table]{xcolor}
 
-\def \titoloDocumento {Analisi dei requisiti}    %modificare con il titolo del documento
-
-%rimuovere se non è un verbale esterno
-\def \nomeAzienda {NOME AZIENDA}    %modificare con il nome dell'azienda
+\def \titoloDocumento {ANALISI DEI REQUISITI}    %modificare con il titolo del documento
 
 \geometry{a4paper,total={160mm,240mm},top=30mm,}
 \begin{document}
@@ -24,17 +26,33 @@
     \headsep = 15mm
 
     \input{changelog.tex}
-    
-    \input{signature.tex}
+    \input{signature}
     \newpage
-    
+    {
     \renewcommand{\contentsname}{Indice}    %rimuovere se non si vuole l'indice
+    \hypersetup{linkcolor=black}
     \tableofcontents    %rimuovere se non si vuole l'indice
     \newpage    %rimuovere se non si vuole l'indice
-
-    \input{info.tex}
+    }
+    \renewcommand{\listfigurename}{Elenco delle figure}    %rimuovere le tre righe se non ci sono figure
+    \listoffigures
     \newpage
 
+    \renewcommand{\listtablename}{Elenco delle tabelle}    %rimuovere le tre righe se non ci sono tabelle
+    \listoftables
+    \newpage
+
+    \newenvironment{beginningnote}
+      {\clearpage
+       \thispagestyle{empty}% no header and footer
+       \vspace*{\stretch{1}}% some space at the top
+       \section*{Note}
+      }
+      {\par % end the paragraph
+       \vspace{\stretch{3}} % space at bottom is three times that at the top
+       \clearpage           % finish off the page
+  }
+  
     \input{content.tex}
       
 \end{document}

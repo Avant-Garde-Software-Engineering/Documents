@@ -1,0 +1,28 @@
+\subsection{UC10 - Ricerca scaffalatura per codice}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{UC_diagrams_1-10/UC10.drawio.png}
+   \caption{Diagramma UML UC10 - Ricerca scaffalatura per codice}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Attori:} User.
+    \item \textbf{Pre-condizione:} L'utente ha creato un magazzino [UC1].
+    \item \textbf{Post-condizione:} L'utente può cercare una scaffalatura dando in input un codice e può visualizzarne i risultati [UC11].
+    \item \textbf{Scenario Principale:} L'utente inserisce un codice per ricercare la scaffalatura corrispondente. I risultati della ricerca possono poi essere visualizzati [UC11].
+    \item \textbf{Generalizzazioni:} -
+    \item \textbf{Estensioni:} È presente una estensione:
+    \begin{itemize}
+        \item UC10.1 - Visualizzazione errore codice inesistente.
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{UC10.1 - Visualizzazione errore codice inesistente}
+\begin{itemize}
+    \item \textbf{Attori:} User.
+    \item \textbf{Pre-condizione:}  L'utente ha inserito per la ricerca un codice che non corrisponde a nessuna scaffalatura.
+    \item \textbf{Post-condizione:}  L'utente visualizza un messaggio d'errore e non sarà visualizzato nessun risultato per la ricerca.
+    \item \textbf{Scenario Principale:}  L'utente visualizza un messaggio informativo sull'errore e ne conferma la ricezione. L'utente non visualizzerà alcun risultato della ricerca.
+    \item \textbf{Generalizzazioni:} -
+    \item \textbf{Estensioni:} -
+\end{itemize}
