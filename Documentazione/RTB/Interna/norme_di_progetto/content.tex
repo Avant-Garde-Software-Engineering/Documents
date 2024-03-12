@@ -77,7 +77,7 @@ Il documento sarà diviso nelle seguenti parti:
 \begin{itemize}
     \item \textbf{Qualità di processo}: specifica le attività e metriche da adottare per assicurare un controllo sulla qualità dei processi;
     \item \textbf{Qualità di prodotto}: specifica le attività e metriche da adottare per assicurare un controllo sulla qualità dei prodotti;
-    \item \textbf{Test}: specifice quali test effettuare per garantire conformità con i requisiti prestabiliti;
+    \item \textbf{Test}: specifica quali test effettuare per garantire conformità con i requisiti prestabiliti;
     \item \textbf{Resoconto}: retrospettiva dell'attività di verifica con eventuali proposte di miglioramento.
 \end{itemize}
 
@@ -188,7 +188,7 @@ A tal fine, questa attività si articola nelle seguenti sotto-attività:
 \subsubsection{Codifica} 
 Con l'attività di codifica, i programmatori si impegnano a concretizzare quanto prodotto con l'attività di progettazione attraverso la programmazione del software vero e proprio.
 
-Lo scopo è quello di ottenere un prodotto software che rispetti i requisti e le richieste concordati con il proponente e che ne garantisca la qualità. In particolare, il codice generato dovrà essere uniforme e leggibile in modo da agevolarne la verifica, la validazione ed eventuali modifiche future.
+Lo scopo è quello di ottenere un prodotto software che rispetti i requisiti e le richieste concordati con il proponente e che ne garantisca la qualità. In particolare, il codice generato dovrà essere uniforme e leggibile in modo da agevolarne la verifica, la validazione ed eventuali modifiche future.
 
 %aggiungere strumenti per la codifica?
 
@@ -317,7 +317,7 @@ Il registro delle modifiche descrive le modifiche apportate al documento nel cor
     \item Descrizione della modifica
 \end{itemize}
 Le modifiche sono riportate, nell'ordine, dalla più vecchia alla più nuova.
-\par Nonostante il verbale sia un documento che, per sua natura, richiede meno modifiche rispetto agli altri (che hanno uno sviluppo più incrementale), il gruppo ha scelto di inserirere un changelog per tenere traccia anche di eventuali richieste di modifica da parte dell'approvatore esterno prima della sua approvazione finale.
+\par Nonostante il verbale sia un documento che, per sua natura, richiede meno modifiche rispetto agli altri (che hanno uno sviluppo più incrementale), il gruppo ha scelto di inserire un changelog per tenere traccia anche di eventuali richieste di modifica da parte dell'approvatore esterno prima della sua approvazione finale.
 \par Alla fine del registro delle modifiche deve essere presente, nel solo caso dei verbali esterni, uno spazio per la firma di approvazione del partecipante esterno. Questa sezione deve contenere:
 \begin{itemize}
     \item Versione del documento
@@ -383,7 +383,7 @@ Per la scrittura dei commenti a supporto del codice del progetto si utilizza JSD
 La gestione della configurazione è l'attività dello sviluppo software che si occupa della gestione e controllo dei software items\textsuperscript{G}, in particolare della documentazione e del codice prodotto, nel corso del progetto.
 \par È un processo particolarmente importante: permette di tracciare le modifiche nel tempo, migliora la collaborazione attraverso la condivisione dei file ed assicura una maggiore affidabilità del sistema, perché facilita l'individuazione e la risoluzione di errori.
 \subsubsection{Versionamento}
-Per poter identificare una particolare istanza di un software item in uno specifico momento temporale e differenziarla dalle altre, il gruppo ha scelto di assegnare un codice di versionamento a ciscun item che si preveda possa subire modifiche ed evolvere nel corso del progetto. Il codice utilizza cifre numeriche ed è scritto come segue:
+Per poter identificare una particolare istanza di un software item in uno specifico momento temporale e differenziarla dalle altre, il gruppo ha scelto di assegnare un codice di versionamento a ciascun item che si preveda possa subire modifiche ed evolvere nel corso del progetto. Il codice utilizza cifre numeriche ed è scritto come segue:
 \begin{center}
     \textbf{[X].[Y].[Z]}
 \end{center}
@@ -411,7 +411,7 @@ Altra caratteristica importante di Git è la sua flessibilità di utilizzo: infa
     \item \textbf{Main}: è il ramo principale, sul quale si trova l'ultima versione funzionante e rilasciata del prodotto. Non si lavora mai direttamente sul ramo principale, per lasciarne intatto il contenuto
     \item \textbf{Release}: è il ramo in cui si lavora per fare le ultime operazioni prima di un rilascio: una volta che tutto è pronto, il suo contenuto viene passato al main e rappresenta ufficialmente una nuova versione
     \item \textbf{Develop}: è il ramo su cui si lavora principalmente, contiene il prodotto incompleto e in fase di lavorazione. Quando lo sviluppo raggiunge una fase tale per cui il prodotto è pronto per il rilascio, si passa il contenuto nel ramo release per gli ultimi ritocchi.
-    \item \textbf{Feature}: ogni ramo feature si stacca dal develop e serve per lavorare separatemente su una specifica feature del prodotto (una parte di codice oppure un documento), in modo tale che il ramo develop non subisca alterazioni mentre la feature è in fase di lavorazione.
+    \item \textbf{Feature}: ogni ramo feature si stacca dal develop e serve per lavorare separatamente su una specifica feature del prodotto (una parte di codice oppure un documento), in modo tale che il ramo develop non subisca alterazioni mentre la feature è in fase di lavorazione.
 \end{itemize}
 In particolare, un aspetto importante di questo workflow è la separazione dei lavori: infatti, permette a ciascun utente di lavorare sul progetto senza bloccare gli altri, perché si lavora su rami feature separati e, in ogni caso, non si lavora sul main, che quindi contiene sempre un prodotto funzionante e completo.
 \par Maggiori informazioni sono presenti alla sezione \ref{sec:riferimenti_esterni:materiali_di_studio}, che contiene documentazione e tutorial sugli strumenti di progetto.
@@ -494,7 +494,7 @@ A tal fine si utilizzano strumenti sia manuali che automatici:
 \begin{itemize}
     \item \textbf{Controllo del verificatore:} il verificatore controlla completamente il documento alla ricerca di eventuali errori (metodo walkthrough);
     \item \textbf{Controllo dei punti della Lista di Controllo\textsuperscript{G}:} il verificatore controlla che l'oggetto da verificare non contenga nessun errore presente nella ``Lista di Controllo''\textsuperscript{G} (attività di inspection);
-    \item \textbf{Plug-in degli editor:} si utilizzano dei plug-in offerti dagli editor di \LaTeX usati dal gruppo (Overleaf, VS-Code) per automatizzare il controllo della correttezza ortografica.
+    \item \textbf{Plug-in degli editor:} si utilizzano dei plug-in offerti dagli editor di \LaTeX\space usati dal gruppo (Overleaf, VS-Code) per automatizzare il controllo della correttezza ortografica.
 \end{itemize}
 
 \paragraph{Verifica del codice}
@@ -587,7 +587,7 @@ In particolare, le sue responsabilità sono:
 \begin{itemize}
     \item Redazione del \textit{Piano di progetto} %mettere link
     assieme all'amministratore per pianificare le milestones\textsuperscript{G}.
-    \item Approvazione delle task verificate (su GitHub rilasciando le feature approvate sul branch main e, nello specifico per la documentazione, trasformando il codice \LaTeX in formato PDF);
+    \item Approvazione delle task verificate (su GitHub rilasciando le feature approvate sul branch main e, nello specifico per la documentazione, trasformando il codice \LaTeX\space in formato PDF);
     \item Gestire le comunicazioni esterne.
 \end{itemize}
 
@@ -672,7 +672,7 @@ In particolare, vengono identificate le seguenti fasi:
 \end{itemize}
 
 \subsection{Gestione delle infrastrutture}\label{sec:processi_organizzativi:gestione_infrastrutture}
-Per la gestione dei processi organizzativi, i.e. per coordinamento e pianificazione, si rendono necessari degli strumenti che ne garantiscano l'efficacia e l'efficienza. Questi strumenti fanno parte della cosidetta infrastruttura organizzativa.
+Per la gestione dei processi organizzativi, i.e. per coordinamento e pianificazione, si rendono necessari degli strumenti che ne garantiscano l'efficacia e l'efficienza. Questi strumenti fanno parte della cosiddetta infrastruttura organizzativa.
 Di seguito vengono riportati gli strumenti utilizzati.
 
 \subsubsection{Strumenti}
@@ -706,7 +706,7 @@ Viene utilizzato come strumento di video-chiamata per le riunioni esterne con co
 Lo sviluppo di un progetto dipende notevolmente dalle abilità e dalle conoscenze del team: se i componenti sanno utilizzare gli strumenti e conoscono l'argomento del progetto, allora saranno in grado di realizzare un prodotto di qualità, più efficace ed efficiente e con tempi di lavoro ridotti.
 \subsubsection{Modalità di formazione}
 La materia di interesse, la programmazione 3D, è un argomento che i membri del gruppo non hanno avuto modo di approfondire nel loro percorso formativo, così come gli strumenti adottati.
-\par Per questi motivi, il gruppo si impegna a mantenere un processo di formazione autonoma ed individuale durante il corso del progetto e a definire una serie di procedure ed automatismi (dove possibile), allo scopo di lavorare sfruttando interamente le opportunità che gli strumenti offrono, per poter soddisfare pienamente le aspettative del commitente e del proponente.
+\par Per questi motivi, il gruppo si impegna a mantenere un processo di formazione autonoma ed individuale durante il corso del progetto e a definire una serie di procedure ed automatismi (dove possibile), allo scopo di lavorare sfruttando interamente le opportunità che gli strumenti offrono, per poter soddisfare pienamente le aspettative del committente e del proponente.
 \par I materiali di studio suggeriti possono essere consultati nella sezione \ref{sec:riferimenti_esterni:materiali_di_studio}, che riporta i riferimenti esterni alla documentazione e tutorial per gli strumenti e le tecnologie utilizzati nel progetto.
 
 \newpage
