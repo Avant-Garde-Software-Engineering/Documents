@@ -185,12 +185,111 @@ A tal fine, questa attività si articola nelle seguenti sotto-attività:
     unità per ogni componente. Questa fase della progettazione costituisce la Product Baseline (PB)\textsuperscript{G}.
 \end{itemize}
 
-\subsubsection{Codifica} 
+\subsubsection{Codifica}
 Con l'attività di codifica, i programmatori si impegnano a concretizzare quanto prodotto con l'attività di progettazione attraverso la programmazione del software vero e proprio.
 
 Lo scopo è quello di ottenere un prodotto software che rispetti i requisiti e le richieste concordati con il proponente e che ne garantisca la qualità. In particolare, il codice generato dovrà essere uniforme e leggibile in modo da agevolarne la verifica, la validazione ed eventuali modifiche future.
 
-%aggiungere strumenti per la codifica?
+\paragraph{Convenzioni adottate}\label{sec:codifica:convenzioni}
+\subparagraph{Convenzioni linguistiche e stilistiche.}
+Per uniformare e formalizzare il processo di codifica vengono adottate alcune convenzioni linguistiche e stilistiche, come riportato di seguito.
+\begin{itemize}
+    \item \textit{Uso dell'inglese:} nomi di variabili, metodi, classi, commenti e nomi di file andranno scritti in inglese, di fatto la lingua franca della programmazione;
+    \item \textit{Indentazione:} i blocchi di codice dovranno avere un'indentazione di quattro spazi;
+    \item \textit{Parentesi graffe:} la parentesi aperta dovrà essere inserita nella stessa riga di dichiarazione del costrutto, separata da uno spazio, mentre la parentesi chiusa dovrà essere inserita con la giusta indentazione alla riga immediatamente successiva all’ultima riga di codice del costrutto;
+    \item \textit{Metodi:} il nome dei metodi dovrà rispettare il camelCase ed essere il più possibile significativo;
+    \item \textit{Classi e componenti:} il nome di classi e componenti dovrà rispettare il PascalCase ed essere il più possibile significativo;
+    \item \textit{Variabili:} il nome dovrà rispettare il camelCase ed essere il più possibile significativo; in aggiunta, la dichiarazione delle variabili dovrà avvenire, se possibile, all'inizio del blocco di codice corrispondente;
+    \item \textit{Costanti:} il nome dovrà essere il più possibile significativo ed essere scritto tutto in maiuscolo; nel caso di nome composto, le parole dovranno essere separate dal carattere ``\_'';
+    \item \textit{Organizzazione dei tag per React:} l'informazione interna al tag se è troppo lunga per essere mantenuta nella stessa linea, deve essere riportata a capo indentando le informazioni; se il tag non ha figli si utilizza una self-close.
+\end{itemize}
+
+\subparagraph{Convenzioni sull'organizzazione.} Per quanto riguarda la gestione dei file si decide di adottare le seguenti norme.
+\begin{itemize}
+    \item \textit{Nome dei file:} i file dovranno rispettare il PascalCase e specificare il contenuto degli stessi;
+    \item \textit{Struttura:} il codice deve essere organizzato secondo la struttura raccomandata dalle linee guida di Next.js (disponibile a questo \href{https://nextjs.org/docs/app/building-your-application/routing/colocation#project-organization-features}{link}).
+\end{itemize}
+
+\subsubsection{Strumenti}\label{sec:sviluppo:strumenti}
+Di seguito si riportano gli strumenti utilizzati per la realizzazione del processo di sviluppo.
+
+\paragraph{Node.js e npm}
+Node.js è un framework JavaScript multipiattaforma e open-source tra i più utilizzati. In particolare, si tratta di un ambiente di esecuzione che permette di eseguire codice Javascript come un qualsiasi linguaggio di programmazione, al di fuori dei browser. Il gruppo ha deciso di utilizzare questo framework per la gestione back-end della web-app. 
+
+\noindent Mentre, come gestore di pacchetti, si è deciso di utilizzare il gestore di default di Node.js, ovvero npm.
+
+\noindent Gli strumenti sono reperibili ai siti:
+\begin{center}
+\begin{itemize}
+    \item Node.js: \url{https://nodejs.org/en}
+    \item npm: \url{https://www.npmjs.com/}
+\end{itemize}
+\end{center}
+
+\paragraph{React.js}
+Si tratta di una libreria open-source per la creazione di interfacce utente in JavaScript. Il gruppo ha deciso di utilizzare questa libreria per creare le varie componenti dell'UI in quanto particolarmente adatta allo sviluppo di componenti riutilizzabili e con dati variabili nel tempo.
+
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://react.dev/}
+\end{center}
+
+\paragraph{Next.js}
+Next.js è un framework open-source che permette di costruire e distribuire rapidamente applicazioni su larga scala e pronte per la produzione, renderizzandole lato server. In particolare, si basa ed estende la libreria JavaScript React e utilizza Node.js come ambiente run-time, sposandosi dunque perfettamente con gli altri strumenti utilizzati.
+Next.js viene dunque utilizzato dal gruppo per migliorare le funzionalità di React fornendo una struttura e degli strumenti che ne migliorano le prestazioni. 
+ 
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://nextjs.org/}
+\end{center}
+
+\paragraph{Three.js}
+Three.js è una libreria JavaScript open-source utilizzata per la realizzazione di contenuti 3D per il Web. In particolare, utilizza le API WebGL per integrare ambienti 3D a siti web tramite semplice canvas html.
+Viene dunque scelta questa libreria per lo sviluppo della parte 3D del progetto.
+ 
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://threejs.org/}
+\end{center}
+
+\paragraph{React Three Fiber e Drei}
+React Three Fiber (R3F) è un React renderer per Three.js. Esso permette di costruire componenti, basati sulla logica 3D di Three.js, che siano riutilizzabili e indipendenti. Il gruppo ha scelto questo strumento per integrare al meglio Three.js con React. 
+
+\noindent Drei, invece, è semplicemente una raccolta di ``astrazioni già pronte all'uso'', ovvero di componenti generici basati su React Three Fiber che sono già completamente funzionali.
+
+ \noindent Gli strumenti sono reperibili ai siti:
+\begin{center}
+\begin{itemize}
+    \item R3F: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction}
+    \item Drei: \url{https://github.com/pmndrs/drei}
+\end{itemize}
+\end{center}
+
+\paragraph{Zustand}
+Zustand è una libreria utilizzata per la gestione degli state in React. Il gruppo utilizza questo strumento per una gestione efficiente, ma comunque semplice, dello stato tra le diverse componenti dell'applicazione.
+ 
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://docs.pmnd.rs/zustand/getting-started/introduction}
+\end{center}
+
+\paragraph{Tailwind CSS}
+Tailwind CSS è un framework CSS che permette di inserire codice CSS all'interno dell'HTML utilizzando classi predefinite (nel nostro caso - che utilizza la sintassi JSX - attraverso l'attributo className). Il gruppo ha deciso di utilizzare Tailwind per personalizzare lo stile dell'applicazione in maniera più efficiente e veloce.
+ 
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://tailwindcss.com/}
+\end{center}
+
+\subsection{Gestione operativa}\label{sec:gestione_operativa}
+Il processo di gestione operativa riguarda l'installazione ed erogazione del prodotto software.
+In particolare, il gruppo ha deciso di utilizzare \textbf{Vercel} per la distribuzione del software per la sua semplicità d'uso e integrazione con gli strumenti di sviluppo utilizzati.
+
+\noindent Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://vercel.com/}
+\end{center}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -788,7 +887,7 @@ Ha l'obiettivo di determinare se le attività compiute durante il corso del prog
 La validazione ha il compito di accertarsi che le attività di progetto risultino in un prodotto finale che rispetti i requisiti preposti dal cliente e soddisfi i bisogni originali per i quali il progetto ha avuto origine.
 \subsubsection{Revisione congiunta con il cliente}
 Questo processo nasce per valutare assieme agli stakeholders lo stato e gli output delle diverse attività di progetto, per accertarsi che rispettino gli accordi prestabiliti e per decidere come intervenire in caso contrario.
-\par Può essere impiegato sia a livello di gestione del progetto che a livello tecnico, perferibilmente durante tutto il corso del progetto.
+\par Può essere impiegato sia a livello di gestione del progetto che a livello tecnico, preferibilmente durante tutto il corso del progetto.
 \subsubsection{Verifiche ispettive interne}
 Conosciuto anche come \textit{audit}, è un processo di revisione nel quale uno o più soggetti (detti \textit{auditors}) si accertano che il software sia conforme agli standard, ai requisiti e al contratto con il cliente.
 \par Per tutelare il cliente ed ottenere una revisione imparziale, è necessario che gli auditors non siano direttamente responsabili del prodotto che stanno esaminando.
@@ -842,6 +941,12 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
         \item Diagrams.net: \url{https://www.drawio.com/doc/#get-started-with-diagramsnet}
         \item Git: \url{https://git-scm.com/doc}
         \item Github: \url{https://docs.github.com/en}
+        \item React.js: \url{https://react.dev/learn}
+        \item Next.js: \url{https://nextjs.org/docs}
+        \item Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Installation}
+        \item React Three Fiber: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction}
+        \item Zustand: \url{https://docs.pmnd.rs/zustand/getting-started/introduction}
+        \item Tailwind CSS: \url{https://tailwindcss.com/docs/installation}
     \end{itemize}
 \subsubsection{Tutorial}
 \begin{itemize}
