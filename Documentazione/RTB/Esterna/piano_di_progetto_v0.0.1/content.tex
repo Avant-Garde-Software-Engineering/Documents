@@ -194,36 +194,29 @@ Un ciclo di vita di un modello agile si divide in 5 fasi:
 Per comodità di esposizione, in questo documento le fasi di Speculate, Explore e Adapt saranno raggruppate in un singolo periodo di tempo chiamato ``incremento".
 Gli incrementi individuati sono 4 e fanno riferimento al periodo antecedente la prima revisione (Requirements and Technology Baseline).
 La tabella sarà soggetta a cambiamenti derivati dai futuri incrememnti.
-\begin{xltabular}{\textwidth}{p{0.05\textwidth} | X | X | X}
+\begin{xltabular}{\textwidth}{p{0.05\textwidth} | p{0.5\textwidth} }
 
     \rowcolor{black}
-    \textbf{\color{white} Incr.} & \textbf{\color{white} Obiettivi} & \textbf{\color{white} Requisiti} & \textbf{\color{white} Casi d'uso}\\ 
+    \textbf{\color{white} Incr.} & \textbf{\color{white} Obiettivi} \ 
     \hline
     \endhead
     
     \textbf{I} 
-    & \textbf{Visualizzazione ambiente 3d:} Prima di tutto, è necessario potersi muovere all'interno dello spazio 3D e creare un magazzino partendo dalle sue dimensioni.
-    & REQUISITI
-    & CASI DUSO \\
+    & \textbf{Visualizzazione ambiente 3d:} Prima di tutto, è necessario potersi muovere all'interno dello spazio 3D e creare un magazzino partendo dalle sue dimensioni. \\
     \hline
 
     \textbf{II} 
-    & \textbf{Creazione e aggiunta scaffalature:} Una volta creato l'ambiente, è necessario poter creare delle nuove scaffalature e inserirle all'interno del magazzino.
-    & REQUISITI
-    & CASI DUSO \\
+    & \textbf{Creazione e aggiunta scaffalature:} Una volta creato l'ambiente, è necessario poter creare delle nuove scaffalature e inserirle all'interno del magazzino. \\
     \hline
 
     \textbf{III} 
-    & \textbf{Implementazione item:} Dopo l'implementazione delle scaffalature, si può passare all'introduzione degli item (dei prodotti) all'interno di esse.
-    & REQUISITI
-    & CASI DUSO \\
+    & \textbf{Implementazione item:} Dopo l'implementazione delle scaffalature, si può passare all'introduzione degli item (dei prodotti) all'interno di esse. \\
     \hline
 
     \textbf{IV} 
-    & \textbf{Creazione richieste spostamento:} Possibilità di creare una richiesta di spostamento di un item da un luogo all'altro del magazzino.
-    & REQUISITI
-    & CASI DUSO \\
+    & \textbf{Creazione richieste spostamento:} Possibilità di creare una richiesta di spostamento di un item da un luogo all'altro del magazzino. \\
     \hline
+
 \caption{Tabella degli incrementi individuati}\label{tab:incrementi}
 \end{xltabular}
 
@@ -424,22 +417,30 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
 \newpage 
 \subsubsection{Diagramma di Gantt}\label{sec:pianificazione:analisi:gantt}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/gantt_analisi.PNG}
+    \caption{Diagramma di Gantt della fase di analisi}
+    \label{fig:gantt_analisi}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Progettazione della Technology Baseline}\label{sec:pianificazione:progRTB}
 
-\textbf{Periodo}: dal 07/01/2024 al 15/01/2024\\\\
-Questa fase inizia una volta completati tutti i documenti preliminari previsti nella fase di Analisi e termina il 15/01/2024 come concordato dal gruppo, con l'inizio della codifica del \textit{Proof of concept}\textsuperscript{G} (abbreviato in \textit{PoC}). Lo scopo di questa fase è quello di progettare un PoC che verrà presentato alla revisione della Technology Baseline e discuterne con l'azienda.
+\textbf{Periodo}: dal 07/01/2024 al 23/02/2024\\\\
+Questa fase inizia una volta completati tutti i documenti preliminari previsti nella fase di Analisi e termina il 23/02/2024 come concordato dal gruppo, con il completamento della codifica del \textit{Proof of concept}\textsuperscript{G} (abbreviato in \textit{PoC}). Al termine della fase il gruppo avr`a creato un PoC funzionante che verr`a presentato alla revisione della Technology Baseline.
 
 \subsubsection{Attività}\label{sec:pianificazione:progRTB:attivita}
 \begin{itemize}
     \item \textbf{Studio tecnologie:} Studio delle tecnologie nuove al gruppo per l'implementazione del Proof of Concept.
     \item \textbf{Progettazione PoC:} Progettazione del Proof of Concept e discussione con l'azienda.
+    \item \textbf{Codifica PoC:} Codifica del Proof of Concept.
     \item \textbf{Aggiornamento documentazione:} Ulteriore revisione dei documenti ed eventuale aggiornamento di essi.
 \end{itemize}
 
 \subsubsection{Periodi}\label{sec:pianificazione:progRTB:periodi}
-Questa fase è composta di un unico periodo come descritto nella pagina successiva.
+Questa fase è composta da un periodo di progettazione seguita da 4 sprint di avanzamento della codifica del Proof of Concept.
 
 \newpage
 
@@ -479,7 +480,7 @@ Questa fase è composta di un unico periodo come descritto nella pagina successi
     \hline
 
     \textbf{Descrizione} 
-    &  Durante questo periodo si lavora sulla progettazione del Proof of Concept, ad un livello minimale e non eccessivamente approfondito vista la natura ``usa e getta" del PoC, si prende familiarità con le tecnologie necessarie e si discute con l'azienda sui requisiti minimi da implementare all'interno del PoC. Si effettuano eventuali modifiche e correzzioni dei documenti. \\
+    &  Durante questo periodo si lavora sulla progettazione del Proof of Concept, ad un livello minimale e non eccessivamente approfondito vista la natura ``usa e getta" del PoC, si prende familiarità con le tecnologie necessarie e si discute con l'azienda sui requisiti minimi da implementare all'interno del PoC. Si effettuano eventuali modifiche e correzioni dei documenti. \\
     \hline
     
     \textbf{Attività} 
@@ -494,27 +495,13 @@ Questa fase è composta di un unico periodo come descritto nella pagina successi
 \end{xltabular}
 
 \newpage 
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:progRTB:gantt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CODIFICA RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Progettazione della Technology Baseline}\label{sec:pianificazione:codificaRTB}
-
-\textbf{Periodo}: dal 16/01/2024 al 10/02/2024\\\\
-Questa fase inizia una volta completata la progettazione del \textit{Proof of Concept} e termina il 10/02/2024 come concordato dal gruppo, con la consegna del \textit{Proof of Concept} al proponente. Al termine della fase il gruppo avrà creato un \textit{PoC} funzionante che verrà presentato alla revisione della Technology Baseline. 
-
-\subsubsection{Attività}\label{sec:pianificazione:codificaRTB:attivita}
-Obiettivo principale di questa fase è la programmazione del PoC per il prodotto software, seguendo lo studio dell'analisi dei requisiti e la progettazione.
-
-\subsubsection{Periodi}\label{sec:pianificazione:codificaRTB:periodi}
-Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
-
-\paragraph{Primo incrememnto}\label{sec:pianificazione:codificaRTB:periodi:primo}
+\paragraph{Primo sprint}\label{sec:pianificazione:codificaRTB:periodi:primo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
-    \textbf{\color{white} Info} & \textbf{\color{white} Primo Incremento}\\ 
+    \textbf{\color{white} Info} & \textbf{\color{white} Primo sprint}\\ 
     \hline
     \endhead
     
@@ -551,16 +538,16 @@ Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
     \end{itemize} \\
     \hline
 
-\caption{Primo incremento PoC}\label{tab:periodo3_1}
+\caption{Primo sprint PoC}\label{tab:periodo3_1}
 \end{xltabular}
 
 \newpage
-\paragraph{Secondo incrememnto}\label{sec:pianificazione:codificaRTB:periodi:secondo}
+\paragraph{Secondo sprint}\label{sec:pianificazione:codificaRTB:periodi:secondo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
-    \textbf{\color{white} Info} & \textbf{\color{white} Secondo Incremento}\\ 
+    \textbf{\color{white} Info} & \textbf{\color{white} Secondo sprint}\\ 
     \hline
     \endhead
     
@@ -569,11 +556,11 @@ Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
     \hline
 
     \textbf{Data fine} 
-    & 28/01/2024 \\
+    & 04/02/2024 \\
     \hline
 
     \textbf{Pre-condizione} 
-    & Soddisfacimento post-condizioni dell'incremento precedente. \\
+    & Soddisfacimento post-condizioni dello sprint precedente. \\
     \hline
     
     \textbf{Post-condizione} 
@@ -597,28 +584,28 @@ Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
     \end{itemize} \\
     \hline
 
-\caption{Secondo incremento PoC}\label{tab:periodo3_2}
+\caption{Secondo sprint PoC}\label{tab:periodo3_2}
 \end{xltabular}
 \newpage
-\paragraph{Terzo incrememnto}\label{sec:pianificazione:codificaRTB:periodi:terzo}
+\paragraph{Terzo sprint}\label{sec:pianificazione:codificaRTB:periodi:terzo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
-    \textbf{\color{white} Info} & \textbf{\color{white} Terzo Incremento}\\ 
+    \textbf{\color{white} Info} & \textbf{\color{white} Terzo sprint}\\ 
     \hline
     \endhead
     
     \textbf{Data inizio} 
-    & 29/01/2024 \\
-    \hline
-
-    \textbf{Data fine} 
     & 05/02/2024 \\
     \hline
 
+    \textbf{Data fine} 
+    & 15/02/2024 \\
+    \hline
+
     \textbf{Pre-condizione} 
-    & Soddisfacimento post-condizioni dell'incremento precedente. \\
+    & Soddisfacimento post-condizioni dello sprint precedente. \\
     \hline
     
     \textbf{Post-condizione} 
@@ -641,29 +628,29 @@ Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
     \end{itemize} \\
     \hline
 
-\caption{Terzo incremento PoC}\label{tab:periodo3_3}
+\caption{Terzo sprint PoC}\label{tab:periodo3_3}
 \end{xltabular}
 
 \newpage
-\paragraph{Quarto incrememnto}\label{sec:pianificazione:codificaRTB:periodi:quarto}
+\paragraph{Quarto sprint}\label{sec:pianificazione:codificaRTB:periodi:quarto}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
-    \textbf{\color{white} Info} & \textbf{\color{white} Quarto Incremento}\\ 
+    \textbf{\color{white} Info} & \textbf{\color{white} Quarto sprint}\\ 
     \hline
     \endhead
     
     \textbf{Data inizio} 
-    & 06/01/2024 \\
+    & 16/01/2024 \\
     \hline
 
     \textbf{Data fine} 
-    & 10/02/2024 \\
+    & 23/02/2024 \\
     \hline
 
     \textbf{Pre-condizione} 
-    & Soddisfacimento post-condizioni dell'incremento precedente. \\
+    & Soddisfacimento post-condizioni dello sprint precedente. \\
     \hline
     
     \textbf{Post-condizione} 
@@ -686,18 +673,25 @@ Questa fase è suddivisa in periodi denominati incrementi come sotto riportato:
     \end{itemize} \\
     \hline
 
-\caption{Quarto incremento PoC}\label{tab:periodo3_4}
+\caption{Quarto sprint PoC}\label{tab:periodo3_4}
 \end{xltabular}
 
 \newpage 
 \subsubsection{Diagramma di Gantt}\label{sec:pianificazione:codificaRTB:gantt}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/gantt_codRTB.PNG}
+    \caption{Diagramma di Gantt della fase di codifica del PoC}
+    \label{fig:gantt_codRTB}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE E CODIFICA   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Progettazione di dettaglio e codifica finale}\label{sec:pianificazione:progCodifica}
 
-\textbf{Periodo}: dal 11/02/2024 al 10/03/2024\\\\
-Questa fase inizia una volta completata la codifica del \textit{Proof of Concept} e termina il 10/03/2024 come concordato dal gruppo, con un prodotto funzionante e pronto per la consegna al proponente. Durante questa fase verranno anche creati documenti quali il \textit{Manuale Utente}, il \textit{Manuale del Manutentore} e l'\textit{Allegato Tecnico}.
+\textbf{Periodo}: dal 24/02/2024 al 01/04/2024\\\\
+Questa fase inizia una volta completata la codifica del \textit{Proof of Concept} e completata la prima revisione. La fase termina il 01/04/2024 come concordato dal gruppo, con un prodotto funzionante e pronto per la consegna al proponente. Durante questa fase verranno anche creati documenti quali il \textit{Manuale Utente}, il \textit{Manuale del Manutentore} e l'\textit{Allegato Tecnico}.
 
 
 \subsubsection{Attività}\label{sec:pianificazione:prog_codifica:attivita}
@@ -727,11 +721,11 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
     \endhead
     
     \textbf{Data inizio} 
-    & 11/02/2024 \\
+    & 25/02/2024 \\
     \hline
 
     \textbf{Data fine} 
-    & 20/02/2024 \\
+    & 05/03/2024 \\
     \hline
 
     \textbf{Pre-condizione} 
@@ -777,11 +771,11 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
     \endhead
     
     \textbf{Data inizio} 
-    & 21/02/2024 \\
+    & 05/03/2024 \\
     \hline
 
     \textbf{Data fine} 
-    & 20/03/2024 \\
+    & 01/04/2024 \\
     \hline
 
     \textbf{Pre-condizione} 
@@ -822,15 +816,22 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
 \newpage 
 \subsubsection{Diagramma di Gantt}\label{sec:pianificazione:progCodifica:gantt}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/gantt_dettaglio.PNG}
+    \caption{Diagramma di Gantt della fase di codifica finale}
+    \label{fig:gantt_codRTB}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   VALIDAZIONE   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Validazione e collaudo}\label{sec:pianificazione:val_collaudo}
 
-\textbf{Periodo}: dal 21/03/2024 al 26/04/2024\\\\
-Questa fase inizia una volta completata la codifica del prodotto finale e termina con la Customer Acceptance. La fase è volta a verificare, revisionare e approvare il prodotto finale e la documentazione.
+\textbf{Periodo}: dal 02/04/2024 al 26/04/2024\\\\
+Questa fase inizia una volta completata la codifica del prodotto finale e termina con la seconda revisione. La fase è volta a verificare, revisionare e approvare il prodotto finale e la documentazione.
 
 \subsubsection{Attività}\label{sec:pianificazione:val_collaudo:attivita}
-Questa fase ha come attività principali la verifica finale ad alto livello del prodotto realizzato nella fase precedente, la validazione rispetto ai requisiti preposti e la presentazione all'azienda proponente.
+Questa fase ha come attività principali la verifica finale ad alto livello del prodotto realizzato nella fase precedente, la validazione rispetto ai requisiti preposti e la presentazione all'azienda proponente, nonchè il completaemento e verifica finale della documentazione del progetto.
 
 \subsubsection{Periodi}\label{sec:pianificazione:val_collaudo:periodi}
 \paragraph{Primo Periodo}\label{sec:pianificazione:val_collaudo:periodi:primo}
@@ -843,7 +844,7 @@ Questa fase ha come attività principali la verifica finale ad alto livello del 
     \endhead
     
     \textbf{Data inizio} 
-    & 21/03/2024 \\
+    & 02/04/2024 \\
     \hline
 
     \textbf{Data fine} 
@@ -855,7 +856,7 @@ Questa fase ha come attività principali la verifica finale ad alto livello del 
     \hline
     
     \textbf{Post-condizione} 
-    & Customer Acceptance \\
+    & Consegna Product Baseline \\
     \hline
 
     \textbf{Ruoli attivi} 
@@ -867,13 +868,20 @@ Questa fase ha come attività principali la verifica finale ad alto livello del 
     \hline
 
     \textbf{Descrizione} 
-    &  Questa fase è adibita alla verifica e validazione del codice e dei documenti prodotti durante il progetto, in vista della consegna di tutto per la Customer Acceptance. \\
+    &  Questa fase è adibita alla verifica e validazione del codice e del completamento dei documenti prodotti durante il progetto, in vista della consegna di tutto per la terza revisione. \\
     \hline
 
 \caption{Tabella descrittiva del periodo di verifica e validazione}\label{tab:periodo5_1}
 \end{xltabular}
 
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:progCodifica:gantt}
+\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:val_collaudo:gantt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/gantt_collaudo.PNG}
+    \caption{Diagramma di Gantt del periodo di verifica e validazione}
+    \label{fig:gantt_collaudo}
+\end{figure}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -981,8 +989,8 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newpage
-\subsubsection{Progettazione Technology Baseline}\label{sec:preventivo:periodi:progRTB}
+\newpage
+\subsubsection{Realizzazione Proof of Concept}\label{sec:preventivo:periodi:progRTB}
 
 \begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | 1 |}
@@ -992,25 +1000,25 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \hline
     \endhead
 
-    Jessica Carretta & 2 & 0 & 3 & 13 & 0 & 0 & 18 \\
+    Jessica Carretta & 4 & 3 & 3 & 8 & 7 & 7 & 32 \\
     \hline
     
-    Giulio Biscontin & 3 & 0 & 2 & 10 & 0 & 3 & 18 \\
+    Giulio Biscontin & 2 & 0 & 4 & 5 & 13 & 8 & 32 \\
     \hline
     
-    Luca Securo & 0	& 6 & 0 & 12 & 0 & 0 & 18 \\
+    Luca Securo & 3	& 6 & 0 & 7 & 10 & 6 & 32 \\
     \hline
     
-    Andrea Mangolini & 3 &	0 &	0 &	13 & 0 & 2 & 18 \\
+    Andrea Mangolini & 2 &	1 &	0 &	8 & 11 & 10 & 32 \\
     \hline
     
-    Zaccaria Marangon & 3 & 4 & 0 & 11 & 0 & 0 & 18 \\
+    Zaccaria Marangon & 2 & 4 & 2 & 6 & 10 & 8 & 32 \\
     \hline
     
-    Lorenzo Pasqualotto & 2 & 2 & 0 & 7 & 0 & 7 & 18 \\
+    Lorenzo Pasqualotto & 1 & 4 & 0 & 2 & 10 & 15 & 32 \\
     \hline
 
-\caption{Suddivisione dei ruoli nel periodo di Progettazione Technology Baseline}\label{tab:ruoli_progRTB}
+\caption{Suddivisione dei ruoli nel periodo di Realizzazione Proof of Concept}\label{tab:ruoli_progRTB}
 \end{xltabular}
 \end{center}
 
@@ -1022,127 +1030,44 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \hline
     \endhead
 
-    Responsabile & 13 & €390,00 \\
+    Responsabile & 14 & €420,00 \\
     \hline
     
-    Amministratore & 12 & €240,00 \\
+    Amministratore & 18 & €360,00 \\
     \hline
     
-    Analista & 5 & €125,00 \\
+    Analista & 9 & €225,00 \\
     \hline
     
-    Progettista & 66 & €1.650,00 \\
+    Progettista & 36 & €900,00 \\
     \hline
     
-    Programmatore & 0 & €0,00 \\
+    Programmatore & 61 & €915,00 \\
     \hline
     
-    Verificatore & 12 & €180,00 \\
+    Verificatore & 54 & €810,00 \\
     \hline
     
-    \textbf{Totale} & \textbf{108} & \textbf{€2.585,00} \\
+    \textbf{Totale} & \textbf{192} & \textbf{€3.630,00} \\
     \hline
         
-    \caption{Costo per ruolo Progettazione Technology Baseline}\label{tab:costo_progRTB}
+    \caption{Costo per ruolo realizzazione Proof of Concept}\label{tab:costo_progRTB}
 \end{xltabular}
 \end{center}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/grafico_progPOC.png}
-    \caption{Grafico a barre suddivisione ruoli Progettazione RTB}
+    \caption{Grafico a barre suddivisione ruoli realizzazione RTB}
     \label{fig:grafico_progRTB}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/torta_progPOC.png}
-    \caption{Grafico a torta suddivisione costi per ruolo Progettazione RTB}
+    \caption{Grafico a torta suddivisione costi per ruolo realizzazione RTB}
     \label{fig:torta_progRTB}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CODIFICA RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\newpage
-\subsubsection{Codifica Technology Baseline}\label{sec:preventivo:periodi:codRTB}
-
-\begin{center}
-    \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | 1 |}
-            
-        \rowcolor{black}
-        \textbf{\color{white} Nominativo} & \textbf{\color{white}Re}& \textbf{\color{white}Am}& \textbf{\color{white}An}& \textbf{\color{white}Pt}& \textbf{\color{white}Pr}& \textbf{\color{white}Ve}& \textbf{\color{white}Totale ore}\\ 
-        \hline
-        \endhead
-    
-        Jessica Carretta & 3 & 3 & 0 & 0 & 7 & 7 & 20 \\
-        \hline
-        
-        Giulio Biscontin & 0 & 0 & 2 & 0 & 13 & 5 & 20 \\
-        \hline
-        
-        Luca Securo & 4	& 0 & 0 & 0 & 10 & 6 & 20 \\
-        \hline
-        
-        Andrea Mangolini & 0 &	1 &	0 &	0 & 11 & 8 & 20 \\
-        \hline
-        
-        Zaccaria Marangon & 0 & 0 & 2 & 0 & 11 & 8 & 20 \\
-        \hline
-        
-        Lorenzo Pasqualotto & 0 & 2 & 0 & 0 & 10 & 8 & 20 \\
-        \hline
-    
-    \caption{Suddivisione dei ruoli nel periodo di Codifica RTB}\label{tab:ruoli_codRTB}
-    \end{xltabular}
-    \end{center}
-    
-    \begin{center}
-    \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | 1 |}
-                
-        \rowcolor{black}
-        \textbf{\color{white} Ruolo} & \textbf{\color{white} Ore} & \textbf{\color{white} Costo}\\ 
-        \hline
-        \endhead
-    
-        Responsabile & 7 & €210,00 \\
-        \hline
-        
-        Amministratore & 6 & €120,00 \\
-        \hline
-        
-        Analista & 4 & €100,00 \\
-        \hline
-        
-        Progettista & 0 & €0,00 \\
-        \hline
-        
-        Programmatore & 61 & €915,00 \\
-        \hline
-        
-        Verificatore & 42 & €630,00 \\
-        \hline
-        
-        \textbf{Totale} & \textbf{120} & \textbf{€1.975,00} \\
-        \hline
-            
-        \caption{Costo per ruolo Codifica RTB}\label{tab:costo_codRTB}
-    \end{xltabular}
-    \end{center}
-    
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.75\textwidth]{images/grafico_codPOC.png}
-        \caption{Grafico a barre suddivisione ruoli Codifica RTB}
-        \label{fig:grafico_codRTB}
-    \end{figure}
-    
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/torta_codPOC.png}
-        \caption{Grafico a torta suddivisione costi per ruolo Codifica RTB}
-        \label{fig:torta_codRTB}
-    \end{figure}
-    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CODIFICA DETTAGLIO   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1157,22 +1082,22 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
         \hline
         \endhead
     
-        Jessica Carretta & 1 & 0 & 0 & 4 & 18 & 5 & 28 \\
+        Jessica Carretta & 2 & 0 & 0 & 9 & 18 & 5 & 34 \\
         \hline
         
-        Giulio Biscontin & 4 & 1 & 0 & 6 & 11 & 6 & 28 \\
+        Giulio Biscontin & 5 & 1 & 0 & 11 & 11 & 6 & 34 \\
         \hline
         
-        Luca Securo & 2	& 0 & 0 & 5 & 13 & 8 & 28 \\
+        Luca Securo & 3	& 0 & 0 & 10 & 13 & 8 & 34 \\
         \hline
         
-        Andrea Mangolini & 1 &	0 &	4 &	5 & 13 & 5 & 28 \\
+        Andrea Mangolini & 2 &	0 &	4 &	10 & 13 & 5 & 34 \\
         \hline
         
-        Zaccaria Marangon & 1 & 5 & 0 & 7 & 15 & 0 & 28 \\
+        Zaccaria Marangon & 2 & 5 & 0 & 12 & 15 & 0 & 34 \\
         \hline
         
-        Lorenzo Pasqualotto & 4 & 0 & 0 & 10 & 14 & 0 & 28 \\
+        Lorenzo Pasqualotto & 5 & 0 & 0 & 15 & 14 & 0 & 34 \\
         \hline
     
     \caption{Suddivisione dei ruoli nel periodo di progettazione e codifica dettaglio}\label{tab:ruoli_dettaglio}
@@ -1196,7 +1121,7 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     Analista & 4 & €100,00 \\
     \hline
     
-    Progettista & 37 & €925,00 \\
+    Progettista & 67 & €1.675,00 \\
     \hline
     
     Programmatore & 84 & €1.260,00 \\
@@ -1205,7 +1130,7 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     Verificatore & 24 & €360,00 \\
     \hline
     
-    \textbf{Totale} & \textbf{168} & \textbf{€3.155,00} \\
+    \textbf{Totale} & \textbf{198} & \textbf{€3.855,00} \\
     \hline
         
     \caption{Costo per ruolo progettazione e codifica dettaglio}\label{tab:costo_dettaglio}
@@ -1317,9 +1242,148 @@ Per queste voci si rimanda al documento \textit{Suddivisione dei ruoli e prevent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONSUNTIVO DI PERIODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Consuntivo di periodo}\label{sec:consuntivo}
-% Valutazione dei costi previsti rispetto a quelli effettivi 
-% DA INSERIRE UNA VOLTA COMPLETATA LA RTB
+\section{Consuntivo di periodo}\label{sec:consuntivo}
+
+Di seguito viene presentato un consuntivo per i diversi periodi del progetto, in cui si confrontano le ore preventivate con quelle effettivamente impiegate e i costi preventivati con quelli effettivi, nonchè le difficoltate incontrate e le strategie utilizzaate per mitigare i rischi.\\
+
+\subsection{Analisi}\label{sec:consuntivo:analisi}
+
+\begin{center}
+    \textbf{Data inizio:} 06/11/2023 \\
+    \textbf{Data fine:} 06/01/2024 \\
+    \begin{xltabular}{\textwidth}{| 1 | 1 | {0.35\textwidth} | 1 | 1 |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Ruolo} & \textbf{\color{white} Totale ore} & \textbf{\color{white} Diff. ore} & \textbf{\color{white} Totale costo} & \textbf{\color{white} Diff. costo}\\ 
+        \endhead
+    
+        Responsabile & 19 & 0 & €570,00 & €0,00 \\
+        \hline
+        
+        Amministratore & 25 & +4 & €500,00 & +€80,00 \\
+        \hline
+        
+        Analista & 42 & +4 & €1050,00 & +€100,00 \\
+        \hline
+        
+        Progettista & 0 & 0 & €0,00 & €0,00 \\
+        \hline
+        
+        Programmatore & 0 & 0 & €0,00 & €0,00 \\
+        \hline
+        
+        Verificatore & 36 & -6 & €540,00 & -€90,00 \\
+        \hline
+        
+        \textbf{Totale} & \textbf{122} & \textbf{+2} & \textbf{€2.660,00} & \textbf{+€90,00} \\
+        \hline
+            
+        \caption{Differenza ore e costi previsti con effettivi, Analisi}\label{tab:consuntivo_analisi}
+    \end{xltabular}
+\end{center}
+
+\subsubsection{Resoconto periodo}\label{sec:consuntivo:analisi:resoconto}
+
+Dal consuntivo di periodo emerge che il gruppo è stato in generale abbastanza in linea con il preventivo,
+ con un leggero aumento dei costi dovuto alle ore aggiuntive impiegate dai ruoli di amministratore ed analista.
+Questo aumento è stato causato da una sottostima delle ore necessarie per la stesura dei documenti,
+ in quanto era per noi la prima esperienza in questo ambito e si è rivelato più dispendioso in termini di tempo di quanto ci aspettassimo.
+Inoltre, l'analisi dei requisiti è stata più complessa del previsto, in quanto il capitolato richiedeva una buona comprensione
+ del dominio applicativo e abbiamo dovuto effettuare ricerche approfondite nell'ambito.\\
+Nonostante ciò, il gruppo è riuscito a rispettare i tempi di consegna e a mantenere i costi entro i limiti previsti, grazie ad una buona organizzazione
+ e ad un lavoro costante e collaborativo, perciò non sono previsti cambiamenti per il prossimo periodo.\\
+
+\subsubsection{Difficoltà incontrate}\label{sec:consuntivo:analisi:difficolta}
+
+Le principali difficoltà incontrate durante questo periodo sono state nel decidere le tecnologie utilizzate per coordinare il nostro lavoro,
+ nonchè alcune difficoltà nel comunicare fra di noi in quanto, essendo un gruppo che non si conosceva precedentemente e con poca esperienza
+ in questo ambito, abbiamo avuto iniziali difficoltà a coordinarci e a comunicare in modo efficace.\\
+  
+
+\subsubsection{Mitigazione rischi attuata}\label{sec:consuntivo:analisi:mitigazione}
+
+\paragraph{Rischi organizzativi}
+
+\begin{center}
+
+
+    \begin{xltabular}{\textwidth}{| X | X |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Descrizione} & \textbf{\color{white} Mitigazione}\\ 
+        \endhead
+    
+        A causa dei diversi impegni di ogni componente del gruppo, gli orari di disponibilità offerti dagli individui erano spesso molto diversi tra loro &
+        Sono stati utilizzati efficientemente i mezzi di comunicazione specificati nelle norme di progetto e il gruppo si è suddiviso i compiti dividendosi in gruppi più piccoli
+        con simili disponibilità orarie \\
+        \hline
+            
+        \caption{Tabella descrittiva rischi organizzativi e mitigazioni periodo Analisi}\label{tab:rischi_organizzativi_analisi}
+    \end{xltabular}
+\end{center}
+
+\paragraph{Rischi tecnologici}
+
+\begin{center}
+    \begin{xltabular}{\textwidth}{| X | X |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Descrizione} & \textbf{\color{white} Mitigazione}\\ 
+        \endhead
+    
+        Essendo molte delle tecnologie utilizzate nuove per il gruppo, era presente il rischio di non riuscire ad utilizzare al meglio tali strumenti &
+        Dopo aver osservato tutti i lati positivi e negativi delle opzioni per le tecnologie, il gruppo ha scelto quelle più adatte e comode e ne ha effettuato uno studio
+        per poterle utilizzare al meglio. \\
+        \hline
+            
+        \caption{Tabella descrittiva rischi tecnologici e mitigazioni periodo Analisi}\label{tab:rischi_tecnologici_analisi}
+    \end{xltabular}
+\end{center}
+
+\subsection{Realizzazione Proof of Concept}\label{sec:consuntivo:progRTB}
+\begin{center}
+    \begin{xltabular}{\textwidth}{| 1 | 1 | {0.35\textwidth} | 1 | 1 |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Ruolo} & \textbf{\color{white} Totale ore} & \textbf{\color{white} Diff. ore} & \textbf{\color{white} Totale costo} & \textbf{\color{white} Diff. costo}\\ 
+        \endhead
+    
+        Responsabile & 14 & 0 & €570,00 & €0,00 \\
+        \hline
+        
+        Amministratore & 18 & 0 & €500,00 & €0,00 \\
+        \hline
+        
+        Analista & 12 & +3 & €300,00 & +€75,00 \\
+        \hline
+        
+        Progettista & 24 & -12 & €600,00 & -€300,00 \\
+        \hline
+        
+        Programmatore & 70 & +9 & €1050,00 & +€135,00 \\
+        \hline
+        
+        Verificatore & 54 & 0 & €810,00 & €0,00 \\
+        \hline
+        
+        \textbf{Totale} & \textbf{192} & \textbf{0} & \textbf{€3.540,00} & \textbf{-€90,00} \\
+        \hline
+            
+        \caption{Differenza ore e costi previsti con effettivi, PoC}\label{tab:consuntivo_analisi}
+    \end{xltabular}
+\end{center}
+
+\subsubsection{Resoconto periodo}\label{sec:consuntivo:analisi:resoconto}
+
+
+
+\subsubsection{Difficoltà incontrate}\label{sec:consuntivo:analisi:difficolta}
+
+
+
+\subsubsection{Mitigazione rischi attuata}\label{sec:consuntivo:analisi:mitigazione}
+
+Abbiamo mitigato dei rischi facendo qualcosa.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
