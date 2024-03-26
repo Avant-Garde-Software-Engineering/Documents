@@ -123,7 +123,7 @@ MPC5-PV & I costi pianificati per le attività di progetto non devono sforare i 
 \hline
 MPC6-AC & I costi effettivi per le attività di progetto non devono sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
 \hline
-MPC7-EV & I valore effettivo per le attività di progetto non deve sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
+MPC7-EV & Il valore effettivo per le attività di progetto non deve sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
 \hline
 \end{tabular}
 \end{table}
@@ -511,7 +511,85 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
 \newpage
 \section{Resoconto}\label{resconto}
 
-\subsection{Accertamento della qualità}\label{accertamento delle qualitá}
+\subsection{Processi primari} \label{sec:processi_primari}
+Di seguito sono visualizzati i grafici relativi alle metriche dei processi primari:
+
+\paragraph{MPC1-EAC}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC1-EAC.png}
+    \caption{MPC1-EAC}
+\end{figure}
+
+\paragraph{MPC2-CV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC2-CV.png}
+    \caption{MPC2-CV}
+\end{figure}
+
+\newpage
+
+\paragraph{MPC3-SV}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC3-SV.png}
+    \caption{MPC3-SV}
+\end{figure}
+
+\paragraph{MPC4-BV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC4-BV.png}
+    \caption{MPC4-BV}
+\end{figure}
+
+\newpage
+
+\paragraph{MPC5-PV}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC5-PV.png}
+    \caption{MPC5-PV}
+\end{figure}
+
+\paragraph{MPC6-AC}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC6-AC.png}
+    \caption{MPC6-AC}
+\end{figure}
+
+\newpage
+
+\paragraph{MPC7-EV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC7-EV.png}
+    \caption{MPC7-EV}
+\end{figure}
+
+\subsection{Processi di supporto} \label{sec:processi_di_supporto}
+
+\paragraph{MPC15-EOD}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC15-EOD.png}
+    \caption{MPC15-EOD}
+\end{figure}
+
+\newpage
+
+\paragraph{MPC16-IG}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC16-IG.png}
+    \caption{MPC16-IG}
+\end{figure}
+
+
+
+\subsection{Accertamento della qualità} \label{sec:accertamento delle qualita}
 Le metriche prese in considerazione in questa fase sono:
 \begin{itemize}
     \item MPC1-EAC \textcolor{green}{Soddisfatta} 
@@ -521,11 +599,11 @@ Le metriche prese in considerazione in questa fase sono:
     \item MPC5-PV \textcolor{green}{Soddisfatta} 
     \item MPC6-AC \textcolor{green}{Soddisfatta} 
     \item MPC7-EV \textcolor{green}{Soddisfatta} 
-    \item MPC15-EOD \textcolor{gray}{da calcolare}
-    \item MPC16-IG \textcolor{gray}{da calcolare}
+    \item MPC15-EOD \textcolor{green}{Soddisfatta}
+    \item MPC16-IG \textcolor{green}{Soddisfatta}
 \end{itemize}
 
-La percentuale di metriche soddisfatte equivale al \textcolor{red}{77\%}
+La percentuale di metriche soddisfatte equivale al \textcolor{green}{100\%}
 
 \newpage
 \section{Riferimenti esterni} \label{sec:riferimenti_esterni}
