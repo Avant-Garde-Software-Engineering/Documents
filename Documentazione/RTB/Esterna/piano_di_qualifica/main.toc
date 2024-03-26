@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Il progetto}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Metriche}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Codice}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Contenuto}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Qualità di processo}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Processi primari}{6}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Fornitura}{6}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Sviluppo}{7}{subsubsection.3.1.2}%
+\contentsline {paragraph}{\numberline {3.1.2.1}Progettazione}{7}{paragraph.3.1.2.1}%
+\contentsline {paragraph}{\numberline {3.1.2.2}Codifica}{8}{paragraph.3.1.2.2}%
+\contentsline {subsection}{\numberline {3.2}Processi di supporto}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Documentazione}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Accertamento della qualità}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Verifica}{10}{subsubsection.3.2.3}%
+\contentsline {section}{\numberline {4}Qualità di prodotto}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Customer needs}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Efficienza}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Usabilità}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Portabilità su altre piattaforme}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Manutenibilità}{13}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Test}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Test di Unità}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Test di Integrazione}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Test di Sistema}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Test di Regressione}{14}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Test di Accettazione}{14}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Resoconto}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Processi primari}{15}{subsection.6.1}%
+\contentsline {paragraph}{\numberline {6.1.0.1}MPC1-EAC}{15}{paragraph.6.1.0.1}%
+\contentsline {paragraph}{\numberline {6.1.0.2}MPC2-CV}{15}{paragraph.6.1.0.2}%
+\contentsline {paragraph}{\numberline {6.1.0.3}MPC3-SV}{16}{paragraph.6.1.0.3}%
+\contentsline {paragraph}{\numberline {6.1.0.4}MPC4-BV}{16}{paragraph.6.1.0.4}%
+\contentsline {paragraph}{\numberline {6.1.0.5}MPC5-PV}{17}{paragraph.6.1.0.5}%
+\contentsline {paragraph}{\numberline {6.1.0.6}MPC6-AC}{17}{paragraph.6.1.0.6}%
+\contentsline {paragraph}{\numberline {6.1.0.7}MPC7-EV}{18}{paragraph.6.1.0.7}%
+\contentsline {subsection}{\numberline {6.2}Processi di supporto}{18}{subsection.6.2}%
+\contentsline {paragraph}{\numberline {6.2.0.1}MPC15-EOD}{18}{paragraph.6.2.0.1}%
+\contentsline {paragraph}{\numberline {6.2.0.2}MPC16-IG}{19}{paragraph.6.2.0.2}%
+\contentsline {subsection}{\numberline {6.3}Accertamento della qualità}{19}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Riferimenti esterni}{20}{section.7}%
