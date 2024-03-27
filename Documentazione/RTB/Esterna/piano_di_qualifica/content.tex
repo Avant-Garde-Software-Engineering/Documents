@@ -123,7 +123,7 @@ MPC5-PV & I costi pianificati per le attività di progetto non devono sforare i 
 \hline
 MPC6-AC & I costi effettivi per le attività di progetto non devono sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
 \hline
-MPC7-EV & I valore effettivo per le attività di progetto non deve sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
+MPC7-EV & Il valore effettivo per le attività di progetto non deve sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
 \hline
 \end{tabular}
 \end{table}
@@ -509,8 +509,99 @@ MPD7-CD & La duplicazione del codice deve essere minimizzata & $\leq$ 3\% & 0\% 
 Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato il software attraverso test di unità, integrazione e sistema. Gli obiettivi principali sono verificare che il software rispetta i requisiti prestabiliti con il cliente ed assicurarsi che sia pronto per essere rilasciato. Per questi motivi, vengono eseguiti alla presenza del committente e su un ambiente che sia quanto più vicino possibile a quello in cui si troverà a lavorare l'utente finale.
 
 \newpage
-\section{Resoconto}
+\section{Resoconto RTB}\label{resoconto}
 
+\subsection{Processi primari} \label{sec:processi_primari}
+Di seguito sono visualizzati i grafici relativi alle metriche dei processi primari:
+
+\subsubsection{MPC1-EAC}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC1-EAC.png}
+    \caption{MPC1-EAC}
+\end{figure}
+
+\subsubsection{MPC2-CV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC2-CV.png}
+    \caption{MPC2-CV}
+\end{figure}
+
+\newpage
+
+\subsubsection{MPC3-SV}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC3-SV.png}
+    \caption{MPC3-SV}
+\end{figure}
+
+\subsubsection{MPC4-BV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC4-BV.png}
+    \caption{MPC4-BV}
+\end{figure}
+
+\newpage
+
+\subsubsection{MPC5-PV}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC5-PV.png}
+    \caption{MPC5-PV}
+\end{figure}
+
+\subsubsection{MPC6-AC}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC6-AC.png}
+    \caption{MPC6-AC}
+\end{figure}
+
+\newpage
+
+\subsubsection{MPC7-EV}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC7-EV.png}
+    \caption{MPC7-EV}
+\end{figure}
+
+\subsection{Processi di supporto} \label{sec:processi_di_supporto}
+
+\subsubsection{MPC15-EOD}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC15-EOD.png}
+    \caption{MPC15-EOD}
+\end{figure}
+
+\newpage
+
+\subsubsection{MPC16-IG}
+\begin{figure}[h] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC16-IG.png}
+    \caption{MPC16-IG}
+\end{figure}
+
+\subsubsection{MPC17-MS} \label{sec:accertamento delle qualita}
+Le metriche prese in considerazione in questa fase sono:
+\begin{itemize}
+    \item MPC1-EAC \colorbox{green}{Soddisfatta} 
+    \item MPC2-CV \colorbox{green}{Soddisfatta} 
+    \item MPC3-SV \colorbox{green}{Soddisfatta}
+    \item MPC4-BV \colorbox{green}{Soddisfatta} 
+    \item MPC5-PV \colorbox{green}{Soddisfatta} 
+    \item MPC6-AC \colorbox{green}{Soddisfatta} 
+    \item MPC7-EV \colorbox{green}{Soddisfatta} 
+    \item MPC15-EOD \colorbox{green}{Soddisfatta}
+    \item MPC16-IG \colorbox{green}{Soddisfatta}
+\end{itemize}
+
+La percentuale di metriche soddisfatte (MPC17-MS) equivale al \colorbox{green}{100\%}.
 
 \newpage
 \section{Riferimenti esterni} \label{sec:riferimenti_esterni}
