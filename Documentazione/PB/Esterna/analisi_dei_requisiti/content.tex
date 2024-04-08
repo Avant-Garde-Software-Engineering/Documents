@@ -1,0 +1,599 @@
+\begin{beginningnote}
+    Al fine di evitare incomprensioni relative alla terminologia usata all’interno del presente documento, viene fornito un Glossario di progetto. 
+    Ogni terminologia specifica di progetto verrà chiarita e definita in modo tale da renderla maggiormente comprensibile ed evitare errate interpretazioni. 
+    Pertanto ogni termine marchiato con una lettera \textbf{G} come apice, sarà specificato e presente nel glossario sopra citato.
+\end{beginningnote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOPO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scopo del Documento}\label{sec:scopo_del_documento}
+Il presente documento ha lo scopo di fornire una descrizione dettagliata dei requisiti di progetto. Il documento è quindi frutto di un'attenta analisi del capitolato, proposto dal proponente, al fine di individuare ed esaminare in modo esaustivo i requisiti minimi, massimi e facoltativi presenti nel progetto. 
+Un ulteriore obbiettivo del documento è quello di analizzare e descrivere le possibili attività (use cases) permesse all'utente in fase di esecuzione del programma. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IL PROGETTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Il progetto}\label{sec:progetto}
+\subsection{Scopo del progetto}\label{sec:scopo_del_progetto}
+Lo scopo del progetto è quello di ottimizzare i processi produttivi attraverso l'utilizzo di 
+un applicativo 3D che rappresenta lo stato di fatto di un magazzino di stoccaggio.\\
+L'applicativo, pensato per un utilizzo da ufficio (di tipo amministrativo), deve permettere all'utente di muoversi all'interno 
+del magazzino e poter gestire le seguenti operazioni:
+\begin{itemize}
+    \item Creazione magazzino:
+        \begin{itemize}
+            \item Creare un nuovo magazzino da zero
+            \item Importare un layout esistente
+        \end{itemize}
+    \item Modifiche alla struttura del magazzino:
+        \begin{itemize}            
+            \item Aggiungere nuove scaffalature
+            \item Rimuovere scaffalature esistenti
+            \item Modificare scaffalature
+        \end{itemize}
+    \item Modifiche ai prodotti presenti in magazzino:
+        \begin{itemize}            
+            \item Aggiungere un nuovo prodotto
+            \item Eliminare un prodotto
+            \item Spostare un prodotto esistente
+        \end{itemize}
+\end{itemize}
+Si vuole sfruttare l'esperienza tridimensionale per aiutare la comprensione e facilitare la gestione delle 
+operazioni di logistica necessarie sopra elencate. 
+
+
+\subsection{Descrizione del prodotto}\label{sec:descrizione_del_prodotto}
+L'applicativo, pensato per soddisfare lo scopo e i requisiti di progetto, si compone principalmente di due sezioni:
+\begin{itemize}
+    \item La prima sezione consente all'utente di interagire con il magazzino, per effettuare operazioni che ne vanno a modificare lo stato attuale (e.g. inserimento e modifica di scaffalature/prodotti, richieste di movimentazione);
+    \item La seconda parte invece è composta dalla visualizzazione vera e propria del magazzino 3D. In questa area l'utente avrà modo di ``navigare" il magazzino. 
+\end{itemize}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USE CASES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Use Cases}\label{sec:use_cases}
+
+\subsection{Attori}\label{subsec:attori}
+Come da specifiche del proponente (si veda \ref{sec:riferimenti_normativi} per il link al capitolato), interessano soltanto sessioni volatili e con la sola gestione ``amministratore”. Pertanto, non sarà necessaria alcuna autenticazione nell'applicazione nè saranno presenti diverse tipologie di utenti con permessi distinti. L'unico attore\textsuperscript{G}, capace di accedere a tutte le funzionalità dell'applicazione e protagonista di tutti i casi d'uso, sarà dunque un utente generico amministratore, denominato \textbf{User}.
+
+\subsection{Elenco dei casi d'uso}\label{subsec:elenco_use_cases}
+\setcounter{secnumdepth}{0}         %per non mostrare numeri sezioni su indice
+\input{UC_texts/UC1}
+\input{UC_texts/UC2}
+\input{UC_texts/UC3}
+\input{UC_texts/UC4}
+\input{UC_texts/UC5}
+\input{UC_texts/UC6}
+\input{UC_texts/UC7}
+\input{UC_texts/UC8}
+\input{UC_texts/UC9}
+\input{UC_texts/UC10}
+\input{UC_texts/UC11}
+\input{UC_texts/UC12}
+\input{UC_texts/UC13}
+\input{UC_texts/UC14}
+\input{UC_texts/UC15}
+\input{UC_texts/UC16}
+\input{UC_texts/UC17}
+\input{UC_texts/UC18}
+\input{UC_texts/UC19}
+\input{UC_texts/UC20}
+\input{UC_texts/UC21}
+\input{UC_texts/UC22}
+\input{UC_texts/UC23}
+\input{UC_texts/UC24}
+\input{UC_texts/UC25}
+\input{UC_texts/UC26}
+\input{UC_texts/UC27}
+\input{UC_texts/UC28}
+\input{UC_texts/UC29}
+\input{UC_texts/UC30}
+\input{UC_texts/UC31}
+\input{UC_texts/UC32}
+\setcounter{secnumdepth}{3} 
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REQUISITI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Requisiti}\label{sec:requisiti}
+La seguente sezione si occupa di \textbf{Descrivere}, \textbf{Classificare}, \textbf{Tracciare} e \textbf{Codificare}
+i requisiti individuati dal gruppo. 
+
+\subsection{Classificazione dei requisiti}
+Una prima macro divisione classificativa sarà effettuata tra requisiti:
+\begin{itemize}
+    \item \textbf{Funzionali: }indicano le funzionalità offerta all'utente;
+    \item \textbf{Di Qualità: }garantiscono la qualità del prodotto;
+    \item \textbf{Di Sistema: }indicano le specifiche tecniche a supporto dell'utilizzo del prodotto;
+    \item \textbf{Prestazionali: }indicano la qualità con cui il sistema sta svolgendo determinate funzioni;
+   % \item \textbf{Di Vincolo: } indicano i vincoli logici del sistema
+\end{itemize}
+i quali meritano una suddivisione in sottosezioni apposite.
+Ci si occuperà inoltre di distinguere tra requisiti \textbf{Obbligatori}, \textbf{Desiderabili} ed \textbf{Opzionali}.
+
+Sulla base delle specifiche appena discusse, ad ogni requisito verrà assegnato un codice che segue la seguente regola:
+\begin{center}
+    \textbf{R[Priorità][Tipo]\textunderscore[Identificativo]}
+\end{center}
+dove:
+\begin{itemize}
+    \item \textbf{Priorità:} indica l'importanza del requisito e può assumere i seguenti valori:
+        \begin{itemize}
+            \item \textbf{O}: requisito obbligatorio;
+            \item \textbf{D}: requisito desiderabile ma non obbligatorio;
+            \item \textbf{F}: requisito facoltativo.
+        \end{itemize}                 
+    \item \textbf{Tipo:} indica la tipologia del requisito e può assumere i seguenti valori:
+        \begin{itemize}
+            \item \textbf{F}: requisito funzionale;
+            \item \textbf{Q}: requisito qualitativo;
+            \item \textbf{P}: requisito prestazionale;
+            \item \textbf{V}: requisito di sistema (vincolo).
+        \end{itemize}             
+    \item \textbf{Identificativo:} si tratta di un numero progressivo univoco all'interno di uno stesso \textit{Tipo} e strutturato in forma gerarchica \textit{[idPadre].[idFiglio]}. Viene usato per contraddistinguere i requisiti e, se necessario, i loro sottocasi.
+\end{itemize}
+Di particolare importanza è inoltre il tracciamento dell'origine dei requisiti, in cui si esamina il perimetro di origine dei tali: una prima suddivisione sará effettuata tra requisiti \textbf{espliciti} ed \textbf{impliciti}, a cui sarà aggiunta una citazione del documento o la modalità dalla quale lo si è ricavato ed eventualmente all'use case ad esso relativo.
+
+
+\subsubsection{Requisiti funzionali}\label{subsec:requisiti_funzionali}
+\rowcolors{2}{gray!10!}{white}
+\renewcommand{\arraystretch}{2.5}
+\begin{xltabular}{\textwidth}{ p{0.1\textwidth} | X | p{0.3\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Tracciamento} \\ 
+    \endhead
+
+    \caption{Tabella requisiti funzionali} 
+    \endlastfoot
+
+    ROF\_1 & L'utente può creare un ambiente di magazzino tridimensionale & Esplicito, Capitolato [UC1]\\
+    ROF\_1.1 & L'utente può creare un ambiente di magazzino tridimensionale da zero & Esplicito, Capitolato [UC1.2]\\
+    ROF\_1.1.1 & L'utente puó creare una planimetria personalizzata & Esplicito, Verbale Esterno 27-02-2024 [UC1.2.1]\\
+    RDF\_1.2 & L'utente può caricare un layout memorizzato in database per inizializzare l'ambiente & Esplicito, Capitolato [UC1.1]\\
+    RFF\_1.3 & L'utente può caricare un file in formato svg per inizializzare l'ambiente & Esplicito, Capitolato \\
+    RDF\_2 & L'utente può salvare i dati del magazzino creato in un database & Esplicito, Capitolato [UC2]\\  
+    RDF\_2.1 & L'utente salva i dati dello spazio del magazzino & Implicito, Discussione interna \\  
+    RDF\_2.2 & L'utente salva i dati delle scaffalature presenti nel magazzino & Implicito, Discussione interna \\  
+    RDF\_2.3 & L'utente salva i dati dei prodotti presenti del magazzino & Implicito, Discussione interna \\    
+    ROF\_3 & L'utente può visualizzare tutto il magazzino in 3D & Esplicito, Capitolato [UC3]\\
+    ROF\_3.1 & L'utente può visualizzare lo spazio del magazzino in 3D & Esplicito, Capitolato [UC3.1]\\
+    ROF\_3.2 & L'utente può visualizzare le scaffalature posizionate all'interno del magazzino in 3D & Esplicito, Capitolato [UC3.2]\\
+    ROF\_3.3 & L'utente può visualizzare i prodotti posizionati all'interno del magazzino in 3D & Esplicito, Capitolato [UC3.3]\\
+    RFF\_3.3.1 & L'utente può visualizzare i prodotti creati (non posizionati) in 3D & Implicito, Discussione interna \\      
+    ROF\_4 & L'utente può navigare attraverso lo spazio tridimensionale & Esplicito, Capitolato [UC5]\\
+    ROF\_4.1 & L'utente deve poter ingrandire l'area di visione a cui è interessato & Implicito, Discussione interna [UC5.1] \\
+    ROF\_4.2 & L'utente deve poter rimpicciolire l'area di visione a cui è interessato & Implicito, Discussione interna [UC5.2] \\
+    ROF\_4.3 & L'utente deve poter ruotare orizzontalmente la camera & Implicito, Discussione interna [UC5.3] \\
+    ROF\_4.4 & L'utente deve poter ruotare verticalmente la camera & Implicito, Discussione interna [UC5.4] \\
+    ROF\_4.5 & L'utente può navigare nello spazio tridimensionale attraverso il mouse& Esplicito, Capitolato\\
+    ROF\_4.6 & L'utente può navigare nello spazio tridimensionale attraverso la tastiera& Esplicito, Capitolato\\
+    ROF\_5 & L'utente può visualizzare in un'area gestionale separata (la libreria) l'elenco degli oggetti creati & Implicito, Discussione interna [UC4] \\
+    ROF\_5.1 & L'utente può visualizzare l'elenco delle scaffalature create & Implicito, Discussione interna [UC4.1] \\
+    ROF\_5.1.1 & L'utente per ogni scaffalatura deve poterne visualizzare il codice & Implicito, Discussione interna [UC4.1.1.1]\\
+    ROF\_5.1.2 & L'utente per ogni scaffalatura deve poterne visualizzare le dimensioni & Implicito, Discussione interna [UC4.1.1.2]\\
+    ROF\_5.1.3 & L'utente per ogni scaffalatura deve poterne visualizzare le dimensioni dei bin & Implicito, Verbale esterno 16-02-24 [UC4.1.1.3]\\
+    ROF\_5.2 & L'utente può visualizzare l'elenco dei prodotti creati & Implicito, Discussione interna [UC4.2] \\
+    ROF\_5.2.1 & L'utente per ogni prodotto deve poterne visualizzare il nome & Implicito, Discussione interna [UC4.2.1.1]\\
+    %ROF\_5.2.2 & L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Implicito, Discussione interna [UC4.2.1.2]\\
+    ROF\_5.2.2 & L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Implicito, Discussione interna [UC4.2.2.1] \\
+    ROF\_6 & L'utente può creare delle scaffalature & Esplicito, Capitolato [UC6]\\
+    ROF\_6.1 & L'utente può scegliere un codice univoco da dare alla scaffalatura & Implicito, Discussione interna [UC6.1]\\
+    ROF\_6.2 & L'utente può scegliere la dimensione delle scaffalature & Esplicito, Capitolato [UC6.2]\\
+    ROF\_6.2.1 & Le scaffalature devono essere divise in bin codificabili con coordinate & Esplicito, Capitolato + Verbale esterno 04-12-23\\
+    ROF\_6.2.2 & L'utente può scegliere la dimensione del bin per la scaffalatura & Esplicito, Verbale esterno 16-02-24 [UC6.3]\\
+    ROF\_7 & L'utente può inserire le scaffalature nello spazio 3D & Esplicito, Capitolato [UC7]\\
+    ROF\_8 & L'utente può selezionare una scaffalatura & Implicito, Discussione interna [UC8]\\
+    ROF\_8.1 & L'utente può selezionare una scaffalatura dalla libreria & Implicito, Discussione interna [UC8.1]\\
+    RFF\_8.1.1 & La scaffalatura è evidenziata in libreria quando viene selezionata & Implicito, Discussione interna [UC8.1.1]\\
+    ROF\_8.2 & L'utente può selezionare una scaffalatura dal render 3D & Implicito, Discussione interna [UC8.2]\\
+    RFF\_8.2.1 & La scaffalatura è evidenziata nel render 3D quando viene selezionata & Implicito, Discussione interna [UC8.2.1]\\
+    ROF\_9 & L'utente può modificare una scaffalatura creata & Esplicito, Capitolato [UC9]\\
+    ROF\_9.1 & L'utente può modificare la capacità della scaffalatura & Esplicito, Capitolato [UC9]\\
+    RDF\_9.2 & L'utente può modificare il codice della scaffalatura & Implicito, Discussione interna [UC9.2]\\
+    RDF\_9.3 & L'utente può modificare la posizione della scaffalatura & Implicito, Discussione interna [UC9.3]\\
+    RDF\_10 & L'utente può ricercare per codice una scaffalatura & Implicito, Discussione interna [UC10]\\
+    ROF\_11 & L'utente può eliminare una scaffalatura creata & Implicito, Discussione interna [UC12]\\
+    ROF\_11.1 & L'utente può cancellare la scaffalatura dalla libreria & Implicito, Discussione interna [UC12.2]\\
+    ROF\_11.2 & L'utente può cancellare la scaffalatura dal render 3D & Implicito, Discussione interna [UC12.3]\\
+    ROF\_12 & L'utente può creare un prodotto di forma parallelepipeda & Esplicito, Capitolato + Verbale esterno 04-12-23 [UC13]\\
+    ROF\_12.1 & L'utente può scegliere un nome univoco da dare al prodotto & Implicito, Discussione interna [UC13.1]\\
+    %RDF\_12.2 & L'utente può scegliere delle dimensioni da dare al prodotto & Esplicito, Verbale esterno 04-12-23 [UC13.2]\\    
+    ROF\_13 & L'utente può inserire i prodotti in un bin di una scaffalatura all'interno dello spazio 3D & Esplicito, Capitolato [UC14.2]\\
+    ROF\_14 & L'utente può selezionare un prodotto creato & Esplicito, Capitolato [UC15]\\
+    ROF\_14.1 & L'utente può selezionare un prodotto dalla libreria & Implicito, Discussione interna [UC15.1]\\
+    RFF\_14.1.1 & Il prodotto è evidenziato in libreria quando viene selezionato & Implicito, Discussione interna [UC15.1.1]\\
+    ROF\_14.2 & L'utente può selezionare un prodotto posizionato dal render 3D & Esplicito, Capitolato [UC15.2]\\
+    RFF\_14.2.1 & Il prodotto è evidenziato nel render 3D quando viene selezionato & Implicito, Discussione interna [UC15.2.1]\\
+    RDF\_15 & L'utente può ricercare per nome un prodotto & Esplicito, Verbale esterno 04-12-23 [UC16]\\
+    ROF\_16 & L'utente può eliminare un prodotto creato & Implicito, Discussione interna [UC18]\\
+    ROF\_16.1 & L'utente può eliminare un prodotto creato dalla libreria & Implicito, Discussione interna [UC18.2]\\
+    ROF\_16.2 & L'utente può eliminare un prodotto posizionato dal render 3D & Implicito, Discussione interna [UC18.1.1]\\
+    ROF\_17 & L'utente può richiedere lo spostamento di un oggetto & Esplicito, Capitolato [UC19]\\
+    RDF\_17.1 & L'utente può richiedere lo spostamento tramite trascinamento & Esplicito, Verbale esterno 04-12-23\\
+    ROF\_17.2 & L'utente può richiedere lo spostamento tramite click del mouse & Esplicito, Verbale esterno 04-12-23\\
+    ROF\_18 & Il sistema deve verificare la disponibilità della scaffalatura target alla richiesta di uno spostamento & Esplicito, Verbale esterno 24-10-23 [UC19.1.2]\\
+    ROF\_19 & Il sistema delega ad un meccanismo terzo la decisione finale sull'accettazione di un movimento & Implicito, Verbale esterno 24-10-23\\
+    RFF\_20 & L'utente può codificare il magazzino in aree specifiche per uno scopo & Esplicito, Capitolato, Verbale 27-02-2024 [UC28]\\
+    \hline
+\end{xltabular}
+
+
+\subsubsection{Requisiti di qualità}\label{subsec:requisiti_qualita}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{\textwidth}{ p{0.1\textwidth} | X | p{0.3\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Tracciamento} \\ 
+    \endhead
+
+    \caption{Tabella requisiti di qualità}
+    \endlastfoot
+
+    ROQ\_1 & La progettazione e il codice devono seguire le norme e le metriche riportate nel documento \textit{Piano di qualifica} & Implicito, Discussione interna \\
+    ROQ\_2 & Dovrà essere fornito un manuale utente sull'uso dell'applicazione & Esplicito, Capitolato \\
+    ROQ\_3 & Il codice sorgente deve essere pubblicato sulla piattaforma GitHub & Esplicito, Capitolato \\
+    ROQ\_4 & Dovrà essere fornita una lista dei difetti riscontrati durante lo sviluppo & Esplicito, Capitolato \\ 
+    ROQ\_5 & Dovrà essere fornito lo schema di design della base di dati & Esplicito, Capitolato \\ 
+    ROQ\_6 & Dovranno essere forniti i diagrammi UML degli use cases di progetto & Esplicito, Capitolato \\ 
+    RDQ\_7 & Il codice JavaScript deve essere supportato dall'utilizzo di JSDoc & Implicito, Norme di Progetto \\
+    \hline
+    %se useremo typescript con supporto di analisi del codice ESLint
+\end{xltabular}
+
+
+\subsubsection{Requisiti di sistema (di vincolo)}\label{subsec:requisiti_vincolo}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{\textwidth}{ p{0.1\textwidth} | X | p{0.3\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Tracciamento} \\ 
+    \endhead
+
+    \caption{Tabella requisiti di sistema (di vincolo)}
+    \endlastfoot
+
+    ROV\_1 & Il front-end dell'applicazione deve essere sviluppato attraverso l'uso di tecnologie web & Esplicito, Verbale esterno 24-10-23 \\
+    ROV\_1.1 & La gestione 3D del magazzino deve essere sviluppata usando JavaScript, usando la libreria Three.js & Esplicito, Verbale esterno 24-10-23 + Discussione interna \\
+    RFV\_2 & Per il salvataggio dei dati di un magazzino si utilizzerà un database basato su SQL & Implicito, Discussione interna\\
+    ROV\_3 & L'applicativo dovrà essere supportato da versioni del browser che supportano WebGL\textsuperscript{G} & Implicito, Discussione interna\\
+    ROV\_3.1 & L'applicativo deve essere accessibile e utilizzabile dalla versione 109 di Google Chrome & Implicito, Discussione interna\\
+    ROV\_3.2 & L'applicativo deve essere accessibile e utilizzabile dalla versione 120 di Mozilla Firefox & Implicito, Discussione interna\\
+    ROV\_3.3 & L'applicativo deve essere accessibile e utilizzabile dalla versione 104 di Opera & Implicito, Discussione interna\\
+    ROV\_3.4 & L'applicativo deve essere accessibile e utilizzabile dalla versione 16.6 di Safari & Implicito, Discussione interna\\
+    RFV\_4 & L'applicativo deve essere accessibile e utilizzabile da browser su tablet, per le versioni supportate fare riferimento alle controparti PC & Esplicito, Verbale esterno 24-10-23\\
+
+    \hline
+\end{xltabular}
+
+\subsubsection{Requisiti prestazionali}\label{subsec:requisiti_prestazionali}
+Non è stato individuato alcun requisito prestazionale durante l’analisi del capitolato e delle richieste del proponente.
+
+\subsection{Tracciamento dei requisiti}\label{subsec:tracciamento}
+\subsubsection{Tracciamento requisiti-fonti}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{\textwidth}{ p{0.2\textwidth} | X | p{0.2\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Requisito} & \textbf{\color{white} Nome requisito} & \textbf{\color{white} Fonte} \\ 
+    \endhead
+
+    \caption{Tabella requisiti-fonti}
+    \endlastfoot
+
+    ROF\_1& L'utente può creare un ambiente di magazzino tridimensionale & Capitolato [UC1]\\
+    ROF\_1.1& L'utente può creare un ambiente di magazzino tridimensionale da zero & Capitolato [UC1.2]\\
+    ROF\_1.1.1 & L'utente puó creare una planimetria personalizzata & Verbale Esterno 27-02-2024 [UC1.2.1]\\
+    RDF\_1.2& L'utente può caricare un layout memorizzato in database per inizializzare l'ambiente & Capitolato [UC1.1]\\
+    RFF\_1.3& L'utente può caricare un file in formato svg per inizializzare l'ambiente & Capitolato \\
+    RDF\_2& L'utente può salvare i dati del magazzino creato in un database & Capitolato [UC2]  \\
+    RDF\_2.1& L'utente salva i dati dello spazio del magazzino & Discussione interna   \\
+    RDF\_2.2& L'utente salva i dati delle scaffalature presenti nel magazzino & Discussione interna   \\
+    RDF\_2.3& L'utente salva i dati dei prodotti presenti del magazzino & Discussione interna     \\
+    ROF\_3& L'utente può visualizzare tutto il magazzino in 3D & Capitolato [UC3]\\
+    ROF\_3.1& L'utente può visualizzare lo spazio del magazzino in 3D & Capitolato [UC3.1]\\
+    ROF\_3.2& L'utente può visualizzare le scaffalature posizionate all'interno del magazzino in 3D & Capitolato [UC3.2]\\
+    ROF\_3.3& L'utente può visualizzare i prodotti posizionati all'interno del magazzino in 3D & Capitolato [UC3.3]\\
+    RFF\_3.3.1& L'utente può visualizzare i prodotti creati (non posizionati) in 3D & Discussione interna       \\
+    ROF\_4& L'utente può navigare attraverso lo spazio tridimensionale & Capitolato [UC5]\\
+    ROF\_4.1& L'utente deve poter ingrandire l'area di visione a cui è interessato & Discussione interna [UC5.1] \\
+    ROF\_4.2& L'utente deve poter rimpicciolire l'area di visione a cui è interessato & Discussione interna [UC5.2] \\
+    ROF\_4.3& L'utente deve poter ruotare orizzontalmente la camera & Discussione interna [UC5.3] \\
+    ROF\_4.4& L'utente deve poter ruotare verticalmente la camera & Discussione interna [UC5.4] \\
+    ROF\_4.5& L'utente può navigare nello spazio tridimensionale attraverso il mouse& Capitolato\\
+    ROF\_4.6& L'utente può navigare nello spazio tridimensionale attraverso la tastiera& Capitolato\\
+    ROF\_5& L'utente può visualizzare in un'area gestionale separata (la libreria) l'elenco degli oggetti creati & Discussione interna [UC4] \\
+    ROF\_5.1& L'utente può visualizzare l'elenco delle scaffalature create & Discussione interna [UC4.1] \\
+    ROF\_5.1.1& L'utente per ogni scaffalatura deve poterne visualizzare il codice & Discussione interna [UC4.1.1.1]\\
+    ROF\_5.1.2& L'utente per ogni scaffalatura deve poterne visualizzare le dimensioni & Discussione interna [UC4.1.1.2]\\
+    ROF\_5.1.3 & L'utente per ogni scaffalatura deve poterne visualizzare le dimensioni dei bin & Verbale esterno 16-02-24 [UC4.1.1.3]\\
+    ROF\_5.2& L'utente può visualizzare l'elenco dei prodotti creati & Discussione interna [UC4.2] \\
+    ROF\_5.2.1& L'utente per ogni prodotto deve poterne visualizzare il nome & Discussione interna [UC4.2.1.1]\\
+    %ROF\_5.2.2& L'utente per ogni prodotto deve poterne visualizzare le dimensioni & Discussione interna [UC4.2.1.2]\\
+    ROF\_5.2.2& L'utente per ogni prodotto posizionato all'interno del magazzino deve poterne visualizzare la posizione & Discussione interna [UC4.2.2.1] \\
+    ROF\_6& L'utente può creare delle scaffalature & Capitolato [UC6]\\
+    ROF\_6.1& L'utente può scegliere un codice univoco da dare alla scaffalatura & Discussione interna [UC6.1]\\
+    ROF\_6.2& L'utente può scegliere la dimensione delle scaffalature & Capitolato [UC6.2]\\
+    ROF\_6.2.1& Le scaffalature devono essere divise in bin codificabili con coordinate & Capitolato + Verbale esterno 04-12-23\\
+    ROF\_6.3& L'utente può scegliere la dimensione del bin per la scaffalatura & Verbale esterno 16-02-24 [UC6.3]\\
+    ROF\_7& L'utente può inserire le scaffalature nello spazio 3D & Capitolato [UC7]\\
+    ROF\_8& L'utente può selezionare una scaffalatura & Discussione interna [UC8]\\
+    ROF\_8.1& L'utente può selezionare una scaffalatura dalla libreria & Discussione interna [UC8.1]\\
+    RFF\_8.1.1& La scaffalatura è evidenziata in libreria quando viene selezionata & Discussione interna [UC8.1.1]\\
+    ROF\_8.2& L'utente può selezionare una scaffalatura dal render 3D & Discussione interna [UC8.2]\\
+    RFF\_8.2.1& La scaffalatura è evidenziata nel render 3D quando viene selezionata & Discussione interna [UC8.2.1]\\
+    ROF\_9& L'utente può modificare una scaffalatura creata & Capitolato [UC9]\\
+    ROF\_9.1& L'utente può modificare la capacitò della scaffalatura & Capitolato [UC9]\\
+    RDF\_9.2& L'utente può modificare il codice della scaffalatura & Discussione interna [UC9.2]\\
+    RDF\_9.3& L'utente può modificare la posizione della scaffalatura & Discussione interna [UC9.3]\\
+    RDF\_10& L'utente può ricercare per codice una scaffalatura & Discussione interna [UC10]\\
+    ROF\_11& L'utente può eliminare una scaffalatura creata & Discussione interna [UC12]\\
+    ROF\_11.1& L'utente può cancellare la scaffalatura dalla libreria & Discussione interna [UC12.2]\\
+    ROF\_11.2& L'utente può cancellare la scaffalatura dal render 3D & Discussione interna [UC12.3]\\
+    ROF\_12& L'utente può creare un prodotto di forma parallelepipeda & Capitolato + Verbale esterno 04-12-23 [UC13]\\
+    ROF\_12.1& L'utente può scegliere un nome univoco da dare al prodotto & Discussione interna [UC13.1]\\
+    %RDF\_12.2& L'utente può scegliere delle dimensioni da dare al prodotto & Verbale esterno 04-12-23 [UC13.2]    \\
+    ROF\_13& L'utente può inserire i prodotti in un bin di una scaffalatura all'interno dello spazio 3D & Capitolato [UC14.2]\\
+    ROF\_14& L'utente può selezionare un prodotto creato & Capitolato [UC15]\\
+    ROF\_14.1& L'utente può selezionare un prodotto dalla libreria & Discussione interna [UC15.1]\\
+    RFF\_14.1.1& Il prodotto è evidenziato in libreria quando viene selezionato & Discussione interna [UC15.1.1]\\
+    ROF\_14.2& L'utente può selezionare un prodotto posizionato dal render 3D & Capitolato [UC15.2]\\
+    RFF\_14.2.1& Il prodotto è evidenziato nel render 3D quando viene selezionato & Discussione interna [UC15.2.1]\\
+    RDF\_15& L'utente può ricercare per nome un prodotto & Verbale esterno 04-12-23 [UC16]\\
+    ROF\_16& L'utente può eliminare un prodotto creato & Discussione interna [UC18]\\
+    ROF\_16.1& L'utente può eliminare un prodotto creato dalla libreria & Discussione interna [UC18.2]\\
+    ROF\_16.2& L'utente può eliminare un prodotto posizionato dal render 3D & Discussione interna [UC18.1.1]\\
+    ROF\_17& L'utente può richiedere lo spostamento di un oggetto & Capitolato [UC19]\\
+    RDF\_17.1& L'utente può richiedere lo spostamento tramite trascinamento & Verbale esterno 04-12-23\\
+    ROF\_17.2& L'utente può richiedere lo spostamento tramite click del mouse & Verbale esterno 04-12-23\\
+    ROF\_18& Il sistema deve verificare la disponibilità della scaffalatura target alla richiesta di uno spostamento & Verbale esterno 24-10-23 [UC19.1.2]\\
+    ROF\_19 & Il sistema delega ad un meccanismo terzo la decisione finale sull'accettazione di un movimento & Verbale esterno 24-10-23\\
+    RFF\_20 & L'utente può codificare il magazzino in aree specifiche per uno scopo & Capitolato + Verbale esterno 27-02-2024 [UC28] \\
+    ROQ\_1& La progettazione e il codice devono seguire le norme e le metriche riportate nel documento \textit{Piano di qualifica} & Discussione interna \\
+    ROQ\_2& Dovrà essere fornito un manuale utente sull'uso dell'applicazione & Capitolato \\
+    ROQ\_3& Il codice sorgente deve essere pubblicato sulla piattaforma GitHub o BitBucket & Capitolato \\
+    ROQ\_4& Dovrà essere fornita una lista dei difetti riscontrati durante lo sviluppo & Capitolato  \\
+    ROQ\_5& Dovrà essere fornito lo schema di design della base di dati & Capitolato  \\
+    ROQ\_6& Dovranno essere forniti i diagrammi UML degli use cases di progetto & Capitolato  \\
+    RDQ\_7& Il codice JavaScript deve essere supportato dall'utilizzo di JSDoc & Norme di Progetto \\
+    ROV\_1& Il front-end dell'applicazione deve essere sviluppato attraverso l'uso di tecnologie web & Verbale esterno 24-10-23 \\
+    ROV\_1.1& La gestione 3D del magazzino deve essere sviluppata usando JavaScript, usando la libreria Three.js & Verbale esterno 24-10-23 + Discussione interna \\
+    RFV\_2& Per il salvataggio dei dati di un magazzino si utilizzerà un database basato su SQL & Discussione interna\\
+    ROV\_3& L'applicativo dovrà essere supportato da versioni del browser che supportano WebGL & Discussione interna\\
+    ROV\_3.1& L'applicativo deve essere accessibile e utilizzabile dalla versione 109 di Google Chrome & Discussione interna\\
+    ROV\_3.2& L'applicativo deve essere accessibile e utilizzabile dalla versione 120 di Mozilla Firefox & Discussione interna\\
+    ROV\_3.3& L'applicativo deve essere accessibile e utilizzabile dalla versione 104 di Opera & Discussione interna\\
+    ROV\_3.4& L'applicativo deve essere accessibile e utilizzabile dalla versione 16.6 di Safari & Discussione interna\\
+    RFV\_4& L'applicativo deve essere accessibile e utilizzabile da browser su tablet, per le versioni supportate fare riferimento alle controparti PC & Verbale esterno 24-10-23\\
+    \hline
+
+    \hline
+\end{xltabular}
+
+
+\renewcommand{\arraystretch}{1.25}
+\subsubsection{Tracciamento fonti-requisiti}
+\rowcolors{1}{white}{white}
+\begin{xltabular}{\textwidth}{ p{0.3\textwidth} | X | p{0.2\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Fonte} & \textbf{\color{white} Nome fonte (se presente)} & \textbf{\color{white} Requisito} \\ 
+    \endhead
+
+    \caption{Tabella fonti-requisiti}
+    \endlastfoot
+
+    %non funziona multirow quindi soluzione con cambio colore manuale
+    \rowcolor{gray!10}Capitolato & & ROF\_1\\
+    \rowcolor{gray!10}&&ROF\_1.1\\ 
+    \rowcolor{gray!10}&&RDF\_1.2\\ 
+    \rowcolor{gray!10}&&RFF\_1.3\\ 
+    \rowcolor{gray!10}&&RDF\_2\\ 
+    \rowcolor{gray!10}&&ROF\_3\\ 
+    \rowcolor{gray!10}&&ROF\_3.1\\ 
+    \rowcolor{gray!10}&&ROF\_3.2\\ 
+    \rowcolor{gray!10}&&ROF\_3.3\\ 
+    \rowcolor{gray!10}&&ROF\_4\\ 
+    \rowcolor{gray!10}&&ROF\_4.5\\ 
+    \rowcolor{gray!10}&&ROF\_4.6\\ 
+    \rowcolor{gray!10}&&ROF\_6\\ 
+    \rowcolor{gray!10}&&ROF\_6.2\\ 
+    \rowcolor{gray!10}&&ROF\_6.2.1\\ 
+    \rowcolor{gray!10}&&ROF\_7\\ 
+    \rowcolor{gray!10}&&ROF\_9\\ 
+    \rowcolor{gray!10}&&ROF\_9.1\\ 
+    \rowcolor{gray!10}&&ROF\_12\\ 
+    \rowcolor{gray!10}&&ROF\_13\\ 
+    \rowcolor{gray!10}&&ROF\_14\\ 
+    \rowcolor{gray!10}&&ROF\_14.2\\ 
+    \rowcolor{gray!10}&&ROF\_17\\ 
+    \rowcolor{gray!10}&&RFF\_20\\ 
+    \rowcolor{gray!10}&&ROQ\_2\\ 
+    \rowcolor{gray!10}&&ROQ\_3\\ 
+    \rowcolor{gray!10}&&ROQ\_4\\ 
+    \rowcolor{gray!10}&&ROQ\_5\\ 
+    \rowcolor{gray!10}&&ROQ\_6\\
+
+    \rowcolors{1}{white}{white}
+    Verbale esterno 24-10-23 & & ROF\_18\\ 
+    &&ROF\_19\\ 
+    &&ROV\_1\\ 
+    &&ROV\_1.1\\ 
+    &&RFV\_4\\ 
+
+
+    \rowcolor{gray!10}Verbale esterno 04-12-23 & & ROF\_6.2.1\\
+    \rowcolor{gray!10}&&ROF\_12\\
+    %&&RDF\_12.2\\
+    \rowcolor{gray!10}&&RDF\_15\\
+    \rowcolor{gray!10}&&RDF\_17.1\\
+    \rowcolor{gray!10}&&ROF\_17.2\\
+
+
+    \rowcolors{1}{white}{white}Verbale esterno 16-02-24 & & ROF\_6.3\\
+    \rowcolors{1}{white}{white}&&ROF\_5.1.3\\
+
+    \rowcolor{gray!10} Verbale esterno 27-02-24 & & ROF\_1.1.1\\
+    \rowcolor{gray!10} && RFF\_20\\ 
+    
+    
+    Discussione interna & & RDF\_2.1\\ 
+    &&RDF\_2.2\\ 
+    &&RDF\_2.3\\ 
+    &&RFF\_3.3.1\\ 
+    &&ROF\_4.1\\ 
+    &&ROF\_4.2\\ 
+    &&ROF\_4.3\\ 
+    &&ROF\_4.4\\ 
+    &&ROF\_5\\ 
+    &&ROF\_5.1\\ 
+    &&ROF\_5.1.1\\ 
+    &&ROF\_5.1.2\\ 
+    &&ROF\_5.2\\ 
+    &&ROF\_5.2.1\\ 
+    %\rowcolor{gray!10}&&ROF\_5.2.2\\ 
+    &&ROF\_5.2.2\\ 
+    &&ROF\_6.1\\ 
+    &&ROF\_8\\ 
+    &&ROF\_8.1\\ 
+    &&RFF\_8.1.1\\ 
+    &&ROF\_8.2\\ 
+    &&RFF\_8.2.1\\ 
+    &&RDF\_9.2\\ 
+    &&RDF\_9.3\\ 
+    &&RDF\_10\\ 
+    &&ROF\_11\\ 
+    &&ROF\_11.1\\ 
+    &&ROF\_11.2\\ 
+    &&ROF\_12.1\\ 
+    &&ROF\_14.1\\ 
+    &&RFF\_14.1.1\\ 
+    &&RFF\_14.2.1\\ 
+    &&ROF\_16\\ 
+    &&ROF\_16.1\\ 
+    &&ROF\_16.2\\ 
+    &&ROQ\_1\\ 
+    &&ROV\_1.1\\ 
+    &&RFV\_2\\ 
+    &&ROV\_3\\ 
+    &&ROV\_3.1\\ 
+    &&ROV\_3.2\\ 
+    &&ROV\_3.3\\ 
+    &&ROV\_3.4\\ 
+
+
+    \rowcolor{gray!10}
+    Norme di progetto & & RDQ\_7\\
+
+
+    UC1 & Creazione Magazzino & ROF\_1\\
+    \rowcolor{gray!10}UC1.2 & Creazione manuale del magazzino & ROF\_1.1\\
+    UC1.1 & Creazione magazzino da file & RDF\_1.2\\
+    \rowcolor{gray!10}UC2 & Salvataggio magazzino & RDF\_2\\
+    UC3 & Visualizzazione 3D del magazzino & ROF\_3\\
+    \rowcolor{gray!10}UC3.1 & Visualizzazione 3D spazio del magazzino & ROF\_3.1\\
+    UC3.2 & Visualizzazione 3D scaffalature & ROF\_3.2\\
+    \rowcolor{gray!10}ROF\_3.3 & Visualizzazione 3D prodotti & UC3.3\\
+    UC5 & Modifica vista magazzino & ROF\_4\\
+    \rowcolor{gray!10}UC4.1 & Ingrandimento & ROF\_4.1\\ 
+    UC5.2 & Rimpicciolimento & ROF\_4.2\\ 
+    \rowcolor{gray!10}UC5.3 & Rotazione orizzontale & ROF\_4.3\\ 
+    UC5.4 & Rotazione verticale & ROF\_4.4\\ 
+    \rowcolor{gray!10}UC4 & Visualizzazione libreria & ROF\_5\\ 
+    UC4.1 & Visualizzazione elenco scaffalature & ROF\_5.1\\ 
+    \rowcolor{gray!10}UC4.1.1.1 & Visualizzazione codice scaffalatura & ROF\_5.1.1\\
+    UC4.1.1.2 & Visualizzazione dimensioni scaffalatura & ROF\_5.1.2\\ 
+    \rowcolor{gray!10}UC4.1.1.3 & Visualizzazione dimensioni singolo bin & ROF\_5.1.3\\ 
+    UC4.2 & Visualizzazione elenco prodotti & ROF\_5.2\\ 
+    \rowcolor{gray!10}UC4.2.1.1 & Visualizzazione nome prodotto & ROF\_5.2.1\\
+    %UC4.2.1.2 & Visualizzazione dimensioni prodotto & ROF\_5.2.2\\
+    UC4.2.2.1 & Visualizzazione scaffalatura di residenza & ROF\_5.2.2\\ 
+    \rowcolor{gray!10}UC6 & Creazione scaffalatura & ROF\_6\\
+    UC6.1 & Inserimento codice & ROF\_6.1\\
+    \rowcolor{gray!10}UC6.2 & Inserimento dimensioni & ROF\_6.2\\
+    UC6.3 & Inserimento dimensioni bin & ROF\_6.3\\
+    \rowcolor{gray!10}UC7 & Posizionamento scaffalatura & ROF\_7\\
+    UC8 & Selezione scaffalatura & ROF\_8\\
+    \rowcolor{gray!10}UC8.1 & Selezione scaffalatura in libreria & ROF\_8.1\\
+    UC8.1.1 & Evidenziazione scaffalatura in libreria & RFF\_8.1.1\\
+    \rowcolor{gray!10}UC8.2 & Selezione scaffalatura in render 3D & ROF\_8.2\\
+    UC8.2.1 & Evidenziazione scaffalatura in render 3D & RFF\_8.2.1\\
+    \rowcolor{gray!10}UC9 & Modifica scaffalatura & ROF\_9\\
+    UC9 & Modifica codice scaffalatura & ROF\_9.1\\
+    \rowcolor{gray!10}UC9.2 & Modifica codice scaffalatura & RDF\_9.2\\
+    UC9.3 & Modifica posizione scaffalatura & RDF\_9.3\\
+    \rowcolor{gray!10}UC10 & Ricerca scaffalatura per codice & RDF\_10\\
+    UC12 & Cancellazione scaffalatura & ROF\_11\\
+    \rowcolor{gray!10}UC12.2 & Cancellazione scaffalatura da libreria & ROF\_11.1\\
+    UC12.3 & Cancellazione scaffalatura da render 3D & ROF\_11.2\\
+    \rowcolor{gray!10}UC13 & Creazione prodotto & ROF\_12\\
+    UC13.1 & Inserimento nome & ROF\_12.1\\
+    %\rowcolor{gray!10}UC13.2 &  Inserimento dimensioni & RDF\_12.2\\ 
+    \rowcolor{gray!10}UC14.2 & Selezione posizione interna alla scaffalatura & ROF\_13\\
+    UC15 & Selezione prodotto & ROF\_14\\
+    \rowcolor{gray!10}UC15.1 & Selezione prodotto da libreria & ROF\_14.1\\
+    UC15.1.1 & Evidenziazione prodotto in libreria & RFF\_14.1.1\\
+    \rowcolor{gray!10}UC15.2 & Selezione prodotto da render 3D & ROF\_14.2\\
+    UC15.2.1 & Evidenziazione prodotto in render 3D & RFF\_14.2.1\\
+    \rowcolor{gray!10}UC16 & Ricerca prodotto per nome & RDF\_15\\
+    UC18 & Cancellazione prodotto & ROF\_16\\
+    \rowcolor{gray!10}UC18.2 & Cancellazione prodotto da libreria & ROF\_16.1\\
+    UC18.1.1 & Cancellazione prodotto da render 3D & ROF\_16.2\\
+    \rowcolor{gray!10}UC19 & Richiesta di spostamento & ROF\_17\\
+    UC19.1.2 & Visualizzazione errore posizione occupata & ROF\_18\\
+    \rowcolor{gray!10}UC28 & Suddivisione della planimetria & RFF\_20\\
+    \hline
+\end{xltabular}
+
+\subsection{Riepilogo dei requisiti}\label{subsec:riepilogo}
+Di seguito si propone una suddivisione dei requisiti per rilevanza e tipo, conteggiandone il numero:
+
+\begin{table}[h]
+    \centering
+    \renewcommand\tabularxcolumn[1]{m{#1}} %per centrare contenuto nelle tabelle
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|c|c|c||c|}
+        \hline
+        \rowcolor{black}
+        \multicolumn{1}{|c|}{\cellcolor{white}Tipo\textbackslash Priorità} & \textbf{\color{white}Obbligatori} & \textbf{\color{white}Desiderabili} & \textbf{\color{white}Facoltativi} & \textbf{\color{white}Totale}\\ 
+        \hline
+
+        \cellcolor{black} \textbf{\color{white}Funzionali} & 49 & 10 & 7 & \textbf{65}\\
+        \cellcolor{black} \textbf{\color{white}Di qualità} & 6 & 1 & 0 & \textbf{7}\\
+        \cellcolor{black} \textbf{\color{white}Di sistema} & 7 & 0 & 2 & \textbf{9}\\
+
+        \hline\hline
+        \cellcolor{black} \textbf{\color{white}Totale complessivo} & \textbf{62} & \textbf{11} & \textbf{9} & \textbf{82}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RIFERIMENTI ESTERNI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Riferimenti esterni}\label{sec:riferimenti}
+
+\subsection{Riferimenti normativi}\label{sec:riferimenti_normativi}
+\begin{itemize}
+    \item Norme di Progetto v3.0.0 \\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Interna/norme_di_progetto_v3.0.0.pdf}
+    \item Piano di Progetto v1.0.0 \\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/piano_di_progetto_v1.0.0.pdf}
+    \item Glossario \\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/glossario.pdf}
+    \item Verbale esterno 16-02-24 v1.0.0 \\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/Verbali/verbale_esterno_160224_v1.0.0.pdf}
+    \item Capitolato C5 - WMS3: warehouse management 3D \\
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf}
+\end{itemize}
+
+\subsection{Riferimenti informativi}\label{sec:riferimenti_informativi}
+Dal materiale didattico del corso di Ingegneria del Software:
+\begin{itemize}
+    \item Analisi e descrizione delle funzionalità: Use case e relativi diagrammi (UML) \\
+    \url{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf}
+    \item Analisi dei requisiti (T5) \\
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}
+\end{itemize}
