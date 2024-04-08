@@ -700,7 +700,7 @@ Nello specifico si occupa di:
     %mettere link?
     \item Redigere assieme ai progettisti il \textit{Piano di Qualifica};
     %mettere link?
-    \item Gestire infrastruttura e strumenti utilizzati (e.g. gestire la board di Jira per l'organizzazione del lavoro);
+    \item Gestire infrastruttura e strumenti utilizzati (e.g. gestire la board per l'organizzazione del lavoro);
     \item Individuare i punti di miglioramento dei processi, ad esempio cercando modi per automatizzarli;
     \item Effettuare il controllo di versioni e configurazioni del prodotto software.
 \end{itemize}
@@ -723,7 +723,7 @@ Nello specifico si occupa si:
 \begin{itemize}
     \item Studiare l'architettura\textsuperscript{G} più adatta al prodotto, garantendone la qualità e il soddisfacimento dei requisiti;
     \item Individuare le unità architetturali\textsuperscript{G} che garantiscano la maggiore manutenibilità ed economicità, oltre che il minor numero di dipendenze possibili (i.e. con alto grado di coesione tra componenti ma basso grado di accoppiamento);
-    \item Redigere la parte più pragmatica del \textit{Piano di Qualifica};
+    \item Redigere la \textit{Specifica Tecnica} e la parte più pragmatica del \textit{Piano di Qualifica};
     \item Effettuare scelte per quanto riguarda gli aspetti tecnici e tecnologici del progetto.
     %mettere link?
 \end{itemize}
@@ -735,7 +735,7 @@ Nello specifico le sue mansioni sono:
 \begin{itemize}
     \item Scrivere codice (pulito e facile) seguendo le specifiche di progettazione e le regole definite nelle \textit{Norme di Progetto};
     \item Realizzare gli strumenti per la verifica e validazione del software;
-    \item Redigere il documento \textit{Manuale Utente}
+    \item Redigere il documento \textit{Manuale Utente}.
     %mettere link?
 \end{itemize}
 Si noti che in un primo momento del progetto\textsuperscript{G} il ruolo di ``Programmatore'' era stato sostituito dal ruolo di ``Redattore'' per la scrittura dei documenti di carattere generale (e.g. verbali).
@@ -749,20 +749,20 @@ In particolare, ha la responsabilità di:
     \item Segnalare eventuale errori e anomalie riscontrate in modo che possano essere corrette nel minor tempo possibile.
 \end{itemize}
 
-\paragraph{Metodo di lavoro e gestione delle task}
+\paragraph{Metodo di lavoro e gestione delle task}\label{sec:pianificazione:gestione_task}
 Per facilitare il corretto utilizzo delle procedure e degli strumenti, il gruppo deve delineare il proprio way of working\textsuperscript{G} e descriverlo formalmente in un documento, consultabile da ciascun membro in qualsiasi momento.  Il documento di riferimento è quello delle \textit{Norme di Progetto}, che deve essere redatto in maniera incrementale, aggiornando le procedure, le convenzioni e gli strumenti utilizzati durante il corso del progetto.
 
 Inoltre, per una maggiore efficienza, si organizza il lavoro in task utili al raggiungimento di ogni milestone\textsuperscript{G} prefissata nel \textit{Piano di progetto} da responsabile e amministratore. %mettere link?
 Lo scopo è quello di facilitare uno sviluppo autonomo del progetto, che consenta di rendere il lavoro il più possibile in parallelo e in asincrono.
-Il compito di definire e predisporre le task viene svolto subito dopo la pianificazione della milestone\textsuperscript{G} attraverso l'uso di Jira e seguendo il seguente iter:
+Il compito di definire e predisporre le task viene svolto subito dopo la pianificazione della milestone\textsuperscript{G} attraverso l'uso di Github e seguendo il seguente iter:
 \begin{itemize}
-    \item \textbf{Creazione della task:} l'attività viene definita come compito da svolgere (\textit{TO-DO}) sotto forma di ticket su Jira;
+    \item \textbf{Creazione della task:} l'attività viene definita come compito da svolgere (\textit{TO-DO}) sotto forma di ticket direttamente su Github;
     \item \textbf{Assegnazione della task:} viene assegnata l'attività a seconda del ruolo corrente dei membri del gruppo;
     \item \textbf{Completamento:} l'attività viene completata da chi sta svolgendo il compito in quel momento, ma può essere ripresa in un secondo momento se necessario;
     \item \textbf{Verifica:} un verificatore controlla la task;
     \item \textbf{Accettazione:} a seguito della conferma del verificatore, il responsabile esegue un controllo e fa passare di stato l'attività decidendo se approvarla definitivamente o rifiutarla, richiedendo una nuova modifica/verifica.
 \end{itemize}
-Inoltre, per minimizzare ritardi e massimizzare lo svolgimento di queste task il gruppo ha deciso di dividere il tempo di lavoro in piccoli intervalli all'interno di un periodo di circa due settimane (sprint) secondo il framework Agile Scrum.
+Inoltre, per minimizzare ritardi e massimizzare lo svolgimento di queste task il gruppo ha deciso di dividere il tempo di lavoro in sprint, ossia dei piccoli intervalli all'interno di un periodo di circa due settimane (ridotti poi a intervalli di una settimana per il periodo seguente all'RTB) secondo il framework Agile Scrum.
 In particolare, vengono identificate le seguenti fasi:
 \begin{itemize}
     \item \textbf{Sprint Planning:} si fa un brainstorming sulle attività da svolgere durante il periodo di sprint, definendo quali task sono da completare a seconda di impegni e del preventivo orario dei membri da impiegare;
@@ -775,15 +775,16 @@ Per la gestione dei processi organizzativi, i.e. per coordinamento e pianificazi
 Di seguito vengono riportati gli strumenti utilizzati.
 
 \subsubsection{Strumenti}
-\paragraph{Jira}
-È un software che fornisce strumenti di pianificazione e monitoraggio permettendo ai team di progetto di avere una migliore organizzazione del lavoro. In particolare, consente la gestione delle issues\textsuperscript{G} che ciascun membro deve svolgere, permettendo l'assegnazione di attività a specifici membri e la definizione di dipendenze tra di esse.
-\par Lo strumento è reperibile al sito:
-\begin{center}
-    \url{https://www.atlassian.com/software/jira}
-\end{center}
+%\paragraph{Jira}
+%È un software che fornisce strumenti di pianificazione e monitoraggio permettendo ai team di progetto di avere una migliore organizzazione del lavoro. In particolare, consente la gestione delle issues\textsuperscript{G} che ciascun membro deve svolgere, permettendo l'assegnazione di attività a specifici membri e la definizione di dipendenze tra di esse.
+%\par Lo strumento è reperibile al sito:
+%\begin{center}
+%    \url{https://www.atlassian.com/software/jira}
+%\end{center}
 
 \paragraph{GitHub}
 Viene utilizzato come servizio di hosting della repository\textsuperscript{G}, quindi per archiviare e gestire il codice e tenere traccia delle modifiche e delle versioni. In particolare, per la gestione della repository viene utilizzato il workflow \textit{GitHub Flow} (maggiori informazioni su di esso sono presenti alla sezione \ref{sec:riferimenti_esterni:materiali_di_studio}).
+A seguito della revisione RTB\textsuperscript{G}, viene anche utilizzato come strumento di pianificazione e monitoraggio del lavoro al posto di Jira. In particolare, si utilizzano le GitHub Issues\textsuperscript{G} per assegnare le attività ai specifici membri e definire dipendenze tra le stesse.
 
 \paragraph{Telegram}
 Viene utilizzato come strumento di comunicazione interna asincrona, perlopiù per comunicazioni organizzative, grazie alla creazione di una chat condivisa con tutti i membri. Si utilizzano anche le chat individuali per questioni che interessano solo alcuni membri del gruppo.
@@ -923,37 +924,37 @@ Dato che la buona riuscita di tutti i processi (in particolare quelli primari) d
 Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
 \begin{itemize}
     \item Capitolato \textbf{Warehouse Management 3D}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \item \textbf{Regolamento} del progetto didattico:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \item Link alla \textbf{documentazione del gruppo}:\\
-    \url{https://avant-garde-software-engineering.github.io/documentazione.html}
+    \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \item Standard \textbf{ISO/IEC 12207}, versione 1995:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \item Link alle \textbf{slides sui processi del ciclo di vita}, con sottoattività per i processi dello standard ISO/IEC 12207:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
 \end{itemize}
 \subsection{Materiali di studio}\label{sec:riferimenti_esterni:materiali_di_studio}
 \subsubsection{Documentazione}
 \begin{itemize}
-        \item \LaTeX: \url{https://www.latex-project.org/help/documentation/}
-        \item Visual Studio Code: \url{https://code.visualstudio.com/docs}
-        \item Diagrams.net: \url{https://www.drawio.com/doc/#get-started-with-diagramsnet}
-        \item Git: \url{https://git-scm.com/doc}
-        \item Github: \url{https://docs.github.com/en}
-        \item React.js: \url{https://react.dev/learn}
-        \item Next.js: \url{https://nextjs.org/docs}
-        \item Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Installation}
-        \item React Three Fiber: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction}
-        \item Zustand: \url{https://docs.pmnd.rs/zustand/getting-started/introduction}
-        \item Tailwind CSS: \url{https://tailwindcss.com/docs/installation}
+        \item \LaTeX: \url{https://www.latex-project.org/help/documentation/} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Visual Studio Code: \url{https://code.visualstudio.com/docs} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Diagrams.net: \url{https://www.drawio.com/doc/#get-started-with-diagramsnet} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Git: \url{https://git-scm.com/doc} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Github: \url{https://docs.github.com/en} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item React.js: \url{https://react.dev/learn} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Next.js: \url{https://nextjs.org/docs} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Installation} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item React Three Fiber: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Zustand: \url{https://docs.pmnd.rs/zustand/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+        \item Tailwind CSS: \url{https://tailwindcss.com/docs/installation} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \end{itemize}
 \subsubsection{Tutorial}
 \begin{itemize}
         \item Gitflow:
             \begin{itemize}
-                \item \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}
-                \item \url{https://danielkummer.github.io/git-flow-cheatsheet/}
+                \item \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+                \item \url{https://danielkummer.github.io/git-flow-cheatsheet/} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
             \end{itemize}       
                         
     \end{itemize}
