@@ -31,16 +31,15 @@ Il progetto deve concretizzarsi nella realizzazione di una web app fruibile agli
 % PROCESSI PRIMARI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Processi primari}\label{sec:processi_primari}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% FORNITURA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fornitura}\label{sec:processi_primari:fornitura}
 Per come è definito nello standard ISO/IEC 12207, il processo di fornitura descrive tutte le attività che il fornitore deve svolgere per assicurarsi che il prodotto sia realizzato in maniera professionale e conforme alle richieste dell'acquirente. Per questa ragione, gli aspetti importanti di questa fase sono:
 \begin{itemize}
-    \item Determinare le risorse necessarie a completare il progetto
-    \item Pianificare le procedure necessarie per completare il progetto ed assicurare un prodotto di qualità
-    \item Gestire le comunicazioni con l'acquirente
+    \item Determinare le risorse necessarie a completare il progetto;
+    \item Pianificare le procedure necessarie per completare il progetto ed assicurare un prodotto di qualità;
+    \item Gestire le comunicazioni con l'acquirente.
 \end{itemize}
 \subsubsection{Determinazione di risorse e procedure}
 Per sviluppare i primi due punti in maniera completa ed adeguata, il gruppo ha scelto di seguire le linee guida dello standard ed affidarsi ai processi organizzativi, il cui compito è esattamente occuparsi di tutti gli aspetti di carattere gestionale, dal punto di vista dei processi, delle infrastrutture e del personale, necessari per la realizzazione del progetto: gli output di queste fasi verranno poi utilizzati per la gestione del processo di fornitura.
@@ -55,7 +54,7 @@ La corretta gestione della comunicazione con il cliente è un aspetto chiave nel
     \item Chiedere un riscontro sulla documentazione prodotta nel corso del progetto;
     \item Proporre particolari soluzioni per le diverse problematiche che possono sorgere nel progetto.
 \end{itemize}
-\par Su richiesta del cliente, la comunicazione avverrà principalmente tramite posta elettronica.
+Su richiesta del cliente, la comunicazione avverrà principalmente tramite posta elettronica. In caso di dubbi o richieste che necessitano di risposte più elaborate, si organizzeranno degli incontri su Google Meet.
 \subsubsection{Documenti da produrre}
 Questo processo punta molto alla comunicazione con il cliente, per questo motivo è necessario produrre due documenti ad uso esterno, descritti di seguito, con l'obiettivo di garantire trasparenza e fornire delle metriche che permettano al cliente di comprendere meglio l'andamento del progetto nel corso del tempo.
 \par Le modalità di scrittura di qualsiasi documento sono descritte nella sezione \ref{sec:processi_di_supporto:documentazione}, dedicata al processo di documentazione.
@@ -96,6 +95,19 @@ Si tratta del programma più utilizzato per la produzione e gestione di fogli el
 \begin{center}
     \url{https://www.microsoft.com/it-it/microsoft-365/project/project-management-software}
 \end{center}
+
+\subsubsection{Metriche}\label{sec:processi_primari:fornitura:metriche}
+Per perseguire la qualità nel processo di fornitura si è deciso di adottare le seguenti metriche:
+\begin{itemize}
+    \item \textbf{MPC1-EAC}: Estimated At Completion;
+    \item \textbf{MPC2-CV}: Cost Variance;
+    \item \textbf{MPC3-SV}: Schedule Variance;
+    \item \textbf{MPC4-BV}: Budget Variance;
+    \item \textbf{MPC5-PV}: Planned Value;
+    \item \textbf{MPC6-AC}: Actual Cost;
+    \item \textbf{MPC7-EV}: Earned Value.
+\end{itemize}
+Per indicazioni più specifiche sulle suddette metriche si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SVILUPPO
@@ -210,8 +222,22 @@ Per uniformare e formalizzare il processo di codifica vengono adottate alcune co
     \item \textit{Struttura:} il codice deve essere organizzato secondo la struttura raccomandata dalle linee guida di Next.js (disponibile a questo \href{https://nextjs.org/docs/app/building-your-application/routing/colocation#project-organization-features}{link}).
 \end{itemize}
 
+\paragraph{Configurazione ambiente di lavoro}\label{sec:codifica:config}
+La configurazione dell’ambiente di lavoro viene inizialmente fatta da un componente del gruppo, che carica la cartella di lavoro configurata nel repo.  Gli altri componenti devono eseguire le seguenti istruzioni per poter lavorare:
+\begin{itemize}
+    \item Installare Node.js e npm attraverso il seguente \href{https://nodejs.org/en/download}{link};
+    \item Entrare nella cartella di lavoro ottenuta dalla repo, aprire il terminale e utlizzare il comando \textbf{npm install} che installa tutte le dipendenze di progetto.
+\end{itemize}
+
 \subsubsection{Strumenti}\label{sec:sviluppo:strumenti}
 Di seguito si riportano gli strumenti utilizzati per la realizzazione del processo di sviluppo.
+
+\paragraph{Visual Studio Code}
+Visual Studio Code è un editor di codice sorgente libero, gratuito e leggero. Lo strumento è stato scelto dal gruppo come code editor per sviluppare tutto il codice presente nel progetto.
+\par Lo strumento è reperibile al sito:
+\begin{center}
+    \url{https://code.visualstudio.com/}
+\end{center}
 
 \paragraph{Node.js e npm}
 Node.js è un framework JavaScript multipiattaforma e open-source tra i più utilizzati. In particolare, si tratta di un ambiente di esecuzione che permette di eseguire codice JavaScript come un qualsiasi linguaggio di programmazione, al di fuori dei browser. Il gruppo ha deciso di utilizzare questo framework per la gestione back-end della web-app. 
@@ -281,6 +307,25 @@ Tailwind CSS è un framework CSS che permette di inserire codice CSS all'interno
     \url{https://tailwindcss.com/}
 \end{center}
 
+\subsubsection{Metriche}\label{sec:processi_primari:sviluppo:metriche}
+Per perseguire la qualità nel processo di sviluppo si è deciso di adottare le seguenti metriche:
+\begin{itemize}
+    \item Per quanto riguarda la progettazione:
+    \begin{itemize}
+        \item \textbf{MPC8-SFINp}: Structural fan-in (procedure);
+        \item \textbf{MPC9-SFOUTp}: Structural fan-out (procedure);
+        \item \textbf{MPC10-SFINf}: Structural fan-in (file);
+        \item \textbf{MPC11-SFOUTf}: Structural fan-out (file).
+    \end{itemize}
+    \item Per quanto riguarda la codifica:
+    \begin{itemize}
+        \item \textbf{MPC12-CCH}: Code churn;
+        \item \textbf{MPC13-NB}: Number of bugs;
+        \item \textbf{MPC14-CC}: Code churn.
+    \end{itemize}
+\end{itemize}
+Per indicazioni più specifiche sulle suddette metriche si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
+
 \subsection{Gestione operativa}\label{sec:gestione_operativa}
 Il processo di gestione operativa riguarda l'installazione ed erogazione del prodotto software.
 In particolare, il gruppo ha deciso di utilizzare \textbf{Vercel} per la distribuzione del software per la sua semplicità d'uso e integrazione con gli strumenti di sviluppo utilizzati.
@@ -289,6 +334,9 @@ In particolare, il gruppo ha deciso di utilizzare \textbf{Vercel} per la distrib
 \begin{center}
     \url{https://vercel.com/}
 \end{center}
+
+\subsubsection{Metriche}\label{sec:processi_primari:gestione_operativa:metriche}
+Il processo di gestione operativa non utilizza metriche qualitative particolari.
 
 
 \newpage
@@ -331,22 +379,46 @@ Il gruppo ha scelto di definire il ciclo di vita del prodotto nel seguente modo:
     \caption{Ciclo di vita di un documento}
     \label{fig:doc_lifecycle}
 \end{figure}
-\subsubsection{Nome del file}
+
+\subsubsection{Convenzioni adottate}\label{sec:processi_di_supporto:documentazione:convenzioni}
+\paragraph{Nome del file}
 Il nome del file deve seguire la convenzione snake case\textsuperscript{G}, ovvero:
 \begin{itemize}
-    \item Ciascuna parola è scritta completamente in minuscolo
-    \item Ogni parola è separata da un trattino basso `\_'
+    \item Ciascuna parola è scritta completamente in minuscolo;
+    \item Ogni parola è separata da un trattino basso `\_'.
 \end{itemize}
 Inoltre, ciascun documento deve riportare, alla fine del nome, il codice di versione.
 \par Ad esempio, per il documento sulle norme di progetto di versione 0.0.1 il nome del file deve essere:
 \begin{center}
     norme\_di\_progetto\_v0.0.1
 \end{center}
+\paragraph{Stile del testo}
+\begin{itemize}
+    \item \textbf{Grassetto}: utilizzato per i titoli delle sezioni e per i primi termini degli elenchi puntati oppure, se necessario, per evidenziare termini di maggiore importanza;
+    \item \textbf{Corsivo}: utilizzato per citare il nome dei documenti (e.g. \textit{Analisi dei requisiti}).
+\end{itemize}
+
+\paragraph{Altre convenzioni}
+\begin{itemize}
+    \item Gli elenchi puntati devono rispettare le seguenti regole:
+        \begin{itemize}
+            \item Ogni elemento dell’elenco deve iniziare con la lettera maiuscola;
+            \item Ogni elemento dell'elenco deve terminare o con ”;”, ad eccezione dell’ultimo elemento che deve terminare con ”.”. In caso di elementi particolarmente lunghi (e.g. composti da più frasi), si può decidere di utilizzare per tutti gli elementi il "." al posto di ";".
+            \item Se gli elementi dell'elenco terminano con ";", in caso di sotto-elenchi, gli elementi di quest'ultimi termineranno con "," ad eccezione dell'ultimo elemento che deve terminare con ";" o "." a seconda di quanto discusso nel punto precedente.
+        \end{itemize}
+    \item Le immagini sono sono inserite sempre con una didascalia descrittiva posizionata sotto l’immagine. Il logo è l'unica immagine che fa da eccezione a questa regola.
+    \item Le tabelle sono provviste di didascalia descrittiva posizionata sotto alla tabella. La tabella contenente il registro delle modifiche è l’unica che fa da eccezione a questa regola.
+\end{itemize}
+
+
 \subsubsection{Glossario}
-Se il documento utilizza termini contenuti nel Glossario di progetto, questi vanno segnalati nella sola prima istanza tramite la lettera \textbf{G} in apice, come da esempio:
+All’interno della documentazione si possono trovare dei termini che possono risultare ambigui a seconda del contesto, o non conosciuti dagli utilizzatori.
+Per ovviare ad incomprensioni si è deciso di stilare un elenco di termini di interesse accompagnati da una descrizione del loro significato. Questi termini sono riportati nel \textit{Glossario}.
+Se il documento utilizza termini contenuti nel \textit{Glossario} di progetto, questi vanno segnalati nella sola prima istanza tramite la lettera \textbf{G} in apice, come da esempio:
 \begin{center}
     termine\textsuperscript{G}
 \end{center}
+Inoltre, ogni componente del gruppo all’inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il \textit{Glossario}.
 \subsubsection{Struttura del documento}
 Il gruppo ha scelto di utilizzare una struttura fissa e prestabilita per la documentazione, allo scopo di rendere più efficienti la stesura, la verifica e la comprensione, che sono tutte facilitate nel caso in cui lo schema di regole da seguire sia unico e preciso.
 \paragraph{Struttura generica}
@@ -392,60 +464,60 @@ La struttura di un verbale ha una sezione dedicata perché, vista la differenza 
 \subparagraph{Intestazione.}
 L'intestazione ha una struttura verticale che deve contenere, nell'ordine di esposizione, centrati orizzontalmente:
 \begin{itemize}
-    \item Logo
-    \item Nome del gruppo
-    \item Email del gruppo
-    \item Titolo del documento
-    \item Sottotitolo con obiettivo dell'incontro (nel solo caso di un verbale esterno)
-    \item Informazioni sul documento
+    \item Logo;
+    \item Nome del gruppo;
+    \item Email del gruppo;
+    \item Titolo del documento;
+    \item Sottotitolo con obiettivo dell'incontro (nel solo caso di un verbale esterno);
+    \item Informazioni sul documento:
     \begin{itemize}
-        \item Versione
-        \item Nome e cognome del responsabile interno che ha approvato il documento
-        \item Nome e cognome di ciascun redattore
-        \item Nome e cognome di ciascun verificatore
-        \item Uso (interno o esterno)
+        \item Versione,
+        \item Nome e cognome del responsabile interno che ha approvato il documento,
+        \item Nome e cognome di ciascun redattore,
+        \item Nome e cognome di ciascun verificatore,
+        \item Uso (interno o esterno).
     \end{itemize}
 \end{itemize}
 \subparagraph{Registro delle modifiche e firma di approvazione.}
 Il registro delle modifiche descrive le modifiche apportate al documento nel corso del tempo, dalla prima scrittura a quella attuale. Il registro è riportato nel documento in forma tabellare: dove ogni riga rappresenta una modifica e contiene:
 \begin{itemize}
-    \item Versione del documento
-    \item Data di modifica
-    \item Autore della modifica
-    \item Ruolo dell'autore
-    \item Descrizione della modifica
+    \item Versione del documento;
+    \item Data di modifica;
+    \item Autore della modifica;
+    \item Ruolo dell'autore;
+    \item Descrizione della modifica.
 \end{itemize}
 Le modifiche sono riportate, nell'ordine, dalla più vecchia alla più nuova.
 \par Nonostante il verbale sia un documento che, per sua natura, richiede meno modifiche rispetto agli altri (che hanno uno sviluppo più incrementale), il gruppo ha scelto di inserire un changelog per tenere traccia anche di eventuali richieste di modifica da parte dell'approvatore esterno prima della sua approvazione finale.
 \par Alla fine del registro delle modifiche deve essere presente, nel solo caso dei verbali esterni, uno spazio per la firma di approvazione del partecipante esterno. Questa sezione deve contenere:
 \begin{itemize}
-    \item Versione del documento
-    \item Data della firma
-    \item Nome del firmatario
-    \item Spazio per la firma
+    \item Versione del documento;
+    \item Data della firma;
+    \item Nome del firmatario;
+    \item Spazio per la firma.
 \end{itemize}
 \subparagraph{Indice dei contenuti.}
 Questa sezione deve contenere un indice dei contenuti esposti nelle due sezioni successive, con i relativi numeri di pagina.
 \subparagraph{Informazioni.}
 La sezione contiene le informazioni relative all'incontro descritto dal verbale. In particolare, deve riportare:
 \begin{itemize}
-    \item Informazioni di contesto
+    \item Informazioni di contesto:
     \begin{itemize}
-        \item Modalità: in presenza o da remoto (eventualmente su quale piattaforma)
-        \item Data dell'incontro
-        \item Orario di inizio e orario di fine
+        \item Modalità: in presenza o da remoto (eventualmente su quale piattaforma),
+        \item Data dell'incontro,
+        \item Orario di inizio e orario di fine;
     \end{itemize}
-    \item Partecipanti
+    \item Partecipanti:
     \begin{itemize}
-        \item Interni, suddivisi tra presenti e assenti
-        \item Esterni
+        \item Interni, suddivisi tra presenti e assenti,
+        \item Esterni.
     \end{itemize}
 \end{itemize}
 Se per l'incontro il gruppo ha selezionato un portavoce, questo deve essere segnato vicino al suo nome nell'elenco dei presenti.
 \subparagraph{Argomenti.}
 La sezione argomenti ha l'obiettivo di descrivere, gli argomenti discussi, le decisioni prese ed eventuali problematiche sorte nel corso dell'incontro. Per una comprensione più efficiente da parte del lettore, le descrizioni devono essere complete ma quanto più concise possibile.
 \subsubsection{Template}
-Al fine di mantenere una struttura quanto più coerente possibile e di velocizzare la scrittura della documentazione, il gruppo ha costruito un template per ciascun tipo di documento (verbale o generico), sul quale il redattore si deve basare per stilare un nuovo documento. 
+Al fine di mantenere una struttura quanto più coerente possibile e di velocizzare la scrittura della documentazione, il gruppo ha costruito un template per ciascun tipo di documento (verbale o generico), sul quale il redattore si deve basare per stilare un nuovo documento. Il template è disponibile come progetto dell'account Overleaf del gruppo.
 \subsubsection{Strumenti}
 \paragraph{\LaTeX}
 Per la scrittura dei documenti il gruppo ha scelto di utilizzare \LaTeX, un linguaggio di marcatura creato appositamente per la preparazione di testi, basato sul programma per la tipografia digitale \TeX. Lo strumento facilita la stesura di un documento perché molti aspetti, quali ad esempio la numerazione delle sezioni, delle pagine e l'indice dei contenuti, vengono gestiti in maniera automatica, permettendo al redattore di focalizzarsi sul contenuto e lavorare in maniera più efficiente. Inoltre, è possibile lavorare su file diversi e unirli per costruire un singolo documento, facilitando la collaborazione tra membri del gruppo.
@@ -473,7 +545,13 @@ Per la scrittura dei commenti a supporto del codice del progetto si utilizza JSD
     \url{https://jsdoc.app/}
 \end{center}
 
-
+\subsubsection{Metriche}\label{sec:processi_di_supporto:documentazione:metriche}
+Per perseguire la qualità sulla documentazione prodotta si è deciso di adottare le seguenti metriche:
+\begin{itemize}
+    \item \textbf{MPC15-EOD}: Errori ortografici per documento;
+    \item \textbf{MPC16-IG}: Indice Gulpease.
+\end{itemize}
+Per indicazioni più specifiche sulle suddette metriche si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% GESTIONE DELLA CONFIGURAZIONE
@@ -488,11 +566,11 @@ Per poter identificare una particolare istanza di un software item in uno specif
 \end{center}
 Dove \textbf{X}, \textbf{Y} e \textbf{Z} sono numeri interi tali che:
 \begin{itemize}
-    \item \textbf{X}: è un numero $ \geq 0 $ che aumenta ad ogni approvazione del responsabile interno
-    \item \textbf{Y}: è un numero $ \geq 0 $ che aumenta ad ogni controllo del verificatore
-    \item \textbf{Z}: è un numero $ \geq 0 $ che aumenta ad ogni modifica del redattore
-    \item Se \textbf{Y} aumenta di 1, allora \textbf{Z} torna al valore 0
-    \item Se \textbf{X} aumenta di 1, allora sia \textbf{Y} che \textbf{Z} tornano al valore 0
+    \item \textbf{X}: è un numero $ \geq 0 $ che aumenta ad ogni approvazione del responsabile interno;
+    \item \textbf{Y}: è un numero $ \geq 0 $ che aumenta ad ogni controllo del verificatore;
+    \item \textbf{Z}: è un numero $ \geq 0 $ che aumenta ad ogni modifica del redattore;
+    \item Se \textbf{Y} aumenta di 1, allora \textbf{Z} torna al valore 0;
+    \item Se \textbf{X} aumenta di 1, allora sia \textbf{Y} che \textbf{Z} tornano al valore 0.
 \end{itemize}
 Ciascun software item inizia dalla versione \textbf{0.0.1} e prosegue come descritto.
 \subsubsection{Strumenti}
@@ -507,8 +585,8 @@ Altra caratteristica importante di Git è la sua flessibilità di utilizzo: infa
 \par Il workflow che il gruppo ha deciso di adottare è Gitflow, che suggerisce di assegnare ruoli specifici ai diversi branch e definisce le modalità secondo cui devono interagire.
 \par Nello specifico, l'adozione del Gitflow workflow comporta la creazione di quattro tipologie di branch:
 \begin{itemize}
-    \item \textbf{Main}: è il ramo principale, sul quale si trova l'ultima versione funzionante e rilasciata del prodotto. Non si lavora mai direttamente sul ramo principale, per lasciarne intatto il contenuto
-    \item \textbf{Release}: è il ramo in cui si lavora per fare le ultime operazioni prima di un rilascio: una volta che tutto è pronto, il suo contenuto viene passato al main e rappresenta ufficialmente una nuova versione
+    \item \textbf{Main}: è il ramo principale, sul quale si trova l'ultima versione funzionante e rilasciata del prodotto. Non si lavora mai direttamente sul ramo principale, per lasciarne intatto il contenuto.
+    \item \textbf{Release}: è il ramo in cui si lavora per fare le ultime operazioni prima di un rilascio: una volta che tutto è pronto, il suo contenuto viene passato al main e rappresenta ufficialmente una nuova versione.
     \item \textbf{Develop}: è il ramo su cui si lavora principalmente, contiene il prodotto incompleto e in fase di lavorazione. Quando lo sviluppo raggiunge una fase tale per cui il prodotto è pronto per il rilascio, si passa il contenuto nel ramo release per gli ultimi ritocchi.
     \item \textbf{Feature}: ogni ramo feature si stacca dal develop e serve per lavorare separatamente su una specifica feature del prodotto (una parte di codice oppure un documento), in modo tale che il ramo develop non subisca alterazioni mentre la feature è in fase di lavorazione.
 \end{itemize}
@@ -518,8 +596,14 @@ In particolare, un aspetto importante di questo workflow è la separazione dei l
 
 \subsection{Accertamento della qualità}\label{sec:processi_di_supporto:accertamento_qualità}
 Lo scopo del processo di accertamento della qualità è quello di garantire che i processi e il prodotto siano conformi alle attese e soddisfino al meglio le richieste del proponente. 
+A tal scopo, ogni membro del gruppo deve:
+\begin{itemize}
+    \item Comprendere le attività da svolgere e gli obiettivi da raggiungere;
+    \item Aver compreso le metriche inserite nel documento di \textit{Piano di Qualifica} e rispettare le normative e gli standard definiti al suo interno;
+    \item Mantenere le normative inserite nelle \textit{Norme di Progetto}.
+\end{itemize}
 Inoltre, vogliamo poter valutare il prodotto tramite verifiche retrospettive\textsuperscript{G}, effettuando confronti, in modo da poter osservare lo stato di avanzamento e l'andamento del progetto\textsuperscript{G} e perseguire un miglioramento continuo.
-A tal fine e per avere una valutazione oggettiva e quantificabile della qualità, viene redatto il \textit{Piano di Qualifica}. %mettere link?
+A tal fine e per avere una valutazione oggettiva e quantificabile della qualità, viene redatto il \textit{Piano di Qualifica}.
 
 \subsubsection{Piano di qualifica}
 Il \textit{Piano di Qualifica} 
@@ -533,7 +617,7 @@ viene utilizzato come strumento per attuare gli obiettivi posti dal processo di 
     \item Visualizzazione di un cruscotto\textsuperscript{G} dello stato attuale, come sorta di resoconto delle attività di verifica\textsuperscript{G}.
 \end{itemize}
 
-\paragraph{Metriche}
+\paragraph{Denominazione delle metriche}
 Le metriche vengono identificate univocamente tramite un codice standardizzato dal gruppo nella seguente maniera:
 \begin{center}
     \textbf{M[Tipo][Identificativo]-[Acronimo]}
@@ -546,11 +630,17 @@ dove:
             \item \textbf{PD}: un prodotto.
         \end{itemize}                 
     \item \textbf{Identificativo:} si tratta di un numero progressivo univoco all'interno di uno stesso \textit{Tipo}.
-    \item \textbf{Acronimo:} indica l' acronimo del nome della metrica.
+    \item \textbf{Acronimo:} indica l'acronimo del nome della metrica.
 \end{itemize}
 Inoltre, per ogni metrica viene riportata una breve descrizione e i valori accettabili e ottimali per avere un deliverable\textsuperscript{G} di qualità.
 
 %eventualmente aggiugere anche denominazione per test?
+\subsubsection{Metriche}\label{sec:processi_di_supporto:accertamento_qualità:metriche}
+Per tracciare la soddisfazione dei requisiti qualitativi è stata concordata una semplice metrica.
+\begin{itemize}
+    \item \textbf{MPC17-MS}: Metriche soddisfatte.
+\end{itemize}
+Per indicazioni più specifici sulla suddetta metrica si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
 
 
 \subsection{Verifica}\label{sec:processi_di_supporto:verifica}
@@ -575,7 +665,7 @@ Si noti che all'inizio il metodo di walkthrough avrà la prevalenza. Tuttavia, c
 \subsubsection{Analisi dinamica}
 L'analisi dinamica, anche detta testing, consiste in una valutazione del comportamento in esecuzione dell'oggetto da verificare che, dunque, potrà essere solamente codice eseguibile.
 
-In particolare, il test\textsuperscript{G} a cui sottoporre il software dovranno essere:
+In particolare, i test\textsuperscript{G} a cui sottoporre il software dovranno essere:
 \begin{itemize}
     \item \textbf{Automatizzati:} si cerca di utilizzare degli strumenti che rendano il testing il più possibile automatizzato in modo da ottimizzare i tempi e ridurre l'errore umano;
     \item \textbf{Ripetibili:} si vuole poter ripetere un test più volte sullo stesso oggetto per poter verificare che le modifiche effettuate per risolvere le problematiche individuate siano effettivamente andate a buon fine.
@@ -610,6 +700,14 @@ Al fine di minimizzare gli errori, il codice viene controllato sia tramite anali
         \end{itemize}
 \end{itemize}
 
+\subsubsection{Metriche}\label{sec:processi_di_supporto:verifica:metriche}
+Per mantenere la qualità nella verifica sono state scelte le seguenti metriche:
+\begin{itemize}
+    \item \textbf{MPC18-CCV}: Code coverage;
+    \item \textbf{MPC19-TP}: Test passati.
+\end{itemize}
+Per indicazioni più specifiche sulle suddette metriche si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
+
 \subsection{Validazione}\label{sec:processi_di_supporto:validazione}
 Una volta terminata la fase di verifica, si può proseguire alla fase di validazione. Si noti che se la verifica viene effettuata in maniera corretta, anche quest'ultimo processo avrà un esito positivo.
 
@@ -621,6 +719,9 @@ In particolare, sarà il responsabile del progetto che avrà la responsabilità 
     \item Accettare il prodotto in quanto conforme alle aspettative;
     \item Rifiutare il prodotto e richiedere una nuova verifica per correggere eventuali errori trascurati durante la precedente fase di verifica e/o per migliorare la qualità del prodotto.
 \end{itemize}
+
+\subsubsection{Metriche}\label{sec:processi_di_supporto:validazione:metriche}
+Il processo di validazione non utilizza metriche qualitative particolari.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -655,7 +756,7 @@ Per il coordinamento durante l’intera durata del progetto il gruppo adotterà 
     \item \textbf{Comunicazione interna:} nel caso la comunicazione coinvolga solo i membri del gruppo;
     \item \textbf{Comunicazione esterna:} nel caso la comunicazione coinvolga anche proponente e/o committenti.
 \end{itemize}
-Nel caso la comunicazione avvenga sotto forma di riunione vengono redatti dai membri del gruppo (a rotazione) dei verbali degli incontri, approvati dal responsabile e, nel caso di comunicazione esterna, anche dal proponente/committente.
+Nel caso la comunicazione avvenga sotto forma di riunione vengono redatti dai membri del gruppo (a rotazione) dei verbali degli incontri, approvati dal responsabile e, nel caso di comunicazione esterna, anche dal proponente/committente. Inoltre, prima di queste riunioni, il responsabile dovrà anche preparare una scaletta degli argomenti da trattare, che potranno essere poi integrati da eventuali dubbi e/o suggerimenti di altri membri del gruppo. 
 
 \paragraph{Comunicazioni interne}
 Le comunicazioni interne avvengono tramite le applicazioni:
@@ -673,25 +774,29 @@ Le comunicazioni esterne avvengono principalmente tramite le seguenti applicazio
 Si noti che le comunicazioni esterne sono, in ogni caso, gestite dal responsabile di progetto. 
 
 \subsubsection{Pianificazione}
-\paragraph{Ruoli di progetto}
+\paragraph{Ruoli di progetto}\label{sec:processi_organizzativi:gestione_processi:pianificazione}
 I ruoli vengono ruotati tra i membri del gruppo a cadenza periodica (generalmente ogni due settimane, ma cercando di garantire la continuità del lavoro), in modo da garantire che ogni membro assuma, nel corso del progetto, almeno una volta ogni ruolo e che lo assuma per un tempo congruo a quanto preventivato. 
-Inoltre, si cerca di assegnare i ruoli in modo che non ci siano conflitti di interessi tra essi. Vige, infatti, la regola che un verificatore non può approvare il codice/testo che lui stesso ha scritto e, analogamente, un responsabile non può approvare il lavoro che lui stesso ha verificato. \\
+Inoltre, si cerca di assegnare i ruoli in modo che non ci siano conflitti di interessi tra essi. Vige, infatti, la regola che un verificatore non può approvare il codice/testo che lui stesso ha scritto e, analogamente, un responsabile non può approvare il lavoro che lui stesso ha verificato. 
+
+Sarà anche necessario tenere traccia delle ore che ogni componente dedica al progetto ed il ruolo associato a quelle ore, in modo da andare a rispettare la tabella degli impegni individuali. Per questo tracciamento verrà utilizzato un foglio Excel in cui ogni componente del gruppo segnerà le ore di lavoro settimanalmente.\\
 
 \noindent Elenchiamo di seguito i ruoli previsti per il progetto e i rispettivi compiti.
 \subparagraph{Responsabile.}
 Il suo compito è quello di garantire il rispetto delle scadenze e di pianificare e coordinare lo svolgimento delle attività, assegnando i compiti agli altri membri del gruppo. Egli si occupa anche di approvare il rilascio dei deliverable\textsuperscript{G}.
-Inoltre, rappresenta il tramite tra il gruppo e gli enti esterni, i.e. proponente e committente. Pertanto, è necessario che il responsabile rimanga sempre aggiornato sullo stato di progresso del progetto.
+Inoltre, rappresenta il tramite tra il gruppo e gli enti esterni, i.e. proponente e committente. Pertanto, è necessario che il responsabile rimanga sempre aggiornato sullo stato di progresso del progetto. Si noti che in ogni momento è presente un solo responsabile.
 
 In particolare, le sue responsabilità sono:
 \begin{itemize}
+    \item Presentazione del \textit{Diario di Bordo} in aula;
     \item Redazione del \textit{Piano di progetto} %mettere link
-    assieme all'amministratore per pianificare le milestones\textsuperscript{G}.
+    assieme all'amministratore per pianificare le milestones\textsuperscript{G};
+    \item Redazione dei punti da discutere prima di ogni meeting interno del gruppo;
     \item Approvazione delle task verificate (su GitHub rilasciando le feature approvate sul branch main e, nello specifico per la documentazione, trasformando il codice \LaTeX\space in formato PDF);
-    \item Gestire le comunicazioni esterne.
+    \item Gestione delle comunicazioni esterne.
 \end{itemize}
 
 \subparagraph{Amministratore.}
-Il suo compito è quello di assicurare efficienza\textsuperscript{G} ed efficacia\textsuperscript{G} dei processi, in particolare per quanto riguarda la gestione degli strumenti e tecnologie che supportano il way of working\textsuperscript{G}.
+Il suo compito è quello di assicurare efficienza\textsuperscript{G} ed efficacia\textsuperscript{G} dei processi, in particolare per quanto riguarda la gestione degli strumenti e tecnologie che supportano il way of working\textsuperscript{G}. Anche in questo caso, in ogni momento è presente un solo amministratore.
 
 Nello specifico si occupa di:
 \begin{itemize}
@@ -700,8 +805,8 @@ Nello specifico si occupa di:
     %mettere link?
     \item Redigere assieme ai progettisti il \textit{Piano di Qualifica};
     %mettere link?
-    \item Gestire infrastruttura e strumenti utilizzati (e.g. gestire la board per l'organizzazione del lavoro);
-    \item Individuare i punti di miglioramento dei processi, ad esempio cercando modi per automatizzarli;
+    \item Gestire infrastruttura e strumenti utilizzati (e.g. gestire la board per l'organizzazione del lavoro), anche per quanto riguarda segnalazioni e problemi del gruppo riguardanti problemi e malfunzionamenti con gli stessi;
+    \item Individuare i punti di miglioramento dei processi, ad esempio cercando modi per automatizzarli, valutando anche la possibilità di utilizzo di nuove tecnologie (facendo, in tal caso, uno studio preliminare in modo da poter presentare al gruppo pro e contro);
     \item Effettuare il controllo di versioni e configurazioni del prodotto software.
 \end{itemize}
 
@@ -710,7 +815,8 @@ Il suo compito consiste nello studiare a fondo il capitolato e le necessità/ric
 
 In particolare, dunque, le sue mansioni sono:
 \begin{itemize}
-    \item Studiare il problema e le richieste del proponente e, a seguito, modellarne concettualmente il sistema risolutivo;
+    \item Interrogare il proponente sullo scopo del prodotto e le funzionalità che deve avere;
+    \item Studiare il problema (anche immedesimandosi in prima persona per comprenderlo meglio) e le richieste del proponente e, a seguito, modellarne concettualmente il sistema risolutivo;
     \item Individuare i requisiti del progetto e suddividerli per categorie;
     \item Redigere il documento di \textit{Analisi dei requisiti}.
     %mettere link?
@@ -722,6 +828,8 @@ Il suo compito è quello di svolgere le attività di design, ovvero di progettar
 Nello specifico si occupa si:
 \begin{itemize}
     \item Studiare l'architettura\textsuperscript{G} più adatta al prodotto, garantendone la qualità e il soddisfacimento dei requisiti;
+    \item Scegliere eventuali pattern architetturali da implementare;
+    \item Sviluppare lo schema UML delle classi;
     \item Individuare le unità architetturali\textsuperscript{G} che garantiscano la maggiore manutenibilità ed economicità, oltre che il minor numero di dipendenze possibili (i.e. con alto grado di coesione tra componenti ma basso grado di accoppiamento);
     \item Redigere la \textit{Specifica Tecnica} e la parte più pragmatica del \textit{Piano di Qualifica};
     \item Effettuare scelte per quanto riguarda gli aspetti tecnici e tecnologici del progetto.
@@ -733,15 +841,15 @@ Il suo compito è implementare l'architettura prodotta dai progettisti.
 
 Nello specifico le sue mansioni sono:
 \begin{itemize}
-    \item Scrivere codice (pulito e facile) seguendo le specifiche di progettazione e le regole definite nelle \textit{Norme di Progetto};
-    \item Realizzare gli strumenti per la verifica e validazione del software;
+    \item Scrivere codice, pulito e facile, seguendo le specifiche di progettazione (date dallo schema delle classi) e le regole definite nelle \textit{Norme di Progetto};
+    \item Realizzare gli strumenti per la verifica e validazione del software, scrivendo gli eventuali test;
     \item Redigere il documento \textit{Manuale Utente}.
     %mettere link?
 \end{itemize}
 Si noti che in un primo momento del progetto\textsuperscript{G} il ruolo di ``Programmatore'' era stato sostituito dal ruolo di ``Redattore'' per la scrittura dei documenti di carattere generale (e.g. verbali).
 
 \subparagraph{Verificatore.}
-Il suo compito è controllare che le attività svolte dagli altri membri del gruppo siano prive di errori e rispettino la qualità prevista nel \textit{Piano di Qualifica}. %mettere link? 
+Il suo compito è controllare che le attività svolte dagli altri membri del gruppo siano prive di errori e rispettino la qualità prevista nel \textit{Piano di Qualifica} e le convenzioni definite nelle \textit{Norme di progetto}. %mettere link? 
 
 In particolare, ha la responsabilità di:
 \begin{itemize}
@@ -770,6 +878,10 @@ In particolare, vengono identificate le seguenti fasi:
     \item \textbf{Sprint Retrospective:} si conclude definitivamente lo sprint valutandone l'andamento e capendo le parti migliorabili e le parti che sono state fatte bene.
 \end{itemize}
 
+\subsubsection{Metriche}\label{sec:processi_organizzativi:gestione_processi:metriche}
+Il processo di gestione dei processi non utilizza metriche qualitative particolari.
+
+
 \subsection{Gestione delle infrastrutture}\label{sec:processi_organizzativi:gestione_infrastrutture}
 Per la gestione dei processi organizzativi, i.e. per coordinamento e pianificazione, si rendono necessari degli strumenti che ne garantiscano l'efficacia e l'efficienza. Questi strumenti fanno parte della cosiddetta infrastruttura organizzativa.
 Di seguito vengono riportati gli strumenti utilizzati.
@@ -784,7 +896,17 @@ Di seguito vengono riportati gli strumenti utilizzati.
 
 \paragraph{GitHub}
 Viene utilizzato come servizio di hosting della repository\textsuperscript{G}, quindi per archiviare e gestire il codice e tenere traccia delle modifiche e delle versioni. In particolare, per la gestione della repository viene utilizzato il workflow \textit{GitHub Flow} (maggiori informazioni su di esso sono presenti alla sezione \ref{sec:riferimenti_esterni:materiali_di_studio}).
-A seguito della revisione RTB\textsuperscript{G}, viene anche utilizzato come strumento di pianificazione e monitoraggio del lavoro al posto di Jira. In particolare, si utilizzano le GitHub Issues\textsuperscript{G} per assegnare le attività ai specifici membri e definire dipendenze tra le stesse.
+
+A seguito della revisione RTB\textsuperscript{G}, viene anche utilizzato come strumento di pianificazione e monitoraggio del lavoro al posto di Jira. In particolare, si utilizzano le GitHub Issues\textsuperscript{G} per assegnare le attività ai specifici membri e definire dipendenze tra le stesse. Per ogni issue, inoltre, potranno essere assegnate anche alcune delle seguenti labels, secondo diversi criteri di interesse (come ambito o priorità):
+\begin{itemize}
+    \item \textbf{Da approvare}: indica una issue che necessita di approvazione;
+    \item \textbf{Da verificare}: indica una issue che necessita di verifica;
+    \item \textbf{Documentazione}: indica una issue riguardante la documentazione;
+    \item \textbf{P=Bassa}: indica una issue a priorità bassa, con una scadenza di massimo 15 giorni;
+    \item \textbf{P=Media}: indica una issue a priorità media, con una scadenza di massimo 7 giorni;
+    \item \textbf{P=Alta}: indica una issue a priorità alta, con una scadenza di massimo 3 giorni.
+\end{itemize}
+Le issues vengono assegnate a delle milestones per verificarne il raggiungimento. La scadenza di ogni milestone viene discussa e fissata dal gruppo. 
 
 \paragraph{Telegram}
 Viene utilizzato come strumento di comunicazione interna asincrona, perlopiù per comunicazioni organizzative, grazie alla creazione di una chat condivisa con tutti i membri. Si utilizzano anche le chat individuali per questioni che interessano solo alcuni membri del gruppo.
@@ -801,6 +923,9 @@ Si utilizza l’indirizzo e-mail condiviso \textit{sweavantgarde@gmail.com} per 
 
 \paragraph{Google Meet}
 Viene utilizzato come strumento di video-chiamata per le riunioni esterne con committente e proponente.
+
+\subsubsection{Metriche}\label{sec:processi_organizzativi:gestione_infrastrutture:metriche}
+Il processo di gestione delle infrastrutture non utilizza metriche qualitative particolari.
 
 \subsection{Formazione del personale}\label{sec:processi_organizzativi:formazione_personale}
 Lo sviluppo di un progetto dipende notevolmente dalle abilità e dalle conoscenze del team: se i componenti sanno utilizzare gli strumenti e conoscono l'argomento del progetto, allora saranno in grado di realizzare un prodotto di qualità, più efficace ed efficiente e con tempi di lavoro ridotti.
@@ -828,43 +953,43 @@ Sono cinque processi a stretto contatto con lo sviluppo software che servono ai 
 Descrive le attività e gli obiettivi dell'acquirente, cioè di quel soggetto che identifica un'opportunità: ha il bisogno di acquisire un sistema, prodotto o servizio software, seleziona un fornitore e decide se accettare o meno tale sistema, prodotto o servizio proposto dal fornitore.
 \par Le sottoattività in cui si suddivide questo processo sono infatti:
 \begin{itemize}
-    \item Acquisition preparation
-    \item Supplier selection
-    \item Supplier monitoring
-    \item Customer acceptance
+    \item Acquisition preparation;
+    \item Supplier selection;
+    \item Supplier monitoring;
+    \item Customer acceptance.
 \end{itemize}
 \subsubsection{Fornitura}
 Questo processo, che delinea i compiti del fornitore, ha inizio nel momento in cui questo decide di produrre una proposta per rispondere alle richieste di un acquirente oppure quando firma un contratto con l'acquirente per lo sviluppo di un sistema, prodotto o servizio software. In particolare, il processo comprende la selezione di procedure e risorse necessarie a completare il progetto e la gestione dei rapporti con il cliente.
 \par Il processo si suddivide nelle seguenti sottoattività:
 \begin{itemize}
-    \item Supplier tendering
-    \item Contract agreement
-    \item Product release
-    \item Product acceptance support
+    \item Supplier tendering;
+    \item Contract agreement;
+    \item Product release;
+    \item Product acceptance support.
 \end{itemize}
 \subsubsection{Sviluppo}
 Contiene tutte le attività e gli obiettivi dello sviluppatore, dall'analisi dei requisiti, al design, alla programmazione con testing, fino all'installazione del prodotto, che deve soddisfare le richieste di contratto stipulate con il cliente.
 \par Più nello specifico, il processo si suddivide in diverse sottoattività:
 \begin{itemize}
-    \item Requirements elicitation
-    \item System requirements analysis
-    \item System architectural design
-    \item Software requirements analysis
-    \item Software architectural design
-    \item Software detailed design
-    \item Software coding and testing
-    \item Software integration
-    \item Software qualification testing
-    \item System integration
-    \item System qualification testing
-    \item Software installation
+    \item Requirements elicitation;
+    \item System requirements analysis;
+    \item System architectural design;
+    \item Software requirements analysis;
+    \item Software architectural design;
+    \item Software detailed design;
+    \item Software coding and testing;
+    \item Software integration;
+    \item Software qualification testing;
+    \item System integration;
+    \item System qualification testing;
+    \item Software installation.
 \end{itemize}
 \subsubsection{Gestione operativa}
 Il processo riguarda l'installazione ed erogazione del prodotto software, con riferimento anche al sistema nel quale il prodotto opera e al supporto per gli utenti utilizzatori.
 \par Si suddivide in:
 \begin{itemize}
-    \item Operational use
-    \item Customer acceptance
+    \item Operational use;
+    \item Customer acceptance.
 \end{itemize}
 \subsubsection{Manutenzione}
 Il processo si attiva quando il prodotto software deve essere modificato nel codice e di conseguenza nella documentazione associata, per risolvere difetti oppure per apportare miglioramenti o adattamenti a seconda delle necessità e ha come obiettivo quello di modificare il prodotto, mantenendo la sua integrità. Il processo include la migrazione e il ritiro del prodotto e, di fatto, si conclude proprio con quest'ultima fase.
@@ -904,12 +1029,12 @@ Sono quattro processi trasversali che non riguardano lo specifico progetto, ma l
 \subsubsection{Gestione dei processi}
 Contiene tutta una serie di obiettivi ed attività di carattere gestionale che possono essere impiegate da qualsiasi soggetto coinvolto per gestire i propri processi. In particolare, si suddividono in attività di:
 \begin{itemize}
-    \item Pianificazione: per ciascun processo, bisogna stabilire i lavori da svolgere, stimare il tempo necessario a concluderli, determinare le risorse necessarie e i costi, assegnare i ruoli e le responsabilità
-    \item Esecuzione e controllo: per mettere in atto il piano stabilito e monitorare l'andamento del processo, per assicurarsi che tutto proceda secondo i piani.
-    \item Revisione: nella quale ci si assicura che il prodotto e i piani soddisfino i requisiti preposti, valutando anche l'andamento del processo rispetto alla pianificazione iniziale.
+    \item \textbf{Pianificazione: }per ciascun processo, bisogna stabilire i lavori da svolgere, stimare il tempo necessario a concluderli, determinare le risorse necessarie e i costi, assegnare i ruoli e le responsabilità.
+    \item \textbf{Esecuzione e controllo:} per mettere in atto il piano stabilito e monitorare l'andamento del processo, per assicurarsi che tutto proceda secondo i piani.
+    \item \textbf{Revisione:} nella quale ci si assicura che il prodotto e i piani soddisfino i requisiti preposti, valutando anche l'andamento del processo rispetto alla pianificazione iniziale.
 \end{itemize}
 \subsubsection{Gestione delle infrastrutture}
-Il processo ha il compito di stabilire e mentenere attiva l'infrastruttura necessaria per gli altri processi. Tale infrastruttura può essere di carattere sia software che hardware, ma può riguardare anche strumenti, tecniche e standard.
+Il processo ha il compito di stabilire e mantenere attiva l'infrastruttura necessaria per gli altri processi. Tale infrastruttura può essere di carattere sia software che hardware, ma può riguardare anche strumenti, tecniche e standard.
 \subsubsection{Miglioramento del processo}
 Si occupa di effettuare misure e controlli per stabilire e migliorare i processi di ciclo di vita del software.
 \subsubsection{Formazione del personale}
@@ -923,16 +1048,20 @@ Dato che la buona riuscita di tutti i processi (in particolare quelli primari) d
 \section{Riferimenti esterni}\label{sec:riferimenti_esterni}
 Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
 \begin{itemize}
+    \item \textbf{Glossario v1.0.0}:\\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/glossario_v1.0.0.pdf}
+    \item \textbf{Piano di Qualifica v2.0.0}:\\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/piano_di_qualifica_v2.0.0.pdf}
     \item Capitolato \textbf{Warehouse Management 3D}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} 
     \item \textbf{Regolamento} del progetto didattico:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf} 
     \item Link alla \textbf{documentazione del gruppo}:\\
     \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
     \item Standard \textbf{ISO/IEC 12207}, versione 1995:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf} 
     \item Link alle \textbf{slides sui processi del ciclo di vita}, con sottoattività per i processi dello standard ISO/IEC 12207:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf} \textcolor{gray}{\textit{(ultimo accesso 07-04-24)}}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf} 
 \end{itemize}
 \subsection{Materiali di studio}\label{sec:riferimenti_esterni:materiali_di_studio}
 \subsubsection{Documentazione}
