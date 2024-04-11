@@ -12,6 +12,7 @@
 \usepackage{array}
 \usepackage{makecell}
 \usepackage{comment}
+\usepackage{xltabular}
 
 \hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=blue}
 \usepackage{titlesec}
@@ -57,6 +58,14 @@
     \tableofcontents    %rimuovere se non si vuole l'indice
     \newpage    %rimuovere se non si vuole l'indice
     }
+
+    \renewcommand{\listfigurename}{Elenco delle figure}    %rimuovere le tre righe se non ci sono figure
+    \listoffigures
+    \newpage
+
+    \renewcommand{\listtablename}{Elenco delle tabelle}    %rimuovere le tre righe se non ci sono tabelle
+    \listoftables
+    \newpage
 
     \input{content.tex}
       
