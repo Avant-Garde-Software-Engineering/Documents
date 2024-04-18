@@ -1,17 +1,24 @@
 \section{Scopo dell'incontro} \label{sec:scopo}
-La riunione si è svolta con l'obiettivo di aggiornare l'azienda \nomeAzienda \space sullo stato di avanzamento del progetto in seguito al completamento della RTB 
-e comunicare loro un modifica della data di consegna del prodotto.
+La riunione si è svolta con l'obiettivo di aggiornare l'azienda \nomeAzienda \space sullo stato di avanzamento del progetto in seguito al completamento della RTB e comunicare loro un modifica della data di consegna del prodotto. Inoltre, il gruppo ha approfittato dell'incontro per chiarire alcuni dubbi sulle modalità di creazione del magazzino e per discutere delle tecnologie di testing.
 
 \section{Argomenti} \label{sec:argomenti}
 \subsection{Modifica della data di consegna}
 Nella prima parte della riunione il gruppo ha comunicato all'azienda proponente la modifica della data di consegna del prodotto.
-La data di consegna è stata posticipata di un paio di settimane rispetto alla prima data propsta.
+La data di consegna è stata posticipata di un paio di settimane rispetto alla prima data proposta: invece del 26/04/2024 la data viene spostata al 10/05/2024.
+\par Per quanto riguarda i costi, invece, non sono previste variazioni rispetto a quelli inizialmente stimati.
 
-\subsection{Discussione su dubbi emersi e tecnologie di testing}
-Successivamente si è discusso con l'azienda riguardo la gestione e l'inserimento di magazzini con una planimetria diversa da 
-quella rettangolare. Il proponente ha specificato che planimetrie non standard sono necessarie solamente quando si inseriscono tramite
-file in formato SVG, e quindi non è necessaria un interfaccia grafica per creare planimetrie non rettangolari.
-Dopo aver chiarito questo dubbio si è discusso riguardo alle tecnologie che si utilizzeranno per il testing automatico del prodootto, 
-alle tecnologie di testing utilizzate dal proponente e a possibili problemi che potrebbero presentarsi durante le fasi di testing 
-del prodotto. Riguardo alla libreria che utilizzeremo il proponente ha espresso interesse essendo una libreria di testing che non viene
-utilizzata dall'azienda e si è mostrato disponibile per eventuali problemi che potremmo avere da essa.
+\subsection{Modalità di creazione del magazzino}
+In vista del possibile inserimento di planimetrie personalizzate per il magazzino (e cioè con forme diverse da quella rettangolare), si è discusso con l'azienda su quali fossero le modalità di gestione ed inserimento che meglio rispecchiano le aspettative di prodotto. Il proponente ha specificato che planimetrie non standard sono necessarie solamente quando si inseriscono tramite file in formato SVG, pertanto non è necessaria un'interfaccia grafica per creare planimetrie non rettangolari, ma solamente un modo di inserire il file SVG contenente la planimetria, che poi verrà elaborato dal programma per costruire il magazzino.
+
+\subsection{Tecnologie di testing}
+Si è infine discusso sulle possibili tecnologie da utilizzare per il testing automatico del prodotto, parlando delle tecnologie di testing utilizzate dal proponente e di possibili problemi che potrebbero presentarsi durante le fasi di testing.
+\par Per il testing del prodotto, il gruppo ha individuato la libreria \textit{React Testing Library}, che permette di estendere il testing alle componenti React, lavorando in combinazione con un un testing framework, in particolare il gruppo ha selezionato \textit{Jest}.
+Nonostante siano tecnologie non utilizzate dall'azienda, il proponente si è mostrato disponibile ad informarsi, per eventualmente fornire supporto al gruppo se necessario.
+
+\subsection{Pianificazione}
+\noindent Per il prossimo sprint (terminante dunque il 21/04/24), si è deciso nello specifico che:
+\begin{itemize}
+    \item Il responsabile (Luca Securo) deve informare il committente sul cambiamento della data di consegna;
+    \item L'amministratore (Zaccaria Marangon) deve aggiornare le \textit{Norme di Progetto} con le librerie di testing selezionate;    
+    \item I progettisti (Giulio Biscontin, Jessica Carretta, Lorenzo Pasqualotto) devono adeguare la progettazione rispetto a quanto emerso dall'incontro, per permettere la gestione del magazzino tramite SVG.
+\end{itemize}
