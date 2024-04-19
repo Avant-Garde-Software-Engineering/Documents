@@ -1,11 +1,10 @@
-export const createWhsSlice = (set) => ({
+export const whsSlice = (set, get) => ({
 	whsName: null,
 	whsHeight: null,
-	filePath: null,
 	points: [],
 
 	setWhsName: (name) => set({ whsName: name }),
-	setFilePath: (path) => set({ filePath: path }),
+
 	setWhsRectangle: (depth, width, height) => set({ 
 		whsHeight: height, 
 		points: 
@@ -14,5 +13,6 @@ export const createWhsSlice = (set) => ({
 			{ x: width, z: 0 },
 			{ x: width, z: depth }]
 	}), 
-	setWhsPolygon: (points, height) => set({ points: points, whsHeight: height })
+
+	setWhsPolygon: (points, height) => set({ points: points, whsHeight: height }),
 })

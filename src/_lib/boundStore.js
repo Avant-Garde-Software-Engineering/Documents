@@ -1,13 +1,17 @@
 import { create } from 'zustand'
-import { createWhsSlice } from './whsSlice'
-import { createShelvesSlice } from './shelvesSlice'
-import { createProductsSlice } from './productsSlice'
-import { createInteractionsSlice } from './interactionsSlice'
+import { whsSlice } from './whsSlice'
+import { shelvesSlice } from './shelvesSlice'
+import { productsSlice } from './productsSlice'
+import { interactionsSlice } from './interactionsSlice'
+import { errorSlice } from './errorSlice'
+import { fileManagementSlice } from './fileManagementSlice'
 
 
-export const useBoundStore = create((...a) => ({
-	...createWhsSlice(...a),
-	...createShelvesSlice(...a),
-	...createProductsSlice(...a),
-	...createInteractionsSlice(...a),
+export const boundStore = create((...a) => ({
+	...whsSlice(...a),
+	...shelvesSlice(...a),
+	...productsSlice(...a),
+	...interactionsSlice(...a),
+	...errorSlice(...a),
+	...fileManagementSlice(...a),
 }))
