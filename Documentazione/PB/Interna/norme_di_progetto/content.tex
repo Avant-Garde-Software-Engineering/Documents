@@ -219,7 +219,7 @@ Per uniformare e formalizzare il processo di codifica vengono adottate alcune co
 \subparagraph{Convenzioni sull'organizzazione.} Per quanto riguarda la gestione dei file si decide di adottare le seguenti norme.
 \begin{itemize}
     \item \textit{Nome dei file:} i file dovranno rispettare il PascalCase e specificare il contenuto degli stessi;
-    \item \textit{Struttura:} il codice deve essere organizzato secondo la struttura raccomandata dalle linee guida di Next.js (disponibile a questo \href{https://nextjs.org/docs/app/building-your-application/routing/colocation#project-organization-features}{link}).
+    \item \textit{Struttura:} il codice deve essere organizzato secondo la struttura raccomandata dalle linee guida di Next.js (disponibile a questo \href{https://nextjs.org/docs/app/building-your-application/routing/colocation#project-organization-features}{link}), in particolare secondo la versione in cui la cartella ``app'' viene utilizzata solo per il routing.
 \end{itemize}
 
 \paragraph{Configurazione ambiente di lavoro}\label{sec:codifica:config}
@@ -299,29 +299,40 @@ Zustand è una libreria utilizzata per la gestione degli state in React. Il grup
     \url{https://docs.pmnd.rs/zustand/getting-started/introduction}\\ \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
 \end{center}
 
-\paragraph{Tailwind CSS}
-Tailwind CSS è un framework CSS che permette di inserire codice CSS all'interno dell'HTML utilizzando classi predefinite (nel nostro caso - che utilizza la sintassi JSX - attraverso l'attributo className). Il gruppo ha deciso di utilizzare Tailwind per personalizzare lo stile dell'applicazione in maniera più efficiente e veloce.
+\paragraph{Ant Design} \label{sec:processi_primari:sviluppo:strumenti:ant_design}
+Ant Design è una libreria di componenti UI React open-source che rende possibile la creazione di interfacce moderne e ben progettate. Questa libreria offre molteplici componenti dal semplice utilizzo e già integrati che semplificano la creazione di interfacce utente interattive.
+Il gruppo ha deciso di utilizzare Ant Design per l'integrazione nativa con React, per la sua ricca selezione di compontenti e la personalizzazione dello stile dell'applicazione in maniera più efficiente e veloce.
  
 \noindent Lo strumento è reperibile al sito:
 \begin{center}
-    \url{https://tailwindcss.com/}\\ \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
+    \url{https://ant.design/}\\ \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
 \end{center}
 
 \subsubsection{Metriche}\label{sec:processi_primari:sviluppo:metriche}
 Per perseguire la qualità nel processo di sviluppo si è deciso di adottare le seguenti metriche:
 \begin{itemize}
+    \item Per quanto riguarda l'analisi dei requisiti:
+    \begin{itemize}
+        \item \textbf{MPD1-ROB}: Copertura dei requisiti obbligatori;
+        \item \textbf{MPD2-RDE}: Copertura dei requisiti desiderabili.
+    \end{itemize}
     \item Per quanto riguarda la progettazione:
     \begin{itemize}
         \item \textbf{MPC8-SFINp}: Structural fan-in (procedure);
         \item \textbf{MPC9-SFOUTp}: Structural fan-out (procedure);
         \item \textbf{MPC10-SFINf}: Structural fan-in (file);
-        \item \textbf{MPC11-SFOUTf}: Structural fan-out (file).
+        \item \textbf{MPC11-SFOUTf}: Structural fan-out (file);
+        \item \textbf{MPD4-PC}: Profondità di click per operazione;
+        \item \textbf{MPD5-CFO}: Comprensibilità funzioni offerte.
     \end{itemize}
     \item Per quanto riguarda la codifica:
     \begin{itemize}
         \item \textbf{MPC12-CCH}: Code churn;
         \item \textbf{MPC13-NB}: Number of bugs;
-        \item \textbf{MPC14-CC}: Code churn.
+        \item \textbf{MPC14-CC}: Code churn;
+        \item \textbf{MPD3-ART}: Average response time;
+        \item \textbf{MPD6-PPT}: Portabilità su piattaforme;
+        \item \textbf{MPD7-CD}: Codice duplicato.
     \end{itemize}
 \end{itemize}
 Per indicazioni più specifiche sulle suddette metriche si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
@@ -634,6 +645,31 @@ dove:
 \end{itemize}
 Inoltre, per ogni metrica viene riportata una breve descrizione e i valori accettabili e ottimali per avere un deliverable\textsuperscript{G} di qualità.
 
+\paragraph{Denominazione dei test}\label{sec:processi_di_supporto:accertamento_qualità:test}
+I test vengono identificati univocamente tramite un codice standardizzato dal gruppo nella seguente maniera:
+\begin{center}
+    \textbf{T[Tipo]-[Identificativo]}
+\end{center}
+dove:
+\begin{itemize}
+    \item \textbf{Tipo:} indica il tipo di test a cui si riferisce:
+        \begin{itemize}
+            \item \textbf{U}: test di unità;
+            \item \textbf{I}: test di integrazione;
+            %\item \textbf{R}: test di regressione;
+            \item \textbf{S}: test di sistema;
+            \item \textbf{A}: test di accettazione.
+        \end{itemize}                 
+    \item \textbf{Identificativo:} si tratta di un numero progressivo univoco all'interno di uno stesso \textit{Tipo} e strutturato in forma gerarchica \textit{[idPadre].[idFiglio]}. Viene usato per contraddistinguere i test e, se necessario, i loro sottocasi.
+\end{itemize}
+Inoltre, per ogni test viene riportata una breve descrizione e lo stato del test stesso. Quest'ultimo indicato come:
+\begin{itemize}
+    \item \textbf{NI}: se il test non è stato ancora implementato;
+    \item \textbf{S}: se il test è stato implementato ed ha avuto esito positivo, i.e. test superato;
+    \item \textbf{NS}: se il test è stato implementato ed ha avuto esito negativo, i.e. test non superato.
+\end{itemize}
+Si noti che un test avente dei ``figli'' viene considerato superato se e solo se tutti i suoi figli hanno avuto esito positivo.
+
 %eventualmente aggiugere anche denominazione per test?
 \subsubsection{Metriche}\label{sec:processi_di_supporto:accertamento_qualità:metriche}
 Per tracciare la soddisfazione dei requisiti qualitativi è stata concordata una semplice metrica.
@@ -671,13 +707,19 @@ In particolare, i test\textsuperscript{G} a cui sottoporre il software dovranno 
     \item \textbf{Ripetibili:} si vuole poter ripetere un test più volte sullo stesso oggetto per poter verificare che le modifiche effettuate per risolvere le problematiche individuate siano effettivamente andate a buon fine.
 \end{itemize}
 
-\subsubsection{Strumenti}
+
+\subsubsection{Strumenti}\label{sec:processi_di_supporto:verifica:strumenti}
 \paragraph{Verifica della documentazione}
 La verifica della documentazione consiste nel:
 \begin{itemize}
+    \item Lettura esplorativa del testo;
+    \item Seconda lettura del testo per una migliore comprensione dei concetti esposti;
+    \item Controllare, ed eventualmente segnalare, i concetti che risultano poco chiari, scorretti o non pertinenti;
+    \item Controllare che la struttura del testo sia opportuna o suggerirne un'alternativa;
+    \item Controllare, ed eventualmente segnalare, se il documento è completo o mancano delle parti;
     \item Controllare l'ortografia e la sintassi;
-    \item Controllare che le convenzioni redazionali (stilistiche, tipografiche e strutturali) accordate in precedenza siano state adottate;
-    \item Controllare che il contenuto del testo sia corretto e pertinente.
+    \item Controllare, ed eventualmente segnalare, che a tutti i primi termini inseriti anche nel \textit{Glossario} sia stata inserita la lettera ``G'' in apice;
+    \item Controllare che le convenzioni redazionali (stilistiche, tipografiche e strutturali) accordate nelle \textit{Norme di Progetto} siano state adottate.
 \end{itemize}
 A tal fine si utilizzano strumenti sia manuali che automatici:
 \begin{itemize}
@@ -695,8 +737,8 @@ Al fine di minimizzare gli errori, il codice viene controllato sia tramite anali
         \end{itemize}
     \item Per l'analisi dinamica: 
         \begin{itemize}
-            \item Siccome i test devono essere eseguiti a run-time ed essere ripetibili, il gruppo intende utilizzare degli strumenti che automatizzino questa analisi. Al momento il gruppo deve ancora definire tali strumenti.
-            %aggiungere tipo di test da effettuare e strumenti per farli?
+            \item L’attività di analisi dinamica del codice si concretizza con lo sviluppo e l’utilizzo dei test. I test servono per assicurare un certo comportamento delle componenti oppure dell’intera applicazione. Ne esistono di diverse tipologie ed ognuna di queste va a controllare aspetti diversi del software (per maggiori informazioni si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento). In ogni caso, per ottenere un buon test, è necessario che questo sia ripetibile, oltre che specifichi ambiente di esecuzione, input e output. Pertanto, il gruppo intende utilizzare degli strumenti che automatizzino questa analisi, il gruppo ha definito Jest e React Testing Library come tali strumenti.
+            %aggiungere tipo di test da effettuare per farli?
         \end{itemize}
 \end{itemize}
 
@@ -1076,7 +1118,9 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
         \item Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Installation} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
         \item React Three Fiber: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
         \item Zustand: \url{https://docs.pmnd.rs/zustand/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
-        \item Tailwind CSS: \url{https://tailwindcss.com/docs/installation} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
+        \item Ant Design: \url{https://ant.design/docs/react/introduce} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
+        \item Jest: \url{https://jestjs.io/docs/getting-started} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
+        \item React Testing Library: \url{https://testing-library.com/docs/react-testing-library/intro/} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
     \end{itemize}
 \subsubsection{Tutorial}
 \begin{itemize}
