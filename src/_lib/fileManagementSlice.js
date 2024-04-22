@@ -1,15 +1,9 @@
-import fs from 'fs';
-
 export const fileManagementSlice = (set, get) => ({
-    filePath: null,
-
-    jsonToState: () => {
-        const fileData = fs.readFileSync(jsonFilePath, 'utf-8');
-
+    jsonToState: (fileData) => {
         const data = JSON.parse(fileData);
 
         get().setWhsName(data.whsName);
-        get().setWhsPolygon(data.whsPoints);
+        get().setWhsPolygon(data.whsPoints, data.whsHeight);
         get().setProducts(data.products);
         get().setShelves(data.shelves);
         get().setMovements(data.movements);
@@ -30,10 +24,31 @@ export const fileManagementSlice = (set, get) => ({
             movements: movementsJsonArray
         };
         
-        const jsonString = JSON.stringify(jsonData, null, 4);
-       
-        fs.writeFileSync(get().filePath, jsonString, 'utf-8');
+        return JSON.stringify(jsonData, null, 4);
     },
 
-    setFilePath: (path) => set({ filePath: path }),
+    svgToState: (svgData, height) => {
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgData, "image/svg+xml");
+        const polygons = svgDoc.getElementsByTagName('polygon');
+        
+        const firstPolygon = Array.from(polygons).find(polygon => polygon.getAttribute('points'));
+        const points = firstPolygon.getAttribute('points').trim().split(' ').map(point => {
+            const [x, z] = point.split(',').map(Number).map(num => parseFloat(num.toFixed(2)));
+            return { x, z };
+        });
+
+        // Translate the center of the polygon in (x: 0, z: 0)          TO CHECK: not sure
+        const centroid = {
+            x: points.reduce((sum, vertex) => sum + vertex.x, 0) / points.length,
+            z: points.reduce((sum, vertex) => sum + vertex.z, 0) / points.length
+        };
+
+        const translatedPoints = points.map(vertex => ({
+            x: parseFloat((vertex.x - centroid.x).toFixed(2)),
+            z: parseFloat((vertex.z - centroid.z).toFixed(2))
+        }));
+
+        get().setWhsPolygon(translatedPoints, parseFloat(height));
+    }
 })

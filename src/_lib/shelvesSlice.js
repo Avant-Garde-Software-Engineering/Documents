@@ -4,14 +4,50 @@ import { binState } from "@_model/Bin"
 export const shelvesSlice = (set, get) => ({
 	shelves: [],
 
-	setShelves: (shelves) => set({ shelves: [...shelves] }),
+	setShelves: (shelvesToSet) => {
+		const uniqueNames = new Set();
+		const uniqueIds = new Set();
+		let error = false;
+		shelvesToSet.forEach(shelf => {
+			if (uniqueNames.has(shelf.name)) {
+				get().setError("La scaffalatura aggiunta contiene un nome già esistente.");
+				error=true;
+				return;
+			}
+			if(uniqueIds.has(shelf.id)){
+				get().setError("La scaffalatura aggiunta ha un ID già presente nel sistema.");
+				error=true;
+				return;
+			}
+			uniqueNames.add(shelf.name);
+			uniqueIds.add(shelf.id);
+		});
+		if(!error) set({ shelves: shelvesToSet });
+	},
 
 	addShelf: (name, binSize, height, width) => { 
-		const newShelf = new Shelf(name, binSize, width, height);
+		let error=false;
+		get().shelves.forEach(shelf => {
+			if (shelf.name === name) {
+				get().setError("La scaffalatura aggiunta contiene un nome già esistente.");
+				error=true;
+				return;
+			}
+		});
+		
+		const maxHeight = get().whsHeight;
+  		if (height > maxHeight) {
+			get().setError("L'altezza deve essere inferiore a " + maxHeight + ".");
+    		error=true;
+  		}
 
-		set((state) => ({
-			shelves: [...state.shelves, newShelf] 
-		}));
+		if(!error){
+			const newShelf = new Shelf(name, binSize, width, height);
+
+			set((state) => ({
+				shelves: [...state.shelves, newShelf] 
+			}));
+		}
 	},
 
 	removeShelf: (id) => {   
@@ -67,9 +103,44 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({
 			shelves: state.shelves.map(shelf => {
 				if (shelf.id === id) {
+					let isValidPosition = true;
+					// Check if shelf intersect walls
+					if (get().setIntersectingIds.includes('whsWalls') && get().setIntersectingIds.includes(shelf.id)) {
+						get().setError(`Posizione non valida. Si prega di riprovare. 
+						Controllare che le misure della scaffalature rientrino nel magazzino.`);
+						isValidPosition = false;
+					}
+					// Check if shelf outside or inside  TO CHECK: not sure
+					else {
+						let inside = false;
+						const whsFloor = get().points;		
+						for (let i = 0, j = whsFloor.length - 1; i < whsFloor.length; j = i++) {
+							const xi = whsFloor[i].x;
+							const zi = whsFloor[i].z;
+							const xj = whsFloor[j].x;
+							const zj = whsFloor[j].z;
+					
+							const intersect =
+								zi > z !== zj > z &&
+								x < ((xj - xi) * (z - zi)) / (zj - zi) + xi;
+							if (intersect) {
+								inside = !inside;
+							}
+						}
+						if(!inside) {
+							get().setError(`Posizione non valida. Si prega di riprovare. 
+							Controllare che le misure della scaffalature rientrino nel magazzino.`);
+							isValidPosition = false;
+						}
+					}
+
 					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
 					newShelf.bins = shelf;
-					newShelf.position = {x: x, y: shelf.position.y, z: z};
+
+					if(isValidPosition) {
+						newShelf.position = {x: x, y: shelf.position.y, z: z};
+					}
+					
 					return newShelf;
 					/*
 					return {
