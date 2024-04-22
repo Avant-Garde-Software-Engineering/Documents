@@ -1,7 +1,7 @@
 import Product from "@_model/Product"
 
-export const createProductsSlice = (set, get) => ({
-	shelves: [],
+export const productsSlice = (set, get) => ({
+	products: [],
 
 	setProducts: (products) => set({ products: products }),
 
@@ -20,7 +20,7 @@ export const createProductsSlice = (set, get) => ({
 
 		const binIds = get().getBinsWithProduct(id);
 		for(let i = 0; i < binIds.length; i++){
-			const data = i.split('-');
+			const data = binIds[i].split('-');
 			const shelfId = data[0];
 			const row = data[1];
 			const col = data[2];
@@ -30,17 +30,23 @@ export const createProductsSlice = (set, get) => ({
 
 	updateColor: (id, color) => {
 		set((state) => ({
-			products: state.products.map((product) =>
-				product.id === id ? { ...product, color: color} : product
-			),
+			products: state.products.map((product) => {
+				if(product.id === id) {
+					product.color = color;
+				}
+				return new Product(product.name, product.color, product.id);
+			}),
 		}));
 	},
 
 	updateName: (id, name) => {
 		set((state) => ({
-			products: state.products.map((product) =>
-				product.id === id ? { ...product, name: name} : product
-			),
+			products: state.products.map((product) => {
+				if(product.id === id) {
+					product.name = name;
+				}
+				return new Product(product.name, product.color, product.id);
+			}),
 		}));
 	},
 })

@@ -4,7 +4,7 @@ import { binState } from "@_model/Bin"
 export const shelvesSlice = (set, get) => ({
 	shelves: [],
 
-	setShelves: (shelves) => set({ shelves: shelves }),
+	setShelves: (shelves) => set({ shelves: [...shelves] }),
 
 	addShelf: (name, binSize, height, width) => { 
 		const newShelf = new Shelf(name, binSize, width, height);
@@ -38,15 +38,26 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({	
 			shelves: state.shelves.map(shelf => {
 				if (shelf.id === id) {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					newShelf.binSize = binSize;
+					newShelf.width = width;
+					newShelf.height = height;
+					newShelf.position = {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2};			
+					return newShelf;
+					/*
 					return {
 						...shelf,
 						binSize: binSize,
 						width: width,
 						height: height,
 						position: {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2}
-					};
+					};*/
 				} else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -56,6 +67,11 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({
 			shelves: state.shelves.map(shelf => {
 				if (shelf.id === id) {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					newShelf.position = {x: x, y: shelf.position.y, z: z};
+					return newShelf;
+					/*
 					return {
 						...shelf,
 						position: {
@@ -63,9 +79,12 @@ export const shelvesSlice = (set, get) => ({
 							x: x,
 							z: z,
 						},
-					};
+					};*/
 				} else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -75,10 +94,15 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({
 			shelves: state.shelves.map(shelf => {
 				if(shelf.id === shelfId) {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					newShelf.bins[row][col].state = binState;
+					return newShelf;
+					/*
 					return {
 						...shelf,
 						bins: shelf.bins.map(bin => {
-							if (bin.id === `${id}-${row}-${col}`) {
+							if (bin.id === `${shelfId}-${row}-${col}`) {
 								return {
 									...bin,
 									state: binState,
@@ -88,9 +112,12 @@ export const shelvesSlice = (set, get) => ({
 								return bin;
 							}
 						}),
-					};
+					};*/
 				} else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -100,12 +127,19 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({
 			shelves: state.shelves.map(shelf => {
 				if (shelf.id === id) {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, !shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					/*
 					return {
 						...shelf,
 						isFlipped: true,
-					};
+					};*/
 				} else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -115,14 +149,22 @@ export const shelvesSlice = (set, get) => ({
 		set((state) => ({
 			shelves: state.shelves.map(shelf => {
 				if(shelf.id === shelfId) {
-					if(shelf.bins[row][col].state === binState.EMPTY) {
+					if(shelf.bins[row][col].state !== binState.EMPTY) {
 						get().setError("Impossibile inserire il prodotto. Il bin è occupato.");	// to test (not sure)
-						return shelf;
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						return newShelf;
+						//return shelf;
 					} else {
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						newShelf.bins[row][col].state = binState.STILL;
+						newShelf.bins[row][col].productId = productId;
+						return newShelf;/*
 						return {
 							...shelf,
 							bins: shelf.bins.map(bin => {
-								if (bin.id === `${id}-${row}-${col}`) {
+								if (bin.id === `${shelfId}-${row}-${col}`) {
 									return {
 										...bin,
 										state: binState.STILL,
@@ -133,11 +175,14 @@ export const shelvesSlice = (set, get) => ({
 									return bin;
 								}
 							}),
-						};
+						};*/
 					}
 					
 				} else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -149,8 +194,17 @@ export const shelvesSlice = (set, get) => ({
 				if(shelf.id == id) {
 					if(shelf.bins[row][col].state == binState.EMPTY) { 
 						get().setError("Impossibile eliminare il prodotto. Il bin è vuoto.");	// to test (not sure)
-						return shelf;
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						return newShelf;
+						//return shelf;
 					} else {
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						newShelf.bins[row][col].state = binState.EMPTY;
+						newShelf.bins[row][col].productId = null;
+						return newShelf;
+						/*
 						return {
 							...shelf,
 							bins: shelf.bins.map(bin => {
@@ -165,11 +219,14 @@ export const shelvesSlice = (set, get) => ({
 									return bin;
 								}
 							}),
-						};
+						};*/
 					}
 				}
 				else {
-					return shelf;
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+					//return shelf;
 				}
 			})
 		}));
@@ -184,7 +241,7 @@ export const shelvesSlice = (set, get) => ({
 			for (let i = 0; i < shelf.height; i++) {
 				for (let j = 0; j < shelf.width; j++) {
 					if(shelf.bins[i][j].productId == productId)
-						binsIds.push(bins[i][j].id);
+						binsIds.push(shelf.bins[i][j].id);
 				}
 			}
 		}

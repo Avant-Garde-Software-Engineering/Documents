@@ -9,8 +9,7 @@ export const fileManagementSlice = (set, get) => ({
         const data = JSON.parse(fileData);
 
         get().setWhsName(data.whsName);
-        get().setWhsHeight(data.whsHeight);
-        get().setWhsPoints(data.whsPoints);
+        get().setWhsPolygon(data.whsPoints);
         get().setProducts(data.products);
         get().setShelves(data.shelves);
         get().setMovements(data.movements);

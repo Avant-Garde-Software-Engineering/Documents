@@ -1,7 +1,7 @@
 import { binState } from "@_model/Bin"
 import Movement from "@_model/Movement";
 
-export const createInteractionsSlice = (set, get) => ({
+export const interactionsSlice = (set, get) => ({
 	intersectingIds: [],
 	selectedShelf: null,
 	selectedBin: null,
@@ -20,12 +20,18 @@ export const createInteractionsSlice = (set, get) => ({
 	
 	orderMovementFromSelected: (toShelf, toRow, toCol) => {
 		const fromShelf = get().selectedBin.split('-')[0];
-		const fromRow = get().selectedBin.split('-')[1];
-		const fromCol = get().selectedBin.split('-')[2];
+		const fromRow = Number(get().selectedBin.split('-')[1]);
+		const fromCol = Number(get().selectedBin.split('-')[2]);
 
-		if(get().shelves.bins[toRow][toCol].state === binState.EMPTY) {
-			const newMovement = new Movement(fromId, fromRow, fromCol, toId, toRow, toCol);
-			get().movements.push(newMovement);
+		const shelf = get().shelves.filter(obj => {
+			return obj.id === toShelf;
+		})[0];
+
+		if(shelf.bins[toRow][toCol].state === binState.EMPTY) {
+			const newMovement = new Movement(fromShelf, fromRow, fromCol, toShelf, toRow, toCol);
+			set((state) => ({
+				movements: [...state.movements, newMovement]
+			}));
 			
 			get().updateBinState(fromShelf, fromRow, fromCol, binState.OUTGOING);
 			get().updateBinState(toShelf, toRow, toCol, binState.INCOMING);
