@@ -45,7 +45,7 @@ test('errorSlice should clear message correctly', () => {
             firstRender = false;
             secondRender = true;
         }
-        if(secondRender) {
+        else if(secondRender) {
             items.clearError();
             secondRender = false;
         }       

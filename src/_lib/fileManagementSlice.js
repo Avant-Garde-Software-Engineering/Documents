@@ -5,16 +5,43 @@ export const fileManagementSlice = (set, get) => ({
         get().setWhsName(data.whsName);
         get().setWhsPolygon(data.whsPoints, data.whsHeight);
         get().setProducts(data.products);
-        get().setShelves(data.shelves);
         get().setMovements(data.movements);
+        get().setShelves(data.shelves);
     },
 
     stateToJson: () => {
-        const productJsonArray = JSON.stringify(get().products);
-        const shelfJsonArray = JSON.stringify(get().shelves);
-        const movementsJsonArray = JSON.stringify(get().movements);
-        const pointsJsonData = JSON.stringify(get().points);
-        
+        const pointsJsonData = get().points;
+
+        const productJsonArray = get().products.map(product => ({
+            id: product.id,
+            name: product.name,
+            color: product.color
+        }));
+
+        const shelfJsonArray = get().shelves.map(shelf => ({
+            id: shelf.id,
+            name: shelf.name,
+            binSize: shelf.binSize,
+            width: shelf.width,
+            height: shelf.height,
+            isFlipped: shelf.isFlipped,
+            bins: shelf.bins.map(row => row.map(bin => ({
+                id: bin.id,
+                productId: bin.productId,
+                state: bin.state
+            })))
+        }));
+
+        const movementsJsonArray = get().movements.map(movement => ({
+            id: movement.id,
+            fromId: movement.fromId,
+            fromRow: movement.fromRow,
+            fromCol: movement.fromCol,
+            toId: movement.toId,
+            toRow: movement.toRow,
+            toCol: movement.toCol
+        }));
+
         const jsonData = {
             whsName: get().whsName,
             whsHeight: get().whsHeight,
@@ -23,8 +50,8 @@ export const fileManagementSlice = (set, get) => ({
             shelves: shelfJsonArray,
             movements: movementsJsonArray
         };
-        
-        return JSON.stringify(jsonData, null, 4);
+
+        return jsonData;
     },
 
     svgToState: (svgData, height) => {
@@ -46,7 +73,7 @@ export const fileManagementSlice = (set, get) => ({
 
         const translatedPoints = points.map(vertex => ({
             x: parseFloat((vertex.x - centroid.x).toFixed(2)),
-            z: parseFloat((vertex.z - centroid.z).toFixed(2))
+            z: parseFloat((vertex.z - centroid.z).toFixed(2)*(-1))
         }));
 
         get().setWhsPolygon(translatedPoints, parseFloat(height));

@@ -41,7 +41,7 @@ class Shelf {
 		for (let i = 0; i < this.#height; i++) {
 			const row = [];
 			for (let j = 0; j < this.#width; j++) {
-				row.push(new Bin(`${this.id}-${i}-${j}`));		
+				row.push(new Bin(`${this.id}+${i}+${j}`));		
 			}
 			matrix.push(row);
 		}
@@ -73,7 +73,7 @@ class Shelf {
 	#addCols(value) {
 		for (let index = 0; index < this.#height; index++) {
 			for(let j = 0; j < value; j++) {
-				this.#bins[index][this.#width + j] = new Bin(`${this.id}-${index}-${this.#width + j}`);
+				this.#bins[index][this.#width + j] = new Bin(`${this.id}+${index}+${this.#width + j}`);
 			}			
 		}
 	}
@@ -93,7 +93,7 @@ class Shelf {
 		for (let index = 0; index < value; index++) {
 			const row = [];
 			for (let j = 0; j < this.#width; j++) {
-				row.push(new Bin(`${this.id}-${this.#height + index}-${this.#width + j}`));		
+				row.push(new Bin(`${this.id}+${this.#height + index}+${this.#width + j}`));		
 			}
 			this.#bins.push(row);	
 		}
@@ -169,16 +169,14 @@ class Shelf {
 	}
 
 	set bins(shelf) {
-		if(shelf instanceof Shelf) {
-			if(shelf.width === this.#width && shelf.height === this.#height) {
-				for (let i = 0; i < this.#height; i++) {
-					for (let j = 0; j < this.#width; j++) {
-						this.#bins[i][j].productId = shelf.bins[i][j].productId;
-						this.#bins[i][j].state = shelf.bins[i][j].state;	
-					}
+		if(shelf.width === this.#width && shelf.height === this.#height) {
+			for (let i = 0; i < this.#height; i++) {
+				for (let j = 0; j < this.#width; j++) {
+					this.#bins[i][j].productId = shelf.bins[i][j].productId;
+					this.#bins[i][j].state = shelf.bins[i][j].state;	
 				}
-			} else throw new ShelfError("Set bin of shelf has mismatched dimensions");
-		} else throw new ShelfError("Object is not instance of Shelf");
+			}
+		} else throw new ShelfError("Set bin of shelf has mismatched dimensions");
 	}
 }
 

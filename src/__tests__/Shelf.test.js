@@ -169,27 +169,22 @@ test('Self bins should be set only with same size shelf', () => {
     expect(() => {myFirstShelf.bins = mySecondShelf}).toThrow(ShelfError);
 });
 
-test('Self bins should be set only with instance of shelf', () => { 
-    const myFirstShelf = new Shelf("newShelf", 5, 4, 6);
-    expect(() => {myFirstShelf.bins = {data: "ciao"}}).toThrow(ShelfError);
-});
-
-test('Shelf bin ids must follow the rule shelf.id-i-j where i and j are indexes of matrix', () => { 
+test('Shelf bin ids must follow the rule shelf.id+i+j where i and j are indexes of matrix', () => { 
     const newShelf = new Shelf("newShelf", 5, 3, 6);
     const bins = newShelf.bins;
     for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 3; j++) {
-            expect(bins[i][j].id).toEqual(`${newShelf.id}-${i}-${j}`);	
+            expect(bins[i][j].id).toEqual(`${newShelf.id}+${i}+${j}`);	
         }
     }
 });
 
-test('Shelf bin ids (in Shelf with personalized id) must follow the rule shelf.id-i-j where i and j are indexes of matrix', () => { 
+test('Shelf bin ids (in Shelf with personalized id) must follow the rule shelf.id+i+j where i and j are indexes of matrix', () => { 
     const newShelf = new Shelf("newShelf", 5, 3, 6, {x: 1, y: 2, z: 3}, true, "98Na4");
     const bins = newShelf.bins;
     for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 3; j++) {
-            expect(bins[i][j].id).toEqual(`98Na4-${i}-${j}`);
+            expect(bins[i][j].id).toEqual(`98Na4+${i}+${j}`);
         }
     }
 });

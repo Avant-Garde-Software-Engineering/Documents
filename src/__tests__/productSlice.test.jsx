@@ -34,6 +34,110 @@ test('productsSlice should set products correctly', () => {
 	expect(products).toEqual(myProducts);
 });
 
+test('productsSlice should NOT set products if there are duplicate names', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "firstProdID"));
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "secondProdID"));
+
+    const selector = (state) => ({
+        products: state.products,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+	let products = null;
+	effect = jest.fn((items) => {
+        products = items.products;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(products.length).toEqual(0);
+});
+
+test('productsSlice should set error if there are duplicate names in set', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "firstProdID"));
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "secondProdID"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
+test('productsSlice should NOT set products if there are duplicate ids', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "A001"));
+    myProducts.push(new Product("mySecondProd", {r: 2, g: 20, b: 200}, "A001"));
+
+    const selector = (state) => ({
+        products: state.products,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+	let products = null;
+	effect = jest.fn((items) => {
+        products = items.products;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(products.length).toEqual(0);
+});
+
+test('productsSlice should set error if there are duplicate ids in set', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "A001"));
+    myProducts.push(new Product("mySecondProd", {r: 2, g: 20, b: 200}, "A001"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
 test('productsSlice should add new product correctly', () => {
     const selector = (state) => ({
         products: state.products,
@@ -62,6 +166,70 @@ test('productsSlice should add new product correctly', () => {
 	expect(productFound).toEqual(true);
 });
 
+test('productsSlice should NOT add new product if name already exists', () => {
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "A001"));
+    
+    const selector = (state) => ({
+        products: state.products,
+        addProduct: state.addProduct,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let products = null;
+	effect = jest.fn((items) => {
+        products = items.products;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addProduct("myFirstProd", {r: 2, g: 20, b: 200});
+            secondRender = false;
+        }    
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(products.length).toEqual(1);
+});
+
+test('productsSlice should set error if there are duplicate names in add', () => {
+    let myProducts = [];
+    myProducts.push(new Product("myFirstProd", {r: 2, g: 20, b: 200}, "A001"));
+    
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        addProduct: state.addProduct,
+        setProducts: state.setProducts
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addProduct("myFirstProd", {r: 2, g: 20, b: 200});
+            secondRender = false;
+        }    
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
 test('productsSlice should remove products correctly', () => {
     let myProducts = [];
     myProducts.push(new Product("firstProd", {r: 2, g: 20, b: 200}, "firstProd"));
@@ -84,7 +252,7 @@ test('productsSlice should remove products correctly', () => {
             firstRender = false;
             secondRender = true;
         }
-        if(secondRender) {
+        else if(secondRender) {
             items.removeProduct("secondProd");
             secondRender = false;
         }
@@ -125,7 +293,7 @@ test('productsSlice should update product name correctly', () => {
             firstRender = false;
             secondRender = true;
         }
-        if(secondRender) {
+        else if(secondRender) {
             items.updateName("secondProd", "myNewSecondProd");
             secondRender = false;
         }
@@ -166,7 +334,7 @@ test('productsSlice should update product color correctly', () => {
             firstRender = false;
             secondRender = true;
         }
-        if(secondRender) {
+        else if(secondRender) {
             items.updateColor("secondProd", {r: 120, g: 0, b: 15});
             secondRender = false;
         }
@@ -212,7 +380,7 @@ test('productsSlice should empty shelves when removing product', () => {
             firstRender = false;
             secondRender = true;
         }
-        if(secondRender) {
+        else if(secondRender) {
             items.removeProduct("myProductId");
             secondRender = false;
         }
@@ -222,7 +390,6 @@ test('productsSlice should empty shelves when removing product', () => {
 
     let implicatedShelf = null;
     for (let index = 0; index < shelves.length; index++) {
-        console.log(shelves[index].id)
         if(shelves[index].id === "secondShelfID") {
             implicatedShelf = shelves[index];
             break;

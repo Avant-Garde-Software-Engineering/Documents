@@ -22,7 +22,12 @@ export const shelvesSlice = (set, get) => ({
 			uniqueNames.add(shelf.name);
 			uniqueIds.add(shelf.id);
 		});
-		if(!error) set({ shelves: shelvesToSet });
+		if(!error) set({ shelves: shelvesToSet.map(shelf => {
+			let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+			newShelf.bins = shelf;
+			return newShelf;
+		}) 
+		});
 	},
 
 	addShelf: (name, binSize, height, width) => { 
@@ -36,7 +41,7 @@ export const shelvesSlice = (set, get) => ({
 		});
 		
 		const maxHeight = get().whsHeight;
-  		if (height > maxHeight) {
+  		if (height * binSize > maxHeight) {
 			get().setError("L'altezza deve essere inferiore a " + maxHeight + ".");
     		error=true;
   		}
@@ -70,6 +75,7 @@ export const shelvesSlice = (set, get) => ({
 		}
 	},
 
+	/*
 	updateShelfInfo: (id, binSize, width, height) => {
 		set((state) => ({	
 			shelves: state.shelves.map(shelf => {
@@ -81,22 +87,53 @@ export const shelvesSlice = (set, get) => ({
 					newShelf.height = height;
 					newShelf.position = {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2};			
 					return newShelf;
-					/*
-					return {
+				} else {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					return newShelf;
+				}
+			})
+		}));
+	},*/
+
+	updateShelfInfo: (id, name, binSize, width, height) => {
+		let error = false;
+		get().shelves.forEach(shelf => {
+		  	if (shelf.name === name && shelf.id !== id) {
+				get().setError("La scaffalatura aggiunta contiene un nome già esistente.");
+				error=true;
+				return;
+		  	}
+		});
+		if(!error){
+		  	set((state) => ({  
+				shelves: state.shelves.map(shelf => {
+					if (shelf.id === id) {
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						newShelf.binSize = binSize;
+						newShelf.width = width;
+						newShelf.height = height;
+						newShelf.name = name;
+						newShelf.position = {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2};      
+						return newShelf;
+						/*
+						return {
 						...shelf,
 						binSize: binSize,
 						width: width,
 						height: height,
 						position: {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2}
-					};*/
-				} else {
-					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-					newShelf.bins = shelf;
-					return newShelf;
-					//return shelf;
-				}
-			})
-		}));
+						};*/
+					} else {
+						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+						newShelf.bins = shelf;
+						return newShelf;
+						//return shelf;
+					}
+				})
+		  	}));
+		}
 	},
 
 	updateShelfPosition: (id, x, z) => {	
@@ -105,7 +142,7 @@ export const shelvesSlice = (set, get) => ({
 				if (shelf.id === id) {
 					let isValidPosition = true;
 					// Check if shelf intersect walls
-					if (get().setIntersectingIds.includes('whsWalls') && get().setIntersectingIds.includes(shelf.id)) {
+					if (get().intersectingIds.includes(shelf.id)) {
 						get().setError(`Posizione non valida. Si prega di riprovare. 
 						Controllare che le misure della scaffalature rientrino nel magazzino.`);
 						isValidPosition = false;
@@ -304,6 +341,27 @@ export const shelvesSlice = (set, get) => ({
 	},
 
 	getBinsWithProduct: (productId) => {
+		let binInfos = [];
+		const shelves = get().shelves;
+		
+		for(let s = 0; s < shelves.length; s++){
+		  	const shelf = shelves[s];
+		  	for (let i = 0; i < shelf.height; i++) {
+				for (let j = 0; j < shelf.width; j++) {
+			  		if(shelf.bins[i][j].productId == productId) {
+						const newObj = {
+				  			shelfName: shelf.name,
+				  			binId: shelf.bins[i][j].id
+						}
+						binInfos.push(newObj);
+			  		}
+				}
+		  	}
+		}
+		return binInfos;
+	}
+	/*
+	getBinsWithProduct: (productId) => {
 		let binsIds = [];
 		const shelves = get().shelves;
 		
@@ -317,5 +375,5 @@ export const shelvesSlice = (set, get) => ({
 			}
 		}
 		return binsIds;
-	}
+	}*/
 })

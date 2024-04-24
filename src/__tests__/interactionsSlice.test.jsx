@@ -72,7 +72,7 @@ test('interactionsSlice with selectShelf should deselect selectedBin', () => {
             items.selectBin("myBinId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectShelf("myShelfId");
             secondRender = false;
         }       
@@ -100,7 +100,7 @@ test('interactionsSlice with selectShelf should deselect selectedProduct', () =>
             items.selectProduct("myProductId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectShelf("myShelfId");
             secondRender = false;
         }       
@@ -151,7 +151,7 @@ test('interactionsSlice with selectProduct should deselect selectedBin', () => {
             items.selectBin("myBinId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectProduct("myProductId");
             secondRender = false;
         }       
@@ -179,7 +179,7 @@ test('interactionsSlice with selectProduct should deselect selectedShelf', () =>
             items.selectShelf("myShelfId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectProduct("myProductId");
             secondRender = false;
         }       
@@ -230,7 +230,7 @@ test('interactionsSlice with selectBin should deselect selectedProduct', () => {
             items.selectProduct("myProductId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectBin("myBinId");
             secondRender = false;
         }       
@@ -258,7 +258,7 @@ test('interactionsSlice with selectBin should deselect selectedShelf', () => {
             items.selectShelf("myShelfId");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.selectBin("myBinId");
             secondRender = false;
         }       
@@ -315,10 +315,10 @@ test('interactionsSlice should order movement correctly', () => {
 
         if(firstRender) {
             items.setShelves(shelves);
-            items.selectBin("fromShelf-0-0");
+            items.selectBin("fromShelf+0+0");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.orderMovementFromSelected("toShelf", 1, 6);
             secondRender = false;
         }       
@@ -341,7 +341,7 @@ test('interactionsSlice should order movement correctly', () => {
     expect(foundMovement).toEqual(true);
 });
 
-test('interactionsSlice should order movement only if bin is empty', () => {
+test('interactionsSlice should order movement only if destination bin is empty', () => {
     const shelves = [
         new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
         new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
@@ -364,10 +364,10 @@ test('interactionsSlice should order movement only if bin is empty', () => {
 
         if(firstRender) {
             items.setShelves(shelves);
-            items.selectBin("fromShelf-1-2");
+            items.selectBin("fromShelf+1+2");
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.orderMovementFromSelected("toShelf", 1, 6);
             secondRender = false;
         }       
@@ -388,4 +388,125 @@ test('interactionsSlice should order movement only if bin is empty', () => {
     }
 
     expect(foundMovement).toEqual(false);
+});
+
+test('interactionsSlice should set error in order movement if starting bin is EMPTY', () => {
+    const shelves = [
+        new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
+        new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
+    ];
+    shelves[1].bins[1][6].state = binState.STILL;
+    shelves[0].bins[1][2].state = binState.STILL;
+    
+    const selector = (state) => ({
+        setShelves: state.setShelves,
+        selectBin: state.selectBin,
+        orderMovementFromSelected: state.orderMovementFromSelected,
+        errorMsg: state.errorMsg
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(shelves);
+            items.selectBin("fromShelf+1+2");
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.orderMovementFromSelected("toShelf", 1, 6);
+            secondRender = false;
+        }       
+    });
+
+    render(<TestComponent elements={selector} effect={effect} />);
+
+    expect(errorMsg).not.toEqual(null);
+});
+
+test('interactionsSlice should order movement only from STILL bin', () => {
+    const shelves = [
+        new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
+        new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
+    ];
+    shelves[0].bins[1][2].state = binState.OUTGOING;
+    
+    const selector = (state) => ({
+        setShelves: state.setShelves,
+        selectBin: state.selectBin,
+        orderMovementFromSelected: state.orderMovementFromSelected,
+        movements: state.movements
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let movements = null;
+	effect = jest.fn((items) => {
+        movements = items.movements;
+
+        if(firstRender) {
+            items.setShelves(shelves);
+            items.selectBin("fromShelf+1+2");
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.orderMovementFromSelected("toShelf", 1, 6);
+            secondRender = false;
+        }       
+    });
+
+    render(<TestComponent elements={selector} effect={effect} />);
+
+    let foundMovement = false;
+    for (let index = 0; index < movements.length; index++) {
+        if(
+            movements[index].fromId === "fromShelf" &&
+            movements[index].fromRow === 1 &&
+            movements[index].fromCol === 2 &&
+            movements[index].toId === "toShelf" &&
+            movements[index].toRow === 1 &&
+            movements[index].toCol === 6
+        ) foundMovement = true;    
+    }
+
+    expect(foundMovement).toEqual(false);
+});
+
+test('interactionsSlice should set error in order movement if starting bin is non-STILL', () => {
+    const shelves = [
+        new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
+        new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
+    ];
+    shelves[0].bins[1][2].state = binState.OUTGOING;
+    
+    const selector = (state) => ({
+        setShelves: state.setShelves,
+        selectBin: state.selectBin,
+        orderMovementFromSelected: state.orderMovementFromSelected,
+        errorMsg: state.errorMsg
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(shelves);
+            items.selectBin("fromShelf+1+2");
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.orderMovementFromSelected("toShelf", 1, 6);
+            secondRender = false;
+        }       
+    });
+
+    render(<TestComponent elements={selector} effect={effect} />);
+
+    expect(errorMsg).not.toEqual(null);
 });

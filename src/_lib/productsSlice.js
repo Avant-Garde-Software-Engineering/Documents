@@ -22,7 +22,10 @@ export const productsSlice = (set, get) => ({
 			uniqueNames.add(product.name);
 			uniqueIds.add(product.id);
 		});
-		if(!error) set({ products: productsToSet });
+		if(!error) set({ products: productsToSet.map(product => {
+			return new Product(product.name, product.color, product.id);
+		})
+		});
 	},
 
 	addProduct: (name, color) => {
@@ -48,9 +51,9 @@ export const productsSlice = (set, get) => ({
 			products: state.products.filter(product => product.id !== id)
 		}));
 
-		const binIds = get().getBinsWithProduct(id);
-		for(let i = 0; i < binIds.length; i++){
-			const data = binIds[i].split('-');
+		const binInfos = get().getBinsWithProduct(id);
+		for(let i = 0; i < binInfos.length; i++){
+			const data = binInfos[i].binId.split('+');
 			const shelfId = data[0];
 			const row = data[1];
 			const col = data[2];

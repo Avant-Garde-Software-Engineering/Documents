@@ -33,10 +33,14 @@ test('shelvesSlice should set shelves correctly', () => {
 	expect(shelves).toEqual(myShelves);
 });
 
-test('shelvesSlice should add new shelf correctly', () => {
+test('shelvesSlice should NOT set shelves if there are duplicate ids', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "firstShelfID"));
+
     const selector = (state) => ({
         shelves: state.shelves,
-        addShelf: state.addShelf
+        setShelves: state.setShelves
     });
 
 	let firstRender = true;
@@ -45,9 +49,115 @@ test('shelvesSlice should add new shelf correctly', () => {
         shelves = items.shelves;
 
         if(firstRender) {
-            items.addShelf("myShelf", 8, 2, 3);
+            items.setShelves(myShelves);
             firstRender = false;
         }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(shelves.length).toEqual(0);
+});
+
+test('shelvesSlice should set error in set shelves if there are duplicate ids', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "myNewID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "myNewID"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves
+    });
+
+	let firstRender = true;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
+test('shelvesSlice should NOT set shelves if there are duplicate names', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("BlueShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("BlueShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "firstShelfID"));
+
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves
+    });
+
+	let firstRender = true;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(shelves.length).toEqual(0);
+});
+
+test('shelvesSlice should set error in set shelves if there are duplicate ids', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("BlueShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "myNewID"));
+    myShelves.push(new Shelf("BlueShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "myNewID"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves
+    });
+
+	let firstRender = true;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
+test('shelvesSlice should add new shelf correctly', () => {
+    const selector = (state) => ({
+        shelves: state.shelves,
+        addShelf: state.addShelf,
+        setWhsRectangle: state.setWhsRectangle
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setWhsRectangle(50, 20, 32);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.addShelf("myShelf", 8, 2, 3);
+            secondRender = false;
+        }
     });
 
 	render(<TestComponent elements={selector} effect={effect} />);
@@ -66,6 +176,143 @@ test('shelvesSlice should add new shelf correctly', () => {
     }
 
 	expect(shelfFound).toEqual(true);
+});
+
+test('shelvesSlice should NOT add new shelf if height is > than whsHeight', () => {
+    const selector = (state) => ({
+        shelves: state.shelves,
+        addShelf: state.addShelf,
+        setWhsRectangle: state.setWhsRectangle
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setWhsRectangle(50, 20, 32);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addShelf("myShelf", 8, 5, 2);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let shelfFound = false;
+    for (let index = 0; index < shelves.length; index++) {
+        if(
+            shelves[index].name === "myShelf" && 
+            shelves[index].binSize === 8 &&
+            shelves[index].height === 5 &&
+            shelves[index].width === 2
+        ){
+            shelfFound = true;
+            break;
+        }
+    }
+
+	expect(shelfFound).toEqual(false);
+});
+
+test('shelvesSlice should set error in add new shelf if height is > than whsHeight', () => {
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        addShelf: state.addShelf,
+        setWhsRectangle: state.setWhsRectangle
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setWhsRectangle(50, 20, 32);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addShelf("myShelf", 8, 5, 2);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
+test('shelvesSlice should NOT add new shelf if name already exists', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves,
+        addShelf: state.addShelf
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addShelf("secondShelf", 4, 3, 8);
+            secondRender = false;
+        } 
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(shelves.length).toEqual(2);
+});
+
+test('shelvesSlice should set error in add new shelf if name already exists', () => { 
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves,
+        addShelf: state.addShelf
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.addShelf("secondShelf", 4, 3, 8);
+            secondRender = false;
+        } 
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
 });
 
 test('shelvesSlice should insert product correctly in EMPTY bin', () => { 
@@ -89,7 +336,7 @@ test('shelvesSlice should insert product correctly in EMPTY bin', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.insertProduct("myProdId", "secondShelfID", 3, 1);
             secondRender = false;
         }
@@ -129,7 +376,7 @@ test('shelvesSlice should set state to STILL when inserting product in EMPTY bin
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.insertProduct("myProdId", "secondShelfID", 3, 1);
             secondRender = false;
         }
@@ -171,7 +418,7 @@ test('shelvesSlice should NOT insert product in non-EMPTY bin', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.insertProduct("myProdId", "firstShelfID", 0, 0);
             secondRender = false;
         }
@@ -211,7 +458,7 @@ test('shelvesSlice should change bin state when product is inserted', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.insertProduct("myProdId", "firstShelfID", 1, 4);
             secondRender = false;
         }
@@ -251,7 +498,7 @@ test('shelvesSlice should remove shelf correctly', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.removeShelf("firstShelfID");
             secondRender = false;
         }
@@ -292,7 +539,7 @@ test('shelvesSlice should remove shelf only with EMPTY bins', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.removeShelf("firstShelfID");
             secondRender = false;
         }
@@ -309,6 +556,118 @@ test('shelvesSlice should remove shelf only with EMPTY bins', () => {
     }
 
 	expect(shelfFound).toEqual(true);
+});
+
+test('shelvesSlice should update shelf name', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves,
+        updateShelfInfo: state.updateShelfInfo
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfInfo("firstShelfID", "NewFirstShelf", 8, 3, 8);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let updatedShelf = null;
+    for (let index = 0; index < shelves.length; index++) {
+        if(shelves[index].id === "firstShelfID") {
+            updatedShelf = shelves[index];
+            break;
+        }        
+    }
+
+	expect(updatedShelf.name).toEqual("NewFirstShelf");
+});
+
+test('shelvesSlice should NOT update shelf name if it already exists', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves,
+        updateShelfInfo: state.updateShelfInfo
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfInfo("secondShelfID", "firstShelf", 8, 3, 8);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let updatedShelf = null;
+    for (let index = 0; index < shelves.length; index++) {
+        if(shelves[index].id === "secondShelfID") {
+            updatedShelf = shelves[index];
+            break;
+        }        
+    }
+
+	expect(updatedShelf.name).not.toEqual("firstShelf");
+});
+
+test('shelvesSlice should set error in update shelf name if it already exists', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves,
+        updateShelfInfo: state.updateShelfInfo
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfInfo("secondShelfID", "firstShelf", 8, 3, 8);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
 });
 
 test('shelvesSlice should update shelf binSize', () => {
@@ -332,8 +691,8 @@ test('shelvesSlice should update shelf binSize', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
-            items.updateShelfInfo("firstShelfID", 8, 3, 8);
+        } else if(secondRender) {
+            items.updateShelfInfo("firstShelfID", "firstShelf", 8, 3, 8);
             secondRender = false;
         }
     });
@@ -372,8 +731,8 @@ test('shelvesSlice should update shelf width', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
-            items.updateShelfInfo("secondShelfID", 3, 7, 1);
+        } else if(secondRender) {
+            items.updateShelfInfo("secondShelfID", "secondShelf", 3, 7, 1);
             secondRender = false;
         }
     });
@@ -412,8 +771,8 @@ test('shelvesSlice should update shelf height', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
-            items.updateShelfInfo("firstShelfID", 2, 2, 1);
+        } else if(secondRender) {
+            items.updateShelfInfo("firstShelfID", "firstShelf", 2, 2, 1);
             secondRender = false;
         }
     });
@@ -433,13 +792,13 @@ test('shelvesSlice should update shelf height', () => {
 
 test('shelvesSlice should update shelf position', () => {
     let myShelves = [];
-    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
-    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    myShelves.push(new Shelf("firstShelf", 4, 8, 3, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
     
     const selector = (state) => ({
         shelves: state.shelves,
         setShelves: state.setShelves,
-        updateShelfPosition: state.updateShelfPosition
+        updateShelfPosition: state.updateShelfPosition,
+        setWhsRectangle: state.setWhsRectangle
     });
 
     let firstRender = true;
@@ -450,10 +809,11 @@ test('shelvesSlice should update shelf position', () => {
 
         if(firstRender) {
             items.setShelves(myShelves);
+            items.setWhsRectangle(40, 40, 20);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
-            items.updateShelfPosition("secondShelfID", 23, 47);
+        } else if(secondRender) {
+            items.updateShelfPosition("firstShelfID", 10, 18);
             secondRender = false;
         }
     });
@@ -462,13 +822,170 @@ test('shelvesSlice should update shelf position', () => {
 
     let updatedShelf = null;
     for (let index = 0; index < shelves.length; index++) {
-        if(shelves[index].id === "secondShelfID") {
+        if(shelves[index].id === "firstShelfID") {
             updatedShelf = shelves[index];
             break;
         }        
     }
 
-	expect(JSON.stringify(updatedShelf.position)).toEqual(JSON.stringify({x: 23, y: 20, z: 47}));
+	expect(JSON.stringify(updatedShelf.position)).toEqual(JSON.stringify({x: 10, y: 5, z: 18}));
+});
+
+test('shelvesSlice should NOT update shelf position if shelf outside whs', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 8, 3, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves,
+        updateShelfPosition: state.updateShelfPosition,
+        setWhsRectangle: state.setWhsRectangle
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            items.setWhsRectangle(40, 40, 20)
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfPosition("firstShelfID", 100, 18);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let updatedShelf = null;
+    for (let index = 0; index < shelves.length; index++) {
+        if(shelves[index].id === "firstShelfID") {
+            updatedShelf = shelves[index];
+            break;
+        }        
+    }
+
+	expect(JSON.stringify(updatedShelf.position)).not.toEqual(JSON.stringify({x: 100, y: 5, z: 18}));
+});
+
+test('shelvesSlice should set error in update shelf position if shelf outside whs', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves,
+        updateShelfPosition: state.updateShelfPosition,
+        setWhsRectangle: state.setWhsRectangle
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            items.setWhsRectangle(40, 40, 20);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfPosition("firstShelfID", 100, 18);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
+test('shelvesSlice should NOT update shelf position if there is an intersection involving the moving shelf', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    let intersectings = ["firstShelfID", "secondShelfID"];
+    
+    const selector = (state) => ({
+        shelves: state.shelves,
+        setShelves: state.setShelves,
+        updateShelfPosition: state.updateShelfPosition,
+        setWhsRectangle: state.setWhsRectangle,
+        setIntersectingIds: state.setIntersectingIds
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let shelves = null;
+	effect = jest.fn((items) => {
+        shelves = items.shelves;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            items.setWhsRectangle(40, 40, 20);
+            items.setIntersectingIds(intersectings);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfPosition("firstShelfID", 10, 18);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let updatedShelf = null;
+    for (let index = 0; index < shelves.length; index++) {
+        if(shelves[index].id === "firstShelfID") {
+            updatedShelf = shelves[index];
+            break;
+        }        
+    }
+
+	expect(JSON.stringify(updatedShelf.position)).not.toEqual(JSON.stringify({x: 10, y: 5, z: 18}));
+});
+
+test('shelvesSlice should set error in update shelf position if there is an intersection involving the moving shelf', () => {
+    let myShelves = [];
+    myShelves.push(new Shelf("firstShelf", 4, 3, 8, {x: 4, y: 5, z: 7}, true, "firstShelfID"));
+    myShelves.push(new Shelf("secondShelf", 6, 2, 9, {x: 5, y: 20, z: 10}, false, "secondShelfID"));
+    let intersectings = ["firstShelfID", "secondShelfID"];
+    
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setShelves: state.setShelves,
+        updateShelfPosition: state.updateShelfPosition,
+        setWhsRectangle: state.setWhsRectangle,
+        setIntersectingIds: state.setIntersectingIds
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setShelves(myShelves);
+            items.setWhsRectangle(40, 40, 20);
+            items.setIntersectingIds(intersectings);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.updateShelfPosition("firstShelfID", 10, 18);
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
 });
 
 test('shelvesSlice should update shelf isFlipped', () => {
@@ -492,7 +1009,7 @@ test('shelvesSlice should update shelf isFlipped', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.flipShelf("firstShelfID");
             secondRender = false;
         }
@@ -532,7 +1049,7 @@ test('shelvesSlice should update bin state', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.updateBinState("secondShelfID", 8, 0, binState.OUTGOING);
             secondRender = false;
         }
@@ -574,7 +1091,7 @@ test('shelvesSlice should remove product correctly', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.removeProductFromBin("secondShelfID", 7, 1);
             secondRender = false;
         }
@@ -616,7 +1133,7 @@ test('shelvesSlice should empty bin when removing product', () => {
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.removeProductFromBin("secondShelfID", 7, 1);
             secondRender = false;
         }
@@ -657,7 +1174,7 @@ test('shelvesSlice should set error when removing product from EMPTY bin', () =>
             items.setShelves(myShelves);
             firstRender = false;
             secondRender = true;
-        } if(secondRender) {
+        } else if(secondRender) {
             items.removeProductFromBin("secondShelfID", 7, 1);
             secondRender = false;
         }

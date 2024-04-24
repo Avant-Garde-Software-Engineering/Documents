@@ -58,7 +58,7 @@ export const whsSlice = (set, get) => ({
 			const calculatedWidth = maxX - minX;
 			const calculatedDepth = maxZ - minZ;
 
-			if (calculatedDepth > MAX_WIDTH || calculatedWidth > MAX_DEPTH || height > MAX_HEIGHT) {
+			if (calculatedDepth > MAX_DEPTH || calculatedWidth > MAX_WIDTH || height > MAX_HEIGHT) {
 				get().setError("Le dimensioni del magazzino superano i limiti massimi consentiti.");
 			}
 			else if (calculatedWidth < MIN_SIZE || calculatedDepth < MIN_SIZE || height < MIN_SIZE) {
