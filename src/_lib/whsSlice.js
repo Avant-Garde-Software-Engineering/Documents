@@ -35,13 +35,15 @@ export const whsSlice = (set, get) => ({
 			get().setError("Le dimensioni del magazzino sono inferiori ai limiti minimi consentiti (0.01mt).");
 		} 
 		else {
+			const widthParsed = parseFloat(width.toFixed(2))/2;
+			const depthParsed = parseFloat(depth.toFixed(2))/2;
 			set({ 
 				whsHeight: parseFloat(height.toFixed(2)), 
 				points: 
-					[{ x: 0, z: 0 },
-					{ x: 0, z: parseFloat(depth.toFixed(2)) },
-					{ x: parseFloat(width.toFixed(2)), z: 0 },
-					{ x: parseFloat(width.toFixed(2)), z: parseFloat(depth.toFixed(2)) }]
+					[{ x: -widthParsed, z: -depthParsed },
+					{ x: widthParsed, z: -depthParsed },
+					{ x: widthParsed, z: depthParsed },
+					{ x: -widthParsed, z: depthParsed },]
 			})
 		}
 	}, 

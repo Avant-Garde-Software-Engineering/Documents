@@ -298,46 +298,47 @@ export const shelvesSlice = (set, get) => ({
 
 	removeProductFromBin: (id, row, col) => {
 		set((state) => ({
-			shelves: state.shelves.map(shelf => {
-				if(shelf.id == id) {
-					if(shelf.bins[row][col].state == binState.EMPTY) { 
-						get().setError("Impossibile eliminare il prodotto. Il bin è vuoto.");	// to test (not sure)
-						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-						newShelf.bins = shelf;
-						return newShelf;
-						//return shelf;
-					} else {
-						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-						newShelf.bins = shelf;
-						newShelf.bins[row][col].state = binState.EMPTY;
-						newShelf.bins[row][col].productId = null;
-						return newShelf;
-						/*
-						return {
-							...shelf,
-							bins: shelf.bins.map(bin => {
-								if (bin.id === `${id}-${row}-${col}`) {
-									return {
-										...bin,
-										state: binState.EMPTY,
-										productId: null,
-									}
-								}
-								else {
-									return bin;
-								}
-							}),
-						};*/
-					}
-				}
-				else {
+		  shelves: state.shelves.map(shelf => {
+			if(shelf.id == id) {
+				if(shelf.bins[row][col].state == binState.EMPTY) { 
+					get().setError("Impossibile eliminare il prodotto. Il bin è vuoto.");  // to test (not sure)
 					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
 					newShelf.bins = shelf;
 					return newShelf;
 					//return shelf;
+				} else {
+					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+					newShelf.bins = shelf;
+					newShelf.bins[row][col].state = binState.EMPTY;
+					newShelf.bins[row][col].productId = null;
+					return newShelf;
+				/*
+				return {
+					...shelf,
+					bins: shelf.bins.map(bin => {
+					if (bin.id === ${id}-${row}-${col}) {
+						return {
+						...bin,
+						state: binState.EMPTY,
+						productId: null,
+						}
+					}
+					else {
+						return bin;
+					}
+					}),
+				};*/
 				}
-			})
+			}
+			else {
+				let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+				newShelf.bins = shelf;
+				return newShelf;
+				//return shelf;
+			}
+		  })
 		}));
+		get().removeMovementsWithBin(id, row, col);
 	},
 
 	getBinsWithProduct: (productId) => {
