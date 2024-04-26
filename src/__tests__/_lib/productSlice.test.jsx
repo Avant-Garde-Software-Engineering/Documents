@@ -1,5 +1,5 @@
 import { binState } from "@_model/Bin";
-import { render } from "../node_modules/@testing-library/react";
+import { render } from "../../node_modules/@testing-library/react";
 import TestComponent from "./TestComponent";
 import { boundStore } from "@_lib/boundStore";
 import Product from "@_model/Product";
