@@ -1,6 +1,6 @@
 import { Modal } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
-const ErrorModal = ({ error, onCancel}) => {
+import { ExclamationCircleOutlined } from '../node_modules/@ant-design/icons';
+const ErrorModal = ({ error, onCancel }) => {
 	return (
 		<Modal 
 				title= {

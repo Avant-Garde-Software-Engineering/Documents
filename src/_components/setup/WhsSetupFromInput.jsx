@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Input, InputNumber, Button, Upload, Divider, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '../../node_modules/@ant-design/icons';
 
 const WhsSetupFromInput = ({ loading, setLoading, setWarehouse }) => {
     const [svgUploaded, setSvgUploaded] = useState(false);
@@ -15,11 +15,11 @@ const WhsSetupFromInput = ({ loading, setLoading, setWarehouse }) => {
 		);
 		const {message, err} = await response.json();
 		return err;
-	}
+	};
 
     const onFinish = (values) => {
         setLoading(true);
-
+        
         if(svgUploaded) {
             const file = values.svgUpload[0].originFileObj;
 
@@ -27,7 +27,6 @@ const WhsSetupFromInput = ({ loading, setLoading, setWarehouse }) => {
             const reader = new FileReader();
             reader.onload = async (event) => {
                 const fileContent = event.target.result;
-                console.log(fileContent);
                 // Check file validity with api
                 const error = await hasError(fileContent);
                 if (!error) {
@@ -49,7 +48,8 @@ const WhsSetupFromInput = ({ loading, setLoading, setWarehouse }) => {
 	};
 
 	const onFinishFailed = (values) => {
-		console.log('Failed: ' + values);
+		//console.log('Failed: ' + JSON.stringify(values));
+        message.error("Alcuni parametri non sono corretti o sono mancanti.");
 	};
 
 	const onFileChange = (info) => {

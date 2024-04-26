@@ -1,5 +1,5 @@
 import Shelf from "@_model/Shelf";
-import { render } from "../node_modules/@testing-library/react";
+import { render } from "../../node_modules/@testing-library/react";
 import TestComponent from "./TestComponent";
 import { boundStore } from "@_lib/boundStore";
 import { binState } from "@_model/Bin";

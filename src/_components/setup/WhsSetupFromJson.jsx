@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Button, Upload, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '../../node_modules/@ant-design/icons';
 
 const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
 
@@ -18,6 +18,12 @@ const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
 
     const onFinish = async (values) => {
 		setLoading(true);
+
+		if(!values.fileUpload) {
+			setLoading(false);
+			message.error("Il file non è stato inserito.");
+			return;
+		}
 
 		const file = values.fileUpload[0].originFileObj;
 
@@ -64,6 +70,7 @@ const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
             <Form.Item
                 name="fileUpload"
                 id="fileUpload"
+				data-testid="fileUpload"
                 valuePropName="fileList"
                 getValueFromEvent={(e) => {
                     if (Array.isArray(e)) {
@@ -76,6 +83,7 @@ const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
 					disabled={ loading }
                     maxCount={1} 
                     accept=".json"
+					data-testid="fileUploadDragger"
                     beforeUpload={beforeUpload}
                 >
 					<p className="ant-upload-drag-icon">
