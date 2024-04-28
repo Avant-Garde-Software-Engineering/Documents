@@ -31,7 +31,7 @@ const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
 		const reader = new FileReader();
     	reader.onload = async (event) => {
       		const fileContent = event.target.result;
-      		console.log(fileContent);
+
 			// Check file validity with api
 			const error = await hasError(fileContent);
 			if (!error) {
@@ -85,6 +85,7 @@ const WhsSetupFromJson = ({ loading, setLoading, setWarehouse }) => {
                     accept=".json"
 					data-testid="fileUploadDragger"
                     beforeUpload={beforeUpload}
+					customRequest={()=>{}}
                 >
 					<p className="ant-upload-drag-icon">
             			<UploadOutlined />

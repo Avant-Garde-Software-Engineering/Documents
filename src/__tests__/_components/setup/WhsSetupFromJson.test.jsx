@@ -103,7 +103,7 @@ describe('Call to setWarehouse function if file is input', () => {
         await waitFor(() => expect(setupFunction).toBeCalledTimes(0));
     });
 
-    test('WhsSetupFromJson should NOT call setWarehouse function on submit if svg format is incorrect', async () => {
+    test('WhsSetupFromJson should NOT call setWarehouse function on submit if json format is incorrect', async () => {
         global.fetch = jest.fn((string, request)=>{
             return {
                 json() {
