@@ -174,6 +174,7 @@ const WhsSetupFromInput = ({ loading, setLoading, setWarehouse }) => {
                     onChange={onFileChange} 
                     accept=".svg"
                     beforeUpload={beforeUpload}
+                    customRequest={()=>{}}
                 >
                     <Button disabled={loading} icon={<UploadOutlined />}>Carica</Button>
                 </Upload>

@@ -22,7 +22,8 @@ const Library = () => {
 			children: shelves.map((shelf) => (
 				{ 
 					title: shelf.name, 
-					key: shelf.id, 
+					key: shelf.id,
+					type: 'shelf'
 				}
 			)) 
 		},
@@ -33,7 +34,8 @@ const Library = () => {
 			children: products.map((product) => (
 				{ 
 					title: product.name, 
-					key: product.id 
+					key: product.id,
+					type: 'product'
 				}
 			)) 
 		}
@@ -59,10 +61,10 @@ const Library = () => {
 	const onSelect = (selectedKeys, info) => {
 		const id = info.node.key;
 
-		if(id.startsWith('s_')) {
+		if(info.node.type === 'shelf') {
 			setSelectedShelf(id);
 		}
-		else if(id.startsWith('p_')) {
+		else if(info.node.type === 'product') {
 			setSelectedProduct(id);
 		}
 

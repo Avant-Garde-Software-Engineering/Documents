@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { SaveOutlined } from '@ant-design/icons';
+import { SaveOutlined } from '../../node_modules/@ant-design/icons';
 import { boundStore } from '@_lib/boundStore';
 
 const Save = () => {
@@ -16,14 +16,14 @@ const Save = () => {
 		// Create a link element
 		const link = document.createElement('a');
 		link.href = url;
-		link.download = whsName || 'data.json'; // Set default filename
+		link.download = whsName ? (whsName + '.json') : 'data.json'; // Set default filename
 
 		// Programmatically trigger the download
-		document.body.appendChild(link);
+		//document.body.appendChild(link);
 		link.click();
 
 		// Clean up
-		document.body.removeChild(link);
+		//document.body.removeChild(link);
 		URL.revokeObjectURL(url);
 	}
 
