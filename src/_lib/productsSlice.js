@@ -73,13 +73,24 @@ export const productsSlice = (set, get) => ({
 	},
 
 	updateName: (id, name) => {
+		const uniqueNames = new Set();
+		get().products.forEach(product => { 
+		  	if (product.id !== id) {
+				uniqueNames.add(product.name);
+			}
+		});
 		set((state) => ({
-			products: state.products.map((product) => {
+		  	products: state.products.map((product) => {
 				if(product.id === id) {
-					product.name = name;
+			  		if (uniqueNames.has(name)) {
+						get().setError("Il nuovo nome è già utilizzato per un altro prodotto.");
+			  		}
+			  		else {
+						product.name = name;
+			  		}
 				}
 				return new Product(product.name, product.color, product.id);
-			}),
+		  	}),
 		}));
 	},
 })

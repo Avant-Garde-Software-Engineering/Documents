@@ -126,7 +126,7 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
 
         if(firstRender) {
             items.setWhsName("myWhs");
-            items.setWhsRectangle(50, 53, 45);
+            items.setWhsRectangle(50, 65, 45);
             items.setProducts(myProducts);
             items.setShelves(myShelves);
             items.setMovements(myMovements);
@@ -139,10 +139,10 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
     expect(json.whsName).toEqual("myWhs");
     expect(json.whsHeight).toEqual(45);
     expect(json.whsPoints.length).toEqual(4);
-    expect(json.whsPoints).toContainEqual({x: 0, z: 0});
-	expect(json.whsPoints).toContainEqual({x: 0, z: 50});
-	expect(json.whsPoints).toContainEqual({x: 53, z: 0});
-	expect(json.whsPoints).toContainEqual({x: 53, z: 50});
+    expect(json.whsPoints).toContainEqual({x: 32.5, z: 25});
+	expect(json.whsPoints).toContainEqual({x: -32.5, z: 25});
+	expect(json.whsPoints).toContainEqual({x: -32.5, z: -25});
+	expect(json.whsPoints).toContainEqual({x: 32.5, z: -25});
     expect(json.products).toEqual([
         {
             name: "firstProd", 

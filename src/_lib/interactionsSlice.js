@@ -81,8 +81,7 @@ export const interactionsSlice = (set, get) => ({
 
 	removeMovementsWithBin: (idShelf, row, col) => {
 		for(let movement of get().movements) {
-		  if(movement.fromId == idShelf && movement.fromRow == row &&
-			movement.fromCol == col) {
+		  	if(movement.fromId == idShelf && movement.fromRow == row && movement.fromCol == col) {
 				const toId = movement.toId;
 				const toRow = movement.toRow;
 				const toCol = movement.toCol;
@@ -90,9 +89,8 @@ export const interactionsSlice = (set, get) => ({
 					movements: state.movements.filter(item => item.id !== movement.id)
 				}));
 				get().removeProductFromBin(toId, toRow, toCol);
-		  }
-		  if(movement.toId == idShelf && movement.toRow == row &&
-			movement.toCol == col) {
+		  	}
+		  	if(movement.toId == idShelf && movement.toRow == row && movement.toCol == col) {
 				const fromId = movement.fromId;
 				const fromRow = movement.fromRow;
 				const fromCol = movement.fromCol;

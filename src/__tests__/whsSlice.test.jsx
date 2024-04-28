@@ -633,10 +633,10 @@ test('whsSlice should set rectangle correctly', () => {
 	render(<TestComponent elements={selector} effect={effect} />);
 
 	expect(height).toEqual(10);
-	expect(points).toContainEqual({x: 0, z: 0});
-	expect(points).toContainEqual({x: 0, z: 40});
-	expect(points).toContainEqual({x: 20, z: 0});
-	expect(points).toContainEqual({x: 20, z: 40});
+	expect(points).toContainEqual({x: 10, z: 20});
+	expect(points).toContainEqual({x: -10, z: 20});
+	expect(points).toContainEqual({x: 10, z: -20});
+	expect(points).toContainEqual({x: -10, z: -20});
 });
 
 test('whsSlice should NOT set rectangle if width is empty', () => { 

@@ -510,3 +510,79 @@ test('interactionsSlice should set error in order movement if starting bin is no
 
     expect(errorMsg).not.toEqual(null);
 });
+
+test('interactionslice should remove movements involved with specific bin (from bin)', () => { 
+    const shelves = [
+        new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
+        new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
+    ];
+    shelves[0].bins[0][0].state = binState.STILL;
+    
+    const selector = (state) => ({
+        setShelves: state.setShelves,
+        selectBin: state.selectBin,
+        orderMovementFromSelected: state.orderMovementFromSelected,
+        removeMovementsWithBin: state.removeMovementsWithBin,
+        movements: state.movements
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let movements = null;
+	effect = jest.fn((items) => {
+        movements = items.movements;
+
+        if(firstRender) {
+            items.setShelves(shelves);
+            items.selectBin("fromShelf+0+0");
+            items.orderMovementFromSelected("toShelf", 1, 6);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.removeMovementsWithBin("fromShelf", 0, 0);
+            secondRender = false;
+        }       
+    });
+
+    render(<TestComponent elements={selector} effect={effect} />);
+
+    expect(movements.length).toEqual(0);
+});
+
+test('interactionslice should remove movements involved with specific bin (to bin)', () => { 
+    const shelves = [
+        new Shelf("fromShelf", 4, 4, 6, {x: 1, y: 2, z: 3}, true, "fromShelf"),
+        new Shelf("toShelf", 2, 7, 2, {x: 10, y: 2, z: 3}, false, "toShelf")
+    ];
+    shelves[0].bins[0][0].state = binState.STILL;
+    
+    const selector = (state) => ({
+        setShelves: state.setShelves,
+        selectBin: state.selectBin,
+        orderMovementFromSelected: state.orderMovementFromSelected,
+        removeMovementsWithBin: state.removeMovementsWithBin,
+        movements: state.movements
+    });
+
+    let firstRender = true;
+    let secondRender = false;
+	let movements = null;
+	effect = jest.fn((items) => {
+        movements = items.movements;
+
+        if(firstRender) {
+            items.setShelves(shelves);
+            items.selectBin("fromShelf+0+0");
+            items.orderMovementFromSelected("toShelf", 1, 6);
+            firstRender = false;
+            secondRender = true;
+        } else if(secondRender) {
+            items.removeMovementsWithBin("toShelf", 1, 6);
+            secondRender = false;
+        }       
+    });
+
+    render(<TestComponent elements={selector} effect={effect} />);
+
+    expect(movements.length).toEqual(0);
+});
