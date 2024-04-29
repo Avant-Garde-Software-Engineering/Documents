@@ -99,23 +99,39 @@ export const shelvesSlice = (set, get) => ({
 	updateShelfInfo: (id, name, binSize, width, height) => {
 		let error = false;
 		get().shelves.forEach(shelf => {
-		  	if (shelf.name === name && shelf.id !== id) {
+			if (shelf.name === name && shelf.id !== id) {
 				get().setError("La scaffalatura aggiunta contiene un nome già esistente.");
 				error=true;
 				return;
-		  	}
+			}
 		});
+		const maxHeight = get().whsHeight;
+		if (height * binSize > maxHeight) {
+		  	get().setError("L'altezza deve essere inferiore a " + maxHeight + ".");
+			error=true;
+		}
 		if(!error){
-		  	set((state) => ({  
+			set((state) => ({  
 				shelves: state.shelves.map(shelf => {
 					if (shelf.id === id) {
 						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
 						newShelf.bins = shelf;
 						newShelf.binSize = binSize;
-						newShelf.width = width;
-						newShelf.height = height;
+						try{
+							newShelf.width = width;
+							newShelf.height = height;
+						}
+						catch{
+							newShelf.width = shelf.width;
+							newShelf.height = shelf.height;
+							get().setError("Impossibile ridurre la scaffalatura, sono presenti dei prodotti.");
+						}
 						newShelf.name = name;
-						newShelf.position = {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2};      
+						newShelf.position = {
+							x: shelf.position.x,
+							y: binSize * height / 2,
+							z: shelf.position.z
+						};      
 						return newShelf;
 						/*
 						return {
@@ -129,10 +145,10 @@ export const shelvesSlice = (set, get) => ({
 						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
 						newShelf.bins = shelf;
 						return newShelf;
-						//return shelf;
+					//return shelf;
 					}
 				})
-		  	}));
+			}));
 		}
 	},
 
@@ -298,46 +314,23 @@ export const shelvesSlice = (set, get) => ({
 
 	removeProductFromBin: (id, row, col) => {
 		set((state) => ({
-			shelves: state.shelves.map(shelf => {
-				if(shelf.id == id) {
-					if(shelf.bins[row][col].state == binState.EMPTY) { 
-						get().setError("Impossibile eliminare il prodotto. Il bin è vuoto.");	// to test (not sure)
-						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-						newShelf.bins = shelf;
-						return newShelf;
-						//return shelf;
-					} else {
-						let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-						newShelf.bins = shelf;
-						newShelf.bins[row][col].state = binState.EMPTY;
-						newShelf.bins[row][col].productId = null;
-						return newShelf;
-						/*
-						return {
-							...shelf,
-							bins: shelf.bins.map(bin => {
-								if (bin.id === `${id}-${row}-${col}`) {
-									return {
-										...bin,
-										state: binState.EMPTY,
-										productId: null,
-									}
-								}
-								else {
-									return bin;
-								}
-							}),
-						};*/
-					}
-				}
-				else {
-					let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
-					newShelf.bins = shelf;
-					return newShelf;
-					//return shelf;
-				}
-			})
+		  shelves: state.shelves.map(shelf => {
+			if(shelf.id == id) {
+				let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+				newShelf.bins = shelf;
+				newShelf.bins[row][col].state = binState.EMPTY;
+				newShelf.bins[row][col].productId = null;
+				return newShelf;
+			}
+			else {
+				let newShelf = new Shelf(shelf.name, shelf.binSize, shelf.width, shelf.height, shelf.position, shelf.isFlipped, shelf.id);
+				newShelf.bins = shelf;
+				return newShelf;
+				//return shelf;
+			}
+		  })
 		}));
+		get().removeMovementsWithBin(id, row, col);
 	},
 
 	getBinsWithProduct: (productId) => {

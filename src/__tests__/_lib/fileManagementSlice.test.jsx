@@ -126,7 +126,7 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
 
         if(firstRender) {
             items.setWhsName("myWhs");
-            items.setWhsRectangle(50, 53, 45);
+            items.setWhsRectangle(50, 65, 45);
             items.setProducts(myProducts);
             items.setShelves(myShelves);
             items.setMovements(myMovements);
@@ -139,10 +139,10 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
     expect(json.whsName).toEqual("myWhs");
     expect(json.whsHeight).toEqual(45);
     expect(json.whsPoints.length).toEqual(4);
-    expect(json.whsPoints).toContainEqual({x: 0, z: 0});
-	expect(json.whsPoints).toContainEqual({x: 0, z: 50});
-	expect(json.whsPoints).toContainEqual({x: 53, z: 0});
-	expect(json.whsPoints).toContainEqual({x: 53, z: 50});
+    expect(json.whsPoints).toContainEqual({x: 32.5, z: 25});
+	expect(json.whsPoints).toContainEqual({x: -32.5, z: 25});
+	expect(json.whsPoints).toContainEqual({x: -32.5, z: -25});
+	expect(json.whsPoints).toContainEqual({x: 32.5, z: -25});
     expect(json.products).toEqual([
         {
             name: "firstProd", 
@@ -158,6 +158,11 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
             width: 3,
             height: 2,
             isFlipped: true,
+            position: {
+                x: 4,
+                y: 5,
+                z: 7
+            },
             bins: [
                 [
                     {
@@ -202,6 +207,11 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
             width: 1,
             height: 3,
             isFlipped: false,
+            position: {
+                x: 5,
+                y: 20,
+                z: 10
+            },
             bins: [
                 [
                     {
@@ -277,6 +287,11 @@ test('fileManagementSlice JsonToState should produce a correct state', () => {
                 "width": 3,
                 "height": 2,
                 "isFlipped": true,
+                "position": {
+                    "x": 4,
+                    "y": 5,
+                    "z": 7
+                },
                 "bins": [
                     [
                         {
@@ -321,6 +336,11 @@ test('fileManagementSlice JsonToState should produce a correct state', () => {
                 "width": 1,
                 "height": 3,
                 "isFlipped": false,
+                "position": {
+                    "x": 5,
+                    "y": 20,
+                    "z": 10
+                },
                 "bins": [
                     [
                         {

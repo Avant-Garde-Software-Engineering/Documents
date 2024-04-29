@@ -312,6 +312,80 @@ test('productsSlice should update product name correctly', () => {
 	expect(productName).toEqual("myNewSecondProd");
 });
 
+test('productsSlice should NOT update product name if it already exists', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("firstProd", {r: 2, g: 20, b: 200}, "firstProd"));
+    myProducts.push(new Product("secondProd", {r: 2, g: 20, b: 200}, "secondProd"));
+
+    const selector = (state) => ({
+        products: state.products,
+        setProducts: state.setProducts,
+        updateName: state.updateName
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let products = null;
+	effect = jest.fn((items) => {
+        products = items.products;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.updateName("secondProd", "firstProd");
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+    let productName = '';
+    for (let index = 0; index < products.length; index++) {
+        if(products[index].id === "secondProd") {
+            productName = products[index].name;
+            break;
+        }
+    }
+
+	expect(productName).toEqual("secondProd");
+});
+
+test('productsSlice should set error in update product name if it already exists', () => { 
+    let myProducts = [];
+    myProducts.push(new Product("firstProd", {r: 2, g: 20, b: 200}, "firstProd"));
+    myProducts.push(new Product("secondProd", {r: 2, g: 20, b: 200}, "secondProd"));
+
+    const selector = (state) => ({
+        errorMsg: state.errorMsg,
+        setProducts: state.setProducts,
+        updateName: state.updateName
+    });
+
+	let firstRender = true;
+    let secondRender = false;
+	let errorMsg = null;
+	effect = jest.fn((items) => {
+        errorMsg = items.errorMsg;
+
+        if(firstRender) {
+            items.setProducts(myProducts);
+            firstRender = false;
+            secondRender = true;
+        }
+        else if(secondRender) {
+            items.updateName("secondProd", "firstProd");
+            secondRender = false;
+        }
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(errorMsg).not.toEqual(null);
+});
+
 test('productsSlice should update product color correctly', () => { 
     let myProducts = [];
     myProducts.push(new Product("firstProd", {r: 2, g: 20, b: 200}, "firstProd"));

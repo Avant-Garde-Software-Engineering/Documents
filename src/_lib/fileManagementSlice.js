@@ -24,6 +24,7 @@ export const fileManagementSlice = (set, get) => ({
             binSize: shelf.binSize,
             width: shelf.width,
             height: shelf.height,
+            position: shelf.position,
             isFlipped: shelf.isFlipped,
             bins: shelf.bins.map(row => row.map(bin => ({
                 id: bin.id,

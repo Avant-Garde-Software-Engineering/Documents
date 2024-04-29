@@ -7,10 +7,13 @@ export const interactionsSlice = (set, get) => ({
 	selectedBin: null,
 	selectedProduct: null,
 	movements: [],
+	movingShelf: null,
 
 	setMovements: (movements) => set({ movements: movements.map(movement => {
 		return new Movement(movement.fromId, movement.fromRow, movement.fromCol, movement.toId, movement.toRow, movement.toCol, movement.id);
 	}) }),
+
+	setMovingShelf: (id = null) => set({movingShelf: id}),
 
 	selectShelf: (id = null) => set({ selectedShelf: id, selectedProduct: null, selectedBin: null }),
 
@@ -78,4 +81,27 @@ export const interactionsSlice = (set, get) => ({
 		}
 		//TODO: ask external mechanism to approve the movement
 	},*/
+
+	removeMovementsWithBin: (idShelf, row, col) => {
+		for(let movement of get().movements) {
+		  	if(movement.fromId == idShelf && movement.fromRow == row && movement.fromCol == col) {
+				const toId = movement.toId;
+				const toRow = movement.toRow;
+				const toCol = movement.toCol;
+				set((state) => ({
+					movements: state.movements.filter(item => item.id !== movement.id)
+				}));
+				get().removeProductFromBin(toId, toRow, toCol);
+		  	}
+		  	if(movement.toId == idShelf && movement.toRow == row && movement.toCol == col) {
+				const fromId = movement.fromId;
+				const fromRow = movement.fromRow;
+				const fromCol = movement.fromCol;
+				set((state) => ({
+					movements: state.movements.filter(item => item.id !== movement.id)
+				}));
+				get().removeProductFromBin(fromId, fromRow, fromCol);
+		  }
+		}
+	  }
 })
