@@ -32,6 +32,28 @@ test('interactionsSlice should set intersecting ids correctly', () => {
 	expect(intersectingIds).toEqual(intersecting);
 });
 
+test('interactionsSlice should set movingShelf correctly', () => { 
+	const selector = (state) => ({
+        movingShelf: state.movingShelf,
+        setMovingShelf: state.setMovingShelf
+    });
+
+	let firstRender = true;
+	let movingShelf = null;
+	effect = jest.fn((items) => {
+        movingShelf = items.movingShelf;
+
+        if(firstRender) {
+            items.setMovingShelf("movingShelfId");
+            firstRender = false;
+        }        
+    });
+
+	render(<TestComponent elements={selector} effect={effect} />);
+
+	expect(movingShelf).toEqual("movingShelfId");
+});
+
 //selectShelf
 test('interactionsSlice should set selectedShelf correctly', () => { 
 	const selector = (state) => ({

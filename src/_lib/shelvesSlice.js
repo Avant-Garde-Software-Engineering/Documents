@@ -127,7 +127,11 @@ export const shelvesSlice = (set, get) => ({
 							get().setError("Impossibile ridurre la scaffalatura, sono presenti dei prodotti.");
 						}
 						newShelf.name = name;
-						newShelf.position = {x: binSize * width / 2, y: binSize * height / 2, z: binSize / 2};      
+						newShelf.position = {
+							x: shelf.position.x,
+							y: binSize * height / 2,
+							z: shelf.position.z
+						};      
 						return newShelf;
 						/*
 						return {

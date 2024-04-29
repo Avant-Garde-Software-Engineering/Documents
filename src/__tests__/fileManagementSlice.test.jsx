@@ -158,6 +158,11 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
             width: 3,
             height: 2,
             isFlipped: true,
+            position: {
+                x: 4,
+                y: 5,
+                z: 7
+            },
             bins: [
                 [
                     {
@@ -202,6 +207,11 @@ test('fileManagementSlice stateToJson should produce a correct JSON', () => {
             width: 1,
             height: 3,
             isFlipped: false,
+            position: {
+                x: 5,
+                y: 20,
+                z: 10
+            },
             bins: [
                 [
                     {
@@ -277,6 +287,11 @@ test('fileManagementSlice JsonToState should produce a correct state', () => {
                 "width": 3,
                 "height": 2,
                 "isFlipped": true,
+                "position": {
+                    "x": 4,
+                    "y": 5,
+                    "z": 7
+                },
                 "bins": [
                     [
                         {
@@ -321,6 +336,11 @@ test('fileManagementSlice JsonToState should produce a correct state', () => {
                 "width": 1,
                 "height": 3,
                 "isFlipped": false,
+                "position": {
+                    "x": 5,
+                    "y": 20,
+                    "z": 10
+                },
                 "bins": [
                     [
                         {

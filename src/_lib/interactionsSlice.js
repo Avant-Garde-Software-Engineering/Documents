@@ -7,10 +7,13 @@ export const interactionsSlice = (set, get) => ({
 	selectedBin: null,
 	selectedProduct: null,
 	movements: [],
+	movingShelf: null,
 
 	setMovements: (movements) => set({ movements: movements.map(movement => {
 		return new Movement(movement.fromId, movement.fromRow, movement.fromCol, movement.toId, movement.toRow, movement.toCol, movement.id);
 	}) }),
+
+	setMovingShelf: (id = null) => set({movingShelf: id}),
 
 	selectShelf: (id = null) => set({ selectedShelf: id, selectedProduct: null, selectedBin: null }),
 
