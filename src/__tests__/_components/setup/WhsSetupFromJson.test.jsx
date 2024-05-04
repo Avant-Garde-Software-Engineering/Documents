@@ -2,20 +2,7 @@ import WhsSetupFromJson from "@_components/setup/WhsSetupFromJson";
 import { render, screen, fireEvent, waitFor, act } from "../../../node_modules/@testing-library/react";
 import "../../../node_modules/@testing-library/jest-dom";
 import userEvent from '../../../node_modules/@testing-library/user-event';
-
-Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: jest.fn().mockImplementation(query => ({
-        matches: false,
-        media: query,
-        onchange: null,
-        addListener: jest.fn(), // deprecated
-        removeListener: jest.fn(), // deprecated
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-    })),
-});
+import "@__mocks__/matchMedia.mock"
 
 describe('Inputs render', () => {
     test('WhsSetupFromJson should have JSON drag file input', () => {
