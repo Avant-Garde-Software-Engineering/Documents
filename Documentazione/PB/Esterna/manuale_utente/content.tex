@@ -43,30 +43,146 @@
 % REQUISITI E COMPATIBILITA'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Requisiti e compatibilità}\label{sec:requisiti_e_compatibilità}
+    In questa sezione sono illustrati i requisiti minimi neccessari per una corretta esecuzione dell'applicativo realizzato. Saranno quindi evidenziate le caratteristiche 
+    che ogni terminale deve soddisfare per configurare correttamente l'ambiente di esecuzione.
+
+    \subsection{Requisiti software}\label{sec:requisiti_e_compatibilità:software}
+    L'applicativo sarà reso disponibile all'utente attraverso due modalità: la \textit{modalità utente}\textsuperscript{G} e la \textit{modalità programmatore}\textsuperscript{G}.\\
+    La \textit{modalità programmatore}\textsuperscript{G} è consigliata solamente ad utilizzatori esperti. \\
+    Per questa esecuzione saranno necessari: l'installazione del software Node.js, alla versione 20.0 o superiore, e un browser stabile. \\
+    Per una corretta installazione del software si rimanda alla pagina dedicata, presente nella sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento. 
+    L'applicativo è stato testato per il corretto funzionamento con i principali motori di ricerca che si riportano qui sotto:
+    \begin{xltabular}{\textwidth}{ X | X}
+
+        \rowcolor{black}
+        \textbf{\color{white} Motore di ricerca} & \textbf{\color{white} Verisone}\\ 
+        \hline
+        \endhead
+
+        Google Chrome & 124.0 \\
+        \hline
+
+        Micorsoft Edge & 124.0 \\
+        \hline
+        
+        Safari & 17.0 \\
+        \hline
+
+        Mozilla Firefox & 115.0 \\
+        \hline
+        
+        \caption{Tabella dei requisiti software}
+        \label{tab:requisiti:soft}
+    \end{xltabular}
+    La \textit{modalità programmatore}\textsuperscript{G} è invece accessibile anche da utenti meno esperti. Non necessita di particolari configurazioni ma si raccomanda 
+    comunque di utilizzare uno dei browser sopra citati. \\
 
 
+
+    \subsection{Requisiti hardware}\label{sec:requisiti_e_compatibilità:hardware}
+    L'applicativo realizzato appartiene alla categoria delle web-app. L'esecuzione non avviene quindi in locale sul terminale utilizzato ma viene effettuata direttamente dal 
+    browser scelto dall'utente. Non sono quindi richieste dei particolari requisiti hardware minimi per l'esecuzione.\\
+    Viene comunque consigliato l'utilizzo di un terminale aggiornato che, a titolo di riferimento, può essere identificato in:
+    \begin{xltabular}{\textwidth}{ X | X}
+
+        \rowcolor{black}
+        \textbf{\color{white} Componente} & \textbf{\color{white} Requisito minimo consigliato}\\ 
+        \hline
+        \endhead
+        
+        Connessione Internet & Connessione Internet stabile e veloce \\
+        \hline
+
+        Processore & Quad-Core 1,80 GHz \\
+        \hline
+        
+        Memoria RAM & 8GB DDR3 \\
+        \hline
+
+        \caption{Tabella dei requisiti hardware}
+        \label{tab:requisiti:hard}
+    \end{xltabular}
+
+    \newpage
+
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INSTALLAZIONE 
+% INSTALLAZIONE ED ESECUZIONE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Installazione}\label{sec:installazione}
+\section{Installazione ed esecuzione}\label{sec:install_run}
+
+    L'esecuzione dell'applicazione si differisce in base alla modalità di esecuzione scelte. Pertanto si riportano separatamente le due modalità disponibili. \\
+    \textbf{In caso si scelga di eseguire il programma in \textit{modalità utente}\textsuperscript{G} è possibile trascurare la sezione installazione. Si rimanda quindi alla 
+    sezione \hyperref[sec:install_run:user]{esecuzione della modalità utente}.} \\ 
+
+    \subsection{MSodalità programmatore}\label{sec:install_run:esperto}
+    Questa sezione intende definire le operazioni di installazione preliminari necessarie per l'esecuzione dell'applicativo in \textit{modalità programmatore}\textsuperscript{G}.\\
+    Di seguito saranno quindi elencati i passaggi necessari per la clonazione della repository e l'avvio dell'applicazione. \\
+    
+    \subsubsection{Clonazione della repository}\label{sec:install_run:esperto:clone}
+    Per scaricare tutto i file neccessari all'esecuzione è possibile: 
+    \begin{enumerate}
+        \item Scaricare il codice (archivio in formato \textit{.zip}) direttamente dal seguente link: \\  
+        \url{INSERIRE LINK CORRETTO} \textcolor{gray}{\textit{(ultimo accesso 04-05-24)}}
+        \item Utilizzare i servizi messi a disposizione dal software Git, che deve essere installato sulla macchina di esecuzione
+        \begin{itemize}
+            \item Posizionarsi sulla repository di interesse.
+            \item Utilizzare il comando:\\
+            \textbf{git clone \url{INSERIRE LINK CORRETTO} }
+        \end{itemize}
+    \end{enumerate}
+
+    \subsubsection{Avvio dell'applicativo}\label{sec:install_run:esperto:avvio}
+    Una volta creata una copia del codice in una repository locale del terminale posizionarsi all'interno di essa in corrispondenza della repository \textit{Diamociunnome}.\\
+    Sarà quindi neccessaio aprire un terminale in corrispondenza di tale repository ed eseguire i seguenti passaggi: 
+    \begin{enumerate}
+        \item Installare le dipendenze (necessario solamente al primo avvio): \\  
+        \textbf{npm install}
+        \item Buildare l'applicazione con il comando: \\  
+        \textbf{npm run dev}
+        \item Una volta terminata la fase di built dell'applicativo, aprire un browser e ricercare la seguente pagina web: \\  
+        \url{http://localhost:3000}
+    \end{enumerate}
+
+    \subsection{Modalità utente}\label{sec:install_run:user}
+    Come già spiegato in \textit{modalità utente}\textsuperscript{G} non sarà necessaria alcuna procedura preliminare. L'utente dovrà solamente collegarsi al seguente link per poter eseguire 
+    direttamente la web-app dal proprio browser predefinito: 
+    \begin{itemize}
+        \item\url{inserire il link corretto}
+    \end{itemize}
+
+    \newpage
 
 
+
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ISTRUZIONI D'USO 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Istruzioni d'uso}\label{sec:Istruzioni_uso}
 
+    \subsection{Schermata iniziale utente}\label{sec:inizio}
+
+
+
+
+
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RIFERIMENTI ESTERNI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
 \section{Riferimenti esterni}\label{sec:riferimenti_esterni}
 Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
 \begin{itemize}
     \item Capitolato \textbf{Warehouse Management 3D}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} 
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} \textcolor{gray}{\textit{(ultimo accesso 04-05-24)}}
     \item Link alla \textbf{documentazione del gruppo}:\\
     \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 25-04-24)}}
+    \item Pagina di installazione al software \textbf{Node.js}:\\
+    \url{https://nodejs.org/en/} \textcolor{gray}{\textit{(ultimo accesso 04-05-24)}}
+    \item \textbf{Glossario} di progetto: \\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/PB/Esterna/glossario.pdf} \textcolor{gray}{\textit{(ultimo accesso 04-05-24)}}
 \end{itemize}
