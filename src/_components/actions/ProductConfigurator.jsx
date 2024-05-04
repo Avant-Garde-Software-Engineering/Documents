@@ -1,4 +1,5 @@
 import { Button, Space, Drawer, Form, Input, ColorPicker } from 'antd';
+import { useEffect } from 'react';
 
 const ProductConfigurator = ({formRef, onFinishedConfig, modProduct, open, closeDrawer}) => {
 	const handleSubmit = () => {
@@ -51,7 +52,7 @@ const ProductConfigurator = ({formRef, onFinishedConfig, modProduct, open, close
 				<Form.Item
 					label="Colore prodotto"
 					name="productColor"
-					initialValue={modProduct ? modProduct.color : null}
+					initialValue={modProduct ? modProduct.color : {r: 0, g: 0, b: 0}}
 					rules={[
 						{
 							required: true,
@@ -59,7 +60,7 @@ const ProductConfigurator = ({formRef, onFinishedConfig, modProduct, open, close
 						},
 					]}
 				>
-					<ColorPicker />
+					<ColorPicker data-testid="ProductColorPicker" />
 				</Form.Item>
             </Form>
 		</Drawer>

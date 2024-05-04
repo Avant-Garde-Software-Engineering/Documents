@@ -1,5 +1,5 @@
 import { Button, Card, Table } from 'antd';
-import { DeleteOutlined, EditOutlined, SelectOutlined, CloseOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, SelectOutlined, CloseOutlined } from '../../node_modules/@ant-design/icons';
 
 const ProductCard = ({ handleCloseProductCard, handleProductDelete, handleProductEdit, 
 	handleProductPositioning, selectedProduct, handleBinSelection, binsWithProduct }) => {
@@ -34,9 +34,9 @@ const ProductCard = ({ handleCloseProductCard, handleProductDelete, handleProduc
 				zIndex: 1,
 			}}
 			actions={[
-				<DeleteOutlined key="setting" onClick={handleProductDelete}/>,
-				<EditOutlined key="edit" onClick={handleProductEdit}/>,
-				<SelectOutlined key="move" onClick={handleProductPositioning}/>,
+				<DeleteOutlined key="setting" onClick={handleProductDelete} data-testid="ProductDeleteButton" />,
+				<EditOutlined key="edit" onClick={handleProductEdit} data-testid="ProductEditButton"/>,
+				<SelectOutlined key="move" onClick={handleProductPositioning} data-testid="ProductPositionButton"/>,
 			]}
 			extra={<Button type="text" onClick={handleCloseProductCard} icon={<CloseOutlined />} />}
 		>

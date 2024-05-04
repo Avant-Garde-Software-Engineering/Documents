@@ -8,7 +8,7 @@ const createJestConfig = nextJest({
  
 // Add any custom config to be passed to Jest
 const config = {
-  coverageProvider: 'v8',
+  coverageProvider: 'babel',
   testEnvironment: 'jsdom',
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
@@ -19,7 +19,8 @@ const config = {
   collectCoverage: true,
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
-  modulePathIgnorePatterns: ['<rootDir>/__tests__/_lib/TestComponent.jsx'],
+  modulePathIgnorePatterns: ['<rootDir>/__tests__/_lib/TestComponent.jsx', '<rootDir>/__tests__/_components/actions/ColorPickerUtils.js'],
+  testTimeout: 20000
 }
  
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

@@ -66,7 +66,7 @@ const ShelfManager = ({ config, setConfig }) => {
 		setCurrentStep(currentStep + 1);
 	};
 
-	useEffect(() => { 
+	useEffect(() => {
 		if(configMade === true && error === null && config === true) {
 			if(currentStep === 0){
 				const currentShelf = modShelf ? modShelf : shelves[shelves.length-1].id;

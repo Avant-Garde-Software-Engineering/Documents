@@ -1,5 +1,5 @@
 import { Button, Card } from 'antd';
-import { DeleteOutlined, EditOutlined, CloseOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, CloseOutlined } from '../../node_modules/@ant-design/icons';
 
 const ShelfCard = ({handleCloseCard, handleShelfDelete, handleShelfEdit, selectedShelf}) => {
 	return (
@@ -12,8 +12,8 @@ const ShelfCard = ({handleCloseCard, handleShelfDelete, handleShelfEdit, selecte
 				zIndex: 1,
 			}}
 			actions={[
-				<DeleteOutlined key="delete" onClick={handleShelfDelete} />,
-				<EditOutlined key="edit" onClick={handleShelfEdit} />,
+				<DeleteOutlined key="delete" onClick={handleShelfDelete} data-testid="ShelfDeleteButton"/>,
+				<EditOutlined key="edit" onClick={handleShelfEdit} data-testid="ShelfEditButton"/>,
 			]}
 			extra={<Button type="text" onClick={handleCloseCard} icon={<CloseOutlined />} />}
 		>

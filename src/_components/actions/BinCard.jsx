@@ -1,5 +1,5 @@
 import { Button, Card, message } from 'antd';
-import { CloseOutlined, DeleteOutlined, SwapOutlined } from '@ant-design/icons';
+import { CloseOutlined, DeleteOutlined, SwapOutlined } from '../../node_modules/@ant-design/icons';
 
 const BinCard = ({handleRemoveFromBin, handleProductMovement, selectedBin, handleCloseBinCard, selectedProduct}) => {
 	const askForMovement = () => {
@@ -30,8 +30,8 @@ const BinCard = ({handleRemoveFromBin, handleProductMovement, selectedBin, handl
 				zIndex: 1,
 			}}
 			actions={[
-				<DeleteOutlined key="setting" onClick={askForDeletion}/>,
-				<SwapOutlined key="move" onClick={askForMovement}/>,
+				<DeleteOutlined key="setting" onClick={askForDeletion} data-testid="RemoveProductButton" />,
+				<SwapOutlined key="move" onClick={askForMovement} data-testid="MoveProductButton" />,
 			]}
 			extra={<Button type="text" onClick={handleCloseBinCard} icon={<CloseOutlined />} />}
 		>

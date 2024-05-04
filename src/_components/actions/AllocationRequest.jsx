@@ -18,14 +18,14 @@ const AllocationRequest = ({ formRef, onFinishedConfig, shelves,
         const maxRow = shelves.find(shelf => shelf.id === value).height - 1;
         let rows = []
         for(let i = 0; i <= maxRow; i++){
-            rows.push({label: i, value: i});
+            rows.push({label: "r"+i, value: i});
         }
         setRows(rows);
 
         const maxCol = shelves.find(shelf => shelf.id === value).width - 1;
         let cols = []
         for(let i = 0; i <= maxCol; i++){
-            cols.push({label: i, value: i});
+            cols.push({label: "c"+i, value: i});
         }
         setCols(cols);
     }
@@ -41,7 +41,7 @@ const AllocationRequest = ({ formRef, onFinishedConfig, shelves,
 			extra={
 				<Space>
 					<Button onClick={closeDrawer}>Annulla</Button>
-					<Button onClick={handleSubmit} type="primary">
+					<Button onClick={handleSubmit} type="primary" data-testid="submitBtn">
 						{selectedProduct ? 'Posiziona' : 'Richiedi'}
 					</Button>
 				</Space>
@@ -69,6 +69,7 @@ const AllocationRequest = ({ formRef, onFinishedConfig, shelves,
 				>
                     <Select
                         showSearch
+                        data-testid="destinationShelf"
                         placeholder="Seleziona una scaffalatura"
                         optionFilterProp="children"
                         filterOption={filterOption}
@@ -82,6 +83,7 @@ const AllocationRequest = ({ formRef, onFinishedConfig, shelves,
                 <Form.Item
 					label="Ripiano scaffalatura di destinazione"
 					name="destinationBinRow"
+                    data-testid="destinationBinRow"
                     rules={[
 						{
 							required: true,
@@ -100,6 +102,7 @@ const AllocationRequest = ({ formRef, onFinishedConfig, shelves,
                 <Form.Item
 					label="Colonna scaffalatura di destinazione"
 					name="destinationBinCol"
+                    data-testid="destinationBinCol"
                     rules={[
 						{
 							required: true,
