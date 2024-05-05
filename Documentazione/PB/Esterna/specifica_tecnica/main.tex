@@ -8,11 +8,25 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage[symbol]{footmisc} 
 
-\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=blue}
 \usepackage{titlesec}
 \usepackage{float}
+
+\definecolor{verde_uml}{HTML}{D5E8D4}
+\definecolor{rosso_uml}{HTML}{F8CECC}
+\definecolor{azzurro_uml}{HTML}{DAE8FC}
+\definecolor{viola_uml}{HTML}{E1D5E7}
+\definecolor{giallo_uml}{HTML}{FFF2CC}
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
@@ -32,7 +46,11 @@
    \clearpage           % finish off the page
   }
 
-\def \titoloDocumento {Specifica Tecnica}    %modificare con il titolo del documento
+\titleformat{\subparagraph}
+    {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{\parindent}{3.25ex plus 1ex minus .2ex}{.75ex plus .1ex}
+
+\def \titoloDocumento {SPECIFICA TECNICA}    %modificare con il titolo del documento
 
 \geometry{a4paper,total={160mm,240mm},top=30mm,}
 \begin{document}
@@ -47,8 +65,19 @@
     \newpage
     
     \renewcommand{\contentsname}{Indice}    %rimuovere se non si vuole l'indice
+    \hypersetup{linkcolor=black}
     \tableofcontents    %rimuovere se non si vuole l'indice
     \newpage    %rimuovere se non si vuole l'indice
+
+    \renewcommand{\listfigurename}{Elenco delle figure}    %rimuovere le tre righe se non ci sono figure
+    \listoffigures
+    \newpage
+
+    \renewcommand{\listtablename}{Elenco delle tabelle}    %rimuovere le tre righe se non ci sono tabelle
+    \listoftables
+    \newpage
+
+    \hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=blue}
 
     \input{content.tex}
       
