@@ -57,7 +57,7 @@ Per lo sviluppo e l'implementazione del software viene utilizzato il seguente li
     \label{tab:linguaggi}
 \end{xltabular}
 
-\noindent Per quanto riguardo il formato dei dati vengono utilizzati i seguenti.
+\noindent Per quanto riguarda il formato dei dati vengono utilizzati i seguenti.
 \begin{xltabular}{0.98\textwidth}{|p{0.25\textwidth}|X|}
     \hline
     \multicolumn{2}{|c|}{\cellcolor{black}\textcolor{white}{\textbf{JSON}}} \\
@@ -78,7 +78,7 @@ Per lo sviluppo e l'implementazione del software viene utilizzato il seguente li
 \end{xltabular}
 
 \subsection{Tecnologie implementative}
-    \begin{xltabular}{0.98\textwidth}{|p{0.25\textwidth}|X|}
+\begin{xltabular}{0.98\textwidth}{|p{0.25\textwidth}|X|}
     \hline
     \endhead
     \multicolumn{2}{|c|}{\cellcolor{black}\textcolor{white}{\textbf{Node.js (con npm) }}} \\
@@ -125,7 +125,7 @@ Per lo sviluppo e l'implementazione del software viene utilizzato il seguente li
     \cellcolor{gray!10} \textbf{Versione:} & \textasciicircum v0.162.0\\
     \hline
     \cellcolor{gray!10} \textbf{Documentazione:} &  
-          \url{https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene} \textcolor{gray}{\textit{(ultimo accesso 05-05-24)}} \\
+          \url{https://threejs.org/docs/index.html\#manual/en/introduction/Creating-a-scene} \textcolor{gray}{\textit{(ultimo accesso 05-05-24)}} \\
     \hline
     \cellcolor{gray!10} \textbf{Descrizione generale:} & Three.js è una libreria JavaScript open-source utilizzata per la realizzazione di contenuti 3D per il Web. In particolare, utilizza le API WebGL per integrare ambienti 3D a siti web usando un semplice canvas HTML.\\
     \hline
@@ -255,6 +255,7 @@ Per lo sviluppo e l'implementazione del software viene utilizzato il seguente li
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ARCHITETTURA LOGICA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Architettura logica}\label{sec:architettura_logica}
 Il gruppo ha dato particolare attenzione alla scelta di un'architettura che favorisse una adeguata ``\textit{separation of concerns}", specialmente tra la logica di business e la logica di presentazione. Una corretta applicazione di questo principio porta, infatti, ad una maggior coesione e ad una riduzione dell'accoppiamento nel software.
 
@@ -474,7 +475,7 @@ Questa slice contiene le informazioni sulle attuali interazioni dell'utente con 
     \item \textbf{selectShelf}, \textbf{selectProduct} e \textbf{selectBin}, per impostare rispettivamente una scaffalatura, un prodotto o un bin come elemento correntemente selezionato e, al contempo, deselezionare qualsiasi altro elemento eventualmente già selezionato;
     \item \textbf{setMovingShelf}, per impostare una scaffalatura come ``in movimento'';
     \item \textbf{setIntersectingIds}, per segnalare tutti gli elementi correntemente interessati da una collisione;
-    \item \textbf{orderMovementFromSelected} e \textbf{removeMovementsWithBin},  utilizzate rispettivamente per aggiungere e rimuovere un movimento di prodotto dallo stato.
+    \item \textbf{orderMovementFromSelected} e \textbf{removeMovementsWithBin},  utilizzate rispettivamente per aggiungere e rimuovere un movimento di un prodotto dallo stato.
 \end{itemize}
 Nel caso di successo di un'action, viene aggiornato correttamente lo stato, altrimenti viene impostato un errore nella errorSlice.
 
@@ -538,7 +539,7 @@ Chiama le action di configurare del magazzino (\textit{setWhsRectangle}, \textit
 Costituisce la pagina iniziale di configurazione del magazzino. Aggiorna lo stato del magazzino nello store con le informazioni ricevute da \textit{WhsSetupFromInput} o \textit{WhsSetupFromJson}. In caso di errori in tale aggiornamento, apre invece una finestra modale \textit{ErrorModal}.
 
 \subparagraph{\colorbox{verde_uml}{WhsSetupFromInput}}
-\textbf{Tipo:} Presentational \footnote[*]{\label{footnoteApi}*Non accede allo store, tuttavia si occupa anche di una validazione preliminare di dati forniti da file esterni tramite il richiamo di un'API. Ques'API controlla che la struttura del file sia corretta, non occupandosi invece della correttezza dei dati stessi. Si è deciso di mantenere qui questa parte per minimizzare la complessità del componente padre \textit{WhsSetupPage}, mantenendo quest'ultimo più snello e focalizzato sulla gestione dello stato globale dell'applicazione e sul coordinamento delle diverse sue componenti figlie. Inoltre, chiamare l'API direttamente in questa componente consente di fornire un feedback più immediato all'utente tramite messaggi di errore (\textit{message.error} di Ant Design).} \\
+\textbf{Tipo:} Presentational \footnote[1]{\label{footnoteApi}Non accede allo store, tuttavia si occupa anche di una validazione preliminare di dati forniti da file esterni tramite il richiamo di un'API. Ques'API controlla che la struttura del file sia corretta, non occupandosi invece della correttezza dei dati stessi. Si è deciso di mantenere qui questa parte per minimizzare la complessità del componente padre \textit{WhsSetupPage}, mantenendo quest'ultimo più snello e focalizzato sulla gestione dello stato globale dell'applicazione e sul coordinamento delle diverse sue componenti figlie. Inoltre, chiamare l'API direttamente in questa componente consente di fornire un feedback più immediato all'utente tramite messaggi di errore (\textit{message.error} di Ant Design).} \\
 \textbf{Interazione con l'utente:} \\
 L'utente inserisce nome e dimensioni del magazzino nelle apposite caselle di input. Di default, le dimensioni includono altezza, larghezza e profondità, affinché sia possibile creare un magazzino quadrato/rettangolare. Tuttavia, gli utenti hanno anche la possibilità di caricare una planimetria personalizzata tramite un file SVG. Quando viene caricato tale file, le caselle di input per la larghezza e la profondità del magazzino vengono disabilitate. L'utente deve però inserire in ogni caso nome e altezza, poiché solo le dimensioni del pavimento del magazzino sono definite dalla planimetria caricata.  \\
 \textbf{Composizione:} \\
@@ -549,7 +550,7 @@ L'utente compila il modulo seguendo le indicazioni fornite. Al momento poi dell'
 
 
 \subparagraph{\colorbox{verde_uml}{WhsSetupFromJson}} 
-\textbf{Tipo:} Presentational * \\
+\textbf{Tipo:} Presentational \textsuperscript{\ref{footnoteApi}} \\
 \textbf{Interazione con l'utente:} \\
 L'utente carica un file .json che include la configurazione del magazzino, i dati relativi agli elementi presenti al suo interno, nonché le richieste di movimentazione pendenti. \\
 \textbf{Composizione:} \\
@@ -588,7 +589,7 @@ L'utente può cliccare un bottone per aprire e chiudere la sidebar. \\
 Funge da contenitore secondario per la pagina principale dell'applicazione (\textit{WmsPage}) ed eventuali sue future pagine figlie. Si innesta infatti a RootLayout. 
 
 \subparagraph{\colorbox{verde_uml}{Library}}
-\textbf{Tipo:} Container ** \\
+\textbf{Tipo:} Container \footnote[7]{In questo caso la parte Presentational è delegata alle componenti di Ant Design sue figlie.}\\
 \textbf{Accesso allo store:} \\
 \textit{Library} rimane in ascolto dello store per ottenere la lista aggiornata dei prodotti e scaffalature presenti nel magazzino (tramite gli stati \textit{products} e \textit{shelves}). \textit{Library} rimane anche in ascolto di \textit{selectedProduct} e \textit{selectedShelf} per avere sempre l'ultimo elemento selezionato e poterlo così evidenziare nell'elenco. Richiama inoltre \textit{selectProduct} o \textit{selectShelf} se l'utente clicca nella lista, rispettivamente, un prodotto o una scaffalatura. \\
 \textbf{Composizione:} \\
@@ -597,7 +598,7 @@ Funge da contenitore secondario per la pagina principale dell'applicazione (\tex
 Visualizza l'elenco di tutte le scaffalature e prodotti nel magazzino. L'utente può anche ricercare uno specifico elemento tramite nome attraverso la barra di ricerca fornita. Inoltre, se uno degli elementi della lista è selezionato, o tramite click o tramite selezione da render (quest'ultima solo per scaffalature, i prodotti in sé infatti non possono essere selezionati da render), questo viene evidenziato nella lista.
 
 \subparagraph{\colorbox{verde_uml}{Save}}
-\textbf{Tipo:} Container \footnote[**]{**In questo caso la parte Presentational è delegata alle componenti di Ant Design sue figlie.}\\
+\textbf{Tipo:} Container \footnote[7]{In questo caso la parte Presentational è delegata alle componenti di Ant Design sue figlie.}\\
 \textbf{Accesso allo store:} \\
 Se il bottone viene cliccato, viene chiamata l'action \textit{stateToJson}. \textit{Save} utilizza anche lo stato \textit{whsName} per denominare il file .json.\\
 \textbf{Composizione:} \\
@@ -614,9 +615,9 @@ Contiene il \textit{Render} e tutte le altre componenti con cui l'utente può in
 \textbf{Descrizione e funzionamento:} \\
 Costituisce la pagina principale dell'applicazione. Il suo ruolo principale è infatti quello di contenitore e coordinatore della visibilità delle sue componenti figlie. Per far ciò utilizza gli hooks di React.\\
 
-\paragraph{Feature/actions}
 \begin{landscape}
 \begin{figure}[H]
+    \paragraph{Feature/actions}
     \centering
     \includegraphics[width=1.5\textwidth]{images/UML/feature_actions.drawio.png}
     \label{fig:UML_feature_actions}
@@ -650,6 +651,7 @@ In caso di aggiunta di una scaffalatura, l'utente inserisce nome e dimensioni de
 \textbf{Descrizione e funzionamento:} \\
 Viene utilizzato per aggiungere una scaffalatura al magazzino o modificarne una già presente. In questo secondo caso, il \textit{Form} fornito è già completato con i dati correnti della scaffalatura selezionata (\textit{selectedShelf)}. L'utente compila/modifica il modulo seguendo le indicazioni date. Al momento poi dell'invio del modulo (se compilato correttamente e completamente), viene richiamata una funzione di \textit{ShelfManager} con i dati caricati. Quest'ultima controlla attraverso un hook di React, precedentemente impostato, se i dati inviati riguardano una scaffalatura esistente e procede a richiamare l'action dello store corrispondente (\textit{addShelf} o \textit{updateShelfInfo}). Alla conferma finale della creazione, dopo il posizionamento da render, \textit{ShelfConfigurator} richiama un'altra funzione di \textit{ShelfManager} che aggiorna la posizione della scaffalatura nello store (tramite \textit{updateShelfPosition}).
 
+\newpage
 \subparagraph{\colorbox{verde_uml}{ShelfCard}}
 \textbf{Tipo:} Presentational \\
 \textbf{Interazione con l'utente:} \\
@@ -669,7 +671,7 @@ Contiene le componenti \textit{ProductCard} per la visualizzazione dei dati gene
 \\
 \textbf{Descrizione e funzionamento:} \\
 È responsabile della gestione dei prodotti nel magazzino, inclusa l'aggiunta, la modifica e la semplice visualizzazione dei dati a esso relativi. 
-Nello specifico, se è presente un bin selezionato (\textit{selectedBin}) ne ricava le informazioni e le visualizza tramite \textit{BinCard}. Analogametne, se è presente un prodotto selezionato (\textit{selectedProduct}), ne ricava le informazioni e le visualizza tramite la componente figlia \textit{ProductCard}. Altrimenti, se riceve indicazione da \textit{WmsPage} o dalla \textit{ProductCard} stessa, apre \textit{ShelfConfigurator} rispettivamente per l'aggiunta o per la modifica di un prodotto.  Inoltre, se viene segnalata l'eliminazione di un prodotto da parte di \textit{ProductCard} o da \textit{BinCard}, \textit{ProductManager} provvede alla sua rimozione (rispettivamente tramite \textit{removeProduct}, che rimuove completamente il prodotto dal magazzino, e \textit{removeProductFromBin}, che lo rimuove solamente dal bin selezionato). Alla stessa maniera, se viene segnalato il posizionamento di un prodotto da parte di \textit{ProductCard} o \textit{BinCard}, \textit{ProductManager} provvede a tale operazione segnalando a \textit{WmsPage} la volontà di aprire l'\textit{AllocationManager} (nel primo caso per posizionamento di un prodotto e nel secondo per una richiesta di movimentazione).
+Nello specifico, se è presente un bin selezionato (\textit{selectedBin}) ne ricava le informazioni e le visualizza tramite \textit{BinCard}. Analogamente, se è presente un prodotto selezionato (\textit{selectedProduct}), ne ricava le informazioni e le visualizza tramite la componente figlia \textit{ProductCard}. Altrimenti, se riceve indicazione da \textit{WmsPage} o dalla \textit{ProductCard} stessa, apre \textit{ShelfConfigurator} rispettivamente per l'aggiunta o per la modifica di un prodotto.  Inoltre, se viene segnalata l'eliminazione di un prodotto da parte di \textit{ProductCard} o da \textit{BinCard}, \textit{ProductManager} provvede alla sua rimozione (rispettivamente tramite \textit{removeProduct}, che rimuove completamente il prodotto dal magazzino, e \textit{removeProductFromBin}, che lo rimuove solamente dal bin selezionato). Alla stessa maniera, se viene segnalato il posizionamento di un prodotto da parte di \textit{ProductCard} o \textit{BinCard}, \textit{ProductManager} provvede a tale operazione segnalando a \textit{WmsPage} la volontà di aprire l'\textit{AllocationManager} (nel primo caso per posizionamento di un prodotto e nel secondo per una richiesta di movimentazione).
 In caso di errori nell'aggiornamento dello stato, apre anche una componente \textit{ErrorModal}.
 
 \subparagraph{\colorbox{verde_uml}{ProductConfigurator}}
@@ -733,6 +735,7 @@ Accede allo store per avere lo stato aggiornato di tutte le scaffalature (\texti
 È responsabile della gestione delle richieste di movimento pendenti. 
 Nello specifico, se riceve indicazione da \textit{WmsPage} apre \textit{MovementView}. Attraverso \textit{MovementView} sarà possibile vedere le richieste pendenti e, per ciascuna, richiedere un sollecito. Il sollecito viene effettuato sotto forma di chiamata API ad un meccanismo esterno che ritorna ``True'' se la movimentazione è stata accettata o ``False'' se rifiutata. In base a questo valore \textit{MovementManager} aggiornerà lo stato tramite \textit{updateBinState} e \textit{removeMovementsWithBin}.
 
+\newpage
 \subparagraph{\colorbox{verde_uml}{MovementView}}
 \textbf{Tipo:} Presentational \\
 \textbf{Interazione con l'utente:} \\
@@ -748,7 +751,7 @@ Viene utilizzato principalmente per visualizzare tutte le movimentazioni ancora 
 L'utente può cliccare dei pulsanti per aggiungere nuovi prodotti o scaffalature e visualizzare/sollecitare le richieste di movimentazione di prodotti.
 \\
 \textbf{Composizione:} \\
-È costituita principalmente da componenti \textit{FloatButton} di Ant Design, accompagnate da \textit{ToolTip} che ne chiariscono l'utilizzo. In particolare, include un singolo \textit{FloatButton} impiegato per aprire la lista delle movimentazione pendenti, e un \textit{FloatButton.Group} che contiene i pulsanti \textit{FloatButton} utilizzati per aggiungere elementi (scaffalature e prodotti) al magazzino.\\
+È costituita principalmente da componenti \textit{FloatButton} di Ant Design, accompagnate da \textit{ToolTip} che ne chiariscono l'utilizzo. In particolare, include un singolo \textit{FloatButton} impiegato per aprire la lista delle movimentazioni pendenti, e un \textit{FloatButton.Group} che contiene i pulsanti \textit{FloatButton} utilizzati per aggiungere elementi (scaffalature e prodotti) al magazzino.\\
 \textbf{Descrizione e funzionamento:} \\
 Funge da piattaforma centralizzata per l'accesso a varie funzionalità legate al magazzino, tra cui l'aggiunta di scaffalature e prodotti, nonché la gestione delle movimentazioni pendenti.
 Se cliccati i bottoni di aggiunta scaffalatura o prodotto vengono visualizzati i form di configurazione presenti in \textit{ShelfManager} e \textit{ProductManager}. Se invece viene cliccato il pulsante di apertura della lista dei movimenti viene visualizzato tramite \textit{MovementManager} un elenco di tutte le richieste pendenti. L'apertura di tutte queste componenti è gestita attraverso il passaggio dello stato dei click di questi pulsanti a \textit{WmsPage}. Come accennato, quest'ultima si occuperà poi di aprire le giuste componenti figlie tramite hooks di React. 
@@ -819,7 +822,7 @@ In particolare, si occupa di aggiornare lo store quando scaffalature o bin vengo
 \textbf{Interazione con l'utente:} \\
 Nessuna.\\
 \textbf{Composizione:} \\
-Si tratta di un \textit{group}, che raccoglie in sè componenti \textit{BinMesh} per ogni bin della scaffalatura.\\
+Si tratta di un \textit{group}, che raccoglie in sé componenti \textit{BinMesh} per ogni bin della scaffalatura.\\
 \textbf{Descrizione e funzionamento:} \\
 Serve alla costruzione della mesh di una scaffalatura. Vengono create delle \textit{BinMesh} per ogni bin della scaffalatura passata come prop. Queste vengono poi posizionati in modo tale da avere una matrice di mesh [\textit{height} della scaffalatura][\textit{width} della scaffalatura] con posizione centrale dell'intera matrice uguale alla posizione della scaffalatura passata come prop. 
 
@@ -847,7 +850,7 @@ L'API richiama una funzione \textit{isValidJson(jsonData)} che prende un oggetto
     \item Per \textit{shelves}: ogni scaffalatura deve avere una proprietà \textit{id} (tipo stringa), \textit{name} (tipo stringa), \textit{binSize} (tipo numero), \textit{width} (tipo numero), \textit{height} (tipo numero), \textit{isFlipped} (tipo boolean) e \textit{bins} (tipo array di oggetti bin).
     \item Per \textit{bins}: ogni oggetto bin deve avere una proprietà \textit{id} (tipo stringa), \textit{state} (tipo stringa) e una proprietà facoltativa \textit{productId} (tipo stringa oppure null).
 \end{itemize}
-La funzione restituisce ``true'' se i dati JSON sono validi secondo i criteri sopra specificati; in caso contrario, restituisce ``false''.
+La funzione restituisce ``True'' se i dati JSON sono validi secondo i criteri sopra specificati; in caso contrario, restituisce ``False''.
 
 \noindent Dopo aver ricevuto indicazione da questa funzione, l'API genera dunque risposte JSON contenenti messaggi di stato e di errore in base al risultato ottenuto.
 
@@ -866,7 +869,7 @@ L'API richiama una funzione \textit{isValidSVG(svgData)} che utilizza la libreri
     \item La presenza di elementi \textit{polygon};
     \item La presenza di almeno uno di questi con proprietà \textit{points} definita.
 \end{itemize}
-Dunque, se almeno un poligono contiene punti, il file SVG viene considerato valido e viene restituito ``true''. Altrimenti, viene ritornato ``false''.
+Dunque, se almeno un poligono contiene punti, il file SVG viene considerato valido e viene restituito ``True''. Altrimenti, viene ritornato ``False''.
 
 \noindent Dopo aver ricevuto indicazione da questa funzione, l'API genera dunque risposte JSON contenenti messaggi di stato e di errore in base al risultato ottenuto.
 
@@ -909,7 +912,7 @@ In particolare, il gruppo ha deciso di utilizzare \textbf{Vercel} come piattafor
 % REQUISITI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stato dei requisiti funzionali}\label{sec:requisiti}
-Di seguito vengono riportati i requisti funzionali corredati dal loro stato: ``Soddisfatto'' o ``Non soddisfatto''.
+Di seguito vengono riportati i requisiti funzionali corredati dal loro stato: ``Soddisfatto'' o ``Non soddisfatto''.
 Per una visione più completa sui requisiti si rimanda al documento \textit{Analisi dei Requisiti v5.0.0}.
 
 \rowcolors{2}{gray!10!}{white}
