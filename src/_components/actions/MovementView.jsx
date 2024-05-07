@@ -1,9 +1,6 @@
 import { Drawer, List, Button } from 'antd';
-import { useState } from 'react';
 
-const MovementView = ({ open, closeView, movementsData, onClick }) => {
-    const [ loading, setLoading ] = useState(false);
-
+const MovementView = ({ open, closeView, movementsData, onClick, isLoading }) => {
     return (
         <Drawer
 			placement="right"
@@ -20,7 +17,7 @@ const MovementView = ({ open, closeView, movementsData, onClick }) => {
                 renderItem={movement => (
                     <List.Item
                         actions={[
-                            <Button onClick={() => {onClick(movement.movementId), setLoading(true)}} loading={loading}>
+                            <Button onClick={() => {onClick(movement.movementId)}} loading={isLoading}>
                                 Sollecita risposta
                             </Button>
                         ]}

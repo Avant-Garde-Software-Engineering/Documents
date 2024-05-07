@@ -20,7 +20,10 @@ const config = {
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
   modulePathIgnorePatterns: ['<rootDir>/__tests__/_lib/TestComponent.jsx', '<rootDir>/__tests__/_components/actions/ColorPickerUtils.js'],
-  testTimeout: 20000
+  testTimeout: 20000,
+  setupFiles: [
+    "<rootDir>/setupTests.js"
+  ]
 }
  
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

@@ -1,14 +1,17 @@
 import { boundStore } from '@_lib/boundStore';
 import MovementView from '@_components/actions/MovementView';
 import { message } from 'antd';
+import { useState } from 'react';
 
 const MovementManager = ({ open, closeView }) => {
+    const [ loading, setLoading ] = useState(false);
     const movements = boundStore((state) => state.movements);
     const shelves = boundStore((state) => state.shelves);
     const removeMovementsWithBin = boundStore((state) => state.removeMovementsWithBin);
     const updateBinState = boundStore((state) => state.updateBinState);
 
 	const requestForMovement = async (id) => {
+        setLoading(true);
         console.log(id)
 		const response = await fetch(
 			'/api/movementRequest',
@@ -36,6 +39,7 @@ const MovementManager = ({ open, closeView }) => {
             removeMovementsWithBin(toId, toRow, toCol);
             message.success(msg);
         }
+        setLoading(false);
 	}
 
 	const dataSource = movements.map(item => ({
@@ -52,6 +56,7 @@ const MovementManager = ({ open, closeView }) => {
             closeView={closeView}
             movementsData={dataSource}
             onClick={requestForMovement}
+            isLoading={loading}
         />
     );
 };
