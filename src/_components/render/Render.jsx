@@ -1,8 +1,8 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas } from "../../node_modules/@react-three/fiber";
 import ThreeScene from '@_components/render/ThreeScene'
 import WarehouseRender from '@_components/render/WarehouseRender'
 import { useState } from "react";
-import { KeyboardControls } from "@react-three/drei";
+import { KeyboardControls } from "../../node_modules/@react-three/drei";
 
 const Render = () => {
 	const [ isNavigating, setIsNavigating ] = useState(false);
@@ -26,6 +26,7 @@ const Render = () => {
 			<Canvas 
 				style={{height: '100%', position: 'relative'}} 
 				onMouseDown={handleClick}
+				data-testid="canvasContainer"
 			>			        
 				<ThreeScene isNavigating={isNavigating} />
 				<WarehouseRender />

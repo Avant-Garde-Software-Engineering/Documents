@@ -76,7 +76,7 @@ const WhsSetupPage = () => {
 	}
 
 	return (
-		<div>
+		<div style={{backgroundColor: 'white', paddingTop: '3vh', paddingBottom: '3vh', paddingLeft: '5vw', paddingRight: '5vw', borderRadius: '16px'}}>
 			<h1>Benvenuto in WMS3D!</h1>
 			<p>Inizia subito a configurare il tuo magazzino!</p>
 			<Tabs 

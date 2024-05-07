@@ -2,7 +2,7 @@
 import { boundStore } from '@_lib/boundStore';
 import ShelfMesh from '@_components/render/ShelfMesh';
 import { forwardRef, useState, useEffect } from 'react';
-import { TransformControls } from '@react-three/drei';
+import { TransformControls } from '../../node_modules/@react-three/drei';
 import * as THREE from 'three'
 
 const ShelvesRender = forwardRef(({wallsRef}, ref) => {
@@ -86,7 +86,6 @@ const ShelvesRender = forwardRef(({wallsRef}, ref) => {
             }
            
         });
-        console.log(collisions)
 		setIntersectingIds(collisions);
 	}
 

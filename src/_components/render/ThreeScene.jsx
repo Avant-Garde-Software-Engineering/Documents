@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { CameraControls, useKeyboardControls } from "@react-three/drei";
+import { useFrame } from "../../node_modules/@react-three/fiber";
+import { CameraControls, useKeyboardControls } from "../../node_modules/@react-three/drei";
 
 const ThreeScene = ({isNavigating}) => {
     const cameraRef = useRef();

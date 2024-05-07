@@ -1,5 +1,5 @@
 import { Shape } from 'three';
-import { Extrude } from "@react-three/drei";
+import { Extrude } from "../../node_modules/@react-three/drei";
 import * as THREE from 'three';
 import { forwardRef } from 'react';
 

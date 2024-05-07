@@ -278,7 +278,7 @@ describe('Input logic', () => {
 
         act(() => fireEvent.click(submitBt));
         await waitFor(() => {expect(values).not.toBeNull()});
-        console.log(values);
+
         expect(values.shelfName).toEqual("NewShelfName");
         expect(values.binSize).toEqual(5);
         expect(values.shelfWidth).toEqual(8);

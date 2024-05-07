@@ -26,7 +26,7 @@ const ShelfMesh = forwardRef((props, ref) => {
         }
     }
 
-    console.log(props.shelf.position)
+    //console.log(props.shelf.position)
     return (
         <group 
             key={props.shelf.id} 

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { Edges } from '@react-three/drei';
+import { Edges } from '../../node_modules/@react-three/drei';
 import { useMemo } from 'react';
 
 const DEFAULT_COLOR = '#454343';
@@ -70,23 +70,23 @@ const BinMesh = (props) => {
     return (
         <mesh position={props.position} onClick={onClick}>
             {/* Bin */}
-            <boxGeometry args={[props.args[0]-spacing, props.args[1]-spacing, props.args[2]-spacing]} /> 
+            <boxGeometry args={[props.args[0]-spacing, props.args[1]-spacing, props.args[2]-spacing]} />
             <Edges />
-            <meshBasicMaterial attach="material-0" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} /> {/* right */}
-            <meshBasicMaterial attach="material-1" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} /> {/* left */}
-            <meshBasicMaterial attach="material-2" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} /> {/* top */}
-            <meshBasicMaterial attach="material-3" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} /> {/* bottom */}
-            <meshLambertMaterial attach="material-4" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : '#838383'} side={THREE.BackSide} map={texture} /> {/* front */}
-            <meshLambertMaterial attach="material-5" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : '#838383'} side={THREE.BackSide} map={texture} /> {/* back */}             
+            <meshBasicMaterial attach="material-0" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} />{/* right */}
+            <meshBasicMaterial attach="material-1" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} />{/* left */}
+            <meshBasicMaterial attach="material-2" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} />{/* top */}
+            <meshBasicMaterial attach="material-3" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : DEFAULT_COLOR} side={THREE.DoubleSide} />{/* bottom */}
+            <meshLambertMaterial attach="material-4" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : '#838383'} side={THREE.BackSide} map={texture} />{/* front */}
+            <meshLambertMaterial attach="material-5" color={(props.isSelectedShelf || props.isSelectedBin) ? SELECTED_COLOR : '#838383'} side={THREE.BackSide} map={texture} />{/* back */}             
             
             {/* Prodotto */}
             {props.bin.state !== 'EMPTY' && (
-                <mesh 
-                    position={[0, -props.args[1]*productScale/2 + spacing, 0]} 
+                <mesh
+                    position={[0, -props.args[1]*productScale/2 + spacing, 0]}
                     scale={[productScale, productScale, productScale]}
                 >
                     <boxGeometry args={props.args} />
-                    <meshBasicMaterial 
+                    <meshBasicMaterial
                         map={generateTexture}
                     />
                     {(props.isSelectedProduct || props.isSelectedBin) && (
