@@ -301,11 +301,11 @@ Zustand è una libreria utilizzata per la gestione degli state in React. Il grup
 
 \paragraph{Ant Design} \label{sec:processi_primari:sviluppo:strumenti:ant_design}
 Ant Design è una libreria di componenti UI React open-source che rende possibile la creazione di interfacce moderne e ben progettate. Questa libreria offre molteplici componenti dal semplice utilizzo e già integrati che semplificano la creazione di interfacce utente interattive.
-Il gruppo ha deciso di utilizzare Ant Design per l'integrazione nativa con React, per la sua ricca selezione di compontenti e la personalizzazione dello stile dell'applicazione in maniera più efficiente e veloce.
+Il gruppo ha deciso di utilizzare Ant Design per l'integrazione nativa con React, per la sua ricca selezione di componenti e per la sua possibilità di personalizzazione lo stile dell'applicazione in maniera efficiente e veloce.
  
 \noindent Lo strumento è reperibile al sito:
 \begin{center}
-    \url{https://ant.design/}\\ \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
+    \url{https://ant.design/}\\ \textcolor{gray}{\textit{(ultimo accesso 07-05-24)}}
 \end{center}
 
 \subsubsection{Metriche}\label{sec:processi_primari:sviluppo:metriche}
@@ -670,7 +670,6 @@ Inoltre, per ogni test viene riportata una breve descrizione e lo stato del test
 \end{itemize}
 Si noti che un test avente dei ``figli'' viene considerato superato se e solo se tutti i suoi figli hanno avuto esito positivo.
 
-%eventualmente aggiugere anche denominazione per test?
 \subsubsection{Metriche}\label{sec:processi_di_supporto:accertamento_qualità:metriche}
 Per tracciare la soddisfazione dei requisiti qualitativi è stata concordata una semplice metrica.
 \begin{itemize}
@@ -737,7 +736,7 @@ Al fine di minimizzare gli errori, il codice viene controllato sia tramite anali
         \end{itemize}
     \item Per l'analisi dinamica: 
         \begin{itemize}
-            \item L’attività di analisi dinamica del codice si concretizza con lo sviluppo e l’utilizzo dei test. I test servono per assicurare un certo comportamento delle componenti oppure dell’intera applicazione. Ne esistono di diverse tipologie ed ognuna di queste va a controllare aspetti diversi del software (per maggiori informazioni si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento). In ogni caso, per ottenere un buon test, è necessario che questo sia ripetibile, oltre che specifichi ambiente di esecuzione, input e output. Pertanto, il gruppo intende utilizzare degli strumenti che automatizzino questa analisi, il gruppo ha definito Jest e React Testing Library come tali strumenti.
+            \item L’attività di analisi dinamica del codice si concretizza con lo sviluppo e l’utilizzo dei test. I test servono per assicurare un certo comportamento delle componenti oppure dell’intera applicazione. Ne esistono di diverse tipologie ed ognuna di queste va a controllare aspetti diversi del software (per maggiori informazioni si faccia riferimento al \textit{Piano di Qualifica}, presente tra i \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento). In ogni caso, per ottenere un buon test, è necessario che questo sia ripetibile, oltre che specifichi ambiente di esecuzione, input e output. Pertanto, il gruppo intende utilizzare degli strumenti che automatizzino questa analisi, il gruppo ha definito \textbf{Jest}, \textbf{React Testing Library} e \textbf{React Three Test Renderer} come tali strumenti.
             %aggiungere tipo di test da effettuare per farli?
         \end{itemize}
 \end{itemize}
@@ -1091,9 +1090,9 @@ Dato che la buona riuscita di tutti i processi (in particolare quelli primari) d
 Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
 \begin{itemize}
     \item \textbf{Glossario v1.0.0}:\\
-    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/glossario_v1.0.0.pdf}
-    \item \textbf{Piano di Qualifica v2.0.0}:\\
-    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/RTB/Esterna/piano_di_qualifica_v2.0.0.pdf}
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/PB/Esterna/glossario_v1.0.0.pdf}
+    \item \textbf{Piano di Qualifica v3.0.0}:\\
+    \url{https://github.com/Avant-Garde-Software-Engineering/WMS3D/blob/main/Documentazione/PB/Esterna/piano_di_qualifica_v3.0.0.pdf}
     \item Capitolato \textbf{Warehouse Management 3D}:\\
     \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} 
     \item \textbf{Regolamento} del progetto didattico:\\
@@ -1118,9 +1117,10 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
         \item Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Installation} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
         \item React Three Fiber: \url{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
         \item Zustand: \url{https://docs.pmnd.rs/zustand/getting-started/introduction} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
-        \item Ant Design: \url{https://ant.design/docs/react/introduce} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
-        \item Jest: \url{https://jestjs.io/docs/getting-started} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
-        \item React Testing Library: \url{https://testing-library.com/docs/react-testing-library/intro/} \textcolor{gray}{\textit{(ultimo accesso 20-04-24)}}
+        \item Ant Design: \url{https://ant.design/docs/react/introduce} \textcolor{gray}{\textit{(ultimo accesso 07-05-24)}}
+        \item Jest: \url{https://jestjs.io/docs/getting-started} \textcolor{gray}{\textit{(ultimo accesso 07-05-24)}}
+        \item React Testing Library: \url{https://testing-library.com/docs/react-testing-library/intro/} \textcolor{gray}{\textit{(ultimo accesso 07-05-24)}}
+        \item React Three Test Renderer: \url{https://docs.pmnd.rs/react-three-fiber/tutorials/testing} \textcolor{gray}{\textit{(ultimo accesso 07-05-24)}}
     \end{itemize}
 \subsubsection{Tutorial}
 \begin{itemize}
@@ -1129,5 +1129,4 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
                 \item \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
                 \item \url{https://danielkummer.github.io/git-flow-cheatsheet/} \textcolor{gray}{\textit{(ultimo accesso 10-04-24)}}
             \end{itemize}       
-                        
-    \end{itemize}
+\end{itemize}
