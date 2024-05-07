@@ -15,6 +15,8 @@ const RootLayout = ({ children }) => {
 					padding: 0,
 					justifyContent: 'center',
 					alignItems: 'center',
+					fontFamily: 'sans-serif',
+					backgroundColor: '#001529'
 				}}
 			>
 				{ children }     
