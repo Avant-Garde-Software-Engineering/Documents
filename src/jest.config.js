@@ -23,7 +23,10 @@ const config = {
   testTimeout: 20000,
   globals: {
     IS_REACT_ACT_ENVIRONMENT: true
-  }
+  },
+  setupFiles: [
+    "<rootDir>/setupTests.js"
+  ]
 }
  
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
