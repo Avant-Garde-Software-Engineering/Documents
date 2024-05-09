@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export const POST = async (req) => {
-    console.log("0")
     let fileData = await req.json();
 
     let err = false;
@@ -74,6 +73,5 @@ function isValidJson(jsonData) {
         }
     }
 
-    console.group("8")
     return true;
 }
