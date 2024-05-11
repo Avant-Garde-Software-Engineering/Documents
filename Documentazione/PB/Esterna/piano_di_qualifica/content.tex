@@ -1,6 +1,6 @@
-\begin{beginSngnote}
+\begin{beginningnote}
     Si tenga presente che alcuni termini utilizzati nel documento riportano la lettera \textbf{G} in apice, allo scopo di evidenziare le parole che assumono uno specifico significato nell'ambito del progetto. Per comprenderle in maniera corretta, si rimanda il lettore al documento ``Glossario", che contiene un elenco completo di tutte le terminologie utilizzate con relative definizioni, allo scopo di costruire un linguaggio uniforme che possa migliorare la comunicazione tra i componenti interni al gruppo e gli stakeholders\textsuperscript{G} esterni.   %inserire corsivo per ogni termine del glossario?
-\end{beginSngnote}
+\end{beginningnote}
 
 %unire scopo delcoumento e il progetto in un unica sezione  (e.g. introduzione) con due sottosezioni?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,7 +178,7 @@ MPC12-CC & Il codice deve essere mantenuto semplice, facilitando comprensione, m
 
 \subsubsection{Processi di supporto}
 \paragraph{Documentazione}
-La documentazione prodotta nel corso del progetto deve essere un valido supporto al gruppo e agli stakeholders per comprendere meglio il codice prodotto, le decisioni prese e la gestione orgaSzzativa. Per questo motivo, le metriche di qualità sulla documentazione si concentrano sulla leggibilità e sul controllo degli errori ortografici. Le metriche in questione sono le seguenti:
+La documentazione prodotta nel corso del progetto deve essere un valido supporto al gruppo e agli stakeholders per comprendere meglio il codice prodotto, le decisioni prese e la gestione organizzativa. Per questo motivo, le metriche di qualità sulla documentazione si concentrano sulla leggibilità e sul controllo degli errori ortografici. Le metriche in questione sono le seguenti:
 \begin{table}[h!]
 \centering
 \def\arraystretch{1.5}
@@ -438,7 +438,7 @@ Si definiscono le seguenti metriche:
 \rowcolor{black}
 \textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
-MPD7-CD & La duplicazione del codice deve essere miSmizzata & $\leq$ 3\% & 0\% \\
+MPD7-CD & La duplicazione del codice deve essere minimizzata & $\leq$ 3\% & 0\% \\
 \hline
 \end{tabular}
 \end{table}
@@ -454,13 +454,21 @@ I test utili all’interno di un progetto sono:
     %\item \textbf{Test di regressione};
     \item \textbf{Test di accettazione}.
 \end{itemize}
-I test descritti nel documento saranno identificati uSvocamente tramite un codice standardizzato secondo quanto definito nelle \textit{Norme di Progetto}, inoltre, nella descrizione dei test saranno presenti riferimenti a classi, procedure e componenti meglio descritti nel documento di \textit{Specifica Tecnica}.
+I test descritti nel documento saranno identificati univocamente tramite un codice standardizzato secondo quanto definito nelle \textit{Norme di Progetto v4.0.0}, inoltre, nella descrizione dei test saranno presenti riferimenti a classi, procedure e componenti meglio descritti nel documento di \textit{Specifica Tecnica v1.0.0}.
 Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
-
+\\ \noindent I test verranno elencati riportando lo stato, che può essere:
+\begin{itemize}
+    \item \textbf{NI}: se il test non è stato ancora implementato;
+    \item \textbf{S}: se il test è stato implementato ed ha avuto esito positivo, i.e. test superato;
+    \item \textbf{NS}: se il test è stato implementato ed ha avuto esito negativo, i.e. test non superato.    
+\end{itemize}
 
 \subsection{Test di Unità}
 \par I test di unità sono di basso livello e mirano a testare le singole unità dell'applicativo software in isolamento. Il concetto di unità si fa corrispondere generalmente alle funzioni per la programmazione procedurale, oppure a metodi e classi per la programmazione ad oggetti.
 \par Sono i più economici da implementare, possono essere scritti più velocemente rispetto agli altri e generalmente vengono eseguiti in maniera automatica (rendendo veloce anche la loro esecuzione e ripetizione). Inoltre, permettono di individuare un problema in maniera più immediata, evitando che si propaghi nel software.
+\vspace{0.5cm} \\ Le tabelle che seguono mostrano il registro dei test effettuati, organizzati per come si prevede di suddividere la realizzazione dell'applicativo (e cioè per feature\textsuperscript{G}), con una breve valutazione e retrospettiva per ciascuna feature.
+
+\subsubsection{Feature model}
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10!}{white}
 \begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth} | p{0.1\textwidth} }
@@ -468,134 +476,447 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     \textbf{\color{white} Test} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Stato}\\ 
     \hline
     \endhead
-    \caption{Tabella dei test di unità} 
+    \caption{Tabella dei test di unità per feature/model} 
     \label{tab:test_sistema}
     \endlastfoot
+    %%%%%%%%%%%% Product
     TU-1 & Product deve essere implementato correttamente & S\\
-    TU-1.1 & Le proprietà di un Product devono essere inizializzate correttamente. & S\\
-    TU-1.2 & La modifica delle proprietà di un Product deve avvenire correttamente. & S\\
-    TU-2 & Bin\textsuperscript{G} deve essere implementato correttamente & S\\
-    TU-2.1 & Le proprietà di un Bin\textsuperscript{G} devono essere inizializzate correttamente. & S\\
-    TU-2.2 & La modifica delle proprietà di un Bin\textsuperscript{G} deve avvenire correttamente. & S\\
-    TU-2.3 & Bin\textsuperscript{G}State deve possedere la proprietà EMPTY. & S\\
-    TU-2.4 & Bin\textsuperscript{G}State deve possedere la proprietà OUTGOING. & S\\
-    TU-2.5 & Bin\textsuperscript{G}State deve possedere la proprietà INCOMING. & S\\
-    TU-2.6 & Bin\textsuperscript{G}State deve possedere la proprietà STILL. & S\\
-    TU-2.7 & Di default un Bin\textsuperscript{G} deve avere productId=null. & S\\
-    TU-2.8 & Di default un Bin\textsuperscript{G} deve avere Bin\textsuperscript{G}State=EMPTY. & S\\
-    TU-3 & Shelf deve essere impementata correttamente & S\\
-    TU-3.1 & Le proprietà di una Shelf devono essere inizializzate correttamente. & S\\
-    TU-3.2 & La modifica delle proprietà di una Shelf deve avvenire correttamente. & S\\
-    TU-3.3 & I Bin\textsuperscript{G} della Shelf devono essere di tipo Bin\textsuperscript{G}. & S\\
-    TU-3.4 & Il numero di colonne della matrice di Bin\textsuperscript{G} deve essere uguale alla width della Shelf. & S\\
-    TU-3.5 & Il numero di righe della matrice di Bin\textsuperscript{G} deve essere uguale alla height della Shelf. & S\\
-    TU-3.6 & Gli id dei Bin\textsuperscript{G} di una Shelf devono essere univoci. & S\\
-    TU-3.7 & Ad una modifica della width di una Shelf deve seguire una corretta modifica della matrice di Bin\textsuperscript{G} & S\\
-    TU-3.8 & Ad una modifica della height della Shelf deve seguire una corretta modifica della matrice di Bin\textsuperscript{G}. & S\\
-    TU-3.9 & La riduzione di dimensione di una Shelf non deve essere possibile se coinvolge Bin\textsuperscript{G} non vuoti. & S\\
-    TU-3.10 & L'id di un Bin\textsuperscript{G} di una Shelf deve seguire il formato: shelf.id+i+j dove i sta per la posizione rispetto alle righe e j rispetto alle colonne della matrice.  & S\\
-    TU-4 & Movement deve essere implementato corrrettamente. & S\\
-    TU-4.1 & Le proprià di un Movement devono essere inizializzate correttamente. & S\\
-    TU-4.2 & La modifica delle proprietà di un Movement deve avvenire correttamente. & S\\
-    TU-5 & productSlice deve essere implementato correttamente & S\\
-    TU-5.1 & L'inizializzazione dei prodotti deve avvenire correttamente. & S\\
-    TU-5.2 & L'inizializzazione dei prodotti non è permessa se i prodotti hanno nomi duplicati. & S\\
-    TU-5.2 & L'inizializzazione dei prodotti non è permessa se i prodotti hanno id duplicati. & S\\
-    TU-5.3 & L'aggiunta di un Product deve avvenire correttamenete. & S\\
-    TU-5.4 & L'aggiunta di un Product non è possibile se il nome è già presente in productSlice. & S\\
-    TU-5.5 & La rimozione di un Product deve avvenire correttamente. & S\\
-    TU-5.6 & L'aggiornamento di un Product deve avvenire correttamente. & S\\
-    TU-5.7 & L'aggiornamento di un prodotto non deve essere possibile se il nuovo nome è già presente in productSlice. & S\\
-    TU-5.8 & L'aggiornamento del colore di un prodotto deve avvenire correttamente. & S\\ 
-    TU-6 & shelvesSlice deve essere implementato correttamente. & S\\
-    TU-6.1 & L'inizializzazione delle Shelf deve avvenire correttamente. & S\\
-    TU-6.2 & L'inizializzazione delle Shelf non è permessa se sono presenti id duplicati. & S\\
-    TU-6.3 & L'aggiunta di una Shelf deve avvenire correttamente. & S\\
-    TU-6.4 & L'aggiunta di una Shelf non è permessa se il nome di quest'ultima è già presente in shelvesSlice. & S\\
-    TU-6.5 & L'inserimento di un prodotto è consentito solo in un Bin\textsuperscript{G} con stato=EMPTY. & S\\
-    TU-6.6 & L'inserimento di un prodotto in un Bin\textsuperscript{G} causa l'aggiornamento dello stato in STILL. & S\\
-    TU-6.7 & La rimozione di una Shelf deve avvenire correttamente. & S \\
-    TU-6.8 & La rimozione di una Shelf è permessa solo se non contiene prodotti. & S\\
-    TU-6.9 & shelvesSlice deve aggiornare correttamente le proprietà delle scaffalature. & S\\
-    TU-7 & whsSlice deve essere implementato correttamente. & S\\
-    TU-7.1 & Il nome del magazzino deve essere inizializzato correttamente. & S\\
-    TU-7.1.1 & Il nome del magazzino non può essere più lungo di 20 caratteri. & S \\
-    TU-7.1.2 & Il nome del magazzino contiene solo lettere, numeri e underscores. & S\\
-    TU-7.1.3 & Il nome del magazzino non può essere vuoto. & S\\
-    TU-7.2 & La forma del magazzino deve essere un poligono. & S\\
-    TU-7.3 & Le dimensioni del magazzino devono essere corrette. & S\\ 
-    TU-7.3.1 & Le dimensioni del magazzino non possono essere > 1000 & S\\
-    TU-7.3.2 & Le dimensioni. del magazzino non posssono essere nulle. & S\\
-    TU-8 & errorSlice deve essere implementato correttamente. & S\\
-    TU-8.1 & Gli errori devono essere inizializzati correttamente. & S\\
-    TU-8.2 & Gli errori devono essere cancellati correttamente. & S\\
-    TU-9 & fileManagementSlice deve essere imlementato correttamente. &S\\
-    TU-9.1 & I file SVG devono essere interpretati correttamente. & S\\
-    TU-9.1.1 & fileManagementSlice deve inizializzare l'altezza quando costruisce la pianta del magazzino da SVG. & S\\
-    TU-9.2 & stateToJson deve produrre un JSON corretto. &S\\
-    TU-9.3 & jsonToState deve produrre uno stato corretto. & S\\
-    TU-10 &interactionSlice deve essere implementato correttamente. & S\\
-    TU-10.1 & Gli id delle scaffalature soggette ad intersezioni deve essere corretto. & S\\
-    TU-10.2 & L'id della scaffalatura soggetta a movimentazione deve essere quello corretto. & S\\
-    TU-10.3 & L'id della scaffalatura selezionata deve essere quello corretto. & S\\
-    TU-10.4 & La selezione di un oggetto deve provocare la deselezione dell'oggetto precedentemente selezionato, se presente. & S\\
-    TU-10.5 & La selezione di un podotto deve avvenire correttamente. & S\\
-    TU-10.6 & I movimenti devono essere effettuati correttamente. & S\\
-    TU-10.6.1 & Il movimento è possibile solo se il Bin\textsuperscript{G} di destinazione è vuoto. & S\\
-    TU-10.6.2 & Il movimento è possibile solo se il Bin\textsuperscript{G} di partenza è pieno. &S\\ 
-    TU-11 & ErrorModal deve mostrare correttamente l'errore attuale. & S\\
-    TU-12 & WhsSetupFromInput deve essere implementato correttamente. & S\\
-    TU-12.1 & WhsSetupFromInput non deve chiamare la funzione setWarehouse se mancano alcuni parametri. & S\\ 
-    TU-12.2 & WhsSetupFromInput non deve chiamare la funzione setWarehouse se il formato svg non è corretto. & S\\ 
-    TU-13 & WhsSetupFromJson deve essere implementato correttamente. & S\\
-    TU-13.1 & WhsSetupFromJson deve implemetare il drag di un JSON correttamente. & S\\
-    TU-13.2 & WhsSetupFromJson non deve accettare file di tipo diverso da JSON. & S\\
-    TU-13.2 & WhsSetupFromJson non deve chiamare setWarehouse se il JSON è in un formato scorretto. & S\\
-    TU-14 & Library deve implementare una corretta visualizzazione di scaffalature e prodotti. & S\\
-    TU-14.1 & Cliccando sul nome di una scaffalatura la seleziono correttamente. & S\\
-    TU-14.2 & Library deve implementare un corretto meccanismo di ricerca. & S\\
-    TU-14.3 &  Library non deve mostrare etichette di genitori vuote. & S\\
-    TU-15 & Save deve implementare un salvataggio di stato correttamente. & S\\
-    TU-15.1 & Save deve salvare correttamente il nome del magazzino. & S\\
-    TU-15.2 & Save deve implementare il download automatico del file prodotto. & S\\
-    TU-16 & I Tools devono essere renderizzati correttamente. & S\\
-    TU-16.1 & Tools deve implementare il render di Add Button. & S\\
-    TU-16.1.1 & Tools deve implementare il render di Add Shelf Button e Add Product Button una volta cliccato Add Button. & S\\
-    TU.16.1.2 & Tools deve chiamare il metodo openShelfDrawer quando Add Shelf Button viene cliccato. & S\\
-    TU.16.1.3 & Tools deve chiamare il metodo openProductDrawer quando Add Product Button viene cliccato. & S\\
-    TU-16.2 & Tools deve implementare il render di Movements List Button. &S \\
-    TU-16.2.1 & Tools deve chiamare il metodo openMovementView  quando il pulsante Movements List Button viene cliccato. & S\\
-    TU-17 & ProductCard deve permettere la visualizzazione delle informazioni relative ad un prodotto correttamente. &S\\
-    TU-17.1 & ProductCard deve visualizzare le info delle scaffalature che contengono il prodotto selezionato. & S\\
-    TU.17.2 & ProductCard deve visualizzare il nome del prodotto selezionato. &S\\
-    TU-17.2 & ProductCard deve rendere disponibile un pulsante per l'eliminazione di un prodotto. &S\\
-    TU-17.3 & ProductCard deve rendere disponibile un pulsante per la modifica di un prodotto.&S\\
-    TU-17.4 & ProductCard deve rendere disponibile un pulsante per il posizionamento di un prodotto &S\\
-    TU-18 & BinCard deve visualizzare correttamente le info relative al Bin selezionato & S\\
-    TU-18.1 & BinCard deve visualizzare lo stato del Bin & S\\
-    TU-18.2 & BinCard deve visualizzare correttamente il contenuto del Bin & S\\
-    TU-18.3 & BinCard deve rendere disponibile un pulsante di rimozione del prodotto contenuto & S\\
-    TU-18.4 & BinCard deve rendere disponibile un pulsante di spostamento del prodotto contenuto. & S\\
-    TU-19 & ShelfCard deve visualizzare correttamente le info relative alla Shelf selezionata. & S\\
-    TU-20 & MovementView deve visualizzare correttamente le informazioni relative alle richieste di spostamenti. & S\\
-    TU-20.1 & MovementView deve rendere disponibile le informazioni relative alla posizione di partenza e di quella di arrivo. & S\\
-    TU-20.2 & MovementView deve rendere disponibile un pulsante di sollecito della risposta per ogni richiesta di spostamento. & S\\
-    TU-21 & ProductConfigurator deve gestire correttamente la chiamata al dialogo di inserimento del prodotto. & S\\
-    TU-21.1 & ProductConfigurator deve chiamare il dialogo di aggiunta di prodotto quando modProd è empty. & S\\
-    TU-21.2 & ProductConfigurator deve chiamare il dialogo di modifica prodotto quando modProd non è empty. & S\\
-    TU-22 & BinMesh deve implementare correttamente il rendering di un Bin e dei suoi child components. & S\\
-    TU-22.1 & La grandezza della mesh deve adattarsi a binsize. & S\\
-    TU-22.2 & La posizione della mesh deve essere correttamente aggiornata dopo uno spostamento. & S\\
-    TU-22.3 & BinMesh non deve rendere visibile la mesh del prodotto se lo stato del Bin è empty. & S\\
-    TU-22.4 & La selezione di una BinMesh provoca un cambiamento di colore della stessa. & S\\
-    TU-23 & ShelfMesh deve implementare correttamente il rendering di una Shelf e dei bin in essa contenuti & S\\
+    TU-1.1 & Product deve ritornare il nome corretto & S\\
+    TU-1.2 & Product deve ritornare il colore corretto & S\\
+    TU-1.3 & Product deve ritornare l'id corretto & S\\
+    TU-1.4 & Product deve impostare un nuovo nome in maniera corretta & S\\
+    TU-1.5 & Product deve impostare un nuovo colore in maniera corretta & S\\
 
+    %%%%%%%%%%%% Bin
+    TU-2 & Bin\textsuperscript{G} deve essere implementato correttamente & S\\
+    TU-2.1 & Bin deve avere il productId di default uguale a null & S\\
+    TU-2.2 & Bin deve avere lo stato di default uguale a EMPTY & S\\
+    TU-2.3 & Bin deve ritornare l'id corretto & S\\
+    TU-2.4 & Bin deve ritornare il productId corretto & S\\
+    TU-2.5 & Bin deve ritornare lo stato corretto & S\\
+    TU-2.6 & Bin deve impostare un nuovo productId in maniera corretta & S\\
+    TU-2.7 & Bin deve impostare un nuovo stato in maniera corretta & S\\
+    TU-2.8 & binState deve avere la proprietà EMPTY & S\\
+    TU-2.9 & binState deve avere la proprietà OUTGOING & S\\
+    TU-2.10 & binState deve avere la proprietà INCOMING & S\\
+    TU-2.11 & binState deve avere la proprietà STILL & S\\
     
+    %%%%%%%%%%%% Shelf
+    TU-3 & Shelf deve essere implementato correttamente & S\\
+    TU-3.1 & Shelf deve ritornare il nome corretto & S\\
+    TU-3.2 & Shelf deve ritornare la binSize corretta & S\\
+    TU-3.3 & Shelf deve ritornare la larghezza corretta & S\\
+    TU-3.4 & Shelf deve ritornare l'altezza corretta & S\\
+    TU-3.5 & Shelf deve ritornare la posizione corretta & S\\
+    TU-3.6 & Shelf deve ritornare isFlipped corretto & S\\
+    TU-3.7 & Shelf deve ritornare l'id corretto & S\\
+    TU-3.8 & Shelf deve impostare un nuovo nome in maniera corretta & S\\
+    TU-3.9 & Shelf deve impostare una nuova binSize in maniera corretta & S\\
+    TU-3.10 & Shelf deve impostare una nuova altezza in maniera corretta & S\\
+    TU-3.11 & Shelf deve impostare una nuova larghezza in maniera corretta & S\\
+    TU-3.12 & Shelf deve impostare una nuova posizione in maniera corretta & S\\
+    TU-3.13 & Shelf deve impostare un nuovo isFlipped in maniera corretta & S\\
+    TU-3.14 & I bin di Shelf devono essere di tipo Bin & S\\
+    TU-3.15 & I bin di Shelf devono avere un numero di colonne pari alla larghezza di Shelf & S\\
+    TU-3.16 & I bin di Shelf devono avere un numero di righe pari all'altezza di Shelf & S\\
+    TU-3.17 & I bin di Shelf devono avere id unici & S\\
+    TU-3.18 & I bin di Shelf devono aumentare all'aumentare della larghezza di Shelf & S\\
+    TU-3.19 & I bin di Shelf devono aumentare all'aumentare dell'altezza di Shelf & S\\
+    TU-3.20 & I bin di Shelf devono aumentare diminuire alla diminuzione della larghezza di Shelf & S\\
+    TU-3.21 & I bin di Shelf devono aumentare diminuire alla diminuzione della lunghezza di Shelf & S\\
+    TU-3.22 & La larghezza di Shelf non deve diminuire se i bin coinvolti sono non-vuoti & S\\
+    TU-3.23 & L'altezza di Shelf non deve diminuire se i bin coinvolti sono non-vuoti & S\\
+    TU-3.24 & I bin di Shelf possono essere impostati solo da scaffalature della stessa dimensione & S\\
+    TU-3.25 & I bin di Shelf devono avere l'id che corrisponde a shelf.id+i+j dove i e j sono indici della matrice & S\\
+    TU-3.26 & I bin di una Shelf con id personalizzato devono avere l'id che corrisponde a shelf.id+i+j dove i e j sono indici della matrice & S\\
+    TU-3.27 & I bin di Shelf devono essere impostati in maniera corretta & S\\
+    TU-3.28 & ShelfError deve ritornare il messaggio corretto & S\\
+
+    %%%%%%%%%%%% Movement
+    TU-4 & Movement deve essere implementato correttamente & S\\
+    TU-4.1 & Movement deve ritornare il corretto fromId & S\\
+    TU-4.2 & Movement deve ritornare il corretto fromRow & S\\
+    TU-4.3 & Movement deve ritornare il corretto fromCol & S\\
+    TU-4.4 & Movement deve ritornare il corretto toId & S\\
+    TU-4.5 & Movement deve ritornare il corretto toRow & S\\
+    TU-4.6 & Movement deve ritornare il corretto toCol & S\\
+    TU-4.7 & Movement deve ritornare il corretto id & S\\
+    TU-4.8 & Movement deve impostare un nuovo fromId in maniera corretta & S\\
+    TU-4.9 & Movement deve impostare un nuovo fromRow in maniera corretta & S\\
+    TU-4.10 & Movement deve impostare un nuovo fromCol in maniera corretta & S\\
+    TU-4.11 & Movement deve impostare un nuovo toId in maniera corretta & S\\
+    TU-4.12 & Movement deve impostare un nuovo toRow in maniera corretta & S\\
+    TU-4.13 & Movement deve impostare un nuovo toCol in maniera corretta & S\\
+
+    %%%%%%%%%%%% whsSlice
+    TU-5 & whsSlice deve essere implementato correttamente & S\\
+    TU-5.1 & whsSlice deve impostare un nuovo nome del magazzino in maniera corretta & S\\
+    TU-5.2 & whsSlice non deve impostare il nome del magazzino se la lunghezza è $>$ 20, deve invece impostare un errore & S\\
+    TU-5.3 & whsSlice non deve impostare il nome del magazzino se i caratteri sono diversi da lettere numeri e underscore, deve invece impostare un errore & S\\
+    TU-5.4 & whsSlice non deve impostare il nome del magazzino se il nome è vuoto, deve invece impostare un errore & S\\
+    TU-5.5 & whsSlice deve impostare il poligono del magazzino in maniera corretta & S\\
+    TU-5.6 & whsSlice non deve impostare il poligono del magazzino se la lunghezza dei punti è $<$ 3, deve invece impostare un errore & S\\
+    TU-5.7 & whsSlice non deve impostare il poligono del magazzino se la profondità è $>$ 1000, deve invece impostare un errore & S\\
+    TU-5.8 & whsSlice non deve impostare il poligono del magazzino se la larghezza è $>$ 1000, deve invece impostare un errore & S\\
+    TU-5.9 & whsSlice non deve impostare il poligono del magazzino se l'altezza è $>$ 50, deve invece impostare un errore & S\\
+    TU-5.10 & whsSlice non deve impostare il poligono del magazzino se la larghezza è $<$ 0.01, deve invece impostare un errore & S\\
+    TU-5.11 & whsSlice non deve impostare il poligono del magazzino se la profondità è $<$ 0.01, deve invece impostare un errore & S\\
+    TU-5.12 & whsSlice non deve impostare il poligono del magazzino se l'altezza è $<$ 0.01, deve invece impostare un errore & S\\
+    TU-5.13 & whsSlice deve impostare la base rettangolare del magazzino in maniera corretta & S\\
+    TU-5.14 & whsSlice non deve impostare la base rettangolare del magazzino se la larghezza è vuota, deve invece impostare un errore & S\\
+    TU-5.15 & whsSlice non deve impostare la base rettangolare del magazzino se la profondità è vuota, deve invece impostare un errore & S\\
+    TU-5.16 & whsSlice non deve impostare la base rettangolare del magazzino se l'altezza è vuota, deve invece impostare un errore & S\\
+    TU-5.17 & whsSlice non deve impostare la base rettangolare del magazzino se la larghezza è $>$ 1000, deve invece impostare un errore & S\\
+    TU-5.18 & whsSlice non deve impostare la base rettangolare del magazzino se la profondità è $>$ 1000, deve invece impostare un errore & S\\
+    TU-5.19 & whsSlice non deve impostare la base rettangolare del magazzino se l'altezza è $>$ 50, deve invece impostare un errore & S\\
+    TU-5.20 & whsSlice non deve impostare la base rettangolare del magazzino se la larghezza è $<$ 0.01, deve invece impostare un errore & S\\
+    TU-5.21 & whsSlice non deve impostare la base rettangolare del magazzino se la profondità è $<$ 0.01, deve invece impostare un errore & S\\
+    TU-5.22 & whsSlice non deve impostare la base rettangolare del magazzino se l'altezza è $<$ 0.01, deve invece impostare un errore & S\\
+    
+    %%%%%%%%%%%% productsSlice
+    TU-6 & productsSlice deve essere implementato correttamente & S\\
+    TU-6.1 & productsSlice deve impostare l'elenco dei prodotti in maniera corretta & S\\
+    TU-6.2 & productsSlice non deve impostare l'elenco dei prodotti se ci sono nomi duplicati, deve invece impostare un errore & S\\
+    TU-6.3 & productsSlice non deve impostare l'elenco dei prodotti se ci sono id duplicati, deve invece impostare un errore & S\\
+    TU-6.4 & productsSlice deve aggiungere un nuovo prodotto in maniera corretta & S\\
+    TU-6.5 & productsSlice non deve aggiungere un nuovo prodotto se il nome esiste già, deve invece impostare un errore & S\\
+    TU-6.6 & productsSlice deve rimuovere un prodotto in maniera corretta & S\\
+    TU-6.7 & productsSlice deve aggiornare il nome di un prodotto in maniera corretta & S\\
+    TU-6.8 & productsSlice non deve aggiornare il nome di un prodotto se esiste già,
+    deve invece impostare un errore & S\\
+    TU-6.9 & productsSlice deve aggiornare il colore di un prodotto in maniera corretta & S\\
+    TU-6.10 & productsSlice deve svuotare le scaffalature quando rimuove un prodotto & S\\
+
+    %%%%%%%%%%%% shelvesSlice
+    TU-7 & shelvesSlice deve essere implementato correttamente & S\\
+    TU-7.1 & shelvesSlice deve impostare l'elenco delle scaffalature in maniera corretta & S\\
+    TU-7.2 & shelvesSlice non deve impostare l'elenco delle scaffalature se ci sono nomi duplicati, deve invece impostare un errore & S\\
+    TU-7.3 & shelvesSlice non deve impostare l'elenco delle scaffalature se ci sono id duplicati, deve invece impostare un errore & S\\
+    TU-7.4 & shelvesSlice deve aggiungere una nuova scaffalatura in maniera corretta & S\\
+    TU-7.5 & shelvesSlice non deve aggiugere una nuova scaffalatura se l'altezza è maggiore dell'altezza del magazzino, deve invece impostare un errore & S\\
+    TU-7.6 & shelvesSlice non deve aggiugere una nuova scaffalatura se il nome esiste già, deve invece impostare un errore & S\\
+    TU-7.7 & shelvesSlice deve inserire un prodotto in maniera corretta in un bin vuoto & S\\
+    TU-7.8 & shelvesSlice deve impostare lo stato a STILL quando inserisce un prodotto in un bin vuoto & S\\
+    TU-7.9 & shelvesSlice non deve inserire un prodotto in un bin non-vuoto & S\\
+    TU-7.10 & shelvesSlice deve rimuovere una scaffalatura in maniera corretta & S\\
+    TU-7.11 & shelvesSlice deve rimuovere una scaffalatura solo se ha tutti i  bin vuoti & S\\
+    TU-7.12 & shelvesSlice deve aggiornare il nome della scaffalatura in maniera corretta & S\\
+    TU-7.13 & shelvesSlice non deve aggiornare il nome della scaffalatura se esiste gia, deve invece impostare un errore & S\\
+    TU-7.14 & shelvesSlice deve aggiornare la binSize della scaffalatura sin maniera corretta& S\\
+    TU-7.15 & shelvesSlice deve aggiornare la larghezza della scaffalatura in maniera corretta & S\\
+    TU-7.16 & shelvesSlice deve aggiornare l'altezza della scaffalatura in maniera corretta & S\\
+    TU-7.17 & shelvesSlice non deve aggiornare l'altezza della scaffalatura se è maggiore dell'altezza del magazzino, deve invece impostare un errore & S\\
+    TU-7.18 & shelvesSlice deve impostare un errore nella riduzione dell'altezza della scaffalatura se i bin sono non vuoti & S\\
+    TU-7.19 & shelvesSlice deve impostare un errore nella riduzione della larghezza della scaffalatura se i bin sono non vuoti & S\\
+    TU-7.20 & shelvesSlice deve aggiornare la posizione della scaffalatura in maniera corretta & S\\
+    TU-7.21 & shelvesSlice non deve aggiornare la posizione della scaffalatura se fuori dal magazzino, deve invece impostare un errore & S\\
+    TU-7.22 & shelvesSlice non deve aggiornare la posizione della scaffalatura se c'è un'interzezione, deve invece impostare un errore & S\\
+    TU-7.23 & shelvesSlice deve aggiornare isFlipped della scaffalatura in maniera corretta & S\\
+    TU-7.24 & shelvesSlice deve aggiornare lo stato del bin in maniera corretta & S\\
+    TU-7.25 & shelvesSlice deve rimuovere un prodotto in maniera corretta & S\\
+    TU-7.26 & shelvesSlice deve svuotare il bin quando rimuove un prodotto & S\\
+    TU-7.27 & shelvesSlice deve poter ritornare i bin contenenti uno specifico prodotto & S\\  
+    
+    %%%%%%%%%%%% interactionsSlice
+    TU-8 & interactionsSlice deve essere implementato correttamente & S\\
+    TU-8.1 & interactionsSlice deve impostare gli id degli oggetti che si intersecano in maniera corretta & S\\
+    TU-8.2 & interactionsSlice deve impostare la scaffalatura in movimentazione in maniera corretta & S\\
+    TU-8.3 & interactionsSlice deve impostare la scaffalatura selezionata in maniera corretta & S\\
+    TU-8.4 & La selezione di una scaffalatura deve deselezionare il bin & S\\
+    TU-8.5 & La selezione di una scaffalatura deve deselezionare il prodotto & S\\
+    TU-8.6 & interactionsSlice deve impostare il prodotto selezionato in maniera corretta & S\\
+    TU-8.7 & La selezione di un prodotto deve deselezionare il bin & S\\
+    TU-8.8 & La selezione di un prodotto deve deselezionare la scaffalatura & S\\
+    TU-8.9 & interactionsSlice deve impostare il bin selezionato in maniera corretta & S\\
+    TU-8.10 & La selezione di un bin deve deselezionare il prodotto & S\\
+    TU-8.11 & La selezione di un bin deve deselezionare la scaffalatura & S\\
+    TU-8.12 & interactionsSlice deve impostare le movimantazioni in maniera corretta & S\\
+    TU-8.13 & interactionsSlice deve ordinare una movimentazione in maniera corretta & S\\
+    TU-8.14 & interactionsSlice deve ordinare una movimentazione solo se il bin di destinazione è vuoto, deve invece impostare un errore & S\\
+    TU-8.15 & interactionsSlice deve ordinare una movimentazione solo se il bin di partenza è STILL, deve altrimenti impostare un errore & S\\
+    TU-8.16 & interactionsSlice deve poter rimuovere i movimenti che partono da uno specico bin e chiedere la rimozione del prodotto INCOMING dal bin di arrivo & S\\
+    TU-8.17 & interactionsSlice deve poter rimuovere i movimenti che arrivano ad uno specico bin e chiedere la rimozione del prodotto OUTGOING dal bin di partenza & S\\
+   
+    %%%%%%%%%%%% errorSlice
+    TU-9 & errorSlice deve essere implementato correttamente & S\\
+    TU-9.1 & errorSlice deve impostare il messaggio in maniera corretta & S\\
+    TU-9.2 & errorSlice deve poter cancellare il messaggio in maniera corretta & S\\
 \end{xltabular}
+
+\noindent I test realizzati in questa feature sono da considerarsi di alta importanza perché verificano il funzionamento delle classi che modellano gli oggetti utilizzati in tutte le funzionalità dell'applicativo e la logica di business.
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati particolarmente utili per evidenziare alcune casistiche non previste nella scrittura dei metodi e funzioni e per correggerne il comportamento. Alcuni metodi, in particolare quelli di shelf, modificavano i dati della scaffalatura senza adattare la matrice di bin alle nuove modifiche: tramite questi test è stato possibile individuare e risolvere il problema. Nella verifica delle funzioni dello store, invece, i test sono serviti a comprendere meglio quali controlli effettuare sui parametri in input, per evitare errori di tipo o comportamenti indesiderati.
+
+
+\subsubsection{Feature setup}
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth} | p{0.1\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Test} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Stato}\\ 
+    \hline
+    \endhead
+    \caption{Tabella dei test di unità per feature/setup} 
+    \label{tab:test_sistema}
+    \endlastfoot
+    %%%%%%%%%%%% ErrorModal
+    TU-12 & ErrorModal deve essere implementato correttamente & S\\
+    TU-12.1 & Il render della componente ErrorModal deve essere implementato correttamente & S\\
+    TU-12.1.1 & ErrorModal deve mostrare il contenuto dell'errore & S\\
+    TU-12.1.2 & ErrorModal deve informare l'utente che si è verificato un errore & S\\
+    
+    %%%%%%%%%%%% WhsSetupFromInput
+    TU-13 & WhsSetupFromInput deve essere implementato correttamente & S\\
+    TU-13.1 & Il render degli input della componente WhsSetupFromInput deve essere implementato correttamente & S\\
+    TU-13.1.1 & WhsSetupFromInput deve avere un input nome & S\\
+    TU-13.1.2 & WhsSetupFromInput deve avere un input altezza & S\\
+    TU-13.1.3 & WhsSetupFromInput deve avere un input larghezza & S\\
+    TU-13.1.4 & WhsSetupFromInput deve avere un input profondità & S\\
+    TU-13.1.5 & WhsSetupFromInput deve avere un input per il file SVG & S\\
+    TU-13.1.6 & WhsSetupFromInput deve avere un bottone per inviare i dati & S\\
+    TU-13.2 & La logioca di input del file della componente WhsSetupFromInput deve essere implementato correttamente & S\\
+    TU-13.2.1 & WhsSetupFromInput non deve accettare file non-SVG & S\\
+    TU-13.2.2 & WhsSetupFromInput deve accettare file SVG & S\\
+    TU-13.2.3 & WhsSetupFromInput deve mostrare errore per file di tipo non-SVG & S\\
+    TU-13.2.4 & WhsSetupFromInput deve disabilitare gli input per larghezza e profondità se è stato caricato un file SVG & S\\
+    TU-13.3 & La logica di invio dei dati una volta inseriti i parametri necessari deve essere implementata correttamente & S\\
+    TU-13.3.1 & WhsSetupFromInput deve chiamare setWarehouse al submit se il nome, l'altezza e il file SVG sono stati inseriti & S\\
+    TU-13.3.2 & WhsSetupFromInput deve chiamare setWarehouse al submit se il nome, l'altezza, la profondità e la larghezza sono stati inseriti & S\\
+    TU-13.3.3 & WhsSetupFromInput non deve chiamare setWarehouse al submit se alcuni parametri sono mancanti & S\\
+    TU-13.3.4 & WhsSetupFromInput non deve chiamare setWarehouse al submit se il formato del file SVG non è valido & S\\
+
+    %%%%%%%%%%%% WhsSetupFromJson
+    TU-14 & WhsSetupFromJson deve essere implementato correttamente & S\\
+    TU-14.1 & Il render degli input della componente WhsSetupFromJson deve essere implementato correttamente & S\\
+    TU-14.1.1 & WhsSetupFromJson deve avere un input per l'upload di file JSON & S\\
+    TU-14.1.2 & WhsSetupFromJson deve avere un bottone per inviare i dati & S\\
+    TU-14.2 & La logica di input del file deve essere implementata correttamente  & S\\
+    TU-14.2.1 & WhsSetupFromJson non deve accettare file del tipo non-JSON & S\\
+    TU-14.2.2 & WhsSetupFromJson deve accettare file del tipo JSON & S\\
+    TU-14.2.3 & WhsSetupFromJson deve mostrare errore per file di tipo non-JSON & S\\
+    TU-14.3 & La logica di invio del file inserito deve essere implementato correttamente  & S\\
+    TU-14.3.1 & WhsSetupFromJson deve chiamare setWarehouse al submit se il file è stato inserito & S\\
+    TU-14.3.2 & WhsSetupFromJson non deve chiamare setWarehouse al submit se il file non è stato inserito & S\\
+    TU-14.3.3 & WhsSetupFromJson non deve chiamare setWarehouse al submit se il formato del file JSON non è valido & S\\
+
+    %%%%%%%%%%%% jsonParser API
+    TU-10 & jsonParser (API) deve essere implementato correttamente & S\\
+    TU-10.1 & jsonParser (API) deve ritornare errore falso se il JSON nella richiesta è corretto & S\\
+    TU-10.2 & jsonParser (API) deve ritornare errore vero se il JSON nella richiesta ha dei dati mancanti & S\\
+    TU-10.3 & jsonParser (API) ritorna errore vero se il JSON nella richiesta ha un errore di tipo (i prodotti devono essere un array) & S\\
+    TU-10.4 & jsonParser (API) ritorna errore vero se il JSON nella richiesta ha un errore di tipo (i punti del magazzino devono essere oggetti) & S\\
+    TU-10.5 & jsonParser (API) ritorna errore vero se il JSON nella richiesta ha un errore di tipo (sugli oggetti prodotto) & S\\
+    TU-10.6 & jsonParser (API) ritorna errore vero se il JSON nella richiesta ha un errore di tipo (sugli oggetti scaffalatura) & S\\
+    TU-10.7 & jsonParser (API) ritorna errore vero se il JSON nella richiesta ha un errore di tipo (sugli oggetti bin) & S\\
+    
+    %%%%%%%%%%%% svgParser API
+    TU-11 & svgParser (API) deve essere implementato correttamente & S\\
+    TU-11.1 & svgParser (API) deve ritornare errore falso se l'SVG nella richiesta è corretto & S\\
+    TU-11.2 & svgParser (API) deve ritornare errore vero se l'SVG nella richiesta è in un formato non valido & S\\
+\end{xltabular}
+
+\noindent I test realizzati in questa feature verificano principalmente il corretto comportamento delle componenti grafiche che gestiscono il setup del magazzino. Come tali, è importante verificare che visualizzino tutti gli elementi necessari per realizzare il setup e che guidino l'utente nella realizzazione.
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati utili per verificare soprattutto le caratteristiche di accessibilità dei form nelle componenti, cioè per verificare che l'utente avesse a disposizione tutte le informazioni necessarie per capire come realizzare il setup.
+
+
+\subsubsection{Feature actions}
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth} | p{0.1\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Test} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Stato}\\ 
+    \hline
+    \endhead
+    \caption{Tabella dei test di unità per feature/actions} 
+    \label{tab:test_sistema}
+    \endlastfoot
+
+%%%%%%%%%%%% Tools
+    TU-15 & Tools deve essere implementato correttamente & S\\
+    TU-15.1 & Il render dei bottoni della componente Tools deve essere implementato correttamente & S\\
+    TU-15.1.1 & Tools deve mostrare il bottone per la lista di movimentazioni & S\\
+    TU-15.1.2 & Tools deve mostrare il bottone l'aggiunta di elementi nel magazzino & S\\
+    TU-15.1.3 & Tools deve mostrare il bottone l'inserimento di scaffalature al click del bottone di aggiunta & S\\
+    TU-15.1.4 & Tools deve mostrare il bottone l'inserimento di prodotti al click del bottone di aggiunta & S\\
+    TU-15.2 & La logica dei bottoni della componente Tools deve essere implementata correttamente & S\\
+    TU-15.2.1 & Tools deve chiamare openMovementView al click sul bottone per la lista di movimentazioni & S\\
+    TU-15.2.2 & Tools deve chiamare openShelfDrawer al click sul bottone per l'inserimento di scaffalature & S\\
+    TU-15.2.3 & Tools deve chiamare openProductDrawer al click sul bottone per l'inserimento di prodotti & S\\
+
+    %%%%%%%%%%%% BinCard
+    TU-16 & BinCard deve essere implementato correttamente & S\\
+    TU-16.1 & Il render delle informazioni del bin deve essere implementato correttamente & S\\
+    TU-16.1.1 & BinCard deve mostrare l'id del bin & S\\
+    TU-16.1.2 & BinCard deve mostrare lo stato del bin & S\\
+    TU-16.1.3 & BinCard deve mostrare il prodotto contenuto nel bin & S\\
+    TU-16.1.4 & BinCard deve informare che non c'è nessun prodotto se il bin è vuoto & S\\
+    TU-16.2 & Il render delle componenti per l'interazione utente su BinCard deve essere implementato correttamente & S\\
+    TU-16.2.1 & BinCard deve mostrare il bottone per rimuovere il prodotto & S\\
+    TU-16.2.2 & BinCard deve mostrare il bottone per muovere il prodotto & S\\
+    TU-16.3 & La logica per l'interazione utente di BinCard deve essere implementata correttamente & S\\
+    TU-16.3.1 & BinCard deve chiamare handleRemoveFromBin al click sul bottone per rimuovere il prodotto & S\\
+    TU-16.3.2 & BinCard non deve chiamare handleRemoveFromBin al click sul bottone per rimuovere il prodotto se il bin è vuoto, deve invece impostare un errore & S\\
+    TU-16.3.3 & BinCard deve chiamare handleProductMovement al click sul bottone per muovere il prodotto & S\\
+    TU-16.3.4 & BinCard non deve chiamare handleProductMovement al click sul bottone per muovere il prodotto se il bin è vuoto, deve invece impostare un errore & S\\
+
+    %%%%%%%%%%%% ShelfCard
+    TU-17 & ShelfCard deve essere implementato correttamente & S\\
+    TU-17.1 & Il render delle informazioni della scaffalatura deve essere implementato correttamente & S\\
+    TU-17.1.1 & ShelfCard deve mostrare il nome della scaffalatura & S\\
+    TU-17.1.2 & ShelfCard deve mostrare le dimensioni della scaffalatura & S\\
+    TU-17.1.3 & ShelfCard deve mostrare la binSize della scaffalatura & S\\
+    TU-17.2 & Il render delle componenti per l'interazione utente su ShelfCard deve essere implementato correttamente & S\\
+    TU-17.2.1 & ShelfCard deve mostrare il bottone per rimuovere la scaffalatura & S\\
+    TU-17.2.2 & ShelfCard deve mostrare il bottone per modificare la scaffalatura & S\\
+    TU-17.3 & La logica per l'interazione utente di ShelfCard deve essere implementata correttamente & S\\
+    TU-17.3.1 & ShelfCard deve chiamare handleShelfDelete al click sul bottone per rimuovere la scaffalatura & S\\
+    TU-17.3.2 & ShelfCard deve chiamare handleShelfEdit al click sul bottone per modificare la scaffalatura & S\\
+
+    %%%%%%%%%%%% ShelfConfigurator
+    TU-18 & ShelfConfigurator deve essere implementato correttamente & S\\
+    TU-18.1 & Il render delle componenti di ShelfConfigurator deve essere implementato correttamente & S\\
+    TU-18.1.1 & ShelfConfigurator deve mostrare il testo ``aggiungi scaffalatura" allo step 0 se modShelf è vuoto & S\\
+    TU-18.1.2 & ShelfConfigurator deve mostrare il testo ``modifica scaffalatura" allo step 0 se modShelf non è vuoto & S\\
+    TU-18.1.3 & ShelfConfigurator deve mostrare il campo di input per il nome allo step 0 & S\\
+    TU-18.1.4 & ShelfConfigurator deve mostrare il nome della scaffalatura nel campo di input allo step 0 se modShelf non è vuoto & S\\
+    TU-18.1.5 & ShelfConfigurator deve mostrare il campo di input per binSize allo step 0 & S\\
+    TU-18.1.6 & ShelfConfigurator deve mostrare la binSize della scaffalatura nel campo di input allo step 0 se modShelf non è vuoto & S\\
+    TU-18.1.7 & ShelfConfigurator deve mostrare il campo di input per la larghezza allo step 0 & S\\
+    TU-18.1.8 & ShelfConfigurator deve mostrare la larghezza della scaffalatura nel campo di input allo step 0 se modShelf non è vuoto & S\\
+    TU-18.1.9 & ShelfConfigurator deve mostrare il campo di input per l'altezza allo step 0 & S\\
+    TU-18.1.10 & ShelfConfigurator deve mostrare l'altezza della scaffalatura nel campo di input allo step 0 se modShelf non è vuoto & S\\
+    TU-18.1.11 & ShelfConfigurator deve mostrare il bottone per posizionare la scaffalatura allo step 0 & S\\
+    TU-18.1.12 & ShelfConfigurator deve mostrare un messaggio per i controlli 3D allo step 1 & S\\
+    TU-18.1.13 & ShelfConfigurator deve mostrare il bottone per aggiungere la scaffalatura allo step 1 se modShelf è vuoto & S\\
+    TU-18.1.14 & ShelfConfigurator deve mostrare il bottone per modificare la scaffalatura allo step 1 se modShelf non è vuoto & S\\
+    TU-18.2 & La logica di input per ShelfConfigurator deve essere implementata correttamente & S\\
+    TU-18.2.1 & ShelfConfigurator deve chiamare onFinishedConfig all'invio quando tutti i parametri sono inseriti nello step 0 & S\\
+    TU-18.2.2 & ShelfConfigurator deve chiamare onFinishedConfig con i parametri corretti all'invio nello step 0 & S\\
+    TU-18.2.3 & ShelfConfigurator deve chiamare onShelfPosition all'invio nello step 1 & S\\
+    TU-18.2.4 & ShelfConfigurator deve mostrare errore all'invio se il nome è mancante & S\\
+
+    %%%%%%%%%%%% ProductCard
+    TU-19 & ProductCard deve essere implementato correttamente & S\\
+    TU-19.1 & Il render delle informazioni del prodotto deve essere implementato correttamente & S\\ 
+    TU-19.1.1 & ProductCard deve mostrare il nome del prodotto & S\\ 
+    TU-19.1.2 & ProductCard deve avere un numero di righe pari alle scaffalature in cui si trova il prodotto & S\\
+    TU-19.1.3 & ProductCard deve mostrare il nome delle scaffalature e i bin in cui si trova il prodotto & S\\
+    TU-19.2 & Il render delle componenti per l'interazione utente su ProductCard deve essere implementato correttamente & S\\
+    TU-19.2.1 & ProductCard deve mostrare il bottone per rimuovere il prodotto & S\\
+    TU-19.2.2 & ProductCard deve mostrare il bottone per modificare il prodotto & S\\
+    TU-19.2.3 & ProductCard deve mostrare il bottone per posizionare il prodotto & S\\
+    TU-19.3 & La logica per l'interazione utente di ProductCard deve essere implementata correttamente & S\\
+    TU-19.3.1 & ProductCard deve chiamare handleProductDelete al click sul bottone per rimuovere il prodotto & S\\
+    TU-19.3.2 & ProductCard deve chiamare handleProductEdit al click sul bottone per modificare il prodotto & S\\
+    TU-19.3.3 & ProductCard deve chiamare handleProductPositioning al click sul bottone per posizionare il prodotto & S\\
+    TU-19.3.4 & ProductCard deve chiamare handleBinSelection al click sulla riga con il corretto id del bin & S\\
+    TU-19.3.5 & ProductCard deve poter riordinare le righe delle scaffalature in base al nome (ordine ascendente) con un click & S\\
+    TU-19.3.6 & ProductCard deve poter riordinare le righe delle scaffalature in base al nome (ordine discendente) con due click & S\\
+
+    %%%%%%%%%%%% ProductConfigurator
+    TU-20 & ProductConfigurator deve essere implementato correttamente & S\\
+    TU-20.1 & Il render delle componenti di ProductConfigurator deve essere implementato correttamente & S\\
+    TU-20.1.1 & ProductConfigurator deve mostrare il testo ``aggiungi prodotto" se modProduct è vuoto & S\\
+    TU-20.1.2 & ProductConfigurator deve mostrare il testo ``modifica prodotto" se modProduct non è vuoto & S\\
+    TU-20.1.3 & ProductConfigurator deve mostrare il campo di input per il nome & S\\
+    TU-20.1.4 & ProductConfigurator deve mostrare il nome del prodotto nel campo di input per il nome se modProduct non è vuoto & S\\
+    TU-20.1.5 & ProductConfigurator deve mostrare il campo di input per il colore & S\\
+    TU-20.1.6 & ProductConfigurator deve mostrare il colore del prodotto nel campo di input per il colore se modProduct non è vuoto & S\\
+    TU-20.2 & La logica di input per ProductConfigurator deve essere implementata correttamente & S\\
+    TU-20.2.1 & ProductConfigurator deve chiamare onFinishedConfig all'invio quando tutti i parametri sono inseriti & S\\
+    TU-20.2.2 & ProductConfigurator deve chiamare onFinishedConfig con i parametri corretti all'invio & S\\
+    TU-20.2.3 & ProductConfigurator deve mostrare errore all'invio se il nome è mancante & S\\
+    
+    %%%%%%%%%%%% AllocationRequest
+    TU-21 & AllocationRequest deve essere implementato correttamente & S\\
+    TU-21.1 & Il render delle componenti di AllocationRequest deve essere implementato correttamente & S\\
+    TU-21.1.1 & AllocationRequest deve mostrare il nome del prodotto quando è selezionato & S\\ 
+    TU-21.1.2 & AllocationRequest deve mostrare il bottone posiziona quando un prodotto è selezionato & S\\ 
+    TU-21.1.3 & AllocationRequest deve mostrare ``sposta prodotto" quando un bin non-vuoto è selezionato & S\\ 
+    TU-21.1.4 & AllocationRequest deve mostrare il bottone richiedi quando un bin è selezionato & S\\ 
+    TU-21.1.5 & AllocationRequest deve mostrare il nome del bin di origine quanto il bin è selezionato & S\\ 
+    TU-21.2 & La logica di input per AllocationRequest deve essere implementata correttamente & S\\
+    TU-21.2.1 & AllocationRequest deve cambiare righe e colonne quando la scaffalatura è selezionata & S\\
+    TU-21.2.2 & AllocationRequest deve chiamare onFinishedConfig quando il form è compilato ed inviato & S\\
+    TU-21.2.3 & AllocationRequest non deve chiamare onFinishedConfig quando il form non è compilato ed inviato & S\\
+    TU-21.2.4 & AllocationRequest deve filtrare le opzioni in manera corretta quando si inseriscono gli input & S\\
+
+    %%%%%%%%%%%% MovementView
+    TU-22 & MovementView deve essere implementato correttamente & S\\
+    TU-22.1 & Il render delle movimentazioni su MovementView deve essere implementato correttamente & S\\
+    TU-22.1.1 & MovementView deve mostrare gli id delle movimentazioni & S\\
+    TU-22.1.2 & MovementView deve mostrare le informazioni sulle scaffalature delle movimentazioni & S\\
+    TU-22.1.3 & MovementView deve mostrare le informazioni sui bin delle movimentazioni & S\\
+    TU-22.1.4 & MovementView deve mostrare i bottoni di richiesta delle movimentazioni & S\\
+    TU-22.2 & MovementView deve chiamare onClick con il corretto id del prodotto & S\\
+\end{xltabular}
+
+\noindent I test realizzati in questa feature verificano il corretto comportamento delle componenti grafiche informative e di interazione utente nell'applicativo. Particolare attienzione deve essere posta nella verifica che mostrino tutte le informazioni necessarie all'utente per un utilizzo ottimale del programma e che rispondano correttamente alle interazioni dell'utente.
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati utili soprattutto dal punto di vista informativo, per assicurarsi che tutte le informazioni venissero visualizzate sull'applicativo. Meno utili invece dal punto di vista dell'interazione utente, perché hanno verificato comportamenti già realizzati in maniera corretta in fase di programmazione.
+
+
+\subsubsection{Feature render}
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{gray!10!}{white}
+\begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth} | p{0.1\textwidth} }
+    \rowcolor{black}
+    \textbf{\color{white} Test} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Stato}\\ 
+    \hline
+    \endhead
+    \caption{Tabella dei test di unità per feature/render} 
+    \label{tab:test_sistema}
+    \endlastfoot
+
+    %%%%%%%%%%%% ShelfMesh
+    TU-24 & ShelfMesh deve essere implementato correttamente & S\\
+    TU-24.1 & ShelfMesh deve mostrare la mesh della scaffalatura con tutti i bin figli & S\\
+    TU-24.2 & ShelfMesh deve mostrare la mesh della scaffalatura con la posizione corretta & S\\
+    TU-24.3 & ShelfMesh deve mostrare la mesh della scaffalatura con la rotazione corretta & S\\
+    TU-24.4 & ShelfMesh deve mostrare la mesh della scaffalatura con la rotazione corretta se è ruotata & S\\
+    TU-24.5 & ShelfMesh deve propagare il click chiamando onClick sul bin & S\\
+    
+    %%%%%%%%%%%% WarehouseMesh
+    TU-25 & WarehouseMesh deve essere implementato correttamente & S\\
+    TU-25.1 & WarehouseMesh deve mostrare la mesh del magazzino con tutti i figli & S\\
+    TU-25.2 & WarehouseMesh deve mostrare la mesh del magazzino con i punti corretti & S\\
+    TU-25.3 & WarehouseMesh deve mostrare la mesh del magazzino con l'altezza corretta & S\\
+    
+    %%%%%%%%%%%% ShelvesRender
+    TU-26 & ShelvesRender deve essere implementato correttamente & S\\
+    TU-26.1 & ShelvesRender crea una scaffalatura in maniera corretta & S\\
+    TU-26.2 & ShelvesRender deve selezionare la scaffalatura al click su un bin & S\\
+    TU-26.3 & ShelvesRender deve selezionare il bin al doppio click sul bin & S\\
+    TU-26.4 & ShelvesRender deve deselezionare la scaffalatura al click esterno & S\\
+    TU-26.5 & ShelvesRender deve gestire i movimenti della scaffalatura quando si utilizzano i transformControls & S\\
+    TU-26.6 & ShelvesRender deve controllare le collisioni quando una scaffalatura si sta muovendo & S\\
+    TU-26.7 & ShelvesRender deve aggiornare lo store quando una scaffalatura è ruotata & S\\
+    
+    %%%%%%%%%%%% WarehouseRender
+    TU-27 & WarehouseRender deve mostrare la mesh del magazzino e lo ShelvesRender & S\\
+
+    %%%%%%%%%%%% ThreeScene
+    TU-28 & ThreeScene deve essere implementato correttamente & S\\
+    TU-28.1 & ThreeScene deve mostrare ambientlight e gridhelper & S\\
+    TU-28.2 & ThreeScene deve mostrare gridhelper alla posizione [0, 0.01, 0] & S\\
+    TU-28.3 & ThreeScene deve chiamare forward con step 0.25 su CameraControls se KeyboardControls ritorna forward & S\\
+    TU-28.4 & ThreeScene deve chiamare forward con step -0.25 su CameraControls se KeyboardControls ritorna backward & S\\
+    TU-28.5 & ThreeScene deve chiamare truck con step -0.25 su CameraControls se KeyboardControls ritorna left & S\\
+    TU-28.6 & ThreeScene deve chiamare truck con step 0.25 su CameraControls se KeyboardControls ritorna right & S\\
+
+    %%%%%%%%%%%% Render
+    TU-29 & Render deve essere implementato correttamente & S\\
+    TU-29.1 & Render deve inviare isNavigating false a ThreeScene al primo render & S\\
+    TU-29.2 & Render deve inviare isNavigating true a ThreeScene al click sulla rotella del mouse & S\\
+
+\end{xltabular}
+
+\noindent I test realizzati in questa feature controllano il corretto comportamento della modellazione 3D dell'applicativo, sono da considerarsi di alta importanza perché la componente 3D è un aspetto essenziale dell'applicativo.
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: I test della modellazione 3D sono risultati meno utili ripetto agli altri, perché la libreria di testing fornita con gli strumenti 3D funziona in modo poco intuitivo e l'impressione è stata che gli stessi test, realizzati solo tramite interazione utente con l'applicativo, avrebbero avuto la stessa efficacia in meno tempo.    
+
 
 \subsection{Test di Integrazione}
 \par I test di integrazione si pongono ad un livello più alto dei test di unità e sono eseguiti per controllare le interazioni tra le diverse componenti del software. L'obiettivo è verificare il corretto funzionamento delle componenti quando vengono integrate fra loro ed identificare problemi nelle interfacce e nelle interazioni.
 \par Di norma sono eseguiti dopo i test di unità per verificare che le componenti che funzionano singolarmente continuino a funzionare in maniera corretta anche quando comunicano fra loro.
+\vspace{0.5cm} \\ La tabella che segue mostra il registro dei test effettuati. Dato che lo store è realizzato sfruttando alcune funzionalità offerte direttamente dalla libreria delle componenti grafiche, l'interazione tra store e interfaccia utente è già di per sé controllata. Perciò il focus dei test di integrazione sarà assicurarsi che le varie parti dello store comunichino correttamente tra loro e, soprattutto, che l'interazione tra componenti presentational e container (così come descritte nella \textit{Specifica Tecnica v1.0.0}), funzioni come previsto.
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10!}{white}
 \begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth}  | p{0.1\textwidth}}
@@ -606,48 +927,82 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     \caption{Tabella dei test di integrazione} 
     \label{tab:test_sistema}
     \endlastfoot
-    TI-1 & Gli errori devono essere settati correttamente ed aggiornare lo stato di errorSlice. & S\\
-    TI-1.1 & L'inizializzazione di prodotti con nomi duplicati deve causare apposito errore. & S\\
-    TI-1.2 & Se ci sono prodotti con id duplicati in productSlice deve essere settato apposito errore. & S\\
-    TI-1.3 & L'aggiunta di un prodotto con nome duplicato deve essere segnalato da un apposito errore. & S\\
-    TI-1.4 & L'inizializzazione di scaffalature con id duplicati deve causare apposito errore. & S\\
-    TI-1.5 & L'aggiunta di una scaffalatura con nome duplicato deve causare apposito errore. & S\\
-    TI-1.6 & L'aggiunta di una scaffalatura con altezza scorretta deve causare apposito errore. & S\\
-    TI-1.7 & L'aggiornamento scorretto delle dimensioni di una scaffalatura causa apposito errore. & S\\
-    TI-1.8 & L'aggiornamento scorretto della posizione di una scaffalatura causa apposito errore. & S\\
-    TI-1.9 & L'inserimento di un nome di magazzino scorretto causa apposito errore. & S\\
-    TI-1.10 & L'inserimento di una forma del magazzino scorretta causa apposito errore. & S\\
-    TI-1.11 & L'inserimento di dimensioni del magazzino scorrette causa appositi errori. & S\\
-    TI-1.12 & La presenza di un file SVG di formato scorretto deve essere segnalata. & S\\
-    TI-1.13 & La presenza di un file JSON di formato scorretto deve essere segnalata & S\\
-    TI-1.14 & Lo spostamento di un prodotto in un Bin non vuoto deve causare apposito errore & S\\
-    TI-1.15 & Lo spostamento di una scaffalatura all'esterno del magazzino causa apposito errore & S\\
-    TI-1.15 & Lo spostamento di una scaffalatura in una posizione di collisione con altre scaffalature causa apposito errore &S \\
-    TI-2 & La rimozione di un prodotto deve essere seguita dal cambiamento di stato dei Bin\textsuperscript{G} nei quali esso è contenuto. & S\\
-    TI-3 & L'aggiunta di una Shelf non è permessa se l'altezza di quest'ultima è maggiore dell'altezza del magazzino. & S\\
-    TI-4 & L'aggiornamento delle dimensioni di una Shelf non è permessa se supera le dimensioni del magazzino. & S\\
-    TI-5 & L'aggiornamento della posizione di una scaffalatura non è permessa se eccede i limiti del magazzino. & S\\
-    TI-6 & L'aggiornamento della posizione di una scaffalatura non è permessa in una posizione in cui entra in conflitto con altre scaffalature. & S\\
-    TI-7 & La rimozione di un movimento deve aggiornare correttamente gli stati dei Bin\textsuperscript{G} interessati. & S\\
-    TI-8 & La rimozione del contenuto di un Bin nel caso in cui quest ultimo sia vuoto non deve causare errori & S\\
-    TI-9 & La selezione di un oggetto nel render causa la selezione nella libreria & S\\
-    TI-10 & La selezione di un oggetto nella libreria causa la selezione nel render. & S\\
-    TI-11 & Lo spostamento di una Shelf nel render causa lo spostamento delle mesh di tutti i Bin in essa contenuti. & S\\
-    TI-12 & I cambiamenti effettuati nel render 3D provocano corrette modifiche dello store. & S\\
-    TI-12.1 & Il cambiamento di posizione di un oggetto nel render causa un cambiamento di posizione nello store. & S\\
-    TI-12.2 & Il cambiamento di orientamento di una scaffalatura causa il cambiamento della proprietà isFlipped della stessa nello store. &S \\
-    TI-13 & I cambiamenti effettuati dalla libreria e dalle azioni provocano i corretti cambiamenti nel render 3D. & S\\
+    %%%%%%%%%%%% fileManagementSlice
+    TI-1 & fileManagementSlice deve essere implementato correttamente & S\\
+    TI-1.1 & fileManagementSlice deve interpretare i punti del file SVG in maniera corretta & S\\
+    TI-1.2 & fileManagementSlice non deve aggiungere altri punti quando legge da file SVG & S\\
+    TI-1.3 & fileManagementSlice deve impostare l'altezza correttamente quando costruisce il magazzino da file SVG & S\\
+    TI-1.4 & fileManagementSlice deve convertire lo stato in un file JSON in maniera corretta & S\\
+    TI-1.5 & fileManagementSlice deve convertire il file JSON in uno stato in maniera corretta & S\\
+
+    %%%%%%%%%%%% ShelfManager
+    TI-2 & ShelfManager deve essere implementato correttamente & S\\
+    TI-2.1 & ShelfManager deve implemetare l'aggiunta e la modifica di una scaffalatura nella maniera corretta & S\\
+    TI-2.1.1 & ShelfManager deve passare i parametri corretti all'azione addShelf al submit per la creazione di una nuova scaffalatura da ShelfConfigurator & S\\
+    TI-2.1.2 & ShelfManager deve chiamare l'azione updateShelfPosition al submit per la creazione di una nuova scaffalatura da ShelfConfigurator (step 1) & S\\
+    TI-2.1.3 & ShelfManager deve passare i parametri corretti all'azione updateShelfInfo al submit per la modifica di una scaffalatura da ShelfConfigurator & S\\
+    TI-2.1.4 & ShelfManager deve chiamare updateShelfPosition quando si annulla la modifica di una scaffalatura da ShelfConfigurator  (step 1) & S\\
+    TI-2.1.5 & ShelfManager deve resettare i campi di input di ShelfConfigurator quando si annulla l'operazione (step 0) & S\\
+    TI-2.1.6 & ShelfManager deve chiamare l'azione removeShelf con il corretto id quando si annulla l'operazione (step 1) & S\\
+    TI-2.1.7 & ShelfManager deve chiuedere ShelfConfigurator al click sul bottone annulla & S\\
+    TI-2.2 & ShelfManager deve implemetare la gestione di ShelfCard nella maniera corretta & S\\
+    TI-2.2.1 & ShelfManager deve chiamare setConfig con il parametro true al clik sul bottone per la modifica della scaffalatura & S\\  
+    TI-2.2.2 & ShelfManager deve chiamare l'azione removeShelf con l'id corretto al click sul bottone per la rimozione della scaffalatura & S\\
+    TI-2.2.3 & ShelfManager deve chiamare l'azione selectShelf senza parametri al click sul bottone per la rimozione della scaffalatura & S\\
+    TI-2.2.4 & ShelfManager deve chiamare l'azione selectShelf senza parametri alla chiusura di ShelfCard & S\\
+    TI-2.3 & Il click sul bottone di chiusura di ErrorModal deve chiamare l'azione clearError & S\\
+
+    %%%%%%%%%%%% ProductManager
+    TI-3 & ProductManager deve essere implementato correttamente & S\\
+    TI-3.1 & ProductManager deve implemetare l'aggiunta e la modifica di un prodotto nella maniera corretta & S\\
+    TI-3.1.1 & ProductManager deve passare i parametri corretti all'azione addProduct al submit per la creazione di un nuovo prodotto da ProductConfigurator & S\\
+    TI-3.1.2 & ProductManager deve chiamare setConfig al submit di nuovi dati per un prodotto esistente da ProductConfigurator & S\\
+    TI-3.1.3 & ProductManager deve chiamare l'azione updateName e updateColor al submit di nuovi dati per un prodotto esistente da ProductConfigurator & S\\
+    TI-3.1.4 & ProductManager deve chiudere ProductConfigurator al submit & S\\
+    TI-3.1.5 & ProductManager deve chiudere ProductConfigurator al click sul bottone annulla & S\\
+    TI-3.1.6 & ProductManager deve resettare ProductConfigurator al submit & S\\
+    TI-3.1.7 & ProductManager deve resettare ProductConfigurator al click sul bottone annulla & S\\
+    TI-3.2 & ProductManager deve implemetare la gestione di ProductCard nella maniera corretta & S\\
+    TI-3.2.1 & ProductManager deve chiamare configMove con il parametro true al click su posiziona prodotto & S\\
+    TI-3.2.2 & ProductManager deve chiamare l'azione removeProduct con l'id corretto al click su elimina prodotto & S\\
+    TI-3.2.3 & ProductManager deve chiamare l'azione selectProduct con nessun parametro al click su elimina prodotto & S\\
+    TI-3.2.4 & ProductManager deve chiamare l'azione selectProduct con nessun parametro alla chiusura di ProductCard & S\\
+    TI-3.3 & ProductManager deve implemetare la gestione di BinCard nella maniera corretta & S\\
+    TI-3.3.1 & ProductManager deve chiamare l'azione selectBin con l'id corretto al click sul bin di ProductCard & S\\
+    TI-3.3.2 & ProductManager deve chiamare configMove con il parametro true al click su movimentazione prodotto & S\\
+    TI-3.3.3 & ProductManager deve chiamare removeProductFromBin con i parametri corretti al click su rimuovi prodotto & S\\
+    TI-3.3.4 & ProductManager deve chiamare l'azione selectBin con nessun parametro al click su rimuovi prodotto & S\\
+    TI-3.3.5 & ProductManager deve chiamare l'azione selectBin con nessun parametro alla chiusura di binCard & S\\
+    TI-3.4 & Il click sul bottone di chiusura di ErrorModal deve chiamare l'azione clearError & S\\
+
+    %%%%%%%%%%%% AllocationManager
+    TI-4 & AllocationManager deve essere implementato correttamente & S\\
+    TI-4.1 & AllocationManager deve implemetare la posizione e la movimentazione di un prodotto nella maniera corretta & S\\
+    TI-4.1.1 & AllocationManager deve chiamare l'azione insertProduct quando un prodotto è inserito dentro a un bin & S\\
+    TI-4.1.2 & AllocationManager deve chiamare l'azione orderMovementFromSelected quando un prodotto è inserito dentro a un bin & S\\
+    TI-4.1.3 & AllocationManager deve chiamare handleCloseRequest quando una movimentazione di un prodotto è avvenuta con successo  & S\\
+    TI-4.1.4 & AllocationManager deve chiamare handleCloseRequest quando il posizionamento di un prodotto è avvenuto con successo & S\\
+    TI-4.1.5 & AllocationManager deve passare i parametri corretti a insertProduct nel submit di una nuova movimentazione & S\\
+    TI-4.1.6 & AllocationManager deve passare i parametri corretti a orderMovementFromSelected nel submit di una movimentazione da un bin & S\\
+    TI-4.1.7 & AllocationManager deve resettare i campi di allocationRequest al click su annulla & S\\
+    TI-4.2 & Il click sul bottone di chiusura di ErrorModal deve chiamare l'azione clearError & S\\
     
-    
+    %%%%%%%%%%%% MovementManager
+    TI-5 & MovementManager deve essere implementato correttamente & S\\
+    TI-5.1 & MovementManager deve implemetare le richieste di movimentazione nella maniera corretta & S\\
+    TI-5.1.1 & MovementManager deve chiamare updateBinState e removeMovementsWithBin con i parametri della scaffalatura di destinazione se la richieta ritorna true & S\\
+    TI-5.1.2 & MovementManager deve chiamare updateBinState e removeMovementsWithBin con i parametri della scaffalatura di partenza se la richiesta ritorna false & S\\
 \end{xltabular}
+
+\vspace{0.2cm} \noindent\textbf{Considerazioni PB}: I test di integrazione sono risultati importanti per assicurarsi che il passaggio di dati dalle componenti grafiche alla logica di business avvenisse correttamente, e quindi per verificare che un'interazione utente comportasse una corrispondente modifica allo store.
 
 \subsection{Test di Sistema}
 \par Sono eseguiti dopo aver completato i test sulle singole unità e sulla loro integrazione, con l'obiettivo di verificare il comportamento complessivo del sistema. Si basano sulle funzionalità espresse nei requisiti concordati con il proponente, per assicurare che tutte le richieste siano soddisfatte.
 
-Di seguito si riporta l'elenco di tali test e i requisiti, identificati nel documento di \textit{Analisi dei requisiti}, che essi vanno a coprire.
+Di seguito si riporta l'elenco di tali test e i requisiti, identificati nel documento di \textit{Analisi dei requisiti v5.0.0}, che essi vanno a coprire.
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10!}{white}
-\begin{xltabular}{0.9\textwidth}{X | p{0.5\textwidth} | X | X}
+\begin{xltabular}{0.9\textwidth}{X | p{0.5\textwidth} | X | p{0.9cm}}
     \rowcolor{black}
     \textbf{\color{white} Test} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Requisito} & \textbf{\color{white} Stato}\\ 
     \hline
@@ -657,75 +1012,72 @@ Di seguito si riporta l'elenco di tali test e i requisiti, identificati nel docu
     \endlastfoot
     TS-1 & Verificare che l'utente possa creare un ambiente di magazzino tridimensionale. & ROF\_1 & S\\
     TS-1.1 & Verificare che l'utente possa creare un ambiente di magazzino tridimensionale da zero. & ROF\_1.1 & S\\
-    TS-1.1.1 & Verificare che l'utente possa creare una plaSmetria personalizzata. & ROF\_1.1.1 & S\\
-    TS-1.2& Verificare che l'utente possa caricare un layout memorizzato in database per inizializzare l'ambiente. & RDF\_1.2  & S\\
-    TS-1.3 & Verificare che l'utente possa caricare un file in formato svg per inizializzare l'ambiente. & RFF\_1.3 & S \\
-    TS-2 & Verificare che l'utente possa salvare i dati del magazzino creato in un database. & RDF\_2& S \\
-    TS-2.1 & Verificare che l'utente possa salvare i dati dello spazio del magazzino.& RDF\_2.1 & S   \\
-    TS-2.2 & Verificare che l'utente possa salvare i dati delle scaffalature presenti nel magazzino. & RDF\_2.2& S   \\
-    TS-2.3 & Verificare che l'utente possa salvare i dati dei prodotti presenti del magazzino. & RDF\_2.3& S     \\
-    TS-3 & Verificare che l'utente possa visualizzare tutto il magazzino in 3D.& ROF\_3 & S\\
-    TS-3.1 & Verificare che l'utente possa visualizzare lo spazio del magazzino in 3D. & ROF\_3.1& S\\
-    TS-3.2 & Verificare che l'utente possa visualizzare le scaffalature posizionate all'interno del magazzino in 3D. & ROF\_3.2& S\\
-    TS-3.3 & Verificare che l'utente possa visualizzare i prodotti posizionati all'interno del magazzino in 3D. & ROF\_3.3& S\\
-    TS-3.3.1 & Verificare che l'utente possa visualizzare i prodotti creati (non posizionati) in 3D. & RFF\_3.3.1& S \\
-    TS-4 & Verificare che l'utente possa navigare attraverso lo spazio tridimensionale. & ROF\_4& S\\
-    TS-4.1 & Verificare che l'utente possa ingrandire l'area di visione a cui è interessato. & ROF\_4.1& S \\
-    TS-4.2 & Verificare che l'utente possa rimpicciolire l'area di visione a cui è interessato. &  ROF\_4.2& S \\
-    TS-4.3 & Verificare che l'utente possa ruotare orizzontalmente la camera. & ROF\_4.3 & S \\
-    TS-4.4 & Verificare che l'utente possa ruotare verticalmente la camera. & ROF\_4.4& S \\
-    TS-4.5 & Verificare che l'utente possa navigare nello spazio tridimensionale attraverso il mouse. & ROF\_4.5& S \\
-    TS-4.6 & Verificare che l'utente possa navigare nello spazio tridimensionale attraverso la tastiera. & ROF\_4.6& S\\
-    TS-5 & Verificare che l'utente possa visualizzare in un'area gestionale separata (la libreria\textsuperscript{G}) l'elenco degli oggetti creati. & ROF\_5& S \\
-    TS-5.1 & Verificare che l'utente possa visualizzare l'elenco delle scaffalature create. & ROF\_5.1& S \\
-    TS-5.1.1 & Verificare che l'utente possa visualizzare il codice corrispondente per ogni scaffalatura. & ROF\_5.1.1& S \\
-    TS-5.1.2 & Verificare che l'utente possa visualizzare le dimensioni per ogni scaffalatura.& ROF\_5.1.2& S \\
-    TS-5.1.3 & Verificare che l'utente possa visualizzare le dimensioni del Bin\textsuperscript{G} per ogni scaffalatura.& ROF\_5.1.3& S\\
-    TS-5.2 & Verificare che l'utente possa visualizzare l'elenco dei prodotti creati. & ROF\_5.2& S \\
-    TS-5.2.1 & Verificare che l'utente possa visualizzare il nome per ogni prodotto. & ROF\_5.2.1  & S \\
-    TS-5.2.2 & Verificare che l'utente possa visualizzare la posizione per ogni prodotto posizionato all'interno del magazzino. & ROF\_5.2.2& S\\
-    TS-6 & Verificare che l'utente possa creare delle scaffalature. & ROF\_6& S\\
-    TS-6.1 & Verificare che l'utente possa scegliere un codice uSvoco da dare alla scaffalatura. & ROF\_6.1& S\\
-    TS-6.2 &Verificare che l'utente possa scegliere la dimensione delle scaffalature. & ROF\_6.2& S\\
-    TS-6.2.1& Verificare che le scaffalature siano divise in Bin\textsuperscript{G}\textsuperscript{G} codificabili con coordinate. & ROF\_6.2.1& S\\
-    TS-6.3 & Verificare che l'utente possa scegliere la dimensione del Bin\textsuperscript{G} per la scaffalatura. & ROF\_6.3& S\\
-    TS-7 & Verificare che l'utente possa inserire le scaffalature nello spazio 3D. & ROF\_7& S\\
-    TS-8 & Verificare che l'utente possa selezionare una scaffalatura. & ROF\_8& S \\
-    TS-8.1 & Verificare che l'utente possa selezionare una scaffalatura dalla libreria. & ROF\_8.1& S\\
-    TS-8.1.1 &  Verificare che la scaffalatura sia evidenziata in libreria quando viene selezionata. & RFF\_8.1.1& S\\
-    TS-8.2 & Verificare che l'utente possa selezionare una scaffalatura dal render 3D. & ROF\_8.2& S\\
-    TS-8.2.1 & Verificare che la scaffalatura sia evidenziata nel render 3D quando viene selezionata. & RFF\_8.2.1& S\\
-    TS-9 & Verificare che l'utente possa modificare una scaffalatura creata. & ROF\_9& S\\
-    TS-9.1 & Verificare che l'utente possa modificare la capacità della scaffalatura. & ROF\_9.1& S\\
-    TS-9.2 & Verificare che l'utente possa modificare il codice della scaffalatura. & RDF\_9.2& S \\
-    TS-9.3 & Verificare che l'utente possa modificare la posizione della scaffalatura. & RDF\_9.3 & S \\
-    TS-10 & Verificare che l'utente possa ricercare per codice una scaffalatura. & RDF\_10& S\\
-    TS-11 & Verificare che l'utente possa eliminare una scaffalatura creata. &  ROF\_11& S\\
-    TS-11.1 & Verificare che l'utente possa cancellare la scaffalatura dalla libreria.& ROF\_11.1 & S\\
-    TS-11.2& Verificare che l'utente possa cancellare la scaffalatura dal render 3D. & ROF\_11.2& S\\
-    TS-12 & Verificare che l'utente possa creare un prodotto di forma parallelepipeda. & ROF\_12& S \\
-    TS-12.1& Verificare che l'utente possa scegliere un nome uSvoco da dare al prodotto. & ROF\_12.1& S \\
-    TS-13 & Verificare che l'utente possa inserire i prodotti in un Bin\textsuperscript{G} di una scaffalatura all'interno dello spazio 3D. & ROF\_13& S\\
-    TS-14 & Verificare che l'utente possa selezionare un prodotto creato. & ROF\_14 & S\\
-    TS-14.1 & Verificare che l'utente possa selezionare un prodotto dalla libreria. & ROF\_14.1& S\\
-    TS-14.1.1 & Verificare che il prodotto sia evidenziato in libreria quando viene selezionato. & RFF\_14.1.1& S \\
-    TS-14.2 & Verificare che l'utente possa selezionare un prodotto posizionato dal render 3D. & ROF\_14.2& S\\
-    TS-14.2.1 & Verificare che il prodotto sia evidenziato nel render 3D quando viene selezionato. & RFF\_14.2.1& S\\
-    TS-15 & Verificare che l'utente possa ricercare per nome un prodotto. & RDF\_15& S\\
-    TS-16& Verificare che l'utente possa eliminare un prodotto creato. & ROF\_16& S\\
-    TS-16.1 & Verificare che l'utente possa eliminare un prodotto creato dalla libreria. & ROF\_16.1& S \\
-    TS-16.2 & Verificare che l'utente possa eliminare un prodotto posizionato dal render 3D. & ROF\_16.2& S \\
-    TS-17& Verificare che l'utente possa richiedere lo spostamento di un oggetto. & ROF\_17& S\\
-    TS-17.1 & Verificare che l'utente possa richiedere lo spostamento tramite trascinamento. & RDF\_17.1& S\\
-    TS-17.2 & Verificare che l'utente possa richiedere lo spostamento tramite click del mouse. & ROF\_17.2& S\\
-    TS-18 & Verificare che il sistema controlli la disponibilità della scaffalatura target alla richiesta di uno spostamento. & ROF\_18& S\\
-    TS-19  & Verificare che il sistema deleghi ad un meccanismo terzo la decisione finale sull'accettazione di un movimento. & ROF\_19& S\\
-    TS-20  & Verificare che l'utente possa codificare il magazzino in aree specifiche per uno scopo. & RFF\_20 & S \\
+    TS-1.1.1 & Verificare che l'utente possa creare una planimetria personalizzata. & ROF\_1.1.1 & S\\
+    TS-1.2 & Verificare che l'utente possa caricare un file in formato svg per inizializzare l'ambiente. & RFF\_1.3 & S \\
+    TS-2 & Verificare che l'utente possa salvare i dati dello spazio del magazzino.& RDF\_2.1 & S   \\
+    TS-3 & Verificare che l'utente possa salvare i dati delle scaffalature presenti nel magazzino. & RDF\_2.2& S   \\
+    TS-4 & Verificare che l'utente possa salvare i dati dei prodotti presenti del magazzino. & RDF\_2.3& S     \\
+    TS-5 & Verificare che l'utente possa visualizzare tutto il magazzino in 3D.& ROF\_3 & S\\
+    TS-5.1 & Verificare che l'utente possa visualizzare lo spazio del magazzino in 3D. & ROF\_3.1& S\\
+    TS-5.2 & Verificare che l'utente possa visualizzare le scaffalature posizionate all'interno del magazzino in 3D. & ROF\_3.2& S\\
+    TS-5.3 & Verificare che l'utente possa visualizzare i prodotti posizionati all'interno del magazzino in 3D. & ROF\_3.3& S\\    
+    TS-6 & Verificare che l'utente possa navigare attraverso lo spazio tridimensionale. & ROF\_4& S\\
+    TS-6.1 & Verificare che l'utente possa ingrandire l'area di visione a cui è interessato. & ROF\_4.1& S \\
+    TS-6.2 & Verificare che l'utente possa rimpicciolire l'area di visione a cui è interessato. &  ROF\_4.2& S \\
+    TS-6.3 & Verificare che l'utente possa ruotare orizzontalmente la camera. & ROF\_4.3 & S \\
+    TS-6.4 & Verificare che l'utente possa ruotare verticalmente la camera. & ROF\_4.4& S \\
+    TS-6.5 & Verificare che l'utente possa navigare nello spazio tridimensionale attraverso il mouse. & ROF\_4.5& S \\
+    TS-6.6 & Verificare che l'utente possa navigare nello spazio tridimensionale attraverso la tastiera. & ROF\_4.6& S\\
+    TS-7 & Verificare che l'utente possa visualizzare in un'area gestionale separata (la libreria\textsuperscript{G}) l'elenco degli oggetti creati. & ROF\_5& S \\
+    TS-7.1 & Verificare che l'utente possa visualizzare l'elenco delle scaffalature create. & ROF\_5.1& S \\
+    TS-7.1.1 & Verificare che l'utente possa visualizzare il codice corrispondente per ogni scaffalatura. & ROF\_5.1.1& S \\
+    TS-7.1.2 & Verificare che l'utente possa visualizzare le dimensioni per ogni scaffalatura.& ROF\_5.1.2& S \\
+    TS-7.1.3 & Verificare che l'utente possa visualizzare le dimensioni del Bin per ogni scaffalatura.& ROF\_5.1.3& S\\
+    TS-7.2 & Verificare che l'utente possa visualizzare l'elenco dei prodotti creati. & ROF\_5.2& S \\
+    TS-7.2.1 & Verificare che l'utente possa visualizzare il nome per ogni prodotto. & ROF\_5.2.1  & S \\
+    TS-7.2.2 & Verificare che l'utente possa visualizzare la posizione per ogni prodotto posizionato all'interno del magazzino. & ROF\_5.2.2& S\\
+    TS-8 & Verificare che l'utente possa creare delle scaffalature. & ROF\_6& S\\
+    TS-8.1 & Verificare che l'utente possa scegliere un codice univoco da dare alla scaffalatura. & ROF\_6.1& S\\
+    TS-8.2 &Verificare che l'utente possa scegliere la dimensione delle scaffalature. & ROF\_6.2& S\\
+    TS-8.2.1& Verificare che le scaffalature siano divise in Bin codificabili con coordinate. & ROF\_6.2.1& S\\
+    TS-8.3 & Verificare che l'utente possa scegliere la dimensione del Bin per la scaffalatura. & ROF\_6.3& S\\
+    TS-9 & Verificare che l'utente possa inserire le scaffalature nello spazio 3D. & ROF\_7& S\\
+    TS-10 & Verificare che l'utente possa selezionare una scaffalatura. & ROF\_8& S \\
+    TS-10.1 & Verificare che l'utente possa selezionare una scaffalatura dalla libreria. & ROF\_8.1& S\\
+    TS-10.1.1 &  Verificare che la scaffalatura sia evidenziata in libreria quando viene selezionata. & RFF\_8.1.1& S\\
+    TS-10.2 & Verificare che l'utente possa selezionare una scaffalatura dal render 3D. & ROF\_8.2& S\\
+    TS-10.2.1 & Verificare che la scaffalatura sia evidenziata nel render 3D quando viene selezionata. & RFF\_8.2.1& S\\
+    TS-11 & Verificare che l'utente possa modificare una scaffalatura creata. & ROF\_9& S\\
+    TS-11.1 & Verificare che l'utente possa modificare la capacità della scaffalatura. & ROF\_9.1& S\\
+    TS-11.2 & Verificare che l'utente possa modificare il codice della scaffalatura. & RDF\_9.2& S \\
+    TS-11.3 & Verificare che l'utente possa modificare la posizione della scaffalatura. & RDF\_9.3 & S \\
+    TS-12 & Verificare che l'utente possa ricercare per codice una scaffalatura. & RDF\_10& S\\
+    TS-13 & Verificare che l'utente possa eliminare una scaffalatura creata. &  ROF\_11& S\\
+    TS-13.1 & Verificare che l'utente possa cancellare la scaffalatura dalla libreria.& ROF\_11.1 & S\\
+    TS-13.2& Verificare che l'utente possa cancellare la scaffalatura dal render 3D. & ROF\_11.2& S\\
+    TS-14 & Verificare che l'utente possa creare un prodotto di forma parallelepipeda. & ROF\_12& S \\
+    TS-14.1& Verificare che l'utente possa scegliere un nome univoco da dare al prodotto. & ROF\_12.1& S \\
+    TS-15 & Verificare che l'utente possa inserire i prodotti in un Bin di una scaffalatura all'interno dello spazio 3D. & ROF\_13& S\\
+    TS-16 & Verificare che l'utente possa selezionare un prodotto creato. & ROF\_14 & S\\
+    TS-16.1 & Verificare che l'utente possa selezionare un prodotto dalla libreria. & ROF\_14.1& S\\
+    TS-16.1.1 & Verificare che il prodotto sia evidenziato in libreria quando viene selezionato. & RFF\_14.1.1& S \\
+    TS-16.2 & Verificare che l'utente possa selezionare un prodotto posizionato dal render 3D. & ROF\_14.2& S\\
+    TS-16.2.1 & Verificare che il prodotto sia evidenziato nel render 3D quando viene selezionato. & RFF\_14.2.1& S\\
+    TS-17 & Verificare che l'utente possa ricercare per nome un prodotto. & RDF\_15& S\\
+    TS-18& Verificare che l'utente possa eliminare un prodotto creato. & ROF\_16& S\\
+    TS-18.1 & Verificare che l'utente possa eliminare un prodotto creato dalla libreria. & ROF\_16.1& S \\
+    TS-18.2 & Verificare che l'utente possa eliminare un prodotto posizionato dal render 3D. & ROF\_16.2& S \\
+    TS-19& Verificare che l'utente possa richiedere lo spostamento di un oggetto. & ROF\_17& S\\
+    TS-19.1 & Verificare che l'utente possa richiedere lo spostamento tramite click del mouse. & ROF\_17.2& S\\
+    TS-20 & Verificare che il sistema controlli la disponibilità della scaffalatura target alla richiesta di uno spostamento. & ROF\_18& S\\
+    TS-21  & Verificare che il sistema deleghi ad un meccanismo terzo la decisione finale sull'accettazione di un movimento. & ROF\_19& S\\
     \hline
 \end{xltabular}
 
+\vspace{0.2cm} \noindent\textbf{Considerazioni PB}: I test di sistema sono stati effettuati una volta conclusa la programmazione di tutto l'applicativo e dopo i test di unità ed integrazione. Hanno permesso di verificare il funzionamento dell'applicativo nella sua interezza, e di assicurarsi di aver rispettato i requisiti di progetto.
+
 %\subsection{Test di Regressione}
-%\par Sono eseguiti sulle nuove versioS del prodotto software per assicurarsi che le funzionalità aggiunte non abbiano introdotto errori nelle funzionalità preesistenti e che la qualità non sia regredita. Prevedono la ripetizione di tutto il processo di testing sulla nuova versione dell'applicativo, comprendente test di unità, integrazione e sistema.
+%\par Sono eseguiti sulle nuove versioni del prodotto software per assicurarsi che le funzionalità aggiunte non abbiano introdotto errori nelle funzionalità preesistenti e che la qualità non sia regredita. Prevedono la ripetizione di tutto il processo di testing sulla nuova versione dell'applicativo, comprendente test di unità, integrazione e sistema.
 \begin{comment}
 \subsection{Test di Usabilità}
 \par Valutazione dell'esperienza dell'utente con l'interfaccia del software, per garantire intuitività e facilità di uso.
@@ -748,7 +1100,7 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
     \endlastfoot
     TA-1 & Verificare che l'utente, durante la configurazione del magazzino, possa:
     \begin{itemize}
-        \item Visualizzare le modalità di creazione di disponibili: manuale e da database;
+        \item Visualizzare le modalità di creazione disponibili: manuale e da file;
         \item Scegliere una modalità di creazione tra quelle disponibili;
         \item Configurare il magazzino:
         \begin{itemize}
@@ -773,14 +1125,6 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
     & S\\
     TA-3 & Verificare che l'utente, nella sezione di libreria, possa:
     \begin{itemize}
-        \item Visualizzare la lista dei elementi (scaffalature e prodotti) interS al magazzino;
-        \item Visualizzare i dettagli di ogni elemento in lista;
-        \item Selezionare un elemento presente nella libreria;
-        \item Visualizzare l'elemento selezionato evidenziato.
-    \end{itemize}
-    & S \\
-    TA-4 & Verificare che l'utente, nella sezione di libreria, possa:
-    \begin{itemize}
         \item Visualizzare la lista dei elementi (scaffalature e prodotti) interni al magazzino;
         \item Visualizzare i dettagli di ogni elemento in lista;
         \item Selezionare un elemento presente nella libreria;
@@ -788,7 +1132,7 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
         \item Ricercare elementi nella libreria tramite codice.
     \end{itemize}
     & S \\
-    TA-5 & Verificare che l'utente possa:
+    TA-4 & Verificare che l'utente possa:
     \begin{itemize}
         \item Creare un nuovo elemento (scaffalatura o prodotto) interno al magazzino;
         \item Modificare la configurazione di un elemento già presente all'interno del magazzino;
@@ -796,23 +1140,23 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
         \item Richiedere lo spostamento di un prodotto al sistema.
     \end{itemize} 
     & S \\
-    TA-6 & Verificare che l'utente, durante la configurazione di una scaffalatura, possa:
+    TA-5 & Verificare che l'utente, durante la configurazione di una scaffalatura, possa:
     \begin{itemize}
         \item Inserire un codice identificativo per la scaffalatura;
-        \item Inserire la dimensione dei Bin\textsuperscript{G} della scaffalatura;
-        \item Inserire il numero di Bin\textsuperscript{G} in altezza e larghezza che formano la scaffalatura;
+        \item Inserire la dimensione dei Bin della scaffalatura;
+        \item Inserire il numero di Bin in altezza e larghezza che formano la scaffalatura;
         \item Scegliere una posizione per la scaffalatura;
         \item Confermare la configurazione o annullarla.
     \end{itemize} 
     & S \\
-    TA-7 & Verificare che l'utente, durante la configurazione di un prodotto, possa:
+    TA-6 & Verificare che l'utente, durante la configurazione di un prodotto, possa:
     \begin{itemize}
         \item Inserire un codice identificativo per il prodotto;
         \item Scegliere una posizione per il prodotto o direttamente non inserirlo nel magazzino;
         \item Confermare la configurazione o annullarla.
     \end{itemize} 
     & S \\
-    TA-8 & Verificare che l'utente possa:
+    TA-7 & Verificare che l'utente possa:
     \begin{itemize}
         \item Salvare lo stato corrente del magazzino in un file;
         \item Visualizzare messaggi di errore se una qualsiasi operazione non va a buon fine.
