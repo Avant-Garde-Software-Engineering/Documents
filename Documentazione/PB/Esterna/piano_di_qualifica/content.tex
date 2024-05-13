@@ -69,7 +69,9 @@ Uno dei compiti principali del processo di fornitura è la gestione delle proced
 \hline
 \textbf{BV} & Budget Variance & Indica se alla data corrente si è speso di più o di meno rispetto a quanto previsto (BV = PV - AC).\\
 \hline
+
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Fornitura}
 \end{table}
 
 \newpage
@@ -98,6 +100,7 @@ MPC6-AC & I costi effettivi per le attività di progetto non devono sforare i co
 MPC7-EV & Il valore effettivo per le attività di progetto non deve sforare i costi pianificati nella revisione del BAC & - & La somma dei costi di volta in volta deve essere $\leq$ EAC \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Fornitura}
 \end{table}
 
 \paragraph{Sviluppo}
@@ -110,13 +113,14 @@ realizzazione del prodotto software concorde con le esigenze del proponente ed, 
 \begin{tabular}{ |m{2cm}|m{4cm}|m{8cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{Acronimo} & \textbf{Nome} & \textbf{Signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{SFINp} & Structural fan-in (procedure) & Numero di procedure che chiamano una specifica procedura.\\
 \hline
 \textbf{SFOUTp} & Structural fan-out (procedure) & Numero di procedure che una specifica procedura chiama.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Sviluppo (Progettazione)}
 \end{table}
 
 \newpage
@@ -135,6 +139,7 @@ MPC8-SFINp & Si vuole che le procedure progettate vengano riutilizzate & Alto (r
 MPC9-SFOUTp & Si vuole che le procedure non siano fortemente accoppiate fra loro & Basso (bassa dipendenza tra procedure) \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Sviluppo (Progettazione)}
 \end{table}
 
 
@@ -147,7 +152,7 @@ Lo scopo è quello di ottenere un prodotto software che rispetti i requisti e le
 \begin{tabular}{ |m{2cm}|m{2.5cm}|m{9.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{CCH} & Code churn & Indica il numero di modifiche, aggiunte e cancellazioni apportate nel tempo ad una certa area di codice, in particolare nell'ambito di progetto, si intende modifiche apportate ad una procedura. Più sono le modifiche, più aumenta il rischio di introdurre errori nel codice. Un alto valore di nuove linee di codice potrebbe anche indicare basso riutilizzo di codice.\\
 \hline
@@ -156,6 +161,7 @@ Lo scopo è quello di ottenere un prodotto software che rispetti i requisti e le
 \textbf{CC} & Cyclomatic complexity & Misura la complessità del codice calcolando il numero di percorsi indipendenti (contando cioè il numero di ``decisioni prese" nel codice sorgente). Un alto valore di complessità ciclomatica\textsuperscript{G} indica codice difficile da comprendere, mantenere e testare.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Sviluppo (Codifica)}
 \end{table}
 \par Le regole di qualità sono applicate alle metriche nel seguente modo:
 \begin{table}[h!]
@@ -167,13 +173,14 @@ Lo scopo è quello di ottenere un prodotto software che rispetti i requisti e le
 \rowcolor{black}
 \textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
 \hline
-MPC10-CCH & Il numero di modifiche apportate alla singola procedura deve essere quanto più basso possibile & massimo 20\% di modifiche sul codice totale della procedura & 0 \\
+MPC10-CCH & Il numero di modifiche apportate alla singola procedura deve essere quanto più basso possibile & Massimo 20\% di modifiche sul codice totale della procedura & 0 \\
 \hline
 MPC11-NB & Si vuole che il numero di bug ed errori nel codice sia quanto più basso possibile & $\leq$ 5 & 0 \\
 \hline
 MPC12-CC & Il codice deve essere mantenuto semplice, facilitando comprensione, manutenzione e test & $\leq$ 15 & $\leq$ 10 \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Sviluppo (Codifica)}
 \end{table}
 
 \subsubsection{Processi di supporto}
@@ -185,7 +192,7 @@ La documentazione prodotta nel corso del progetto deve essere un valido supporto
 \begin{tabular}{ |m{2cm}|m{4.5cm}|m{7.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{EOD} & Errori ortografici per documento & Indica il numero di errori ortografici individuati per documento.\\
 \hline
@@ -195,6 +202,7 @@ La documentazione prodotta nel corso del progetto deve essere un valido supporto
 \end{center}\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Documentazione}
 \end{table}
 \par Le regole di qualità sono applicate alle metriche nel seguente modo:
 \begin{table}[h!]
@@ -211,6 +219,7 @@ MPC13-EOD & Si vogliono meno errori ortografici possibili per ciascun documento 
 MPC14-IG & La documentazione deve essere di facile lettura & 30-100 & 40-100 \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Documentazione}
 \end{table}
 
 \paragraph{Accertamento della qualità}
@@ -222,11 +231,12 @@ Lo scopo dell'accertamento della qualità è garantire che i processi e il prodo
 \begin{tabular}{ |m{2cm}|m{3.5cm}|m{8.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{MS} & Metriche soddisfatte & Indica la percentuale di metriche di qualità soddisfatte rispetto al totale delle metriche preposte.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Accertamento della qualità}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
@@ -241,6 +251,7 @@ Lo scopo dell'accertamento della qualità è garantire che i processi e il prodo
 MPC15-MS & Il numero di metriche di qualità soddisfatte deve essere molto alto & 90\% & 100\% \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Accertamento della qualità}
 \end{table}
 
 \newpage
@@ -252,13 +263,14 @@ Il processo di verifica ha lo scopo di determinare se i prodotti dei processi du
 \begin{tabular}{ |m{2cm}|m{3.5cm}|m{8.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{CCV} & Code coverage & Misura la quantità di codice (in percentuale) coperta dai test rispetto al totale del codice sorgente.\\
 \hline
 \textbf{TP} & Test passati & Misura la quantità di test (in percentuale) eseguiti con successo.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche del processo di Verifica}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
@@ -275,6 +287,7 @@ MPC16-CCV & Si vuole che la percentuale di codice coperta da test sia molto alta
 MPC17-TP & Si vuole che tutti i test siano eseguiti con successo & 100\% & 100\% \\
 \hline
 \end{tabular}
+\caption{Metriche del processo di Verifica}
 \end{table}
 \newpage
 
@@ -288,13 +301,14 @@ Si definiscono le seguenti metriche:
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{ROB} & Copertura dei requisiti obbligatori & Indica il valore (in percentuale) di requisiti obbligatori che il prodotto soddisfa.\\
 \hline
 \textbf{RDE} & Copertura dei requisiti desiderabili & Indica il valore (in percentuale) di requisiti desiderabili che il prodotto soddisfa.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche riguardanti i Customer needs}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
@@ -311,6 +325,7 @@ MPD1-ROB & I requisiti obbligatori devono essere tutti soddisfatti & 100\% & 100
 MPD2-RDE & I requisiti desiderabili devono essere soddisfatti in buona parte & 70\% & 100\% \\
 \hline
 \end{tabular}
+\caption{Metriche riguardanti i Customer needs}
 \end{table}
 
 \subsubsection{Efficienza}
@@ -321,11 +336,12 @@ Si definiscono le seguenti metriche:
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{ART} & Average response time & Misura il tempo medio che il prodotto software impiega per rispondere agli input forniti dall'utente.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche riguardanti l'Efficienza}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
@@ -340,6 +356,7 @@ Si definiscono le seguenti metriche:
 MPD3-ART & Il prodotto deve essere veloce nel tempo di risposta & $<$ 3 sec. & $\leq$ 1 sec. \\
 \hline
 \end{tabular}
+\caption{Metriche riguardanti l'Efficienza}
 \end{table}
 
 \subsubsection{Usabilità}
@@ -350,13 +367,14 @@ MPD3-ART & Il prodotto deve essere veloce nel tempo di risposta & $<$ 3 sec. & $
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{PC} & Profondità di click per operazione & Misura il numero di click che l'utente deve fare per raggiungere un determinato obiettivo. Un numero troppo alto provoca frustrazione e difficoltà di utilizzo.\\
 \hline
 \textbf{CFO} & Comprensibilità funzioni offerte & Misura la quantità (in percentuale) di funzioni offerte che l'utente riesce ad individuare ed utilizzare con facilità.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche riguardanti l'Usabilità}
 \end{table}
 \newpage
 \par Con le seguenti regole:
@@ -374,6 +392,7 @@ MPD4-PC & L'utente deve essere facilitato nell'interazione con il prodotto softw
 MPD5-CFO & L'utente deve comprendere facilmente quali sono e come si comportano le funzioni offerte & $\geq$ 90\% & 100\% \\
 \hline
 \end{tabular}
+\caption{Metriche riguardanti l'Usabilità}
 \end{table}
 
 \subsubsection{Portabilità su altre piattaforme}
@@ -393,11 +412,12 @@ Si definiscono dunque le seguenti metriche:
 \begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
 \hline
 \rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
+\textbf{Acronimo} & \textbf{Nome} & \textbf{Significato}\\
 \hline
 \textbf{PPT} & Portabilità su piattaforme & Indica la percentuale di piattaforme (tra quelle prese in considerazione) su cui il prodotto software è utilizzabile.\\
 \hline
 \end{tabular}
+\caption{Acronimi per le metriche riguardanti la Portabilità su piattaforme}
 \end{table}
 \par Con le seguenti regole:
 \begin{table}[h!]
@@ -412,6 +432,7 @@ Si definiscono dunque le seguenti metriche:
 MPD6-PPT & Il prodotto deve essere utilizzabile su tutti i browser principali. & 100\% & 100\% \\
 \hline
 \end{tabular}
+\caption{Metriche riguardanti la Portabilità su piattaforme}
 \end{table}
 
 \newpage
@@ -425,9 +446,10 @@ I test utili all’interno di un progetto sono:
     %\item \textbf{Test di regressione};
     \item \textbf{Test di accettazione}.
 \end{itemize}
-I test descritti nel documento saranno identificati univocamente tramite un codice standardizzato secondo quanto definito nelle \textit{Norme di Progetto v4.0.0}, inoltre, nella descrizione dei test saranno presenti riferimenti a classi, procedure e componenti meglio descritti nel documento di \textit{Specifica Tecnica v1.0.0}.
+I test descritti nel documento saranno identificati univocamente tramite un codice standardizzato secondo quanto definito nelle \textit{Norme di Progetto}. Inoltre, si noti che nella descrizione dei test saranno presenti riferimenti a classi, procedure e componenti meglio descritti nel documento di \textit{Specifica Tecnica}.
 Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{Riferimenti Esterni} del documento.
-\\ \noindent I test verranno elencati riportando lo stato, che può essere:
+\\ 
+I test verranno elencati riportando lo stato, che può essere:
 \begin{itemize}
     \item \textbf{NI}: se il test non è stato ancora implementato;
     \item \textbf{S}: se il test è stato implementato ed ha avuto esito positivo, i.e. test superato;
@@ -493,8 +515,8 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-3.17 & I bin di Shelf devono avere id unici & S\\
     TU-3.18 & I bin di Shelf devono aumentare all'aumentare della larghezza di Shelf & S\\
     TU-3.19 & I bin di Shelf devono aumentare all'aumentare dell'altezza di Shelf & S\\
-    TU-3.20 & I bin di Shelf devono aumentare diminuire alla diminuzione della larghezza di Shelf & S\\
-    TU-3.21 & I bin di Shelf devono aumentare diminuire alla diminuzione della lunghezza di Shelf & S\\
+    TU-3.20 & I bin di Shelf devono diminuire alla diminuzione della larghezza di Shelf & S\\
+    TU-3.21 & I bin di Shelf devono diminuire alla diminuzione della lunghezza di Shelf & S\\
     TU-3.22 & La larghezza di Shelf non deve diminuire se i bin coinvolti sono non-vuoti & S\\
     TU-3.23 & L'altezza di Shelf non deve diminuire se i bin coinvolti sono non-vuoti & S\\
     TU-3.24 & I bin di Shelf possono essere impostati solo da scaffalature della stessa dimensione & S\\
@@ -523,7 +545,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-5 & whsSlice deve essere implementato correttamente & S\\
     TU-5.1 & whsSlice deve impostare un nuovo nome del magazzino in maniera corretta & S\\
     TU-5.2 & whsSlice non deve impostare il nome del magazzino se la lunghezza è $>$ 20, deve invece impostare un errore & S\\
-    TU-5.3 & whsSlice non deve impostare il nome del magazzino se i caratteri sono diversi da lettere numeri e underscore, deve invece impostare un errore & S\\
+    TU-5.3 & whsSlice non deve impostare il nome del magazzino se i caratteri sono diversi da lettere, numeri e underscore, deve invece impostare un errore & S\\
     TU-5.4 & whsSlice non deve impostare il nome del magazzino se il nome è vuoto, deve invece impostare un errore & S\\
     TU-5.5 & whsSlice deve impostare il poligono del magazzino in maniera corretta & S\\
     TU-5.6 & whsSlice non deve impostare il poligono del magazzino se la lunghezza dei punti è $<$ 3, deve invece impostare un errore & S\\
@@ -564,15 +586,15 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-7.2 & shelvesSlice non deve impostare l'elenco delle scaffalature se ci sono nomi duplicati, deve invece impostare un errore & S\\
     TU-7.3 & shelvesSlice non deve impostare l'elenco delle scaffalature se ci sono id duplicati, deve invece impostare un errore & S\\
     TU-7.4 & shelvesSlice deve aggiungere una nuova scaffalatura in maniera corretta & S\\
-    TU-7.5 & shelvesSlice non deve aggiugere una nuova scaffalatura se l'altezza è maggiore dell'altezza del magazzino, deve invece impostare un errore & S\\
-    TU-7.6 & shelvesSlice non deve aggiugere una nuova scaffalatura se il nome esiste già, deve invece impostare un errore & S\\
+    TU-7.5 & shelvesSlice non deve aggiungere una nuova scaffalatura se l'altezza è maggiore dell'altezza del magazzino, deve invece impostare un errore & S\\
+    TU-7.6 & shelvesSlice non deve aggiungere una nuova scaffalatura se il nome esiste già, deve invece impostare un errore & S\\
     TU-7.7 & shelvesSlice deve inserire un prodotto in maniera corretta in un bin vuoto & S\\
     TU-7.8 & shelvesSlice deve impostare lo stato a STILL quando inserisce un prodotto in un bin vuoto & S\\
     TU-7.9 & shelvesSlice non deve inserire un prodotto in un bin non-vuoto & S\\
     TU-7.10 & shelvesSlice deve rimuovere una scaffalatura in maniera corretta & S\\
     TU-7.11 & shelvesSlice deve rimuovere una scaffalatura solo se ha tutti i  bin vuoti & S\\
     TU-7.12 & shelvesSlice deve aggiornare il nome della scaffalatura in maniera corretta & S\\
-    TU-7.13 & shelvesSlice non deve aggiornare il nome della scaffalatura se esiste gia, deve invece impostare un errore & S\\
+    TU-7.13 & shelvesSlice non deve aggiornare il nome della scaffalatura se esiste già, deve invece impostare un errore & S\\
     TU-7.14 & shelvesSlice deve aggiornare la binSize della scaffalatura sin maniera corretta& S\\
     TU-7.15 & shelvesSlice deve aggiornare la larghezza della scaffalatura in maniera corretta & S\\
     TU-7.16 & shelvesSlice deve aggiornare l'altezza della scaffalatura in maniera corretta & S\\
@@ -581,7 +603,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-7.19 & shelvesSlice deve impostare un errore nella riduzione della larghezza della scaffalatura se i bin sono non vuoti & S\\
     TU-7.20 & shelvesSlice deve aggiornare la posizione della scaffalatura in maniera corretta & S\\
     TU-7.21 & shelvesSlice non deve aggiornare la posizione della scaffalatura se fuori dal magazzino, deve invece impostare un errore & S\\
-    TU-7.22 & shelvesSlice non deve aggiornare la posizione della scaffalatura se c'è un'interzezione, deve invece impostare un errore & S\\
+    TU-7.22 & shelvesSlice non deve aggiornare la posizione della scaffalatura se c'è un'intersezione, deve invece impostare un errore & S\\
     TU-7.23 & shelvesSlice deve aggiornare isFlipped della scaffalatura in maniera corretta & S\\
     TU-7.24 & shelvesSlice deve aggiornare lo stato del bin in maniera corretta & S\\
     TU-7.25 & shelvesSlice deve rimuovere un prodotto in maniera corretta & S\\
@@ -601,12 +623,12 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-8.9 & interactionsSlice deve impostare il bin selezionato in maniera corretta & S\\
     TU-8.10 & La selezione di un bin deve deselezionare il prodotto & S\\
     TU-8.11 & La selezione di un bin deve deselezionare la scaffalatura & S\\
-    TU-8.12 & interactionsSlice deve impostare le movimantazioni in maniera corretta & S\\
+    TU-8.12 & interactionsSlice deve impostare le movimentazioni in maniera corretta & S\\
     TU-8.13 & interactionsSlice deve ordinare una movimentazione in maniera corretta & S\\
-    TU-8.14 & interactionsSlice deve ordinare una movimentazione solo se il bin di destinazione è vuoto, deve invece impostare un errore & S\\
+    TU-8.14 & interactionsSlice deve ordinare una movimentazione solo se il bin di destinazione è vuoto, altrimenti deve impostare un errore & S\\
     TU-8.15 & interactionsSlice deve ordinare una movimentazione solo se il bin di partenza è STILL, deve altrimenti impostare un errore & S\\
-    TU-8.16 & interactionsSlice deve poter rimuovere i movimenti che partono da uno specico bin e chiedere la rimozione del prodotto INCOMING dal bin di arrivo & S\\
-    TU-8.17 & interactionsSlice deve poter rimuovere i movimenti che arrivano ad uno specico bin e chiedere la rimozione del prodotto OUTGOING dal bin di partenza & S\\
+    TU-8.16 & interactionsSlice deve poter rimuovere i movimenti che partono da uno specifico bin e chiedere la rimozione del prodotto INCOMING dal bin di arrivo & S\\
+    TU-8.17 & interactionsSlice deve poter rimuovere i movimenti che arrivano ad uno specifico bin e chiedere la rimozione del prodotto OUTGOING dal bin di partenza & S\\
    
     %%%%%%%%%%%% errorSlice
     TU-9 & errorSlice deve essere implementato correttamente & S\\
@@ -615,7 +637,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
 \end{xltabular}
 
 \noindent I test realizzati in questa feature sono da considerarsi di alta importanza perché verificano il funzionamento delle classi che modellano gli oggetti utilizzati in tutte le funzionalità dell'applicativo e la logica di business.
-\vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati particolarmente utili per evidenziare alcune casistiche non previste nella scrittura dei metodi e funzioni e per correggerne il comportamento. Alcuni metodi, in particolare quelli di shelf, modificavano i dati della scaffalatura senza adattare la matrice di bin alle nuove modifiche: tramite questi test è stato possibile individuare e risolvere il problema. Nella verifica delle funzioni dello store, invece, i test sono serviti a comprendere meglio quali controlli effettuare sui parametri in input, per evitare errori di tipo o comportamenti indesiderati.
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati particolarmente utili per evidenziare alcune casistiche non previste nella scrittura dei metodi e funzioni e per correggerne il comportamento. Alcuni metodi, in particolare quelli di Shelf, modificavano i dati della scaffalatura senza adattare la matrice di Bin alle nuove modifiche: tramite questi test è stato possibile individuare e risolvere il problema. Nella verifica delle funzioni dello store, invece, i test sono serviti a comprendere meglio quali controlli effettuare sui parametri in input, per evitare errori di tipo o comportamenti indesiderati.
 
 
 \subsubsection{Feature setup}
@@ -644,7 +666,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-13.1.4 & WhsSetupFromInput deve avere un input profondità & S\\
     TU-13.1.5 & WhsSetupFromInput deve avere un input per il file SVG & S\\
     TU-13.1.6 & WhsSetupFromInput deve avere un bottone per inviare i dati & S\\
-    TU-13.2 & La logioca di input del file della componente WhsSetupFromInput deve essere implementato correttamente & S\\
+    TU-13.2 & La logica di input del file della componente WhsSetupFromInput deve essere implementata correttamente & S\\
     TU-13.2.1 & WhsSetupFromInput non deve accettare file non-SVG & S\\
     TU-13.2.2 & WhsSetupFromInput deve accettare file SVG & S\\
     TU-13.2.3 & WhsSetupFromInput deve mostrare errore per file di tipo non-SVG & S\\
@@ -809,7 +831,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-21.2.1 & AllocationRequest deve cambiare righe e colonne quando la scaffalatura è selezionata & S\\
     TU-21.2.2 & AllocationRequest deve chiamare onFinishedConfig quando il form è compilato ed inviato & S\\
     TU-21.2.3 & AllocationRequest non deve chiamare onFinishedConfig quando il form non è compilato ed inviato & S\\
-    TU-21.2.4 & AllocationRequest deve filtrare le opzioni in manera corretta quando si inseriscono gli input & S\\
+    TU-21.2.4 & AllocationRequest deve filtrare le opzioni in maniera corretta quando si inseriscono gli input & S\\
 
     %%%%%%%%%%%% MovementView
     TU-22 & MovementView deve essere implementato correttamente & S\\
@@ -821,7 +843,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TU-22.2 & MovementView deve chiamare onClick con il corretto id del prodotto & S\\
 \end{xltabular}
 
-\noindent I test realizzati in questa feature verificano il corretto comportamento delle componenti grafiche informative e di interazione utente nell'applicativo. Particolare attienzione deve essere posta nella verifica che mostrino tutte le informazioni necessarie all'utente per un utilizzo ottimale del programma e che rispondano correttamente alle interazioni dell'utente.
+\noindent I test realizzati in questa feature verificano il corretto comportamento delle componenti grafiche informative e di interazione utente nell'applicativo. Particolare attenzione deve essere posta nel verificare che tutte le informazioni necessarie all'utente siano mostrate e rispondano correttamente alle interazioni dell'utente stesso. Tutto ciò affinché si possa avere un utilizzo ottimale del programma.
 \vspace{0.2cm} \\ \textbf{Considerazioni PB}: Questi test sono risultati utili soprattutto dal punto di vista informativo, per assicurarsi che tutte le informazioni venissero visualizzate sull'applicativo. Meno utili invece dal punto di vista dell'interazione utente, perché hanno verificato comportamenti già realizzati in maniera corretta in fase di programmazione.
 
 
@@ -848,7 +870,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     %%%%%%%%%%%% WarehouseMesh
     TU-25 & WarehouseMesh deve essere implementato correttamente & S\\
     TU-25.1 & WarehouseMesh deve mostrare la mesh del magazzino con tutti i figli & S\\
-    TU-25.2 & WarehouseMesh deve mostrare la mesh del magazzino con i punti corretti & S\\
+    TU-25.2 & WarehouseMesh deve mostrare la mesh del magazzino con i punti di angolo corretti & S\\
     TU-25.3 & WarehouseMesh deve mostrare la mesh del magazzino con l'altezza corretta & S\\
     
     %%%%%%%%%%%% ShelvesRender
@@ -876,18 +898,18 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     %%%%%%%%%%%% Render
     TU-29 & Render deve essere implementato correttamente & S\\
     TU-29.1 & Render deve inviare isNavigating false a ThreeScene al primo render & S\\
-    TU-29.2 & Render deve inviare isNavigating true a ThreeScene al click sulla rotella del mouse & S\\
+    TU-29.2 & Render deve inviare isNavigating true a ThreeScene al primo click sulla rotella del mouse & S\\
 
 \end{xltabular}
 
 \noindent I test realizzati in questa feature controllano il corretto comportamento della modellazione 3D dell'applicativo, sono da considerarsi di alta importanza perché la componente 3D è un aspetto essenziale dell'applicativo.
-\vspace{0.2cm} \\ \textbf{Considerazioni PB}: I test della modellazione 3D sono risultati meno utili ripetto agli altri, perché la libreria di testing fornita con gli strumenti 3D funziona in modo poco intuitivo e l'impressione è stata che gli stessi test, realizzati solo tramite interazione utente con l'applicativo, avrebbero avuto la stessa efficacia in meno tempo.    
+\vspace{0.2cm} \\ \textbf{Considerazioni PB}: I test della modellazione 3D sono risultati meno utili rispetto agli altri, perché la libreria di testing fornita con gli strumenti 3D funziona in modo poco intuitivo e l'impressione è stata che gli stessi test, realizzati solo tramite interazione utente con l'applicativo, avrebbero avuto la stessa efficacia in meno tempo.    
 
 
 \subsection{Test di Integrazione}
 \par I test di integrazione si pongono ad un livello più alto dei test di unità e sono eseguiti per controllare le interazioni tra le diverse componenti del software. L'obiettivo è verificare il corretto funzionamento delle componenti quando vengono integrate fra loro ed identificare problemi nelle interfacce e nelle interazioni.
 \par Di norma sono eseguiti dopo i test di unità per verificare che le componenti che funzionano singolarmente continuino a funzionare in maniera corretta anche quando comunicano fra loro.
-\vspace{0.5cm} \\ La tabella che segue mostra il registro dei test effettuati. Dato che lo store è realizzato sfruttando alcune funzionalità offerte direttamente dalla libreria delle componenti grafiche, l'interazione tra store e interfaccia utente è già di per sé controllata. Perciò il focus dei test di integrazione sarà assicurarsi che le varie parti dello store comunichino correttamente tra loro e, soprattutto, che l'interazione tra componenti presentational e container (così come descritte nella \textit{Specifica Tecnica v1.0.0}), funzioni come previsto.
+\vspace{0.5cm} \\ La tabella che segue mostra il registro dei test effettuati. Dato che lo store è realizzato sfruttando alcune funzionalità offerte direttamente dalla libreria delle componenti grafiche, l'interazione tra store e interfaccia utente è già di per sé controllata. Perciò il focus dei test di integrazione sarà assicurarsi che le varie parti dello store comunichino correttamente tra loro e, soprattutto, che l'interazione tra componenti Presentational e Container (così come descritte nella \textit{Specifica Tecnica}) funzioni come previsto.
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10!}{white}
 \begin{xltabular}{0.9\textwidth}{X | p{0.6\textwidth}  | p{0.1\textwidth}}
@@ -908,16 +930,16 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
 
     %%%%%%%%%%%% ShelfManager
     TI-2 & ShelfManager deve essere implementato correttamente & S\\
-    TI-2.1 & ShelfManager deve implemetare l'aggiunta e la modifica di una scaffalatura nella maniera corretta & S\\
+    TI-2.1 & ShelfManager deve implementare l'aggiunta e la modifica di una scaffalatura nella maniera corretta & S\\
     TI-2.1.1 & ShelfManager deve passare i parametri corretti all'azione addShelf al submit per la creazione di una nuova scaffalatura da ShelfConfigurator & S\\
     TI-2.1.2 & ShelfManager deve chiamare l'azione updateShelfPosition al submit per la creazione di una nuova scaffalatura da ShelfConfigurator (step 1) & S\\
     TI-2.1.3 & ShelfManager deve passare i parametri corretti all'azione updateShelfInfo al submit per la modifica di una scaffalatura da ShelfConfigurator & S\\
     TI-2.1.4 & ShelfManager deve chiamare updateShelfPosition quando si annulla la modifica di una scaffalatura da ShelfConfigurator  (step 1) & S\\
     TI-2.1.5 & ShelfManager deve resettare i campi di input di ShelfConfigurator quando si annulla l'operazione (step 0) & S\\
     TI-2.1.6 & ShelfManager deve chiamare l'azione removeShelf con il corretto id quando si annulla l'operazione (step 1) & S\\
-    TI-2.1.7 & ShelfManager deve chiuedere ShelfConfigurator al click sul bottone annulla & S\\
-    TI-2.2 & ShelfManager deve implemetare la gestione di ShelfCard nella maniera corretta & S\\
-    TI-2.2.1 & ShelfManager deve chiamare setConfig con il parametro true al clik sul bottone per la modifica della scaffalatura & S\\  
+    TI-2.1.7 & ShelfManager deve chiudere ShelfConfigurator al click sul bottone annulla & S\\
+    TI-2.2 & ShelfManager deve implementare la gestione di ShelfCard nella maniera corretta & S\\
+    TI-2.2.1 & ShelfManager deve chiamare setConfig con il parametro true al click sul bottone per la modifica della scaffalatura & S\\  
     TI-2.2.2 & ShelfManager deve chiamare l'azione removeShelf con l'id corretto al click sul bottone per la rimozione della scaffalatura & S\\
     TI-2.2.3 & ShelfManager deve chiamare l'azione selectShelf senza parametri al click sul bottone per la rimozione della scaffalatura & S\\
     TI-2.2.4 & ShelfManager deve chiamare l'azione selectShelf senza parametri alla chiusura di ShelfCard & S\\
@@ -925,7 +947,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
 
     %%%%%%%%%%%% ProductManager
     TI-3 & ProductManager deve essere implementato correttamente & S\\
-    TI-3.1 & ProductManager deve implemetare l'aggiunta e la modifica di un prodotto nella maniera corretta & S\\
+    TI-3.1 & ProductManager deve implementare l'aggiunta e la modifica di un prodotto nella maniera corretta & S\\
     TI-3.1.1 & ProductManager deve passare i parametri corretti all'azione addProduct al submit per la creazione di un nuovo prodotto da ProductConfigurator & S\\
     TI-3.1.2 & ProductManager deve chiamare setConfig al submit di nuovi dati per un prodotto esistente da ProductConfigurator & S\\
     TI-3.1.3 & ProductManager deve chiamare l'azione updateName e updateColor al submit di nuovi dati per un prodotto esistente da ProductConfigurator & S\\
@@ -933,12 +955,12 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     TI-3.1.5 & ProductManager deve chiudere ProductConfigurator al click sul bottone annulla & S\\
     TI-3.1.6 & ProductManager deve resettare ProductConfigurator al submit & S\\
     TI-3.1.7 & ProductManager deve resettare ProductConfigurator al click sul bottone annulla & S\\
-    TI-3.2 & ProductManager deve implemetare la gestione di ProductCard nella maniera corretta & S\\
+    TI-3.2 & ProductManager deve implementare la gestione di ProductCard nella maniera corretta & S\\
     TI-3.2.1 & ProductManager deve chiamare configMove con il parametro true al click su posiziona prodotto & S\\
     TI-3.2.2 & ProductManager deve chiamare l'azione removeProduct con l'id corretto al click su elimina prodotto & S\\
     TI-3.2.3 & ProductManager deve chiamare l'azione selectProduct con nessun parametro al click su elimina prodotto & S\\
     TI-3.2.4 & ProductManager deve chiamare l'azione selectProduct con nessun parametro alla chiusura di ProductCard & S\\
-    TI-3.3 & ProductManager deve implemetare la gestione di BinCard nella maniera corretta & S\\
+    TI-3.3 & ProductManager deve implementare la gestione di BinCard nella maniera corretta & S\\
     TI-3.3.1 & ProductManager deve chiamare l'azione selectBin con l'id corretto al click sul bin di ProductCard & S\\
     TI-3.3.2 & ProductManager deve chiamare configMove con il parametro true al click su movimentazione prodotto & S\\
     TI-3.3.3 & ProductManager deve chiamare removeProductFromBin con i parametri corretti al click su rimuovi prodotto & S\\
@@ -948,7 +970,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
 
     %%%%%%%%%%%% AllocationManager
     TI-4 & AllocationManager deve essere implementato correttamente & S\\
-    TI-4.1 & AllocationManager deve implemetare la posizione e la movimentazione di un prodotto nella maniera corretta & S\\
+    TI-4.1 & AllocationManager deve implementare il posizionamento e la movimentazione di un prodotto nella maniera corretta & S\\
     TI-4.1.1 & AllocationManager deve chiamare l'azione insertProduct quando un prodotto è inserito dentro a un bin & S\\
     TI-4.1.2 & AllocationManager deve chiamare l'azione orderMovementFromSelected quando un prodotto è inserito dentro a un bin & S\\
     TI-4.1.3 & AllocationManager deve chiamare handleCloseRequest quando una movimentazione di un prodotto è avvenuta con successo  & S\\
@@ -960,8 +982,8 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
     
     %%%%%%%%%%%% MovementManager
     TI-5 & MovementManager deve essere implementato correttamente & S\\
-    TI-5.1 & MovementManager deve implemetare le richieste di movimentazione nella maniera corretta & S\\
-    TI-5.1.1 & MovementManager deve chiamare updateBinState e removeMovementsWithBin con i parametri della scaffalatura di destinazione se la richieta ritorna true & S\\
+    TI-5.1 & MovementManager deve implementare le richieste di movimentazione nella maniera corretta & S\\
+    TI-5.1.1 & MovementManager deve chiamare updateBinState e removeMovementsWithBin con i parametri della scaffalatura di destinazione se la richiesta ritorna true & S\\
     TI-5.1.2 & MovementManager deve chiamare updateBinState e removeMovementsWithBin con i parametri della scaffalatura di partenza se la richiesta ritorna false & S\\
 \end{xltabular}
 
@@ -970,7 +992,7 @@ Tali documenti sono reperibili nella sezione \hyperref[sec:riferimenti_esterni]{
 \subsection{Test di Sistema}
 \par Sono eseguiti dopo aver completato i test sulle singole unità e sulla loro integrazione, con l'obiettivo di verificare il comportamento complessivo del sistema. Si basano sulle funzionalità espresse nei requisiti concordati con il proponente, per assicurare che tutte le richieste siano soddisfatte.
 
-Di seguito si riporta l'elenco di tali test e i requisiti, identificati nel documento di \textit{Analisi dei requisiti v5.0.0}, che essi vanno a coprire.
+Di seguito si riporta l'elenco di tali test e i requisiti, identificati nel documento di \textit{Analisi dei requisiti}, che essi vanno a coprire.
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10!}{white}
 \begin{xltabular}{0.9\textwidth}{X | p{0.5\textwidth} | X | p{0.9cm}}
@@ -1139,22 +1161,22 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
 
 \newpage
 \section{Cruscotto di valutazione della qualità}\label{resoconto}
-Per ogni metrica si riporta un grafico riassuntivo e/o una breve considerazione dei valori di tale metrica durante i vari periodi pianificati nel \textit{Piano di Progetto}. Lo scopo è quello di analizzare l'andamento del progetto per poter, eventualmente, attuare azioni migliorative. Per informazioni dettagliate riguardo alla suddivisione dei periodi di progetto si consulti il già citato documento nella sezione \ref{sec:riferimenti_esterni}.
+Per ogni metrica si riporta un grafico riassuntivo e/o una breve considerazione dei valori di tale metrica durante i vari periodi pianificati nel \textit{Piano di Progetto}. Lo scopo è quello di analizzare l'andamento del progetto per poter, eventualmente, attuare azioni migliorative. Per informazioni dettagliate riguardo alla suddivisione dei periodi di progetto si consulti il sopra citato documento presente nella sezione \ref{sec:riferimenti_esterni}.
 
 \subsection{Processi primari} \label{sec:processi_primari}
-Di seguito sono visualizzati i grafici relativi alle metriche dei processi primari. 
-\subsubsection{Qualità di processo - fornitura}
+Di seguito sono visualizzati i grafici e i resoconti relativi alle metriche dei processi primari. 
+\subsubsection{Qualità di processo - Fornitura}
 \paragraph{MPC1-EAC: Estimated At Completion}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/MPC1-EAC.png}
     \caption{MPC1-EAC: Estimated At Completion}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si nota come la stima del costo totale (EAC) sia in linea con il budget inizialmente preventivato per entrambi i periodi di Analisi e Codifica del PoC. Si vuole dunque cercare di mantenere questo risultato anche per i prossimi periodi.
+\noindent \textbf{Considerazioni RTB:} Si nota come la stima del costo totale (EAC) sia in linea con il budget inizialmente preventivato per entrambi i periodi di Analisi e Codifica del PoC. Si vuole dunque cercare di mantenere questo risultato anche per i prossimi periodi.
 
 \vspace{0.5cm}
 
-\noindent \textbf{Considerazioni PB:} La stima del costo totale non ha mai subito variazioni nei periodi attraversati.
+\noindent \textbf{Considerazioni PB:} Si è riusciti nell'obiettivo posto da questa metrica. La stima del costo totale, infatti, non ha mai subito variazioni nei periodi attraversati.
 
 \newpage
 \paragraph{MPC2-CV: Cost Variance}
@@ -1163,10 +1185,10 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \includegraphics[width=0.8\textwidth]{images/MPC2-CV.png}
     \caption{MPC2-CV: Cost Variance}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} pur rimanendo entro i limiti previsti dalle metriche, il Cost Variance (CV) non rispetta il valore ottimale, in quanto il valore delle attività realizzate è inferiore al costo sostenuto. Sarà dunque necessario attuare dei miglioramenti dal punto di vista produttivo, in modo che i costi per le attività siano ben giustificati.
+\noindent \textbf{Considerazioni RTB:} Pur rimanendo entro i limiti previsti dalle metriche, il Cost Variance (CV) non rispetta il valore ottimale, in quanto il valore delle attività realizzate è inferiore al costo sostenuto. Sarà dunque necessario attuare dei miglioramenti dal punto di vista produttivo, in modo che i costi per le attività siano ben giustificati.
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazioni PB:} La fase di progettazione e codifica è risultata estremamente produttiva nonostante l'aumento sostanziale dei costi sostenuti, arrivando ad un valore ottimale per la metrica CV. Nono sono necessarie azioni correttive, bensì ci si aspetta un comportamento simile nella prossima fase. Il periodo di collaudo ha visto confermare la stabilità della relazione tra costi e valore del prodotto. 
+\noindent \textbf{Considerazioni PB:} La fase di progettazione e codifica è risultata estremamente produttiva nonostante l'aumento sostanziale dei costi sostenuti, arrivando ad un valore ottimale per la metrica CV. Non sono state dunque necessarie azioni correttive. Il periodo di Collaudo ha visto confermare la stabilità della relazione tra costi e valore del prodotto. 
 
 
 \paragraph{MPC3-SV: Schedule Variance}
@@ -1175,10 +1197,10 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \includegraphics[width=0.8\textwidth]{images/MPC3-SV.png}
     \caption{MPC3-SV: Schedule Variance}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si nota come la Schedule Variance (SV) risulta avere un calo durante il periodo di progettazione e codifica del PoC, suggerendo quindi che ci sono stati dei ritardi rispetto alla pianificazione prevista. Il motivo di questi ritardi è dovuto allo studio delle nuove tecnologie che ha richiesto più tempo del previsto e alla sessione di esami che ha tolto del tempo allo svolgimento del progetto.
+\noindent \textbf{Considerazioni RTB:} Si nota come la Schedule Variance (SV) risulta avere un calo durante il periodo di progettazione e codifica del PoC, suggerendo quindi che ci sono stati dei ritardi rispetto alla pianificazione prevista. Il motivo di questi ritardi è dovuto allo studio delle nuove tecnologie che ha richiesto più tempo del previsto e alla sessione di esami che ha tolto del tempo allo svolgimento del progetto.
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazioni PB:} L'accumulo di ritardi nella fase precedente ha provocato un aumento della produttività del gruppo, riuscendo a risollevare, nella fase di Progettazione e codifica, la metrica SV fino a valori accettabili. Ci si aspetta un trend simile nel periodo successivo e per realizzarlo bisogna mantenere costante il livello di produttività. La fase di collaudo è stata ancora più positiva della precedente, arrivando ad ottenere valori ottimali per la metrica SV.
+\noindent \textbf{Considerazioni PB:} L'accumulo di ritardi nella fase precedente ha provocato un aumento della produttività del gruppo, riuscendo a risollevare, nella fase di Progettazione e codifica, la metrica SV fino a valori accettabili. Si è riusciti a mantenere costante il livello di produttività anche nella fase di Collaudo che, anzi, è stata ancora più positiva della precedente, arrivando ad ottenere valori ottimali per la metrica SV.
 
 \paragraph{MPC4-BV: Budget Variance}
 \begin{figure}[h!] 
@@ -1186,26 +1208,22 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \includegraphics[width=0.8\textwidth]{images/MPC4-BV.png}
     \caption{MPC4-BV: Budget Variance}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si nota come sostanzialmente l'errore rimane pressoché nullo, a significare che i costi della pianificazione iniziale corrispondono quasi completamente a quelli effettivi. Si cerca di dunque di mantenere questa linea anche per i prossimi periodi.
+\noindent \textbf{Considerazioni RTB:} Si nota come sostanzialmente l'errore rimane pressoché nullo, a significare che i costi della pianificazione iniziale corrispondono quasi completamente a quelli effettivi. Si cerca di dunque di mantenere questa linea anche per i prossimi periodi.
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazioni PB:} anche in queste fasi l'errore di previsione di costi rimane nullo. I ritardi accumulati non hanno dunque portato ad un aumento dei costi totali ma ad un recupero del capitale mal utilizzato nella fase RTB.
+\noindent \textbf{Considerazioni PB:} Anche in queste fasi l'errore di previsione di costi rimane pressochè nullo. I ritardi accumulati in fase RTB non hanno dunque influenzato i costi, che rimangono in linea con quelli pianificati.
 
 \paragraph{MPC5-PV: Planned Value}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/MPC5-PV.png}
     \caption{MPC5-PV: Planned Value}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si deduce dal grafico che i costi sostenuti per i periodi di Analisi e Codifica del PoC rimangono inferiori a quelli previsti totalmente per la realizzazione del progetto. Ovviamente si ha un incremento in questi costi dovuti all'avanzare del progetto, ma rimane comunque controllato.
+\noindent \textbf{Considerazioni RTB:} Si deduce dal grafico che i costi sostenuti per i periodi di Analisi e Codifica del PoC rimangono inferiori a quelli previsti totalmente per la realizzazione del progetto. Ovviamente si ha un incremento in questi costi dovuti all'avanzare del progetto, ma rimane comunque controllato.
 
-\newpage
-
+\vspace{0.5cm}
 \noindent \textbf{Considerazioni PB:} 
-\begin{itemize}
-    \item \textbf{Progettazione e codifica finale:} In questa fase si prevede un sostanziale consumo di risorse, in linea con le aspettative. Non sono necessarie azioni risanatorie
-    \item \textbf{Collaudo:} Il budget rimanente scarseggia ma la previsione finale si allinea a quella iniziale. 
-\end{itemize}
+Per la fase di Progettazione e codifica finale si è previsto un sostanziale consumo di risorse che però rimane sotto al limite massimo previsto (corrispondente al BAC). Pertanto, non sono state effettuate azioni correttive. Per quanto riguarda la fase di Collaudo, il budget rimanente è scarso ma la previsione finale si allinea a quella iniziale. 
 
 \paragraph{MPC6-AC: Actual Cost}
 \begin{figure}[h!] 
@@ -1213,10 +1231,10 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \includegraphics[width=0.8\textwidth]{images/MPC6-AC.png}
     \caption{MPC6-AC: Actual Cost}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si osserva che l’Actual Cost (AC) mostra un incremento, come naturale con il progredire del progetto, ma rimane comunque sotto la soglia dell'Estimated at Completion (EAC). 
+\noindent \textbf{Considerazioni RTB:} Si osserva che l’Actual Cost (AC) mostra un incremento, come naturale con il progredire del progetto, ma rimane comunque sotto la soglia dell'Estimated at Completion (EAC). 
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazioni PB:} nella fase di progettazione ci si aspetta un grande consumo di risorse, quella di collaudo dovrà utilizzare il capitale rimanente.
+\noindent \textbf{Considerazioni PB:} Nella fase di progettazione e codifica si è verificato un grande consumo di risorse. Tuttavia, al termine del periodo, l'Actual Cost (AC) non supera comunque la soglia dell'Estimated At Completion (EAC).
 
 
 \paragraph{MPC7-EV: Earned Value}
@@ -1225,14 +1243,16 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \includegraphics[width=0.8\textwidth]{images/MPC7-EV.png}
     \caption{MPC7-EV: Earned Value}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si nota che l'Earned Value (EV) rimane minore dell'Estimated at Completion (EAC), a significare che il valore effettivo delle attività di progetto svolte fino all'RTB non sfora i costi pianificati per l'intero progetto, seppur ovviamente aumenta con il susseguirsi dei vari periodi.
+\noindent \textbf{Considerazioni RTB:} Si nota che l'Earned Value (EV) rimane minore dell'Estimated at Completion (EAC), a significare che il valore effettivo delle attività di progetto svolte fino all'RTB non sfora i costi pianificati per l'intero progetto, seppur ovviamente aumenta con il susseguirsi dei vari periodi.
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazioni PB:} nella fase di progettazione e codifica ci avviciniamo spaventosamente al limite di costi previsti. La fase successiva deve tener conto della scarsità di capitale rimanente. Nella fase di collaudo è riuscito a rientrare entro i limiti della metrica.
+\noindent \textbf{Considerazioni PB:} Nella fase di progettazione e codifica ci si è avvicinati spaventosamente al limite di costi previsti. Nella fase successiva di Collaudo si è tenuto conto della scarsità di capitale rimanente e si è riusciti a rientrare entro i limiti della metrica.
 
-\subsubsection{Sviluppo} \label{sec:sviluppo}
+\subsubsection{Qualità di processo - Sviluppo} \label{sec:sviluppo}
+Si noti che le seguenti metriche saranno analizzate soltanto per il periodo di Progettazione e codifica finale in quanto lo sviluppo finale del prodotto è avvenuto in questo periodo.
+
 \paragraph{MPC8-SFINp: Structural Fan-In}  
-Il design del prodotto, meglio descritto nel documento \textit{Specifica Tecnica}, consultabile nella sezione \ref{sec:riferimenti_esterni}, prevede un'alta dipendenza dei componenti grafici verso lo store. Il riutilizzo di codice è dunque molto alto e rende la metrica SFINp soddisfatta.
+Il design del prodotto, meglio descritto nel documento \textit{Specifica Tecnica}, consultabile nella sezione \ref{sec:riferimenti_esterni}, prevede un alto utilizzo delle procedure definite nello store da parte dei componenti grafici. Il riutilizzo di codice è dunque molto alto e rende la metrica SFINp soddisfatta.
 
 \paragraph{MPC9-SFOUTp: Structural Fan-Out}
 I componenti grafici non hanno alcuna dipendenza tra di loro, mentre la parte di store è intrinsecamente interdipendente per via dei design pattern utilizzati. La metrica è dunque da ritenersi soddisfatta.
@@ -1240,7 +1260,7 @@ I componenti grafici non hanno alcuna dipendenza tra di loro, mentre la parte di
 \newpage
 \paragraph{MPC10-CCH: Code Churn}
 
-\textbf{Nota:} Nel seguente grafico è analizzato il periodo di progettazione e codifica finale e sono presi in considerazione quei componenti soggetti ad un numero sostanziale di modifiche.
+\textbf{Nota:} Si noti che sono stati presi in considerazione solamente i componenti soggetti ad un numero sostanziale di modifiche.
 
 \begin{figure}[h!] 
     \centering
@@ -1248,18 +1268,17 @@ I componenti grafici non hanno alcuna dipendenza tra di loro, mentre la parte di
     \caption{MPC10-CCH: Code Churn}
 \end{figure}
 
-\noindent \textbf{Considerazioni PB:} Gli Sprint 1, 2 e 3 sono stati soggetti ad un modesto numero di modifiche, causando cambiamenti di codice che hanno rallentato momentaneamente lo sviluppo. Questa esperienza ha causato un ritorno di attenzione sull' UML del progetto, modificandolo ed aggiornandolo in maniera dettagliata. Gli sprint successivi sono infatti più stabili.
+\noindent \textbf{Considerazioni:} Gli Sprint 1, 2 e 3 sono stati soggetti ad un modesto numero di modifiche, causando cambiamenti di codice che hanno rallentato momentaneamente lo sviluppo. Questa esperienza ha causato un ritorno di attenzione sull'UML del progetto, modificandolo ed aggiornandolo in maniera dettagliata. Gli sprint successivi sono infatti più stabili.
 
 
 \paragraph{MPC11-NB: Number of Bugs}
-\textbf{Nota:} Nel seguente grafico è analizzato il periodo di progettazione e codifica finale.
 \begin{figure}[h!] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/MPC11-NB.png}
     \caption{MPC11-NB: Number of Bugs}
 \end{figure}
 
-\noindent Durante lo sviluppo del codice sono stati rilevati e corretti alcuni bug. Il prodotto finale non contiene bug rilevati.
+\noindent \textbf{Considerazioni:} Durante lo sviluppo del codice sono stati rilevati e corretti alcuni bug. Il prodotto finale non contiene bug rilevati. La metrica è dunque soddisfatta in maniera ottimale.
 
 \paragraph{MPC12-CC: Cyclomatic Complexity}
 
@@ -1267,19 +1286,16 @@ Di seguito sono analizzati in ordine decrescente i valori di Cyclomatic Complexi
 
 \begin{figure}[h!] 
     \centering
-    \includegraphics[width=0.8\textwidth]{images/MPC12-CC.png}
+    \includegraphics[width=0.9\textwidth]{images/MPC12-CC.png}
     \caption{MPC12-CC: Cyclomatic Complexity}
 \end{figure}
 
-\noindent Come si nota, il valore di complessità massimo è raggiunto in ProductSlice ma è comunque compreso tra i valori ottimali scelti per questa metrica.
-
-\vspace{0.2cm}
-\textbf{Nota:} L'immagine prodotta è stata realizzata attraverso Plato, uno strumento di analisi statica del codice. Si consulti la sezione \ref{sec:riferimenti_esterni} per maggiore informazioni.
+\noindent \textbf{Considerazioni:} Come si nota, il valore di complessità massimo è raggiunto in ProductSlice ma è comunque compreso tra i valori ottimali scelti per questa metrica.
 
 \newpage
 
 \subsection{Processi di supporto} \label{sec:processi_di_supporto}
-Di seguito sono visualizzati i grafici relativi alle metriche dei processi di supporto.
+Di seguito sono visualizzati i grafici e i resoconti relativi alle metriche dei processi di supporto.
 \subsubsection{Qualità di processo - Documentazione}
 \paragraph{MPC13-EOD: Errori ortografici per documento}
 \begin{figure}[h!] 
@@ -1287,20 +1303,20 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi di su
     \includegraphics[width=0.8\textwidth]{images/MPC13-EOD.png}
     \caption{MPC13-EOD: Errori ortografici per documento}
 \end{figure}
-\noindent \textbf{Considerazioni:} il gruppo si è impegnato a mantenere una documentazione priva di errori ortografici.
+\noindent \textbf{Considerazioni:} Il gruppo si è impegnato a mantenere una documentazione priva di errori ortografici. La metrica è dunque soddisfatta ina maniera ottimale.
 
 
 \paragraph{MPC14-IG: Indice Gulpease}
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/MPC14-EODrtb.png}
         \caption{MPC14-IG RTB}
         \label{fig:image1}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/MPC14-IG.png}
         \caption{MPC14-IG PB}
@@ -1310,15 +1326,33 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi di su
     \label{fig:whole_figure}
 \end{figure}
 
-\noindent \textbf{Considerazioni RTB:} si osserva come l'indice di Gulpease rimane accettabile per tutti i documenti, tuttavia non raggiunge mai l'ottimalità. Il gruppo, pertanto, dovrà impegnarsi ad utilizzare termini meno tecnici (se possibile) e strutturare i periodi in maniera più semplice.
+\noindent \textbf{Considerazioni RTB:} Si osserva come l'indice di Gulpease rimane accettabile per tutti i documenti, tuttavia non raggiunge mai l'ottimalità. Il gruppo, pertanto, dovrà impegnarsi ad utilizzare termini meno tecnici (se possibile) e strutturare i periodi in maniera più semplice.
 
 \vspace{0.5cm}
-\noindent \textbf{Considerazione PB:} la natura tecnica della documentazione prodotta non ha permesso un miglioramento netto ma i documenti soddisfano i valori minimi.
+\noindent \textbf{Considerazione PB:} La natura tecnica della documentazione prodotta non ha permesso un miglioramento netto ma i documenti soddisfano i valori minimi.
 
+\subsubsection{Qualità di processo - Accertamento della qualità}
 \paragraph{MPC15-MS: Metriche soddisfatte} \label{sec:accertamento delle qualita}
 
 \noindent \textbf{Considerazioni RTB:}
-le metriche prese in considerazione in questa fase sono:
+Le metriche prese in considerazione in questa fase sono:
+\begin{itemize}
+    \item MPC1-EAC \colorbox{green}{Soddisfatta} 
+    \item MPC2-CV \colorbox{green}{Soddisfatta} 
+    \item MPC3-SV \colorbox{green}{Soddisfatta}
+    \item MPC4-BV \colorbox{green}{Soddisfatta} 
+    \item MPC5-PV \colorbox{green}{Soddisfatta} 
+    \item MPC6-AC \colorbox{green}{Soddisfatta} 
+    \item MPC7-EV \colorbox{green}{Soddisfatta} 
+    \item MPC13-EOD \colorbox{green}{Soddisfatta}
+    \item MPC14-IG \colorbox{green}{Soddisfatta}
+\end{itemize}
+
+\noindent La percentuale di metriche soddisfatte (MPC15-MS) equivale al \textbf{100\%}. Pertanto, possiamo dire che si è raggiunto un livello di ottimalità per questa metrica.
+
+\bigskip
+\noindent \textbf{Considerazioni PB:}
+Le metriche prese in considerazione in questa fase sono:
 \begin{itemize}
     \item MPC1-EAC \colorbox{green}{Soddisfatta};
     \item MPC2-CV \colorbox{green}{Soddisfatta};
@@ -1347,8 +1381,9 @@ le metriche prese in considerazione in questa fase sono:
 
 \newpage
 
+\subsubsection{Qualità di processo - Verifica}
 \paragraph{MPC16-CCV: Code Coverage}
-\textbf{Nota:} La scrittura dei test è iniziata parallelamente alla codifica, dunque nel seguente grafico sono presi in considerazione gli sprint di Progettazione e codifica e quelli di collaudo.
+\textbf{Nota:} La scrittura dei test è iniziata parallelamente alla codifica, dunque nel seguente grafico sono presi in considerazione gli sprint di Progettazione e codifica e quelli di Collaudo.
 \begin{figure}[h!] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/MPC16-CCV.png}
@@ -1358,9 +1393,9 @@ le metriche prese in considerazione in questa fase sono:
 \noindent \textbf{Considerazioni:} La percentuale di Code Coverage è sempre stata elevata grazie ad una parallelizzazione del lavoro di Verificatori e Programmatori.
 
 \paragraph{MPC17-TP: Test Passed}
-\begin{figure}[h!] 
+\begin{figure}[H] 
     \centering
-    \includegraphics[width=0.4\textwidth]{images/MPC17-TP.png}
+    \includegraphics[width=0.8\textwidth]{images/MPC17-TP.png}
     \caption{MPC17-TP: Test Passed}
 \end{figure}
 
@@ -1368,79 +1403,81 @@ le metriche prese in considerazione in questa fase sono:
 
 \subsection{Qualità di prodotto}
 
-\subsubsection{Customer Needs}
+\subsubsection{Qualità di prodotto - Customer Needs}
 
-\begin{figure}[h!] 
+\paragraph{MPD1-ROB: Copertura dei requisiti obbligatori,  MPD2-RDE: Copertura dei requisiti desiderabili}
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/Customer Needs.png}
     \caption{Customer Needs}
 \end{figure}
 
 \noindent \textbf{Considerazioni:} L'aumento di copertura di requisiti, sia desiderabili che obbligatori, è sempre stato costante e crescente. Non sono dunque servite azioni correttive.
-Come si può in figura notare, le metriche MPD1-ROB e MPD2-RDE sono soddisfatte.
 
-\subsubsection{Efficienza}
+Come si può notare in figura, le metriche MPD1-ROB e MPD2-RDE sono soddisfatte. Nello specifico, si raggiunge l'ottimalità per la metrica MPD1-ROB, mentre si rientra nei valori accettabili per la metrica MPD2-RDE.
+
+\subsubsection{Qualità di prodotto - Efficienza}
 
 \paragraph{MPD3-ART: Average Response Time}
-L'unica funzione soggetta a visibile latenza è il caricamento del magazzino da file. Il tempo impiegato è tuttavia sempre inferiore a 2 secondi, pertanto la metrica ART è soddisfatta.
+L'unica funzione soggetta a visibile latenza è il caricamento del magazzino da file. Il tempo impiegato è tuttavia sempre inferiore a 2 secondi, pertanto la metrica MPD3-ART è soddisfatta.
 
-\subsubsection{Usabilità}
+\subsubsection{Qualità di prodotto - Usabilità}
 
 \paragraph{MPD4-PC: Profondità Click}
-Il numero di click che l'utente deve fare per poter raggiungere una determinata funzione non è mai superiore a 2, dunque la metrica PC è soddisfatta.
+Il numero di click che l'utente deve fare per poter raggiungere una determinata funzione non è mai superiore a 3, dunque la metrica MPD4-PC è soddisfatta.
 
 \paragraph{MPD5-CFO: Comprensibilità funzionalità offerte}
-Il prodotto finale è stato sottoposto ad un analisi da parte dei componenti del gruppo non coinvolti direttamente nella programmazione, con risultati che sembrano dimostrare la facilità di comprensione delle funzionalità proposte. In particolare è stato assegnato un valore di 95\% alla metrica CFO.
+Il prodotto finale è stato sottoposto ad un'analisi da parte dei componenti del gruppo non coinvolti direttamente nella programmazione, con risultati che sembrano dimostrare la facilità di comprensione delle funzionalità proposte. In particolare è stato assegnato un valore di 95\% alla metrica CFO.
 
 
 \newpage
-\subsubsection{Portabilità su altre piattaforme}
-\paragraph{Google Chrome}
-\begin{figure}[h!] 
+\subsubsection{Qualità di prodotto - Portabilità su altre piattaforme}
+\paragraph{MPD6-PPT: Portabilità su piattaforme}
+La metrica risulta essere soddisfatta dato il corretto funzionamento dell'applicativo nei browser richiesti. Si riporta di seguito la visualizzazione dell'applicativo nei vari browser, corredato dalla versione del browser in cui l'applicativo è stato testato.
+
+\subparagraph{Google Chrome}
+v124.0.6367.119 (Official Build) (arm64)
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/chrome.png}
     \caption{Test su Google Chrome}
 \end{figure}
-Versione: 124.0.6367.119 (Official Build) (arm64)
 
-\paragraph{Safari}
-\begin{figure}[h!] 
+
+\subparagraph{Safari}
+v17.1.2 (19616.2.9.11.12)
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/safari.png}
     \caption{Test su Safari}
 \end{figure}
-Versione: 17.1.2 (19616.2.9.11.12)
 
 
-\paragraph{Firefox}
-\begin{figure}[h!] 
+\subparagraph{Firefox}
+v115 (64-bit)
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/firefox.png}
     \caption{Test su Firefox}
 \end{figure}
-Versione: 115 (64-bit)
 
-\paragraph{Opera}
-\begin{figure}[h!] 
+\subparagraph{Opera}
+v109.0.5097.68 (arm64)
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/opera.png}
     \caption{Test su Opera}
 \end{figure}
-Versione: 109.0.5097.68 (arm64)
 
-\newpage
 
-\paragraph{Microsoft Edge}
-\begin{figure}[h!] 
+\subparagraph{Microsoft Edge}
+v124.0.2478.80 (Official build) (arm64)
+\begin{figure}[H] 
     \centering
     \includegraphics[width=0.8\textwidth]{images/microsoftedge.png}
     \caption{Test su Microsoft Edge}
 \end{figure}
-Versione: 124.0.2478.80 (Official build) (arm64)
 
-\vspace{3cm}
-\noindent
-Come evidenziato nei precedenti paragrafi, la metrica MPD6-PPT è soddisfatta dato il corretto funzionamento dell'applicativo nei browser principali. 
 
 \newpage
 \section{Riferimenti esterni} \label{sec:riferimenti_esterni}
@@ -1461,10 +1498,9 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
     \item \textbf{Regolamento} del progetto didattico:\\
     \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}
     \item Link alla \textbf{documentazione del gruppo}:\\
-    \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 12-04-24)}}
+    \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
     \item Standard \textbf{ISO/IEC 12207}, versione 1995:\\
     \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
     \item Metriche di progetto, metodo \textbf{Earned Value}:\\
     \url{https://it.wikipedia.org/wiki/Metriche_di_progetto} \textcolor{gray}{\textit{(ultimo accesso 12-04-24)}}
-    \item Plato Es-Analysis \url{https://github.com/es-analysis/plato} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
 \end{itemize}
