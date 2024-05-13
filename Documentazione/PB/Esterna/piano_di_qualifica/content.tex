@@ -414,35 +414,6 @@ MPD6-PPT & Il prodotto deve essere utilizzabile su tutti i browser principali. &
 \end{tabular}
 \end{table}
 
-\subsubsection{Manutenibilità}
-Si definiscono le seguenti metriche:
-\begin{table}[h!]
-\centering
-\def\arraystretch{1.5}
-\begin{tabular}{ |m{2cm}|m{5.5cm}|m{6.5cm}| }
-\hline
-\rowcolor{lightgray!30}
-\textbf{acronimo} & \textbf{Nome} & \textbf{signficato}\\
-\hline
-\textbf{CD} & Codice duplicato & Misura la quantità (in percentuale) di codice duplicato.\\
-\hline
-\end{tabular}
-\end{table}
-\par Con le seguenti regole:
-\begin{table}[h!]
-\rowcolors{2}{lightgray!30}{white}
-\centering
-\def\arraystretch{1.5}
-\begin{tabular}{ |>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}| }
-\hline
-\rowcolor{black}
-\textbf{\color{white} Codice} & \textbf{\color{white} Descrizione} & \textbf{\color{white} Valore accettabile} & \textbf{\color{white} Valore ottimale}\\
-\hline
-MPD7-CD & La duplicazione del codice deve essere minimizzata & $\leq$ 3\% & 0\% \\
-\hline
-\end{tabular}
-\end{table}
-
 \newpage
 \section{Specifica dei test}\label{sec:test}
 \par Questa sezione è dedicata alla descrizione dei vari tipi di test che verranno effettuati per assicurare la qualità e l'affidabilità del software.
@@ -1168,7 +1139,7 @@ Sono test eseguiti poco prima del rilascio del prodotto, dopo aver già testato 
 
 \newpage
 \section{Cruscotto di valutazione della qualità}\label{resoconto}
-Per ogni metrica si riporta un grafico riassuntivo e/o una breve considerazione dei valori di tale metrica durante i vari periodi pianificati nel \textit{Piano di Progetto}. Lo scopo è quello di analizzare l'andamento del progetto per poter, eventualmente, attuare azioni migliorative.
+Per ogni metrica si riporta un grafico riassuntivo e/o una breve considerazione dei valori di tale metrica durante i vari periodi pianificati nel \textit{Piano di Progetto}. Lo scopo è quello di analizzare l'andamento del progetto per poter, eventualmente, attuare azioni migliorative. Per informazioni dettagliate riguardo alla suddivisione dei periodi di progetto si consulti il già citato documento nella sezione \ref{sec:riferimenti_esterni}.
 
 \subsection{Processi primari} \label{sec:processi_primari}
 Di seguito sono visualizzati i grafici relativi alle metriche dei processi primari. 
@@ -1194,6 +1165,10 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
 \end{figure}
 \noindent \textbf{Considerazioni RTB:} pur rimanendo entro i limiti previsti dalle metriche, il Cost Variance (CV) non rispetta il valore ottimale, in quanto il valore delle attività realizzate è inferiore al costo sostenuto. Sarà dunque necessario attuare dei miglioramenti dal punto di vista produttivo, in modo che i costi per le attività siano ben giustificati.
 
+\vspace{0.5cm}
+\noindent \textbf{Considerazioni PB:} La fase di progettazione e codifica è risultata estremamente produttiva nonostante l'aumento sostanziale dei costi sostenuti, arrivando ad un valore ottimale per la metrica CV. Nono sono necessarie azioni correttive, bensì ci si aspetta un comportamento simile nella prossima fase. Il periodo di collaudo ha visto confermare la stabilità della relazione tra costi e valore del prodotto. 
+
+
 \paragraph{MPC3-SV: Schedule Variance}
 \begin{figure}[h!]
     \centering
@@ -1202,7 +1177,9 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
 \end{figure}
 \noindent \textbf{Considerazioni RTB:} si nota come la Schedule Variance (SV) risulta avere un calo durante il periodo di progettazione e codifica del PoC, suggerendo quindi che ci sono stati dei ritardi rispetto alla pianificazione prevista. Il motivo di questi ritardi è dovuto allo studio delle nuove tecnologie che ha richiesto più tempo del previsto e alla sessione di esami che ha tolto del tempo allo svolgimento del progetto.
 
-\newpage
+\vspace{0.5cm}
+\noindent \textbf{Considerazioni PB:} L'accumulo di ritardi nella fase precedente ha provocato un aumento della produttività del gruppo, riuscendo a risollevare, nella fase di Progettazione e codifica, la metrica SV fino a valori accettabili. Ci si aspetta un trend simile nel periodo successivo e per realizzarlo bisogna mantenere costante il livello di produttività. La fase di collaudo è stata ancora più positiva della precedente, arrivando ad ottenere valori ottimali per la metrica SV.
+
 \paragraph{MPC4-BV: Budget Variance}
 \begin{figure}[h!] 
     \centering
@@ -1210,6 +1187,9 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
     \caption{MPC4-BV: Budget Variance}
 \end{figure}
 \noindent \textbf{Considerazioni RTB:} si nota come sostanzialmente l'errore rimane pressoché nullo, a significare che i costi della pianificazione iniziale corrispondono quasi completamente a quelli effettivi. Si cerca di dunque di mantenere questa linea anche per i prossimi periodi.
+
+\vspace{0.5cm}
+\noindent \textbf{Considerazioni PB:} anche in queste fasi l'errore di previsione di costi rimane nullo. I ritardi accumulati non hanno dunque portato ad un aumento dei costi totali ma ad un recupero del capitale mal utilizzato nella fase RTB.
 
 \paragraph{MPC5-PV: Planned Value}
 \begin{figure}[h!]
@@ -1223,9 +1203,8 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
 
 \noindent \textbf{Considerazioni PB:} 
 \begin{itemize}
-    \item \textbf{Progettazione:} Si prevede un medio consumo di risorse per questa fase, in linea con le aspettative. Non sono necessarie azioni risanatorie.
-    \item \textbf{Codifica MVP:} Per questa fase si prevede un sostanziale consumo di risorse, in linea con le aspettative. Non sono necessarie azioni risanatorie
-    \item \textbf{Progettazione:} Il budget rimanente scarseggia ma la previsione finale si allinea a quella iniziale. 
+    \item \textbf{Progettazione e codifica finale:} In questa fase si prevede un sostanziale consumo di risorse, in linea con le aspettative. Non sono necessarie azioni risanatorie
+    \item \textbf{Collaudo:} Il budget rimanente scarseggia ma la previsione finale si allinea a quella iniziale. 
 \end{itemize}
 
 \paragraph{MPC6-AC: Actual Cost}
@@ -1236,6 +1215,10 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
 \end{figure}
 \noindent \textbf{Considerazioni RTB:} si osserva che l’Actual Cost (AC) mostra un incremento, come naturale con il progredire del progetto, ma rimane comunque sotto la soglia dell'Estimated at Completion (EAC). 
 
+\vspace{0.5cm}
+\noindent \textbf{Considerazioni PB:} nella fase di progettazione ci si aspetta un grande consumo di risorse, quella di collaudo dovrà utilizzare il capitale rimanente.
+
+
 \paragraph{MPC7-EV: Earned Value}
 \begin{figure}[h!] 
     \centering
@@ -1244,8 +1227,57 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi prima
 \end{figure}
 \noindent \textbf{Considerazioni RTB:} si nota che l'Earned Value (EV) rimane minore dell'Estimated at Completion (EAC), a significare che il valore effettivo delle attività di progetto svolte fino all'RTB non sfora i costi pianificati per l'intero progetto, seppur ovviamente aumenta con il susseguirsi dei vari periodi.
 
+\vspace{0.5cm}
+\noindent \textbf{Considerazioni PB:} nella fase di progettazione e codifica ci avviciniamo spaventosamente al limite di costi previsti. La fase successiva deve tener conto della scarsità di capitale rimanente. Nella fase di collaudo è riuscito a rientrare entro i limiti della metrica.
+
 \subsubsection{Sviluppo} \label{sec:sviluppo}
-\paragraph{MPC8-SFINp}
+\paragraph{MPC8-SFINp: Structural Fan-In}  
+Il design del prodotto, meglio descritto nel documento \textit{Specifica Tecnica}, consultabile nella sezione \ref{sec:riferimenti_esterni}, prevede un'alta dipendenza dei componenti grafici verso lo store. Il riutilizzo di codice è dunque molto alto e rende la metrica SFINp soddisfatta.
+
+\paragraph{MPC9-SFOUTp: Structural Fan-Out}
+I componenti grafici non hanno alcuna dipendenza tra di loro, mentre la parte di store è intrinsecamente interdipendente per via dei design pattern utilizzati. La metrica è dunque da ritenersi soddisfatta.
+
+\newpage
+\paragraph{MPC10-CCH: Code Churn}
+
+\textbf{Nota:} Nel seguente grafico è analizzato il periodo di progettazione e codifica finale e sono presi in considerazione quei componenti soggetti ad un numero sostanziale di modifiche.
+
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC10-CCH.png}
+    \caption{MPC10-CCH: Code Churn}
+\end{figure}
+
+\noindent \textbf{Considerazioni PB:} Gli Sprint 1, 2 e 3 sono stati soggetti ad un modesto numero di modifiche, causando cambiamenti di codice che hanno rallentato momentaneamente lo sviluppo. Questa esperienza ha causato un ritorno di attenzione sull' UML del progetto, modificandolo ed aggiornandolo in maniera dettagliata. Gli sprint successivi sono infatti più stabili.
+
+
+\paragraph{MPC11-NB: Number of Bugs}
+\textbf{Nota:} Nel seguente grafico è analizzato il periodo di progettazione e codifica finale.
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC11-NB.png}
+    \caption{MPC11-NB: Number of Bugs}
+\end{figure}
+
+\noindent Durante lo sviluppo del codice sono stati rilevati e corretti alcuni bug. Il prodotto finale non contiene bug rilevati.
+
+\paragraph{MPC12-CC: Cyclomatic Complexity}
+
+Di seguito sono analizzati in ordine decrescente i valori di Cyclomatic Complexity (CC) dei componenti del prodotto:
+
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC12-CC.png}
+    \caption{MPC12-CC: Cyclomatic Complexity}
+\end{figure}
+
+\noindent Come si nota, il valore di complessità massimo è raggiunto in ProductSlice ma è comunque compreso tra i valori ottimali scelti per questa metrica.
+
+\vspace{0.2cm}
+\textbf{Nota:} L'immagine prodotta è stata realizzata attraverso Plato, uno strumento di analisi statica del codice. Si consulti la sezione \ref{sec:riferimenti_esterni} per maggiore informazioni.
+
+\newpage
+
 \subsection{Processi di supporto} \label{sec:processi_di_supporto}
 Di seguito sono visualizzati i grafici relativi alle metriche dei processi di supporto.
 \subsubsection{Qualità di processo - Documentazione}
@@ -1255,19 +1287,36 @@ Di seguito sono visualizzati i grafici relativi alle metriche dei processi di su
     \includegraphics[width=0.8\textwidth]{images/MPC13-EOD.png}
     \caption{MPC13-EOD: Errori ortografici per documento}
 \end{figure}
-\noindent \textbf{Considerazioni RTB:} si osserva che non sono presenti errori ortografici in nessun documento. Pertanto, si ha un valore ottimale per quanto riguarda questa metrica (MPC13-EOD). Ciò significa che il gruppo ha prestato una particolare attenzione alla correttezza ortografica dei documenti.
+\noindent \textbf{Considerazioni:} il gruppo si è impegnato a mantenere una documentazione priva di errori ortografici.
 
 
 \paragraph{MPC14-IG: Indice Gulpease}
-\begin{figure}[h!] 
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/MPC14-IG.png}
-    \caption{MPC14-IG: Indice Gulpease}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/MPC14-EODrtb.png}
+        \caption{MPC14-IG RTB}
+        \label{fig:image1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/MPC14-IG.png}
+        \caption{MPC14-IG PB}
+        \label{fig:image2}
+    \end{subfigure}
+    \caption{MPC14-1G Indice Gulpease}
+    \label{fig:whole_figure}
 \end{figure}
+
 \noindent \textbf{Considerazioni RTB:} si osserva come l'indice di Gulpease rimane accettabile per tutti i documenti, tuttavia non raggiunge mai l'ottimalità. Il gruppo, pertanto, dovrà impegnarsi ad utilizzare termini meno tecnici (se possibile) e strutturare i periodi in maniera più semplice.
 
-\subsubsection{Qualità di processo - Accertamento della qualità}
+\vspace{0.5cm}
+\noindent \textbf{Considerazione PB:} la natura tecnica della documentazione prodotta non ha permesso un miglioramento netto ma i documenti soddisfano i valori minimi.
+
 \paragraph{MPC15-MS: Metriche soddisfatte} \label{sec:accertamento delle qualita}
+
 \noindent \textbf{Considerazioni RTB:}
 le metriche prese in considerazione in questa fase sono:
 \begin{itemize}
@@ -1278,13 +1327,73 @@ le metriche prese in considerazione in questa fase sono:
     \item MPC5-PV \colorbox{green}{Soddisfatta};
     \item MPC6-AC \colorbox{green}{Soddisfatta};
     \item MPC7-EV \colorbox{green}{Soddisfatta};
+    \item MPC8-SFINp \colorbox{green}{Soddisfatta};
+    \item MPC9-SFOUTp \colorbox{green}{Soddisfatta};
+    \item MPC10-CCH \colorbox{green}{Soddisfatta};
+    \item MPC11-NB \colorbox{green}{Soddisfatta};
+    \item MPC12-CC \colorbox{green}{Soddisfatta};
     \item MPC13-EOD \colorbox{green}{Soddisfatta};
-    \item MPC14-IG \colorbox{green}{Soddisfatta}.
+    \item MPC14-IG \colorbox{green}{Soddisfatta};
+    \item MPC16-CCV \colorbox{green}{Soddisfatta}.
+    \item MPD17-TP \colorbox{green}{Soddisfatta};
+    \item MPD1-ROB\colorbox{green}{Soddisfatta};
+    \item MPD2-RDE\colorbox{green}{Soddisfatta};
+    \item MPD3-ART \colorbox{green}{Soddisfatta};
+    \item MPD4-PC \colorbox{green}{Soddisfatta};
+    \item MPD5-CFO \colorbox{green}{Soddisfatta};
+    \item MPD6-PPT \colorbox{green}{Soddisfatta};
 \end{itemize}
 \noindent La percentuale di metriche soddisfatte (MPC15-MS) equivale al \textbf{100\%}. Pertanto, possiamo dire che si è raggiunto un livello di ottimalità per questa metrica.
 
 \newpage
+
+\paragraph{MPC16-CCV: Code Coverage}
+\textbf{Nota:} La scrittura dei test è iniziata parallelamente alla codifica, dunque nel seguente grafico sono presi in considerazione gli sprint di Progettazione e codifica e quelli di collaudo.
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/MPC16-CCV.png}
+    \caption{MPC16-CCV: Code Coverage}
+\end{figure}
+
+\noindent \textbf{Considerazioni:} La percentuale di Code Coverage è sempre stata elevata grazie ad una parallelizzazione del lavoro di Verificatori e Programmatori.
+
+\paragraph{MPC17-TP: Test Passed}
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/MPC17-TP.png}
+    \caption{MPC17-TP: Test Passed}
+\end{figure}
+
+\noindent \textbf{Considerazioni:} Come si evince dalla figura, tutti i test sono passati. Durante la fase di scrittura dei test quelli falliti hanno causato un aggiornamento istantaneo del codice e un successivo aggiornamento dello stato del test. 
+
 \subsection{Qualità di prodotto}
+
+\subsubsection{Customer Needs}
+
+\begin{figure}[h!] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Customer Needs.png}
+    \caption{Customer Needs}
+\end{figure}
+
+\noindent \textbf{Considerazioni:} L'aumento di copertura di requisiti, sia desiderabili che obbligatori, è sempre stato costante e crescente. Non sono dunque servite azioni correttive.
+Come si può in figura notare, le metriche MPD1-ROB e MPD2-RDE sono soddisfatte.
+
+\subsubsection{Efficienza}
+
+\paragraph{MPD3-ART: Average Response Time}
+L'unica funzione soggetta a visibile latenza è il caricamento del magazzino da file. Il tempo impiegato è tuttavia sempre inferiore a 2 secondi, pertanto la metrica ART è soddisfatta.
+
+\subsubsection{Usabilità}
+
+\paragraph{MPD4-PC: Profondità Click}
+Il numero di click che l'utente deve fare per poter raggiungere una determinata funzione non è mai superiore a 2, dunque la metrica PC è soddisfatta.
+
+\paragraph{MPD5-CFO: Comprensibilità funzionalità offerte}
+Il prodotto finale è stato sottoposto ad un analisi da parte dei componenti del gruppo non coinvolti direttamente nella programmazione, con risultati che sembrano dimostrare la facilità di comprensione delle funzionalità proposte. In particolare è stato assegnato un valore di 95\% alla metrica CFO.
+
+
+\newpage
 \subsubsection{Portabilità su altre piattaforme}
 \paragraph{Google Chrome}
 \begin{figure}[h!] 
@@ -1357,4 +1466,5 @@ Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono con
     \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
     \item Metriche di progetto, metodo \textbf{Earned Value}:\\
     \url{https://it.wikipedia.org/wiki/Metriche_di_progetto} \textcolor{gray}{\textit{(ultimo accesso 12-04-24)}}
+    \item Plato Es-Analysis \url{https://github.com/es-analysis/plato} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
 \end{itemize}
