@@ -1,12 +1,12 @@
 \begin{beginningnote}
-    Si tenga presente che alcuni termini utilizzati nel documento riportano la lettera \textbf{G} in apice, allo scopo di evidenziare le parole che assumono uno specifico significato nell'ambito del progetto. Per comprenderle in maniera corretta, si rimanda il lettore al documento ``Glossario", che contiene un elenco completo di tutte le terminologie utilizzate con relative definizioni, allo scopo di costruire un linguaggio uniforme che possa migliorare la comunicazione tra i componenti interni al gruppo e gli stakeholders\textsuperscript{G} esterni.   %inserire corsivo per ogni termine del glossario?
+    Si tenga presente che alcuni termini utilizzati nel documento riportano la lettera \textbf{G} in apice, allo scopo di evidenziare le parole che assumono uno specifico significato nell'ambito del progetto. Per comprenderle in maniera corretta, si rimanda il lettore al documento ``Glossario", che contiene un elenco completo di tutte le terminologie utilizzate con relative definizioni, allo scopo di costruire un linguaggio uniforme che possa migliorare la comunicazione tra i componenti interni al gruppo e gli stakeholder\textsuperscript{G} esterni.
 \end{beginningnote}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOPO DEL DOCUMENTO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scopo del documento}\label{sec:scopo_del_documento}
-Questo documento è destinato sia ai membri del gruppo che agli stakeholders\textsuperscript{G} in quanto ha come obiettivo quello di indicare tempi, costi e modalità di sviluppo delle varie fasi del progetto\textsuperscript{G}.
+Questo documento è destinato sia ai membri del gruppo che agli stakeholder in quanto ha come obiettivo quello di indicare tempi, costi e modalità di sviluppo delle varie fasi del progetto\textsuperscript{G}.
 In particolare, al suo interno, sono riportati:
 \begin{itemize}
     \item Un'analisi dei rischi, comprendente anche delle tecniche di mitigazione implementate per limitarne le problematiche;
@@ -162,99 +162,90 @@ Noi di Avant-Garde abbiamo deciso di scegliere un approccio iterativo, più prec
 
 \subsection{Il modello agile}\label{sec:modello_sviluppo:agile}
 La metodologia Agile è un approccio alla gestione dei progetti che prevede la suddivisione del progetto in fasi e sottolinea l'importanza della collaborazione e del miglioramento continui, tramite frequenti incontri tra i membri del gruppo e con l'azienda.
-I vantaggi di un modello agile comprendono:
+
+\noindent I vantaggi di un modello agile comprendono:
 \begin{itemize}
-    \item Rispondere in modo rapido e flessibile alle richieste dei clienti;
+    \item Rispondere in modo rapido e flessibile alle richieste dei clienti e ad eventuali problemi emergenti;
     \item Alta comunicazione fra sviluppatori e cliente;
-    \item Diverse fasi che permettono i vantaggi di un modello incrementale.
+    \item Distinzione di diverse fasi che permettono i vantaggi di un modello incrementale (e.g. permettono di concentrarsi su piccoli obiettivi raggiungibili e di rivedere periodicamente i risultati).
 \end{itemize}
-Un ciclo di vita di un modello agile si divide nelle seguenti 5 fasi.
-    \subsubsection{Envision}\label{sec:modello_sviluppo:agile:envision}
-    Fase in cui si determinano con il cliente gli obiettivi del progetto, si decide il team e le norme da utilizzare.
-    Alla fine della fase di Envision si ha:
+Il ciclo di vita di un progetto che utilizza il modello agile si divide nelle seguenti fasi:
+\begin{itemize}
+    \item Envision;
+    \item Per ogni sprint\textsuperscript{G}:
     \begin{itemize}
-        \item Un Piano di Progetto che ne descriva lo scopo;
-        \item Gli obiettivi complessivi del progetto;
-        \item Gli stakeholder del progetto;
-        \item Strumenti di collaborazione del gruppo funzionanti.
+        \item Speculate,
+        \item Explore,
+        \item Adapt;
     \end{itemize}
-    Una volta terminata la fase di Envision, si passa per ogni sprint\textsuperscript{G} attraverso le prossime tre fasi: Speculate, Explore e Adapt.
-    \subsubsection{Speculate}\label{sec:modello_sviluppo:agile:speculate}
-    La fase Speculate è un esercizio di pianificazione. Durante questa fase, si sviluppa o rivede il piano di consegna basato sulle feature\textsuperscript{G}, le stime per ogni feature, e i rischi da gestire. In ogni sprint vengono completate una o più feature. %Una feature è un pezzo di funzionalità o outcome che ha valore per il cliente.
-    La fase di Speculate termina quando sono definiti una serie di requisiti per lo sprint e una lista di feature da sviluppare in base ai requisiti. Inoltre si ha una stima del lavoro necessario per ogni feature, e i rischi verranno identificati o aggiornati per le feature su cui si sta lavorando.
-    \subsubsection{Explore}\label{sec:modello_sviluppo:agile:explore}
-    Durante la fase Explore si sviluppa effettivamente il prodotto. Sono previsti incontri frequenti tra i membri del gruppo e revisioni delle feature non appena vengono create.
-    \subsubsection{Adapt}\label{sec:modello_sviluppo:agile:adapt}
-    La fase di Adapt consiste in una revisione finale delle feature da parte del cliente e una riunione documentata dei membri del team per riflettere su ciò che è stato fatto. Si condivide l'esperienza accumulata nel corso di progetto e viene rivista la pianificazione per lo sprint successivo.
-    \subsubsection{Close}\label{sec:modello_sviluppo:agile:close}
-    Il progetto passa per le fasi di speculate, explore e adapt fino al momento in cui tutti gli sprint per il progetto sono completati. Una volta finite tutte le iterazioni e implementate le feature, arriva la fase Close, di chiusura.
-    Durante questa fase ci si assicura che i deliverable\textsuperscript{G} siano completati.
+    \item Close.
+\end{itemize}
+Vediamole in dettaglio.
 
-\subsection{Incrementi individuati}\label{sec:modello_sviluppo:incrementi}
-Per comodità di esposizione, in questo documento le fasi di Speculate, Explore e Adapt saranno raggruppate in un singolo periodo di tempo chiamato ``Sprint", come lo definisce il modello Agile.
-Gli sprint individuati sono 4 e fanno riferimento al periodo antecedente la prima revisione (Requirements and Technology Baseline).
-\begin{xltabular}{\textwidth}{p{0.05\textwidth} | p{0.5\textwidth} }
+\subsubsection{Envision}\label{sec:modello_sviluppo:agile:envision}
+In questa prima fase si determinano con il cliente gli obiettivi del progetto, si decidono il team e le norme da utilizzare.
+Il completamento della fase di Envision produce:
+\begin{itemize}
+    \item Un \textit{Piano di Progetto} che definisca la pianificazione generale e lo scopo del progetto stesso;
+    \item Gli obiettivi complessivi del progetto;
+    \item Gli stakeholder del progetto;
+    \item Delle \textit{Norme di Progetto} che definiscano metodologie e strumenti di lavoro e collaborazione del gruppo.
+\end{itemize}
 
-    \rowcolor{black}
-    \textbf{\color{white} Sprint} & \textbf{\color{white} Obiettivi} \ 
-    \hline
-    \endhead
-    
-    \textbf{I} 
-    & \textbf{Visualizzazione ambiente 3d:} Prima di tutto, è necessario potersi muovere all'interno dello spazio 3D e creare un magazzino partendo dalle sue dimensioni. \\
-    \hline
+\subsubsection{Speculate}\label{sec:modello_sviluppo:agile:speculate}
+In questa fase si pianificano per ogni sprint dei requisiti da soddisfare, facendo delle stime sul lavoro richiesto e sui tempi previsti, considerando anche i possibili rischi da gestire. %Una feature è un pezzo di funzionalità o outcome che ha valore per il cliente.
+A tal fine, viene definita anche una lista di feature\textsuperscript{G}, basate sui requisiti precedentemente individuati, che devono essere completate durante lo sprint.
 
-    \textbf{II} 
-    & \textbf{Creazione e aggiunta scaffalature:} Una volta creato l'ambiente, è necessario poter creare delle nuove scaffalature e inserirle all'interno del magazzino. \\
-    \hline
+\subsubsection{Explore}\label{sec:modello_sviluppo:agile:explore}
+Durante la fase Explore si sviluppa effettivamente il prodotto. In particolare, per ogni sprint, vengono realizzate le feature individuate durante la fase di Speculate. A tal fine, sono previsti incontri frequenti tra i membri del gruppo e revisioni delle feature non appena queste vengono create.
 
-    \textbf{III} 
-    & \textbf{Implementazione item:} Dopo l'implementazione delle scaffalature, si può passare all'introduzione degli item\textsuperscript{G} (dei prodotti) all'interno di esse. \\
-    \hline
 
-    \textbf{IV} 
-    & \textbf{Creazione richieste spostamento:} Possibilità di creare una richiesta di spostamento di un item da un luogo all'altro del magazzino. \\
-    \hline
+\subsubsection{Adapt}\label{sec:modello_sviluppo:agile:adapt}
+La fase di Adapt termina lo sprint. In particolare, essa consiste in una revisione finale delle feature da parte del cliente e in una riunione documentata dei membri del team per riflettere su ciò che è stato fatto durante l'ultima iterazione. Si condivide dunque l'esperienza accumulata nel corso di progetto e viene rivista la pianificazione per lo sprint successivo.
 
-\caption{Tabella degli sprint individuati}\label{tab:incrementi}
-\end{xltabular}
+\subsubsection{Close}\label{sec:modello_sviluppo:agile:close}
+Il progetto passa per le fasi di Speculate, Explore e Adapt fino al momento in cui tutti gli sprint sono completati. Una volta finite tutte le iterazioni e implementate le feature, inizia la fase Close.
+Durante questa fase ci si assicura che i deliverable\textsuperscript{G} siano completati e che il cliente sia soddisfatto di questi. Il progetto, dunque, termina.
+\vspace{20pt}
+
+\noindent \textit{D'ora in poi, per comodità di esposizione, in questo documento le fasi di Speculate, Explore e Adapt saranno raggruppate in un singolo periodo di tempo chiamato ``Sprint'', come lo definisce il modello Agile.}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PIANIFICAZIONE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Pianificazione}\label{sec:pianificazione}
-
-La pianificazione è stata suddivisa nelle seguenti quattro fasi:
-
+Si è deciso di suddividere il progetto nelle seguenti quattro fasi:
 \begin{itemize}
     \item Analisi;
-    \item Progettazione e codifica del Proof of Concept;
-    \item Progettazione dettaglio e codifica finale;
+    \item Progettazione e codifica del Proof of Concept\textsuperscript{G};
+    \item Progettazione di dettaglio e codifica finale;
     \item Validazione e collaudo.
 \end{itemize}
-
-Ogni attività può essere suddivisa in ulteriori sottoperiodi con obiettivi più specifici. Ciascun sottoperiodo riporta una tabella con obiettivi e descrizione e ad ogni fase è associato un diagramma di Gantt\textsuperscript{G} che riporta le tempistiche previste.
+Ognuna di queste fasi sarà formata da attività mostrate nei corrispettivi diagrammi di Gantt\textsuperscript{G}. Ogni attività si ramifica poi in sotto-attività per mostrarne l’esecuzione ad alto livello.
 
 \subsection{Analisi}\label{sec:pianificazione:analisi}
-
 \textbf{Periodo previsto}: dal 06/11/2023 al 06/01/2024\\\\
-Questa fase inizia dopo l'assegnazione del capitolato d'appalto e termina il 06/01/2024 come concordato dal gruppo. Gli obiettivi di questa fase, che corrisponde al momento di \textit{Envision} nel modello agile, sono l'analisi in dettaglio del capitolato \textit{Warehouse Management Systems} (WMS), individuando i requisiti di progetto, e il completamento della stesura dei documenti preliminari alla codifica.
+Questa fase inizia subito dopo l'assegnazione del capitolato d'appalto e termina il 06/01/2024 come concordato dal gruppo. 
+Possiamo far corrispondere questa fase all'Envision nel modello agile. Infatti, i suoi obiettivi sono l'analisi in dettaglio del capitolato e l'individuazione dei requisiti, oltre che la stesura dei documenti preliminari alla codifica.
 
 \subsubsection{Attività}\label{sec:pianificazione:analisi:attivita}
 \begin{itemize}
-    \item \textbf{Norme di progetto:} stesura del documento \textit{Norme di progetto} necessario a descrivere le regole che il gruppo si impone per il corretto svolgimento del progetto. Con la stesura del documento vengono inoltre studiate le tecnologie e gli strumenti che verranno utilizzati nella stesura dei documenti e nel progetto.
-    \item \textbf{Piano di progetto:} stesura del documento \textit{Piano di progetto}, che presenta un'analisi dei rischi, descrive il piano di progetto in dettaglio e il calcolo del preventivo per la realizzazione del progetto.
+    \item \textbf{Norme di progetto:} stesura del documento \textit{Norme di progetto} necessario a descrivere le regole che il gruppo si impone per il corretto svolgimento del progetto. Con la stesura del documento vengono inoltre studiate le tecnologie e gli strumenti che verranno utilizzati nel corso del progetto.
+    \item \textbf{Piano di progetto:} stesura del documento \textit{Piano di progetto}, che presenta un'analisi dei rischi, descrive il piano di progetto in dettaglio e calcola il preventivo per la realizzazione del progetto.
     \item \textbf{Piano di qualifica:} stesura del documento \textit{Piano di qualifica}, in cui vengono esposte tecniche e metodi utilizzati per garantire la qualità del prodotto.
     \item \textbf{Analisi dei requisiti:} stesura del documento di \textit{Analisi dei requisiti}, con una descrizione approfondita dei casi d'uso per il prodotto software e dei requisiti di progetto emersi dallo studio del capitolato, dei casi d'uso stessi e attraverso gli incontri con il proponente.
     \item \textbf{Glossario:} stesura del \textit{Glossario}, che dovrà contenere i termini principali utilizzati nell'ambito del progetto.
 \end{itemize}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gantt_analisi.PNG}
+    \caption{Diagramma di Gantt della fase di analisi}
+    \label{fig:gantt_analisi}
+\end{figure}
 
 \subsubsection{Periodi}\label{sec:pianificazione:analisi:periodi}
-Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
-
-\newpage
+La pianificazione di questa fase è stata organizzata nei seguenti tre periodi.
 
 \paragraph{Primo periodo}\label{sec:pianificazione:analisi:periodi:primo}
 
@@ -282,7 +273,7 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -295,20 +286,19 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item Individuazione e studio strumenti
         \item Stesura documento \textit{Norme di progetto} con i dettagli sui metodi di svolgimento del progetto e descrizione degli strumenti che verranno utilizzati
         \item Inizio stesura documento \textit{Piano di progetto}
         \item Inizio stesura documento \textit{Piano di qualifica}
         \item Inizio del lavoro di analisi dei requisiti e incontri con il proponente
-        \item Stesura del glossario
+        \item Stesura del \textit{Glossario}
     \end{itemize} \\
     \hline
 
 \caption{Tabella descrittiva del periodo 1 della fase di analisi}\label{tab:periodo1_1}
 \end{xltabular}
 
-\newpage
 \paragraph{Secondo periodo}\label{sec:pianificazione:analisi:periodi:secondo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
@@ -319,7 +309,7 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \endhead
     
     \textbf{Data inizio prevista} 
-    & 31/11/2023 \\
+    & 1/12/2023 \\
     \hline
 
     \textbf{Data fine prevista} 
@@ -335,7 +325,7 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -348,19 +338,18 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item Perfezionamento del documento \textit{Norme di progetto}, verifica e approvazione dello stesso
         \item Completamento stesura documento \textit{Piano di progetto}
         \item Completamento stesura documento \textit{Piano di qualifica}
         \item Completamento del lavoro di analisi dei requisiti e stesura dell'omonimo documento
-        \item Aggiornamento del glossario con i nuovi termini individuati dalla documentazione
+        \item Aggiornamento del \textit{Glossario} con i nuovi termini individuati dalla documentazione
     \end{itemize} \\
     \hline
 
 \caption{Tabella descrittiva del periodo 2 della fase di analisi}\label{tab:periodo1_2}
 \end{xltabular}
 
-\newpage
 \paragraph{Terzo periodo}\label{sec:pianificazione:analisi:periodi:terzo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
@@ -387,7 +376,7 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -400,50 +389,44 @@ Questa fase è suddivisa in tre periodi come descritto nelle pagine successive.
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item Perfezionamento del documento \textit{Norme di progetto}, verifica e approvazione dello stesso
         \item Verifica e approvazione del documento \textit{Piano di progetto}
         \item Verifica e approvazione del documento \textit{Piano di qualifica}
         \item Verifica e approvazione del documento \textit{Analisi dei requisiti}
-        \item Verifica e aggiornamento del glossario
+        \item Verifica e aggiornamento del \textit{Glossario}
     \end{itemize} \\
     \hline
 
 \caption{Tabella descrittiva del periodo 3 della fase di analisi}\label{tab:periodo1_3}
 \end{xltabular}
 
-\newpage 
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:analisi:gantt}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{images/gantt_analisi.PNG}
-    \caption{Diagramma di Gantt della fase di analisi}
-    \label{fig:gantt_analisi}
-\end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Progettazione e codifica del Proof of concept}\label{sec:pianificazione:progRTB}
 
 \textbf{Periodo previsto}: dal 07/01/2024 al 23/02/2024\\\\
-Questa fase inizia una volta completati tutti i documenti preliminari previsti nella fase di Analisi e termina il 23/02/2024 come concordato dal gruppo, con il completamento della codifica del \textit{Proof of concept}\textsuperscript{G} (abbreviato in \textit{PoC}). Al termine della fase il gruppo avrà creato un PoC funzionante che verrà presentato alla revisione della Technology Baseline.
+Questa fase inizia una volta completati tutti i documenti preliminari previsti nella fase di Analisi e termina il 23/02/2024 come concordato dal gruppo, con il completamento della codifica del \textit{Proof of concept} (abbreviato in \textit{PoC}). Al termine di questa fase il gruppo avrà creato un PoC funzionante che verrà presentato alla revisione della Technology Baseline.
 
 \subsubsection{Attività}\label{sec:pianificazione:progRTB:attivita}
 \begin{itemize}
-    \item \textbf{Studio tecnologie:} Studio delle tecnologie nuove al gruppo per l'implementazione del Proof of Concept.
-    \item \textbf{Progettazione PoC:} Progettazione del Proof of Concept e discussione con l'azienda.
-    \item \textbf{Codifica PoC:} Codifica del Proof of Concept.
-    \item \textbf{Aggiornamento documentazione:} Ulteriore revisione dei documenti ed eventuale aggiornamento di essi.
+    \item \textbf{Studio tecnologie:} studio delle tecnologie nuove al gruppo per l'implementazione del Proof of Concept.
+    \item \textbf{Progettazione PoC:} progettazione del Proof of Concept e discussione con l'azienda sui punti da implementare.
+    \item \textbf{Codifica PoC:} codifica del Proof of Concept.
+    \item \textbf{Aggiornamento documentazione:} ulteriore revisione dei documenti ed eventuale aggiornamento di essi.
 \end{itemize}
 
-\subsubsection{Periodi}\label{sec:pianificazione:progRTB:periodi}
-Questa fase è composta da un periodo di progettazione seguita da 4 sprint di avanzamento della codifica del Proof of Concept.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gantt_codRTB.PNG}
+    \caption{Diagramma di Gantt della fase di codifica del PoC}
+    \label{fig:gantt_codRTB}
+\end{figure}
 
-\newpage
+\subsubsection{Periodi}\label{sec:pianificazione:progRTB:periodi}
+Questa fase è composta da un periodo di progettazione e da uno di codifica del PoC, quest'ultimo composto da 4 sprint.
 
 \paragraph{Primo periodo}\label{sec:pianificazione:progRTB:periodi:primo}
-
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
@@ -468,7 +451,7 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -482,19 +465,67 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item Studio tecnologie per la codifica del PoC 
         \item Riunioni con l'azienda per discutere dei requisiti minimi da implementare nel PoC
         \item Aggiornamento dei documenti
     \end{itemize} \\
     \hline
 
-\caption{Tabella descrittiva del periodo 1 della fase di progettazione della Technology Baseline}\label{tab:periodo2_1}
+\caption{Tabella descrittiva del periodo 1 della fase di progettazione e codifica del PoC}\label{tab:periodo2_1}
 \end{xltabular}
 
-\newpage 
+\paragraph{Secondo periodo}\label{sec:pianificazione:progRTB:periodi:secondo}
+\begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
+        
+    \rowcolor{black}
+    \textbf{\color{white} Info} & \textbf{\color{white} Secondo Periodo}\\ 
+    \hline
+    \endhead
+    
+    \textbf{Data inizio prevista} 
+    & 16/01/2024 \\
+    \hline
 
-\paragraph{Primo sprint}\label{sec:pianificazione:codificaRTB:periodi:primo}
+    \textbf{Data fine prevista} 
+    & 23/02/2024 \\
+    \hline
+
+    \textbf{Pre-condizione} 
+    & Soddisfacimento post-condizioni del periodo precedente. \\
+    \hline
+    
+    \textbf{Post-condizione} 
+    & Codice PoC funzionante. \\
+    \hline
+
+    \textbf{Ruoli attivi} 
+    &  \begin{itemize}[topsep=0pt]
+        \item Responsabile
+        \item Amministratore
+        \item Verificatore
+        \item Programmatore
+    \end{itemize}\\
+    \hline
+
+    \textbf{Descrizione} 
+    &  Durante questo periodo si passa alla codifica del codice seguendo quanto definito nel primo periodo della fase di progettazione e codifica del PoC. \\
+    \hline
+    
+    \textbf{Attività} 
+    & \begin{itemize}[topsep=0pt]
+        \item \textbf{Codifica:} Implementazione del PoC
+        \item Aggiornamento dei documenti
+    \end{itemize} \\
+    \hline
+
+\caption{Tabella descrittiva del periodo 2 della fase di progettazione e codifica del PoC}\label{tab:periodo4_2}
+\end{xltabular}
+
+\noindent Nello specifico, questo periodo è composto dai seguenti quattro sprint di avanzamento della codifica del Proof of Concept.
+
+
+\subparagraph{Primo sprint}\label{sec:pianificazione:codificaRTB:periodi:primo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
@@ -520,7 +551,7 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -530,17 +561,16 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item Approfondimento delle tecnologie studiate finora 
         \item \textbf{Creazione ambiente 3D:} Implementazione di un'interfaccia utente che permetta di muoversi all'interno di un ambiente 3D che visualizza un magazzino con dimensioni inserite dall'utente
     \end{itemize} \\
     \hline
 
-\caption{Primo sprint PoC}\label{tab:periodo3_1}
+\caption{Tabella descrittiva dello sprint 1 della codifica del PoC}\label{tab:periodo3_1}
 \end{xltabular}
 
-\newpage
-\paragraph{Secondo sprint}\label{sec:pianificazione:codificaRTB:periodi:secondo}
+\subparagraph{Secondo sprint}\label{sec:pianificazione:codificaRTB:periodi:secondo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
@@ -566,7 +596,7 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -575,18 +605,16 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item \textbf{Creazione scaffalature:} Implementazione della funzionalità che permetta all'utente di creare una nuova scaffalatura
         \item \textbf{Piazzamento scaffalature:} Possibilità di poter piazzare la scaffalatura creata all'interno del magazzino 3D
         \item \textbf{Spostamento scaffalature:} Possibilità di spostare, modificare o eliminare una scaffalatura piazzata in precedenza nel magazzino 3D
     \end{itemize} \\
     \hline
-
-\caption{Secondo sprint PoC}\label{tab:periodo3_2}
+    \caption{Tabella descrittiva dello sprint 2 della codifica del PoC}\label{tab:periodo3_2}
 \end{xltabular}
-\newpage
-\paragraph{Terzo sprint}\label{sec:pianificazione:codificaRTB:periodi:terzo}
 
+\subparagraph{Terzo sprint}\label{sec:pianificazione:codificaRTB:periodi:terzo}
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
     \rowcolor{black}
@@ -611,7 +639,7 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -620,17 +648,16 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item \textbf{Creazione prodotto:} Tramite interfaccia utente, possibilità di creare un nuovo prodotto
         \item \textbf{Posizionamento prodotto:} Possibilità di piazzare il prodotto creato all'interno di una scaffalatura libera
     \end{itemize} \\
     \hline
 
-\caption{Terzo sprint PoC}\label{tab:periodo3_3}
+\caption{Tabella descrittiva dello sprint 3 della codifica del PoC}\label{tab:periodo3_3}
 \end{xltabular}
 
-\newpage
-\paragraph{Quarto sprint}\label{sec:pianificazione:codificaRTB:periodi:quarto}
+\subparagraph{Quarto sprint}\label{sec:pianificazione:codificaRTB:periodi:quarto}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
         
@@ -656,7 +683,7 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -665,49 +692,41 @@ Questa fase è composta da un periodo di progettazione seguita da 4 sprint di av
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
+    & \begin{itemize}[topsep=0pt]
         \item \textbf{Interfaccia spostamento oggetto:} Creazione di un'interfaccia che permetta di creare una richiesta di spostamento di un prodotto da un luogo ad un altro
         \item \textbf{Creazione richiesta spostamento:} Implementare la creazione di una richiesta di spostamento di un prodotto
     \end{itemize} \\
     \hline
 
-\caption{Quarto sprint PoC}\label{tab:periodo3_4}
+\caption{Tabella descrittiva dello sprint 4 della codifica del PoC}\label{tab:periodo3_4}
 \end{xltabular}
-
-\newpage 
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:codificaRTB:gantt}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/gantt_codRTB.PNG}
-    \caption{Diagramma di Gantt della fase di codifica del PoC}
-    \label{fig:gantt_codRTB}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE E CODIFICA   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Progettazione di dettaglio e codifica finale}\label{sec:pianificazione:progCodifica}
 
 \textbf{Periodo previsto}: dal 24/02/2024 al 01/04/2024\\\\
-Questa fase inizia una volta completata la codifica del \textit{Proof of Concept} e completata la prima revisione. La fase termina il 01/04/2024 come concordato dal gruppo, con un prodotto funzionante e pronto per la consegna al proponente. Durante questa fase verranno anche creati documenti quali il \textit{Manuale Utente}, il \textit{Manuale del Manutentore} e l'\textit{Allegato Tecnico}.
+Questa fase inizia al termine della codifica del \textit{Proof of Concept}, dopo aver completato la prima revisione (RTB). La fase termina il 01/04/2024 come concordato dal gruppo, con un prodotto funzionante e pronto per la consegna al proponente. Durante questa fase verranno inoltre aggiornati i documenti finora prodotti e saranno creati quelli richiesti per la seconda revisione del progetto: la \textit{Specifica Tecnica} e il \textit{Manuale Utente}.
 
 
 \subsubsection{Attività}\label{sec:pianificazione:prog_codifica:attivita}
 \begin{itemize}
-    \item \textbf{Progettazione di dettaglio:} Viene progettato nel dettaglio il prodotto finale, in modo da poterlo implementare in modo efficiente, completo e con meno problematiche possibile. 
-    \item \textbf{Incremento dei documenti:} Aggiornamento e verifica dei documenti.
-    \item \textbf{Codifica:} Viene implementato il prodotto finale, partendo da quanto emerso tramite la realizzazione del PoC. La codifica avviene in modo incrementale, seguendo gli incrementi individuati nella fase di analisi secondo il modello Agile.
-    \item \textbf{Manuale Utente:} Stesura del Manuale Utente.
-    \item \textbf{Manuale del Manutentore:} Stesura del Manuale del Manutentore.
-    \item \textbf{Allegato Tecnico:} Stesura dell'Allegato Tecnico.
-    \item \textbf{Product Baseline:} Realizzazione dei diagrammi di sequenza e di attività.
-    \item \textbf{Verifica:} Il codice viene verificato in fase di scrittura per facilitare il lavoro nella fase di validazione.
+    \item \textbf{Progettazione di dettaglio:} viene progettato nel dettaglio il prodotto finale secondo i pattern previsti dalle tecnologie, in modo da poterlo poi implementare in modo efficiente, completo, e con meno problematiche possibile. 
+    \item \textbf{Incremento dei documenti:} aggiornamento e conseguente verifica della documentazione finora prodotta.
+    \item \textbf{Codifica:} viene implementato il prodotto finale, partendo da quanto emerso tramite la realizzazione del PoC. La codifica avviene in modo incrementale, seguendo gli incrementi individuati nella fase di analisi secondo il modello Agile.
+    \item \textbf{Manuale Utente:} stesura del \textit{Manuale Utente}.
+    \item \textbf{Specifica Tecnica:} stesura della \textit{Specifica Tecnica}.
+    \item \textbf{Verifica:} il codice viene verificato in fase di scrittura per facilitare il lavoro nella fase di validazione.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gantt_dettaglio.PNG}
+    \caption{Diagramma di Gantt della fase di codifica finale}
+    \label{fig:gantt_codRTB}
+\end{figure}
 
 \subsubsection{Periodi}\label{sec:pianificazione:prog_codifica:periodi}
-Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
-
-\newpage
+Questa fase è composta da due periodi, l'ultimo dei quali composto da 2 sprint.
 
 \paragraph{Primo periodo}\label{sec:pianificazione:prog_codifica:periodi:primo}
 
@@ -727,17 +746,18 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Pre-condizione} 
-    & Soddisfacimento post-condizioni del periodo precedente, revisione del RTB. \\
+    & Soddisfacimento post-condizioni del periodo precedente, superamento revisione RTB. \\
     \hline
     
     \textbf{Post-condizione} 
-    & Progetto architetturale ad alto livello completato e pronto ad essere implementato. \\
+    & Progetto architetturale ad alto livello completato e pronto ad essere implementato.\\
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
+        \item Analista
         \item Verificatore
         \item Progettista
         \item Programmatore
@@ -745,20 +765,20 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Descrizione} 
-    &  Durante questo periodo si progetta il prodotto finale, revisionando i dettagli e discutendone con l'azienda \\
+    &  Durante questo periodo si progetta il prodotto finale, revisionando i dettagli e discutendone con l'azienda. Vengono inoltre corretti i documenti secondo le segnalazioni dei committenti alla revisione di avanzamento RTB.\\
     \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
-        \item Scelta dei design pattern\textsuperscript{G} e progettazione architetturale con unità architetturali\textsuperscript{G}
+    & \begin{itemize}[topsep=0pt]
+        \item Studio delle \textit{best practices} per le tecnologie selezionate e scelta dei design pattern\textsuperscript{G} e dell'architettura logica con la definizione delle componenti e delle unità architetturali\textsuperscript{G}
+        \item Preparazione dei diagrammi UML da inserire nel documento di \textit{Specifica Tecnica} 
         \item Aggiornamento dei documenti
     \end{itemize} \\
     \hline
 
-\caption{Tabella descrittiva del periodo 1 progettazione e codifica dettaglio}\label{tab:periodo4_1}
+\caption{Tabella descrittiva del periodo 1 della fase di progettazione e codifica dettaglio}\label{tab:periodo4_1}
 \end{xltabular}
 
-\newpage
 \paragraph{Secondo periodo}\label{sec:pianificazione:prog_codifica:periodi:secondo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
@@ -785,53 +805,156 @@ Questa fase è suddivisa in due periodi come descritto nelle pagine successive.
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
+        \item Responsabile
+        \item Amministratore
+        \item Verificatore
+        \item Progettista
+        \item Programmatore
+    \end{itemize}\\
+    \hline
+
+    \textbf{Descrizione} 
+    &  Durante questo periodo si passa alla codifica del codice seguendo il progetto architetturale, implementando nel dettaglio ogni requisito. \\
+    \hline
+    
+    \textbf{Attività} 
+    & \begin{itemize}[topsep=0pt]
+        \item \textbf{Manuale utente:} Inizio stesura del \textit{Manuale Utente}
+        \item \textbf{Specifica tecnica:} Inizio stesura della Specifica Tecnica
+        \item \textbf{Codifica:} Implementazione del prodotto finale
+        \item Aggiornamento dei documenti
+    \end{itemize} \\
+    \hline
+
+\caption{Tabella descrittiva del periodo 2 della fase  di progettazione e codifica dettaglio}\label{tab:periodo4_2}
+\end{xltabular}
+
+
+\noindent Nello specifico, questo periodo è composto dai seguenti due sprint di avanzamento della codifica del prodotto finale.
+
+
+\subparagraph{Primo sprint}\label{sec:pianificazione:codificaPB:periodi:primo}
+
+\begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
+        
+    \rowcolor{black}
+    \textbf{\color{white} Info} & \textbf{\color{white} Primo sprint}\\ 
+    \hline
+    \endhead
+    
+    \textbf{Data inizio prevista} 
+    & 05/03/2024 \\
+    \hline
+
+    \textbf{Data fine prevista} 
+    & 18/03/2024 \\
+    \hline
+
+    \textbf{Pre-condizione} 
+    & Soddisfacimento post-condizioni del periodo precedente. \\
+    \hline
+    
+    \textbf{Post-condizione} 
+    & Interfaccia utente che permette di visualizzare un ambiente 3D. Possibilità di creare, modificare ed eliminare aree. Possibilità di creare, modificare, piazzare e muovere scaffalature.\\
+    \hline
+
+    \textbf{Ruoli attivi} 
+    &  \begin{itemize}[topsep=0pt]
+        \item Responsabile
+        \item Amministratore
+        \item Verificatore
+        \item Progettista
+        \item Programmatore
+    \end{itemize}\\
+    \hline
+    
+    \textbf{Attività} 
+    & \begin{itemize}[topsep=0pt]
+         \item \textbf{Specifica tecnica:} Inizio stesura della Specifica Tecnica
+        \item Definizione degli unit test da eseguire
+        \item \textbf{Creazione ambiente 3D:} Implementazione di un'interfaccia utente che permetta di muoversi all'interno di un ambiente 3D che visualizza un magazzino con planimetria inserita dall'utente
+        \item \textbf{Creazione aree:} Implementazione della funzionalità che permetta all'utente di creare delle aree interne al magazzino
+        \item \textbf{Modifica aree:} Implementazione della funzionalità che permetta all'utente di modificare o eliminare un'area del magazzino
+        \item \textbf{Creazione scaffalature:} Implementazione della funzionalità che permetta all'utente di creare una nuova scaffalatura
+        \item \textbf{Piazzamento scaffalature:} Possibilità di poter piazzare la scaffalatura creata all'interno del magazzino 3D
+        \item \textbf{Spostamento scaffalature:} Possibilità di spostare, modificare o eliminare una scaffalatura piazzata in precedenza nel magazzino 3D
+    \end{itemize} \\
+    \hline
+
+\caption{Tabella descrittiva dello sprint 1 della codifica del prodotto finale}
+\end{xltabular}
+
+\subparagraph{Secondo sprint}\label{sec:pianificazione:codificaPB:periodi:secondo}
+
+\begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
+        
+    \rowcolor{black}
+    \textbf{\color{white} Info} & \textbf{\color{white} Secondo sprint}\\ 
+    \hline
+    \endhead
+    
+    \textbf{Data inizio prevista} 
+    & 19/03/2024 \\
+    \hline
+
+    \textbf{Data fine prevista} 
+    & 01/04/2024 \\
+    \hline
+
+    \textbf{Pre-condizione} 
+    & Soddisfacimento post-condizioni dello sprint precedente. \\
+    \hline
+    
+    \textbf{Post-condizione} 
+    & Interfaccia utente che permette di visualizzare e ricercare i dati in forma testuale. Possibilità di salvare i dati del magazzino in un file e di utilizzarlo per configurare l'ambiente 3D. Aggiunta di prodotti con possibilità di piazzarli nelle scaffalature presenti nel magazzino 3D. \\
+    \hline
+
+    \textbf{Ruoli attivi} 
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
         \item Programmatore
     \end{itemize}\\
     \hline
-
-    \textbf{Descrizione} 
-    &  Durante questo periodo si passa alla codifica del codice seguendo il progetto architetturale creato in precedenza, seguendo gli stessi sprint della fase di codifica del PoC, implementando nel dettaglio ogni requisito. \\
-    \hline
     
     \textbf{Attività} 
-    & \begin{itemize}
-        \item \textbf{Manuale utente:} Inizio stesura del Manuale Utente
-        \item \textbf{Manuale del manutentore:} Inizio stesura del Manuale del manutentore
-        \item \textbf{Allegato tecnico:} Inizio stesura dell'Allegato Tecnico
-        \item \textbf{Product Baseline:} Produzione del \textit{PB}
-        \item \textbf{Codifica:} Implementazione del prodotto finale
-        \item Aggiornamento dei documenti
+    & \begin{itemize}[topsep=0pt]
+        \item \textbf{Manuale utente:} Inizio stesura del \textit{Manuale Utente}
+        \item \textbf{Creazione libreria:} Implementazione di un'interfaccia utente che permetta di visualizzare i dati delle scaffalature e dei prodotti in forma testuale e di filtrarli attraverso una ricerca
+        \item \textbf{Creazione prodotto:} Tramite interfaccia utente, possibilità di creare un nuovo prodotto
+        \item \textbf{Posizionamento prodotto:} Possibilità di piazzare il prodotto creato (ed eventualmente già posizionato) all'interno di una scaffalatura libera
+        \item \textbf{Salvataggio dati:} Implementazione della funzionalità che permetta all'utente di salvare i dati del magazzino in un file
+        \item \textbf{Configurazione da file:} Implementazione della funzionalità che permetta all'utente di creare l'ambiente 3D attraverso il caricamento di un file apposito
     \end{itemize} \\
     \hline
-
-\caption{Tabella descrittiva del periodo 2 progettazione e codifica dettaglio}\label{tab:periodo4_2}
+    \caption{Tabella descrittiva dello sprint 2 della codifica del prodotto finale}
 \end{xltabular}
 
-\newpage 
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:progCodifica:gantt}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/gantt_dettaglio.PNG}
-    \caption{Diagramma di Gantt della fase di codifica finale}
-    \label{fig:gantt_codRTB}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   VALIDAZIONE   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Validazione e collaudo}\label{sec:pianificazione:val_collaudo}
 
 \textbf{Periodo previsto}: dal 02/04/2024 al 26/04/2024\\\\
-Questa fase inizia una volta completata la codifica del prodotto finale e termina con la seconda revisione. La fase è volta a verificare, revisionare e approvare il prodotto finale e la documentazione.
+Questa fase inizia una volta completata la codifica del prodotto finale e termina con la revisione PB. In particolare, essa corrisponde alla Close del modello Agile. Infatti, questa fase è volta a verificare, revisionare e approvare il prodotto finale e la relativa documentazione.
 
 \subsubsection{Attività}\label{sec:pianificazione:val_collaudo:attivita}
 Questa fase ha come attività principali la verifica finale ad alto livello del prodotto realizzato nella fase precedente, la validazione rispetto ai requisiti preposti e la presentazione all'azienda proponente, nonché il completamento e verifica finale della documentazione del progetto.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gantt_collaudo.PNG}
+    \caption{Diagramma di Gantt del periodo di verifica e validazione}
+    \label{fig:gantt_collaudo}
+\end{figure}
+
+
 \subsubsection{Periodi}\label{sec:pianificazione:val_collaudo:periodi}
+Questa fase è composta da un unico periodo.
+
 \paragraph{Primo Periodo}\label{sec:pianificazione:val_collaudo:periodi:primo}
 
 \begin{xltabular}{\textwidth}{{0.35\textwidth} | X}
@@ -858,7 +981,7 @@ Questa fase ha come attività principali la verifica finale ad alto livello del 
     \hline
 
     \textbf{Ruoli attivi} 
-    &  \begin{itemize}
+    &  \begin{itemize}[topsep=0pt]
         \item Responsabile
         \item Amministratore
         \item Verificatore
@@ -866,20 +989,20 @@ Questa fase ha come attività principali la verifica finale ad alto livello del 
     \hline
 
     \textbf{Descrizione} 
-    &  Questa fase è adibita alla verifica e validazione del codice e del completamento dei documenti prodotti durante il progetto, in vista della consegna di tutto per la terza revisione. \\
+    &  Questa fase è adibita alla verifica e validazione del codice e del completamento dei documenti prodotti durante il progetto. \\
     \hline
 
-\caption{Tabella descrittiva del periodo di verifica e validazione}\label{tab:periodo5_1}
+    \textbf{Attività} 
+    & \begin{itemize}[topsep=0pt]
+        \item \textbf{Verifica:} Completamento della fase di verifica del codice prodotto
+        \item \textbf{Validazione:} Confronto tra i requisiti di progetto e il programma per assicurarsi che le richieste del proponente siano soddisfatte
+        \item \textbf{Collaudo:} Presentazione dell'applicativo al proponente
+        \item Completamento della documentazione
+    \end{itemize} \\
+    \hline
+
+\caption{Tabella descrittiva del periodo di validazione e collaudo}\label{tab:periodo5_1}
 \end{xltabular}
-
-\subsubsection{Diagramma di Gantt}\label{sec:pianificazione:val_collaudo:gantt}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/gantt_collaudo.PNG}
-    \caption{Diagramma di Gantt del periodo di verifica e validazione}
-    \label{fig:gantt_collaudo}
-\end{figure}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -934,11 +1057,9 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     Lorenzo Pasqualotto & 4 & 4 & 9 & 0 & 0 & 3 & 20 \\
     \hline
 
-\caption{Suddivisione dei ruoli nel periodo di Analisi Preliminare}\label{tab:ruoli_analisi}
+\caption{Suddivisione dei ruoli nel periodo di Analisi}\label{tab:ruoli_analisi}
 \end{xltabular}
-\end{center}
 
-\begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | 1 |}
             
     \rowcolor{black}
@@ -967,28 +1088,28 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \textbf{Totale} & \textbf{120} & \textbf{€2.570,00} \\
     \hline
         
-    \caption{Costo per ruolo Analisi Preliminare}\label{tab:costo_analisi}
+    \caption{Costo per ruolo Analisi}\label{tab:costo_analisi}
 \end{xltabular}
 \end{center}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/grafico_analisi.png}
-    \caption{Grafico a barre suddivisione ruoli Analisi Preliminare}
+    \caption{Grafico a barre suddivisione ruoli Analisi}
     \label{fig:grafico_analisi}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/torta_analisi.png}
-    \caption{Grafico a torta suddivisione costi per ruolo Analisi Preliminare}
+    \caption{Grafico a torta suddivisione costi per ruolo Analisi}
     \label{fig:torta_analisi}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROGETTAZIONE RTB   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\subsubsection{Realizzazione Proof of Concept}\label{sec:preventivo:periodi:progRTB}
+\subsubsection{Progettazione e codifica del Proof of Concept}\label{sec:preventivo:periodi:progRTB}
 
 \begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | 1 |}
@@ -1018,9 +1139,7 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
 
 \caption{Suddivisione dei ruoli nel periodo di Realizzazione Proof of Concept}\label{tab:ruoli_progRTB}
 \end{xltabular}
-\end{center}
 
-\begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | 1 |}
             
     \rowcolor{black}
@@ -1049,28 +1168,28 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \textbf{Totale} & \textbf{192} & \textbf{€3.630,00} \\
     \hline
         
-    \caption{Costo per ruolo realizzazione Proof of Concept}\label{tab:costo_progRTB}
+    \caption{Costo per ruolo progettazione e codifica PoC}\label{tab:costo_progRTB}
 \end{xltabular}
 \end{center}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/grafico_progPOC.png}
-    \caption{Grafico a barre suddivisione ruoli realizzazione RTB}
+    \caption{Grafico a barre suddivisione ruoli progettazione e codifica PoC}
     \label{fig:grafico_progRTB}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/torta_progPOC.png}
-    \caption{Grafico a torta suddivisione costi per ruolo realizzazione RTB}
+    \caption{Grafico a torta suddivisione costi per ruolo progettazione e codifica PoC}
     \label{fig:torta_progRTB}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CODIFICA DETTAGLIO   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newpage
-\subsubsection{Progettazione dettaglio e codifica}\label{sec:preventivo:periodi:dettaglio}
+\subsubsection{Progettazione di dettaglio e codifica finale}\label{sec:preventivo:periodi:dettaglio}
 
 \begin{center}
     \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | 1 |}
@@ -1098,11 +1217,9 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
         Lorenzo Pasqualotto & 5 & 0 & 0 & 15 & 14 & 0 & 34 \\
         \hline
     
-    \caption{Suddivisione dei ruoli nel periodo di progettazione e codifica dettaglio}\label{tab:ruoli_dettaglio}
+    \caption{Suddivisione dei ruoli nel periodo di progettazione di dettaglio e codifica finale}\label{tab:ruoli_dettaglio}
     \end{xltabular}
-\end{center}
 
-\begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | 1 |}
             
     \rowcolor{black}
@@ -1110,7 +1227,7 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \hline
     \endhead
 
-    Responsabile & 13 & €390,00 \\
+    Responsabile & 19 & €570,00 \\
     \hline
     
     Amministratore & 6 & €120,00 \\
@@ -1128,31 +1245,31 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     Verificatore & 24 & €360,00 \\
     \hline
     
-    \textbf{Totale} & \textbf{198} & \textbf{€3.855,00} \\
+    \textbf{Totale} & \textbf{204} & \textbf{€4.085,00} \\
     \hline
         
-    \caption{Costo per ruolo progettazione e codifica dettaglio}\label{tab:costo_dettaglio}
+    \caption{Costo per ruolo progettazione di dettaglio e codifica finale}\label{tab:costo_dettaglio}
 \end{xltabular}
 \end{center}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{images/grafico_codPOC.png}
-    \caption{Grafico a barre suddivisione ruoli progettazione e codifica dettaglio}
+    \includegraphics[width=0.75\textwidth]{images/grafico_dettaglio.png}
+    \caption{Grafico a barre suddivisione ruoli progettazione di dettaglio e codifica finale}
     \label{fig:grafico_dettaglio}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/torta_codPOC.png}
-    \caption{Grafico a torta suddivisione costi per ruolo progettazione e codifica dettaglio}
+    \includegraphics[width=0.5\textwidth]{images/torta_dettaglio.png}
+    \caption{Grafico a torta suddivisione costi per ruolo progettazione di dettaglio e codifica finale}
     \label{fig:torta_dettaglio}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   VALIDAZIONE   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newpage
-\subsubsection{Verifica e collaudo}\label{sec:preventivo:periodi:collaudo}
+\subsubsection{Validazione e collaudo}\label{sec:preventivo:periodi:collaudo}
 
 \begin{center}
     \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | {0.35\textwidth} | 1 |}
@@ -1180,11 +1297,9 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
         Lorenzo Pasqualotto & 0 & 0 & 0 & 0 & 0 & 8 & 8 \\
         \hline
     
-    \caption{Suddivisione dei ruoli nel periodo di verifica e collaudo}\label{tab:ruoli_collaudo}
+    \caption{Suddivisione dei ruoli nel periodo di validazione e collaudo}\label{tab:ruoli_collaudo}
     \end{xltabular}
-\end{center}
 
-\begin{center}
 \begin{xltabular}{\textwidth}{| 1 | {0.35\textwidth} | 1 |}
             
     \rowcolor{black}
@@ -1213,21 +1328,21 @@ A seguire sono elencate tutte le fasi del progetto, con i relativi ruoli e le or
     \textbf{Totale} & \textbf{48} & \textbf{€850,00} \\
     \hline
         
-    \caption{Costo per ruolo verifica e collaudo}\label{tab:costo_collaudo}
+    \caption{Costo per ruolo validazione e collaudo}\label{tab:costo_collaudo}
 \end{xltabular}
 \end{center}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/grafico_collaudo.png}
-    \caption{Grafico a barre suddivisione ruoli verifica e collaudo}
+    \caption{Grafico a barre suddivisione ruoli validazione e collaudo}
     \label{fig:grafico_collaudo}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/torta_collaudo.png}
-    \caption{Grafico a torta suddivisione costi per ruolo verifica e collaudo}
+    \caption{Grafico a torta suddivisione costi per ruolo validazione e collaudo}
     \label{fig:torta_collaudo}
 \end{figure}
 
@@ -1242,7 +1357,7 @@ Per queste voci si rimanda al documento \textit{Suddivisione dei ruoli e prevent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Consuntivo di periodo}\label{sec:consuntivo}
 
-Di seguito viene presentato un consuntivo per i diversi periodi del progetto, in cui si confrontano le ore preventivate con quelle effettivamente impiegate e i costi preventivati con quelli effettivi, nonché le difficoltà incontrate e le strategie utilizzate per mitigare i rischi.\\
+Di seguito viene presentato un consuntivo per i diversi periodi del progetto, in cui si confrontano le ore preventivate con quelle effettivamente impiegate e i costi preventivati con quelli effettivi, nonchè le difficoltà incontrate e le strategie utilizzate per mitigare i rischi.\\
 
 \subsection{Analisi}\label{sec:consuntivo:analisi}
 
@@ -1326,15 +1441,16 @@ A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata
         \endhead
     
         Essendo molte delle tecnologie utilizzate nuove per il gruppo, era presente il rischio di non riuscire ad utilizzare al meglio tali strumenti &
-        Dopo aver osservato tutti i lati positivi e negativi delle opzioni per le tecnologie, il gruppo ha scelto quelle più adatte e comode e ne ha effettuato uno studio
-        per poterle utilizzare al meglio. \\
+        Dopo aver osservato tutti i lati positivi e negativi delle opzioni per le tecnologie, il gruppo ha scelto quelle più adatte e comode e ne ha effettuato uno studio per poterle utilizzare al meglio. \\
         \hline
             
         \caption{Tabella descrittiva rischi tecnologici e mitigazioni periodo Analisi}\label{tab:rischi_tecnologici_analisi}
     \end{xltabular}
 \end{center}
 
-\subsection{Realizzazione Proof of Concept}\label{sec:consuntivo:progRTB}
+
+\newpage
+\subsection{Progettazione e codifica del Proof of Concept}\label{sec:consuntivo:progRTB}
 \begin{center}
     \textbf{Data inizio:} 07/01/2024 \\
     \textbf{Data fine:} 25/03/2024 \\
@@ -1344,10 +1460,10 @@ A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata
         \textbf{\color{white} Ruolo} & \textbf{\color{white} Totale ore} & \textbf{\color{white} Diff. ore} & \textbf{\color{white} Totale costo} & \textbf{\color{white} Diff. costo}\\ 
         \endhead
     
-        Responsabile & 14 & 0 & €570,00 & €0,00 \\
+        Responsabile & 14 & 0 & €420,00 & €0,00 \\
         \hline
         
-        Amministratore & 18 & 0 & €500,00 & €0,00 \\
+        Amministratore & 18 & 0 & €360,00 & €0,00 \\
         \hline
         
         Analista & 12 & +3 & €300,00 & +€75,00 \\
@@ -1356,7 +1472,7 @@ A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata
         Progettista & 24 & -12 & €600,00 & -€300,00 \\
         \hline
         
-        Programmatore & 70 & +9 & €1050,00 & +€135,00 \\
+        Programmatore & 70 & +9 & €1.050,00 & +€135,00 \\
         \hline
         
         Verificatore & 54 & 0 & €810,00 & €0,00 \\
@@ -1431,6 +1547,175 @@ A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata
     \end{xltabular}
 \end{center}
 
+%%%%%% codifica finale
+\newpage
+\subsection{Progettazione di dettaglio e codifica finale}\label{sec:consuntivo:progFIN}
+\begin{center}
+    \textbf{Data inizio:} 26/03/2024 \\
+    \textbf{Data fine:} 05/05/2024 \\
+    \begin{xltabular}{\textwidth}{| 1 | 1 | {0.35\textwidth} | 1 | 1 |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Ruolo} & \textbf{\color{white} Totale ore} & \textbf{\color{white} Diff. ore} & \textbf{\color{white} Totale costo} & \textbf{\color{white} Diff. costo}\\ 
+        \endhead
+    
+        Responsabile & 22 & +3 & €660,00 & +€90,00 \\
+        \hline
+        
+        Amministratore & 7 & +1 & €140,00 & +€20,00 \\
+        \hline
+        
+        Analista & 3 & -1 & €75,00 & -€25,00 \\
+        \hline
+        
+        Progettista & 65 & -2 & €1.625,00 & -€50,00 \\
+        \hline
+        
+        Programmatore & 78 & -6 & €1.170,00 & -€90,00 \\
+        \hline
+        
+        Verificatore & 25 & +1 & €375,00 & +€15,00 \\
+        \hline
+        
+        \textbf{Totale} & \textbf{200} & \textbf{-4} & \textbf{€4.045,00} & \textbf{-€40,00} \\
+        \hline
+            
+        \caption{Differenza ore e costi previsti con effettivi, progettazione e codifica finale}\label{tab:consuntivo_codifica}
+    \end{xltabular}
+\end{center}
+
+\subsubsection{Resoconto periodo}\label{sec:consuntivo:codifica:resoconto}
+
+Dal consuntivo di periodo emerge che il gruppo è sostanzialmente riuscito a rispettare quanto inizialmente preventivato, seppur in una situazione di largo ritardo. \\
+In particolare si può notare un minor impiego, rispetto a quanto previsto, del ruolo di Programmatore. Il periodo precedente (sviluppo del PoC) si è infatti rivelato molto importante per prendere dimestichezza e una buona familiarità sia con il nuovo linguaggio di programmazione, sia con le tecnologie adottate, decisamente poco conosciute a tutti i membri del gruppo. 
+Un altro aspetto significativo, che ha contribuito alla riduzione delle ore lavorative impiegate dai Programmatori, è quello relativo alle nuove disposizioni organizzative adottate dal gruppo dall'inizio di questa fase. Esse hanno infatti contribuito in maniera importante all'ottimizzazione del passaggio di consegne in fase di cambio ruoli e al generale incremento di produttività da parte del gruppo.\\
+L'implementazione di tali nuove scelte organizzative si riflette ed è visibile nei ruoli di Responsabile ed Amministratore. È infatti possibile notare un leggero aumento del monte ore delle due figure citate.\\
+L'aumento è infatti giustificato da una maggiore attenzione da parte del gruppo alla fase organizzativa del progetto, aspetto decisamente migliorato rispetto ai periodi precedenti. \\
+
+\subsubsection{Mitigazione rischi attuata}\label{sec:consuntivo:codifica:mitigazione}
+
+A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata per tali rischi.\\
+
+\paragraph{Rischi organizzativi}
+
+\begin{center}
+
+
+    \begin{xltabular}{\textwidth}{| X | X |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Descrizione} & \textbf{\color{white} Mitigazione}\\ 
+        \endhead
+
+        Alcune scelte archittetturali si sono rivelate più articolate del previsto. Sono infatti emersi diversi pattern archittetturali implementabili nel progetto proposto e la scelta su quali adottare e in che modo non era scontata.  & Un immediato incontro di chiarimento con il Prof. Cardin ha permesso al gruppo di prendere le decisioni più adeguate e proseguire con le fasi di progetto senza ulteriori ritardi.  \\
+        \hline
+
+        Alcune funzionalità richieste (in particolare l'inserimento di un layout tramite file .svg) si sono subito presentati come problemi complessi e decisamente non immediati. & L'intero gruppo si è quindi attivato in aiuto di Progettisti e Programmatori per consentire una rapida risoluzione del problema. Un incontro di chiarimento con il proponente è inoltre stato di ulteriore aiuto per l'attuazione delle scelte poi prese. \\
+        \hline 
+        
+        \caption{Tabella descrittiva rischi organizzativi e mitigazioni periodo: Progettazione e codifica finale}\label{tab:rischi_organizzativi_finale}
+    \end{xltabular}
+\end{center}
+
+\paragraph{Rischi tecnologici}
+
+\begin{center}
+    \begin{xltabular}{\textwidth}{| X | X |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Descrizione} & \textbf{\color{white} Mitigazione}\\ 
+        \endhead
+    
+        Le tecnologie utilizzate nel progetto, sebbene ora conosciute ai membri del gruppo, hanno creato qualche problema nell'implementazione delle funzionalità più specifiche, vista la limitata documentazione. &
+        I membri del gruppo hanno ricercato online esempi simili e studiato le soluzioni proposte, adattandole alle esigenze specifiche di progetto. \\
+        \hline
+            
+        \caption{Tabella descrittiva rischi tecnologici e mitigazioni periodo: Progettazione e codifica finale}\label{tab:rischi_tecnologici_finale}
+    \end{xltabular}
+\end{center}
+
+
+%%%%%% validazione e collaudo
+\newpage
+\subsection{Validazione e collaudo}\label{sec:consuntivo:val_col}
+\begin{center}
+    \textbf{Data inizio:} 06/05/2024 \\
+    \textbf{Data fine:} 17/05/2024 \\
+    \begin{xltabular}{\textwidth}{| 1 | 1 | {0.35\textwidth} | 1 | 1 |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Ruolo} & \textbf{\color{white} Totale ore} & \textbf{\color{white} Diff. ore} & \textbf{\color{white} Totale costo} & \textbf{\color{white} Diff. costo}\\ 
+        \endhead
+    
+        Responsabile & 6 & -1 & €180,00 & -€30,00 \\
+        \hline
+        
+        Amministratore & 8 & +3 & €160,00 & +€60,00 \\
+        \hline
+        
+        Analista & 0 & 0 & €0,00 & €0,00 \\
+        \hline
+        
+        Progettista & 0 & 0 & €0,00 & €0,00 \\
+        \hline
+        
+        Programmatore & 2 & +2 & €30,00 & +€30,00 \\
+        \hline
+        
+        Verificatore & 34 & -2 & €510,00 & -€30,00 \\
+        \hline
+        
+        \textbf{Totale} & \textbf{50} & \textbf{+2} & \textbf{€880,00} & \textbf{+€30,00} \\
+        \hline
+            
+        \caption{Differenza ore e costi previsti con effettivi, validazione e collaudo}\label{tab:consuntivo_collaudo}
+    \end{xltabular}
+\end{center}
+
+
+
+\subsubsection{Resoconto periodo}\label{sec:consuntivo:analisi:resoconto}
+
+Anche da questo ultimo consuntivo di periodo emerge che il gruppo è sostanzialmente riuscito a rispettare quanto inizialmente preventivato, pur se in ritardo rispetto ai tempi prefissati per l'accumulo di ritardi nelle fasi precedenti. \\
+Il rispetto di tempistiche (nonostante i ritardi) e costi per entrambi i periodi successivi alla RTB è, a nostro avviso, indice di un deciso miglioramento nell'organizzazione del gruppo. \\
+Le difficoltà organizzative e le lacune riscontrate sulla prima fase di progetto sono state superate e le nuove disposizioni adottate hanno permesso al gruppo di concludere questa PB rispettando i costi e le tempistiche inizialmente stimati, non aggravando ulteriormente la situazione di ritardo già accumulato.\\
+Anche in questo caso, per un corretto processo organizzativo e rispetto delle nuove norme da attuare, è stato necessario incrementare leggermente il tempo dedicato al ruolo di Amministratore. Tuttavia, il guadagno in termini di efficienza produttiva ha permesso di non sforare pesantemente il budget di periodo. 
+
+
+\subsubsection{Mitigazione rischi attuata}\label{sec:consuntivo:analisi:mitigazione}
+
+A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata per tali rischi.\\
+
+
+
+\paragraph{Rischi tecnologici}
+
+\begin{center}
+    \begin{xltabular}{\textwidth}{| X | X |}
+                
+        \rowcolor{black}
+        \textbf{\color{white} Descrizione} & \textbf{\color{white} Mitigazione}\\ 
+        \endhead
+    
+        Le attività necessarie in questo ultimo periodo si sono rivelate poco intuitive da porre in essere. La fase di testing soprattutto, sconosciuta a tutti i componenti del gruppo, si è rivelata particolarmente ostica. &
+        I membri del gruppo hanno dovuto dedicare del tempo all'autoformazione per studiare il corretto approccio da applicare a tali attività. \\
+        \hline
+
+        Alcune tecnologie utilizzate (React Testing Library e React Three Test Renderer) si sono rivelate piuttosto scarne di documentazione, rendendo complicato l'utilizzo in alcuni casi particolari dell'applicativo. &
+        È stato necessario impiegare del tempo per l'autoapprendimento tramite forum e ricerche online. Le fonti non sempre si sono dimostrate esaustive, ma hanno posto le basi per comprendere meglio l'applicazione nei nostri specifici casi. \\
+        \hline
+            
+        \caption{Tabella descrittiva rischi tecnologici e mitigazioni periodo: validazione e collaudo}\label{tab:rischi_tecnologici_poc}
+    \end{xltabular}
+\end{center}
+
+
+
+%%fine verifica
+
+
+
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MITIGAZIONE DEI RISCHI
@@ -1449,11 +1734,11 @@ A seguito vengono riportati alcuni rischi incontrati e la mitigazione effettuata
 Per ulteriori chiarimenti sugli argomenti discussi nel documento, si possono consultare i seguenti link esterni:
 \begin{itemize}
     \item Capitolato \textbf{Warehouse Management 3D}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C5.pdf} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
     \item Link alla \textbf{documentazione del gruppo}:\\
-    \url{https://avant-garde-software-engineering.github.io/documentazione.html}
+    \url{https://avant-garde-software-engineering.github.io/documentazione.html} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
     \item Link alle \textbf{slides sul ciclo di vita del software}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T3.pdf}
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T3.pdf} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}}
     \item Link alle \textbf{slides sulla gestione di progetto}:\\
-    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T4.pdf}   
+    \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T4.pdf} \textcolor{gray}{\textit{(ultimo accesso 13-05-24)}} 
 \end{itemize}
